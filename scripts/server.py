@@ -469,13 +469,27 @@ def _team_players(team_id, d=None):
     return t.get("name"), [_pinfo(e["playerPoolEntry"]["player"], e["lineupSlotId"]) for e in t["roster"]["entries"]]
 
 
+def _play_prob(p, day):
+    """Chance a player plays on `day` (US Eastern date). Injured players with an ESPN projected
+    return date count at their injured-status rate before it and as healthy from that day on.
+    (2026-11-03: previously today's status applied to every remaining day of the week.)"""
+    from datetime import timedelta
+    base = PLAY_PROB.get(p["status"], 0.8)
+    healthy = PLAY_PROB["ACTIVE"]
+    ret = p.get("ret")
+    if ret is None or base >= healthy:
+        return base
+    ret = max(ret, datetime.now(ET).date() + timedelta(days=1))  # status still says out: not back before tomorrow
+    return healthy if day >= ret else base
+
+
 def _sim_totals(players, days, sched, rng, now=None):
     tot = dict.fromkeys(KEYS, 0.0)
     for day in days:
         playing = [p for p in players if p["rates"] and p["slot"] != 13
                    and _can_play(p, day, sched, now)]
         for p in _daily_lineup(playing):
-            if rng.random() > PLAY_PROB.get(p["status"], 0.8):
+            if rng.random() > _play_prob(p, day):
                 continue
             f = max(0.2, rng.gauss(1.0, FORM_SD))  # game-to-game form (minutes, shooting night)
             for k in KEYS:
@@ -560,7 +574,7 @@ def simulate_week(team_id: int = 0) -> str:
     def games_left(players):
         total = 0
         for day in days:
-            playing = [p for p in players if p["rates"] and p["slot"] != 13 and PLAY_PROB.get(p["status"], 0.8) > 0
+            playing = [p for p in players if p["rates"] and p["slot"] != 13 and _play_prob(p, day) > 0
                        and _games_on(p["pro"], day, sched, now if day == now.date() else None)]
             total += len(_daily_lineup(playing))
         return total
