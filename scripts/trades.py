@@ -1,16 +1,19 @@
-"""Trade tracker: how every trade this season is actually turning out. Writes data/trades.json.
+"""Trade tracker for a POINTS league: every trade this season and how it's turning out.
+Writes data/trades.json.
 
-For each trade, three views:
-  at_time - the model's expected-wins change for each side when the trade happened (from the
-            published trade review, or computed when first seen)
-  so_far  - what really happened: each side's incoming players' stats, counting only games they
-            started for that team after the trade, scored head-to-head across the 9 categories
-            (so a trade can be "leading 6-3"). Rebuilt day by day for the chart.
-  now     - the same trade re-run through the model with today's rosters and injuries
-            (only while every traded player is still on the team that received him)
+For each trade:
+  gets      - who each team received
+  so_far    - fantasy points each team's incoming players have scored IN ITS STARTING LINEUP since the
+              trade (bench games don't count; a player stops counting once he leaves that team).
+              Uneven trades (2-for-1 etc.): the team receiving fewer players frees a roster spot, so it is
+              credited with an average free agent in each freed spot (FA points per game x the share of
+              days an NBA team plays). Day-by-day running margin for the chart.
+  at_time   - the model's change in expected wins (rest of season) for each side when first seen
+  now       - the same re-run with today's rosters and injuries (while every player is still where he went)
 
-Caches every NBA day's starting lineups per player in data/player_days.json (one ESPN call per new day).
-Run after live.py. Needs ESPN_S2 / ESPN_SWID.
+Trades are found in ESPN's transaction log (mTransactions2), scanned once for the whole season and
+then only for recent days. Every NBA day's lineups are cached in data/player_days.json.
+Run after live.py.
 """
 import json, os, sys, logging
 from datetime import datetime, timedelta, timezone
@@ -24,9 +27,8 @@ import server as S  # noqa: E402
 DAYS = os.path.join(ROOT, "data", "player_days.json")
 LOG = os.path.join(ROOT, "data", "trades_log.json")
 OUT = os.path.join(ROOT, "data", "trades.json")
-SEED = os.path.join(HERE, "trades_seed.json")
-K = ["0", "6", "3", "2", "1", "17", "11", "13", "14", "15", "16"]  # PTS REB AST STL BLK 3PM TO FGM FGA FTM FTA
-CATS = [("PTS", "0"), ("REB", "6"), ("AST", "3"), ("STL", "2"), ("BLK", "1"), ("3PM", "17"), ("TO", "11"), ("FG%", None), ("FT%", None)]
+TEAM_PLAY_SHARE = 0.48   # an NBA team plays on roughly 48% of the season's days
+FA_POOL = 10             # "average free agent" = mean of the best 10 available by fantasy points per game
 
 
 def load(path, default):
@@ -38,7 +40,7 @@ def load(path, default):
 
 
 def player_days(d):
-    """{sp: {"date": "YYYY-MM-DD", "p": {name: [team_id, started, *K stats]}}} for every finished day."""
+    """{sp: {"date": "YYYY-MM-DD", "p": {player_id: [team_id, started, fpts]}}} for every finished day."""
     cache = load(DAYS, {})
     latest = d["status"].get("latestScoringPeriod") or 1
     first = d["status"].get("firstScoringPeriod") or 1
@@ -56,209 +58,184 @@ def player_days(d):
                 pl = e["playerPoolEntry"]["player"]
                 st = S._day_line(pl, sp)
                 if st:
-                    p[pl.get("fullName")] = [t["id"], e["lineupSlotId"] not in (12, 13)] + [round(float(st.get(k, 0) or 0), 1) for k in K]
+                    p[str(pl["id"])] = [t["id"], e["lineupSlotId"] not in (12, 13), round(S._fp(st), 1)]
         cache[str(sp)] = {"date": str(today - timedelta(days=latest - sp)), "p": p}
     with open(DAYS, "w") as f:
         json.dump(cache, f, separators=(",", ":"))
     return cache
 
 
-def find_trades(names, log, seed):
-    """One record per trade. The league message feed only shows recent items, so every trade is
-    remembered in trades_log.json the first time it's seen (the job runs every few hours).
-    Trades from before the tracker existed come from trades_seed.json."""
-    ids = {v: k for k, v in names.items()}
+def scan_trades(d, log):
+    """Find executed trades in ESPN's transaction log. Full-season scan the first time, then recent days."""
+    latest = d["status"].get("transactionScoringPeriod") or d["status"].get("latestScoringPeriod") or 1
     known = log.setdefault("_trades", {})
-    for key, x in seed.items():
-        if not key.startswith("_") and "gets" in x and key not in known:
-            known[key] = {"gets": x["gets"], "dates": x["dates"]}
-    for e in json.loads(S.get_recent_transactions(limit=1000)):
-        moves = [m for m in e["moves"] if m["action"] in ("traded", "trade accepted")]
-        teams = sorted({m["team"] for m in moves})
-        if not moves or len(teams) != 2 or any(t not in ids for t in teams):
+    start = 0 if not log.get("_scanned_full") else max(0, latest - 4)
+    for sp in range(start, latest + 2):
+        try:
+            tx = S._get(["mTransactions2"], params={"scoringPeriodId": sp}).get("transactions", [])
+        except Exception:
             continue
-        key = "|".join(sorted({str(m["player"]) for m in moves}))
-        rec = known.setdefault(key, {"gets": {}, "dates": []})
-        for m in moves:  # ESPN logs each traded player under the team RECEIVING him
-            lst = rec["gets"].setdefault(m["team"], [])
-            if m["player"] not in lst:
-                lst.append(m["player"])
-        if not any(x[:16] == e["date"][:16] for x in rec["dates"]):  # same message, different precision
-            rec["dates"] = sorted(rec["dates"] + [e["date"]])
-    return [{"key": k, "gets": v["gets"], "dates": v["dates"]} for k, v in known.items() if len(v["gets"]) == 2]
+        for t in tx:
+            if t.get("type") not in ("TRADE_ACCEPT", "TRADE_UPHOLD", "TRADE_PROPOSAL") or t.get("status") != "EXECUTED":
+                continue
+            items = [i for i in t.get("items", []) if i.get("playerId") and i.get("toTeamId")]
+            if not items or not t.get("processDate"):
+                continue  # accepted but never processed (vetoed / cancelled) or no player list
+            key = t["id"]
+            if key in known:
+                continue
+            gets = {}
+            for i in items:
+                gets.setdefault(str(i["toTeamId"]), []).append(i["playerId"])
+            if len(gets) != 2:
+                continue
+            known[key] = {"gets": gets,
+                          "accepted_utc": datetime.fromtimestamp((t.get("proposedDate") or t["processDate"]) / 1000, timezone.utc).isoformat(),
+                          "processed_utc": datetime.fromtimestamp(t["processDate"] / 1000, timezone.utc).isoformat()}
+    log["_scanned_full"] = True
+    return known
 
 
-def day_of(iso):
-    return datetime.fromisoformat(iso).astimezone(S.ET).date()
+def fa_level():
+    """Average free agent's fantasy points per game (best FA_POOL available, 3+ games or a projection)."""
+    vals = []
+    for x in S._pool():
+        if x.get("onTeamId", 0) != 0:
+            continue
+        p = x["player"]
+        if not p.get("proTeamId"):
+            continue
+        r = S._rates(p)
+        if r and (p.get("injuryStatus") or "ACTIVE") == "ACTIVE":
+            vals.append(S._fp(r))
+    vals.sort(reverse=True)
+    top = vals[:FA_POOL]
+    return round(sum(top) / len(top), 1) if top else 0.0
 
 
-def score(got, gave):
-    """Head-to-head across the 9 categories between two stat totals (lists in K order)."""
-    out, w, l = [], 0, 0
-    for cat, k in CATS:
-        if k:
-            a, b = got[K.index(k)], gave[K.index(k)]
-        else:
-            m, att = ("13", "14") if cat == "FG%" else ("15", "16")
-            ga, gb = got[K.index(att)], gave[K.index(att)]
-            a = got[K.index(m)] / ga if ga else None
-            b = gave[K.index(m)] / gb if gb else None
-        if a is None or b is None or abs(a - b) < 1e-9:
-            res = 0
-        else:
-            res = 1 if (a < b if cat == "TO" else a > b) else -1
-        w += res == 1; l += res == -1
-        out.append({"cat": cat, "got": None if a is None else round(a, 3 if k is None else 1),
-                    "gave": None if b is None else round(b, 3 if k is None else 1), "res": res})
-    return w, l, out
+def replacement(fpg):
+    """A synthetic 'average free agent' player for the season model."""
+    scale = fpg / max(1e-9, S._fp(S.REPLACEMENT))
+    return {"id": -1, "name": "Average free agent", "pro": 1, "elig": [0, 1, 2, 3, 4, 5, 6, 11], "status": "ACTIVE",
+            "rates": {k: v * scale for k, v in S.REPLACEMENT.items()}, "slot": 12, "ret": None}
 
 
-def wins_added(team_id, delta, weeks, dists):
-    """Team-aware value of what a trade has produced so far, in matchup wins.
-    delta = this team's (got - gave) stat totals in K order; spread over `weeks` weeks.
-    Compares the team's weekly totals with and without that per-week difference against every
-    other team, so a category only counts as much as it moves this team's real chances."""
-    if weeks <= 0:
-        return 0.0
-    mean, var = dists[team_id]
-    without = (dict(mean), var)
-    for i, k in enumerate(K):
-        without[0][k] = mean.get(k, 0) - delta[i] / weeks
-    opp = [dv for t, dv in dists.items() if t != team_id]
-    w_with = sum(S._match_win(S._cat_probs((mean, var), o)) for o in opp) / len(opp)
-    w_without = sum(S._match_win(S._cat_probs(without, o)) for o in opp) / len(opp)
-    return round((w_with - w_without) * weeks * S.GAIN_CALIBRATION, 3)
-
-
-def grade_wins(x, games):
-    if games < 12:
-        return "Too early"
-    # x = matchup wins added PER WEEK since the trade, so early and late trades are graded alike
-    for g, lo in (("A+", 0.04), ("A", 0.025), ("B+", 0.012), ("B", 0.004), ("C", -0.004), ("C-", -0.012), ("D+", -0.025), ("D", -0.04)):
-        if x >= lo:
-            return g
-    return "F"
-
-
-def grade(m, games):
-    if games < 12:
-        return "Too early"
-    for g, lo in (("A+", 7), ("A", 5), ("B+", 3), ("B", 1), ("C", 0), ("C-", -2), ("D+", -4), ("D", -6)):
-        if m >= lo:
-            return g
-    return "F"
-
-
-def now_value(d, names, rosters, side, other, gets):
-    """Model's rest-of-season expected-wins change for `side` from this trade, with today's info.
-    None if any traded player has since left the team that received him."""
-    ids = {v: k for k, v in names.items()}
-    a, b = ids[side], ids[other]
-    mine, theirs = rosters[a], rosters[b]
-    got = [p for p in mine if p["name"] in gets[side]]
-    gave = [p for p in theirs if p["name"] in gets[other]]
-    if len(got) != len(gets[side]) or len(gave) != len(gets[other]):
+def model_change(d, rosters, side, other, gets, fpg):
+    """Change in `side`'s expected wins (rest of season) from the trade, using current rosters.
+    None if the players aren't all where the trade sent them (or where they started)."""
+    got = set(gets[str(side)])
+    gave = set(gets[str(other)])
+    mine = {p["id"]: p for p in rosters[side]}
+    if got <= set(mine):            # already processed: compare with the pre-trade roster
+        after = rosters[side]
+        before = [p for p in after if p["id"] not in got] + [p for p in rosters[other] if p["id"] in gave]
+        if len(before) != len(after) - len(got) + len(gave):
+            return None
+    elif gave <= set(mine):         # not processed yet
+        before = rosters[side]
+        after = [p for p in before if p["id"] not in gave] + [p for p in rosters[other] if p["id"] in got]
+    else:
         return None
-    weeks = S._remaining_weeks(d)
-    after = mine
-    before = [p for p in mine if p not in got] + gave
-    av, _ = S._fixture_value(after, d, a, weeks)
-    bv, _ = S._fixture_value(before, d, a, weeks)
-    return round((av - bv) * S.GAIN_CALIBRATION, 3)
+    for _ in range(max(0, len(before) - len(after))):   # freed roster spot -> average free agent
+        after = after + [replacement(fpg)]
+    for _ in range(max(0, len(after) - len(before))):
+        before = before + [replacement(fpg)]
+    wk = S._remaining_weeks(d)
+    av, _ = S._fixture_value(after, d, side, wk)
+    bv, _ = S._fixture_value(before, d, side, wk)
+    wpts = S._weekly_dist(after)[0]["FP"] - S._weekly_dist(before)[0]["FP"]
+    return {"exp_wins": round((av - bv) * S.GAIN_CALIBRATION, 2), "weekly_points": round(wpts, 1)}
+
+
+def grade(margin_per_week):
+    """Letter grade from fantasy points per week gained vs the other side."""
+    for lim, g in ((60, "A+"), (40, "A"), (25, "A-"), (12, "B+"), (4, "B"), (-4, "C"), (-12, "C-"),
+                   (-25, "D+"), (-40, "D"), (-60, "D-")):
+        if margin_per_week >= lim:
+            return g
+    return "F"
 
 
 def main():
     d = S._get(["mRoster", "mTeam", "mMatchup", "mSettings", "mStatus"])
-    names = {t["id"]: t.get("name") for t in d["teams"]}
+    names = {t["id"]: t.get("name").strip() for t in d["teams"]}
     rosters = {t["id"]: S._team_players(t["id"], d)[1] for t in d["teams"]}
-    on_team = {p["name"]: tid for tid, pl in rosters.items() for p in pl}
+    pool_names = {x["player"]["id"]: x["player"].get("fullName") for x in S._pool()}
     days = player_days(d)
-    dists = {tid: S._weekly_dist(pl) for tid, pl in rosters.items()}
-    seed, log = load(SEED, {}), load(LOG, {})
+    log = load(LOG, {})
+    known = scan_trades(d, log)
+    fpg = fa_level()
+    fa_day = round(fpg * TEAM_PLAY_SHARE, 2)
     today = str(datetime.now(S.ET).date())
     out = []
-    log.pop("_scan", None)
-    for t in find_trades(names, log, seed):
-        key, gets = t["key"], t["gets"]
-        A, B = sorted(gets)
-        moved = all(on_team.get(n) == next(k for k, v in names.items() if v == side) for side in (A, B) for n in gets[side])
-        if moved or len(t["dates"]) >= 2 or day_of(t["dates"][0]) < datetime.now(S.ET).date() - timedelta(days=3):
-            start, status = t["dates"][-1], "processed"
-        else:
-            start, status = None, "in league review"
+    for key, t in known.items():
+        A, B = sorted((int(x) for x in t["gets"]), key=lambda x: names[x])
+        gets = t["gets"]
         rec = log.setdefault(key, {"first_seen": today, "history": []})
-        # at the time
         if "at_time" not in rec:
-            if key in seed:
-                rec["at_time"], rec["post"], rec["at_time_source"] = seed[key]["at_time"], seed[key].get("post"), "trade review"
+            at = {names[s]: model_change(d, rosters, s, o, gets, fpg) for s, o in ((A, B), (B, A))}
+            if all(at.values()):
+                rec["at_time"] = at
+                rec["at_time_source"] = "model when first seen" if rec["first_seen"] <= t["processed_utc"][:10] \
+                    else f"model on {rec['first_seen']} (trade made before the tracker started)"
+        # ---- so far: day by day from the day after processing
+        first_day = str(datetime.fromisoformat(t["processed_utc"]).astimezone(S.ET).date() + timedelta(days=1))
+        open_spots = {A: max(0, len(gets[str(B)]) - len(gets[str(A)])), B: max(0, len(gets[str(A)]) - len(gets[str(B)]))}
+        tot = {A: 0.0, B: 0.0}
+        games = {A: 0, B: 0}
+        players = {s: {pid: {"name": pool_names.get(pid, str(pid)), "games": 0, "fpts": 0.0} for pid in gets[str(s)]} for s in (A, B)}
+        series = []
+        for sp in sorted(days, key=int):
+            day = days[sp]
+            if day["date"] < first_day:
+                continue
+            for s in (A, B):
+                for pid in gets[str(s)]:
+                    x = day["p"].get(str(pid))
+                    if x and x[0] == s and x[1]:
+                        tot[s] += x[2]
+                        games[s] += 1
+                        players[s][pid]["games"] += 1
+                        players[s][pid]["fpts"] += x[2]
+                tot[s] += open_spots[s] * fa_day
+            series.append([day["date"], round(tot[A] - tot[B], 1)])
+        ndays = len(series)
+        wk = ndays / 7
+        margin = tot[A] - tot[B]
+        so_far = {"from": first_day, "days": ndays,
+                  "points": {names[A]: round(tot[A], 1), names[B]: round(tot[B], 1)},
+                  "margin": {names[A]: round(margin, 1), names[B]: round(-margin, 1)},
+                  "per_week": {names[A]: round(margin / wk, 1) if wk else 0, names[B]: round(-margin / wk, 1) if wk else 0},
+                  "games": {names[A]: games[A], names[B]: games[B]},
+                  "fa_credit": {names[s]: round(open_spots[s] * fa_day * ndays, 1) for s in (A, B) if open_spots[s]},
+                  "players": {names[s]: [{"name": v["name"], "games": v["games"], "fpts": round(v["fpts"], 1)}
+                                         for v in players[s].values()] for s in (A, B)},
+                  "series": series,
+                  "grade": {names[A]: grade(margin / wk) if wk >= 1 else None,
+                            names[B]: grade(-margin / wk) if wk >= 1 else None}}
+        nv = {names[s]: model_change(d, rosters, s, o, gets, fpg) for s, o in ((A, B), (B, A))}
+        frozen = not all(nv.values())
+        if not frozen:
+            rec["now"] = {"date": today, **nv}
+            h = [today, nv[names[A]]["exp_wins"], nv[names[B]]["exp_wins"]]
+            if rec["history"] and rec["history"][-1][0] == today:
+                rec["history"][-1] = h
             else:
-                at = {s: now_value(d, names, rosters, s, o, gets) for s, o in ((A, B), (B, A))} if status == "processed" else {}
-                if status != "processed":
-                    # not moved yet: score it as if it went through
-                    at = {}
-                    for s, o in ((A, B), (B, A)):
-                        sid, oid = (next(k for k, v in names.items() if v == x) for x in (s, o))
-                        got = [p for p in rosters[oid] if p["name"] in gets[s]]
-                        gave = [p for p in rosters[sid] if p["name"] in gets[o]]
-                        after = [p for p in rosters[sid] if p not in gave] + got
-                        wk = S._remaining_weeks(d)
-                        av, _ = S._fixture_value(after, d, sid, wk)
-                        bv, _ = S._fixture_value(rosters[sid], d, sid, wk)
-                        at[s] = round((av - bv) * S.GAIN_CALIBRATION, 3)
-                if all(v is not None for v in at.values()) and at:
-                    rec["at_time"], rec["at_time_source"] = at, "model when first seen"
-        # so far: day by day from the day after processing
-        rec_out = {"key": key, "accepted_utc": t["dates"][0], "status": status, "gets": gets,
-                   "at_time": rec.get("at_time"), "post": rec.get("post")}
-        if start:
-            first_day = day_of(start) + timedelta(days=1)
-            ids = {v: k for k, v in names.items()}
-            tot = {A: [0.0] * len(K), B: [0.0] * len(K)}
-            games = {A: 0, B: 0}
-            series = []
-            for sp in sorted(days, key=int):
-                day = days[sp]
-                if day["date"] < str(first_day):
-                    continue
-                for side in (A, B):
-                    for n in gets[side]:
-                        x = day["p"].get(n)
-                        if x and x[0] == ids[side] and x[1]:
-                            games[side] += 1
-                            for i in range(len(K)):
-                                tot[side][i] += x[2 + i]
-                w, l, _ = score(tot[A], tot[B])
-                nd = len(series) + 1
-                dd = [tot[A][i] - tot[B][i] for i in range(len(K))]
-                series.append([day["date"], w - l,
-                               wins_added(ids[A], dd, nd / 7, dists), wins_added(ids[B], [-x for x in dd], nd / 7, dists)])
-            w, l, cats = score(tot[A], tot[B])
-            ndays = sum(1 for sp in days if days[sp]["date"] >= str(first_day))
-            wk = ndays / 7
-            dA = [tot[A][i] - tot[B][i] for i in range(len(K))]  # A got what B's new players didn't
-            added = {A: wins_added(ids[A], dA, wk, dists), B: wins_added(ids[B], [-x for x in dA], wk, dists)}
-            g = min(games.values())
-            rec_out["so_far"] = {"from": str(first_day), "days": ndays, "score": [w, l, 9 - w - l], "cats": cats,
-                                 "games": games, "series": series, "wins_added": added,
-                                 "grade": {A: grade_wins(added[A] / max(wk, 1e-9), g), B: grade_wins(added[B] / max(wk, 1e-9), g)}}
-            nv = {A: now_value(d, names, rosters, A, B, gets), B: now_value(d, names, rosters, B, A, gets)}
-            if all(v is not None for v in nv.values()):
-                rec["now"] = {"date": today, **nv}
-                if not rec["history"] or rec["history"][-1][0] != today:
-                    rec["history"].append([today, nv[A], nv[B]])
-                else:
-                    rec["history"][-1] = [today, nv[A], nv[B]]
-            rec_out["now"] = rec.get("now")
-            rec_out["now_frozen"] = not all(v is not None for v in nv.values())
-            rec_out["now_history"] = rec["history"]
-        out.append(rec_out)
-    out.sort(key=lambda r: r["accepted_utc"], reverse=True)
+                rec["history"].append(h)
+        out.append({"key": key, "accepted_utc": t["accepted_utc"], "processed_utc": t["processed_utc"],
+                    "teams": [names[A], names[B]],
+                    "gets": {names[s]: [pool_names.get(pid, str(pid)) for pid in gets[str(s)]] for s in (A, B)},
+                    "at_time": rec.get("at_time"), "at_time_source": rec.get("at_time_source"),
+                    "post": rec.get("post"), "so_far": so_far,
+                    "now": rec.get("now"), "now_frozen": frozen, "now_history": rec["history"]})
+    out.sort(key=lambda r: r["processed_utc"], reverse=True)
     with open(LOG, "w") as f:
         json.dump(log, f, indent=1)
     with open(OUT, "w") as f:
-        json.dump({"updated_utc": datetime.now(timezone.utc).isoformat(), "teams_order": "alphabetical",
+        json.dump({"updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                   "fa_points_per_game": fpg, "fa_points_per_day": fa_day, "fa_pool": FA_POOL,
                    "trades": out}, f, indent=1)
-    print(f"trades: {len(out)} ({sum(r['status'] == 'processed' for r in out)} processed), days cached: {len(days)}")
+    print(f"trades: {len(out)}, days cached: {len(days)}, avg FA {fpg} FPTS/game")
 
 
 if __name__ == "__main__":

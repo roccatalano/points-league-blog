@@ -1,0 +1,126 @@
+{
+ "updated_utc": "2026-11-03T05:35:46+00:00",
+ "fa_points_per_game": 24.5,
+ "fa_points_per_day": 11.76,
+ "fa_pool": 10,
+ "trades": [
+  {
+   "key": "6e762812-5a9b-450a-86f2-0b5e6cfe8ca0",
+   "accepted_utc": "2026-10-20T10:01:03.386000+00:00",
+   "processed_utc": "2026-10-20T10:01:03.412000+00:00",
+   "teams": [
+    "Kream team",
+    "coachcainzey"
+   ],
+   "gets": {
+    "Kream team": [
+     "Brice Sensabaugh"
+    ],
+    "coachcainzey": [
+     "Tre Jones"
+    ]
+   },
+   "at_time": null,
+   "at_time_source": null,
+   "post": null,
+   "so_far": {
+    "from": "2026-10-21",
+    "days": 13,
+    "points": {
+     "Kream team": 50.0,
+     "coachcainzey": 76.0
+    },
+    "margin": {
+     "Kream team": -26.0,
+     "coachcainzey": 26.0
+    },
+    "per_week": {
+     "Kream team": -14.0,
+     "coachcainzey": 14.0
+    },
+    "games": {
+     "Kream team": 4,
+     "coachcainzey": 4
+    },
+    "fa_credit": {},
+    "players": {
+     "Kream team": [
+      {
+       "name": "Brice Sensabaugh",
+       "games": 4,
+       "fpts": 50.0
+      }
+     ],
+     "coachcainzey": [
+      {
+       "name": "Tre Jones",
+       "games": 4,
+       "fpts": 76.0
+      }
+     ]
+    },
+    "series": [
+     [
+      "2026-10-21",
+      0.0
+     ],
+     [
+      "2026-10-22",
+      -17.0
+     ],
+     [
+      "2026-10-23",
+      -17.0
+     ],
+     [
+      "2026-10-24",
+      -32.0
+     ],
+     [
+      "2026-10-25",
+      -52.0
+     ],
+     [
+      "2026-10-26",
+      -37.0
+     ],
+     [
+      "2026-10-27",
+      -26.0
+     ],
+     [
+      "2026-10-28",
+      -26.0
+     ],
+     [
+      "2026-10-29",
+      -26.0
+     ],
+     [
+      "2026-10-30",
+      -26.0
+     ],
+     [
+      "2026-10-31",
+      -26.0
+     ],
+     [
+      "2026-11-01",
+      -26.0
+     ],
+     [
+      "2026-11-02",
+      -26.0
+     ]
+    ],
+    "grade": {
+     "Kream team": "D+",
+     "coachcainzey": "B+"
+    }
+   },
+   "now": null,
+   "now_frozen": true,
+   "now_history": []
+  }
+ ]
+}

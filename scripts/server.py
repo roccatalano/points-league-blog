@@ -466,7 +466,11 @@ def _daily_lineup(players):
 def _team_players(team_id, d=None):
     d = d or _get(["mRoster", "mTeam"])
     t = next(t for t in d["teams"] if t["id"] == team_id)
-    return t.get("name"), [_pinfo(e["playerPoolEntry"]["player"], e["lineupSlotId"]) for e in t["roster"]["entries"]]
+    players = [_pinfo(e["playerPoolEntry"]["player"], e["lineupSlotId"]) for e in t["roster"]["entries"]]
+    for p in players:
+        if not p.get("pro"):  # no NBA team (unsigned): can't play
+            p["status"] = "OUT"
+    return t.get("name"), players
 
 
 def _play_prob(p, day):

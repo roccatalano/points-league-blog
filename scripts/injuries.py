@@ -34,11 +34,10 @@ def load_owners():
     owners = {}
     for t in m.get("teams", []):
         for p in t.get("players", []):
-            r = p.get("rates") or {}
+            pg = p.get("pg") or {}
             line = None
-            if r:
-                line = {"PTS": round(r.get("0", 0), 1), "REB": round(r.get("6", 0), 1),
-                        "AST": round(r.get("3", 0), 1)}
+            if pg:
+                line = {"FPTS": pg.get("FPTS"), "PTS": pg.get("PTS"), "REB": pg.get("REB"), "AST": pg.get("AST")}
             owners[norm(p["name"])] = {"team": t["name"], "fantasy_status": p.get("status"),
                                        "per_game": line, "ir": p.get("slot") == 13}
     return owners

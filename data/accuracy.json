@@ -1,0 +1,105 @@
+{
+ "updated_utc": "2026-11-03T05:36:18+00:00",
+ "summary": null,
+ "weeks": [
+  {
+   "week": 3,
+   "opening": false,
+   "saved_utc": "2026-11-03T05:33:26+00:00",
+   "finished": false,
+   "matchups": [
+    {
+     "home": "Kawhi Me A River",
+     "away": "Kuminga Lot",
+     "home_win_pct": 51,
+     "proj": [
+      1354.3,
+      1350.1
+     ],
+     "margin_80": [
+      -149.6,
+      158.2
+     ]
+    },
+    {
+     "home": "Joseph's Scary Team",
+     "away": "RayJayDaPawnSTAH",
+     "home_win_pct": 66,
+     "proj": [
+      1330.8,
+      1281.1
+     ],
+     "margin_80": [
+      -102.4,
+      205.0
+     ]
+    },
+    {
+     "home": "No Scrubs",
+     "away": "Big Herro Glick",
+     "home_win_pct": 80,
+     "proj": [
+      1307.0,
+      1202.0
+     ],
+     "margin_80": [
+      -42.8,
+      267.3
+     ]
+    },
+    {
+     "home": "Spicy town  Mayo",
+     "away": "Rye RSL",
+     "home_win_pct": 17,
+     "proj": [
+      1039.0,
+      1147.9
+     ],
+     "margin_80": [
+      -256.5,
+      33.2
+     ]
+    },
+    {
+     "home": "Ant Social Behaviour",
+     "away": "Kream team",
+     "home_win_pct": 8,
+     "proj": [
+      1181.0,
+      1335.4
+     ],
+     "margin_80": [
+      -307.3,
+      -11.1
+     ]
+    },
+    {
+     "home": "Downtown Euros",
+     "away": "NAWSectual",
+     "home_win_pct": 97,
+     "proj": [
+      1436.6,
+      1197.3
+     ],
+     "margin_80": [
+      77.9,
+      402.5
+     ]
+    },
+    {
+     "home": "coachcainzey",
+     "away": "BYE",
+     "home_win_pct": 100,
+     "proj": [
+      1390.2,
+      47.8
+     ],
+     "margin_80": [
+      1230.2,
+      1455.9
+     ]
+    }
+   ]
+  }
+ ]
+}
