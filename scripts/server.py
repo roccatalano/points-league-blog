@@ -416,6 +416,13 @@ def _schedule():
     return _SCHED["data"]
 
 
+def _sp_date(sp):
+    """US Eastern date of scoring period `sp` (one NBA day each; day 1 = opening night)."""
+    from datetime import timedelta
+    opening = min(g for games in _schedule().values() for g in games).date()
+    return opening + timedelta(days=sp - 1)
+
+
 def _week_days(weeks_ahead=0):
     """US-Eastern dates of a fantasy week (Mon-Sun). weeks_ahead=0 -> rest of current week from today."""
     from datetime import timedelta
@@ -494,7 +501,9 @@ def _play_prob(p, day):
 def _sim_totals(players, days, sched, rng, now=None):
     tot = dict.fromkeys(KEYS, 0.0)
     for day in days:
-        playing = [p for p in players if p["rates"] and p["slot"] != 13
+        # players known to be out that day are benched, not started (2026-11-03 fix: they used to take a
+        # lineup slot and score zero, undercounting teams with injured players not on IR)
+        playing = [p for p in players if p["rates"] and p["slot"] != 13 and _play_prob(p, day) > 0
                    and _can_play(p, day, sched, now)]
         for p in _daily_lineup(playing):
             if rng.random() > _play_prob(p, day):

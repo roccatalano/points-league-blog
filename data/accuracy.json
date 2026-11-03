@@ -1,102 +1,495 @@
 {
- "updated_utc": "2026-11-03T05:48:09+00:00",
- "summary": null,
+ "updated_utc": "2026-11-03T06:13:41+00:00",
+ "summary": {
+  "matchups": 14,
+  "called": 8,
+  "callable": 14,
+  "brier": 0.236,
+  "avg_miss_points": 148.7,
+  "bias_points": -142.5,
+  "in_range": 10,
+  "range_target_pct": 80,
+  "calibration": [
+   {
+    "bucket": "50-60%",
+    "n": 2,
+    "fav_won_pct": 50
+   },
+   {
+    "bucket": "60-70%",
+    "n": 5,
+    "fav_won_pct": 20
+   },
+   {
+    "bucket": "70-80%",
+    "n": 3,
+    "fav_won_pct": 100
+   },
+   {
+    "bucket": "80-90%",
+    "n": 2,
+    "fav_won_pct": 50
+   },
+   {
+    "bucket": "90-100%",
+    "n": 2,
+    "fav_won_pct": 100
+   }
+  ],
+  "live_only": null,
+  "rebuilt_matchups": 14
+ },
  "weeks": [
   {
-   "week": 3,
-   "opening": false,
-   "saved_utc": "2026-11-03T05:33:26+00:00",
-   "finished": false,
+   "week": 1,
+   "opening": true,
+   "rebuilt": true,
+   "saved_utc": "2026-10-20T15:00:00Z",
+   "finished": true,
    "matchups": [
     {
      "home": "Kawhi Me A River",
-     "away": "Kuminga Lot",
-     "home_win_pct": 51,
+     "away": "BYE",
+     "home_win_pct": 100,
      "proj": [
-      1354.3,
-      1350.1
+      1266.2,
+      193.4
      ],
      "margin_80": [
-      -149.6,
-      158.2
+      939.1,
+      1209.0
+     ],
+     "actual": [
+      1078.0,
+      32.0
+     ],
+     "called": true,
+     "brier": 0.0,
+     "in_range": true,
+     "miss": [
+      -188.2,
+      -161.4
      ]
     },
     {
-     "home": "Joseph's Scary Team",
-     "away": "RayJayDaPawnSTAH",
-     "home_win_pct": 66,
+     "home": "Spicy town Mayo",
+     "away": "Ant Social Behaviour",
+     "home_win_pct": 32,
      "proj": [
-      1330.8,
-      1281.1
+      1115.2,
+      1173.4
      ],
      "margin_80": [
-      -102.4,
-      205.0
-     ]
-    },
-    {
-     "home": "No Scrubs",
-     "away": "Big Herro Glick",
-     "home_win_pct": 80,
-     "proj": [
-      1307.0,
-      1202.0
+      -227.7,
+      111.8
      ],
-     "margin_80": [
-      -42.8,
-      267.3
-     ]
-    },
-    {
-     "home": "Spicy town  Mayo",
-     "away": "Rye RSL",
-     "home_win_pct": 17,
-     "proj": [
-      1039.0,
-      1147.9
+     "actual": [
+      981.0,
+      1207.0
      ],
-     "margin_80": [
-      -256.5,
-      33.2
-     ]
-    },
-    {
-     "home": "Ant Social Behaviour",
-     "away": "Kream team",
-     "home_win_pct": 8,
-     "proj": [
-      1181.0,
-      1335.4
-     ],
-     "margin_80": [
-      -307.3,
-      -11.1
+     "called": true,
+     "brier": 0.102,
+     "in_range": true,
+     "miss": [
+      -134.2,
+      33.6
      ]
     },
     {
      "home": "Downtown Euros",
-     "away": "NAWSectual",
-     "home_win_pct": 97,
+     "away": "coachcainzey",
+     "home_win_pct": 52,
      "proj": [
-      1436.6,
-      1197.3
+      1238.3,
+      1232.4
      ],
      "margin_80": [
-      77.9,
-      402.5
+      -168.4,
+      178.4
+     ],
+     "actual": [
+      1118.0,
+      1201.0
+     ],
+     "called": false,
+     "brier": 0.27,
+     "in_range": true,
+     "miss": [
+      -120.3,
+      -31.4
      ]
     },
+    {
+     "home": "Joseph's Scary Team",
+     "away": "Kream team",
+     "home_win_pct": 33,
+     "proj": [
+      1223.9,
+      1286.4
+     ],
+     "margin_80": [
+      -233.7,
+      113.4
+     ],
+     "actual": [
+      1176.0,
+      979.0
+     ],
+     "called": false,
+     "brier": 0.449,
+     "in_range": false,
+     "miss": [
+      -47.9,
+      -307.4
+     ]
+    },
+    {
+     "home": "No Scrubs",
+     "away": "Kuminga Lot",
+     "home_win_pct": 65,
+     "proj": [
+      1266.8,
+      1214.6
+     ],
+     "margin_80": [
+      -119.6,
+      227.9
+     ],
+     "actual": [
+      1024.0,
+      1061.0
+     ],
+     "called": false,
+     "brier": 0.423,
+     "in_range": true,
+     "miss": [
+      -242.8,
+      -153.6
+     ]
+    },
+    {
+     "home": "Big Herro Glick",
+     "away": "Rye RSL",
+     "home_win_pct": 30,
+     "proj": [
+      1124.8,
+      1195.5
+     ],
+     "margin_80": [
+      -238.0,
+      101.0
+     ],
+     "actual": [
+      985.0,
+      971.0
+     ],
+     "called": false,
+     "brier": 0.49,
+     "in_range": true,
+     "miss": [
+      -139.8,
+      -224.5
+     ]
+    },
+    {
+     "home": "RayJayDaPawnSTAH",
+     "away": "NAWSectual",
+     "home_win_pct": 23,
+     "proj": [
+      1175.9,
+      1277.0
+     ],
+     "margin_80": [
+      -279.0,
+      73.6
+     ],
+     "actual": [
+      1035.0,
+      1182.0
+     ],
+     "called": true,
+     "brier": 0.053,
+     "in_range": true,
+     "miss": [
+      -140.9,
+      -95.0
+     ]
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "opening": true,
+   "rebuilt": true,
+   "saved_utc": "2026-10-26T15:00:00Z",
+   "finished": true,
+   "matchups": [
+    {
+     "home": "BYE",
+     "away": "Ant Social Behaviour",
+     "home_win_pct": 0,
+     "proj": [
+      61.5,
+      1405.7
+     ],
+     "margin_80": [
+      -1478.3,
+      -1216.3
+     ],
+     "actual": [
+      4.0,
+      1218.0
+     ],
+     "called": true,
+     "brier": 0.0,
+     "in_range": false,
+     "miss": [
+      -57.5,
+      -187.7
+     ]
+    },
+    {
+     "home": "coachcainzey",
+     "away": "Kawhi Me A River",
+     "home_win_pct": 15,
+     "proj": [
+      1337.9,
+      1472.5
+     ],
+     "margin_80": [
+      -304.5,
+      44.3
+     ],
+     "actual": [
+      1212.0,
+      1331.0
+     ],
+     "called": true,
+     "brier": 0.022,
+     "in_range": true,
+     "miss": [
+      -125.9,
+      -141.5
+     ]
+    },
+    {
+     "home": "Kream team",
+     "away": "Spicy town Mayo",
+     "home_win_pct": 16,
+     "proj": [
+      1324.7,
+      1466.9
+     ],
+     "margin_80": [
+      -318.2,
+      36.7
+     ],
+     "actual": [
+      1320.0,
+      1106.0
+     ],
+     "called": false,
+     "brier": 0.706,
+     "in_range": false,
+     "miss": [
+      -4.7,
+      -360.9
+     ]
+    },
+    {
+     "home": "Kuminga Lot",
+     "away": "Downtown Euros",
+     "home_win_pct": 48,
+     "proj": [
+      1323.5,
+      1324.9
+     ],
+     "margin_80": [
+      -179.5,
+      180.9
+     ],
+     "actual": [
+      1319.0,
+      1378.0
+     ],
+     "called": true,
+     "brier": 0.23,
+     "in_range": true,
+     "miss": [
+      -4.5,
+      53.1
+     ]
+    },
+    {
+     "home": "Rye RSL",
+     "away": "Joseph's Scary Team",
+     "home_win_pct": 22,
+     "proj": [
+      1337.0,
+      1447.5
+     ],
+     "margin_80": [
+      -281.8,
+      69.2
+     ],
+     "actual": [
+      1065.0,
+      1236.0
+     ],
+     "called": true,
+     "brier": 0.048,
+     "in_range": true,
+     "miss": [
+      -272.0,
+      -211.5
+     ]
+    },
+    {
+     "home": "NAWSectual",
+     "away": "No Scrubs",
+     "home_win_pct": 26,
+     "proj": [
+      1271.3,
+      1359.9
+     ],
+     "margin_80": [
+      -270.1,
+      81.6
+     ],
+     "actual": [
+      885.0,
+      1291.0
+     ],
+     "called": true,
+     "brier": 0.068,
+     "in_range": false,
+     "miss": [
+      -386.3,
+      -68.9
+     ]
+    },
+    {
+     "home": "RayJayDaPawnSTAH",
+     "away": "Big Herro Glick",
+     "home_win_pct": 34,
+     "proj": [
+      1276.6,
+      1329.2
+     ],
+     "margin_80": [
+      -224.2,
+      122.1
+     ],
+     "actual": [
+      1175.0,
+      1164.0
+     ],
+     "called": false,
+     "brier": 0.436,
+     "in_range": true,
+     "miss": [
+      -101.6,
+      -165.2
+     ]
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "opening": true,
+   "rebuilt": true,
+   "saved_utc": "2026-11-02T16:00:00Z",
+   "finished": false,
+   "matchups": [
     {
      "home": "coachcainzey",
      "away": "BYE",
      "home_win_pct": 100,
      "proj": [
-      1390.2,
-      47.8
+      1231.1,
+      0.0
      ],
      "margin_80": [
-      1230.2,
-      1455.9
+      1107.5,
+      1356.7
+     ]
+    },
+    {
+     "home": "Ant Social Behaviour",
+     "away": "Kream team",
+     "home_win_pct": 9,
+     "proj": [
+      1216.9,
+      1397.3
+     ],
+     "margin_80": [
+      -352.5,
+      -6.1
+     ]
+    },
+    {
+     "home": "Kawhi Me A River",
+     "away": "Kuminga Lot",
+     "home_win_pct": 47,
+     "proj": [
+      1332.3,
+      1339.7
+     ],
+     "margin_80": [
+      -185.5,
+      173.0
+     ]
+    },
+    {
+     "home": "Spicy town Mayo",
+     "away": "Rye RSL",
+     "home_win_pct": 38,
+     "proj": [
+      1158.4,
+      1197.4
+     ],
+     "margin_80": [
+      -203.8,
+      129.7
+     ]
+    },
+    {
+     "home": "Downtown Euros",
+     "away": "NAWSectual",
+     "home_win_pct": 77,
+     "proj": [
+      1376.6,
+      1275.3
+     ],
+     "margin_80": [
+      -79.4,
+      288.4
+     ]
+    },
+    {
+     "home": "Joseph's Scary Team",
+     "away": "RayJayDaPawnSTAH",
+     "home_win_pct": 59,
+     "proj": [
+      1349.7,
+      1307.2
+     ],
+     "margin_80": [
+      -135.4,
+      227.9
+     ]
+    },
+    {
+     "home": "No Scrubs",
+     "away": "Big Herro Glick",
+     "home_win_pct": 76,
+     "proj": [
+      1316.7,
+      1215.9
+     ],
+     "margin_80": [
+      -68.0,
+      280.0
      ]
     }
    ]

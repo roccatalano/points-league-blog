@@ -176,9 +176,12 @@ def main():
         ph = json.load(open(ppath))
     except Exception:
         ph = {"days": []}
-    today = datetime.now(S.MEL).strftime("%Y-%m-%d")
-    snap = {"date": today, "week": o["matchup_period"], "ranks": {r["team"]: r["power_rank"] for r in lg["ladder"]}}
-    ph["days"] = [x for x in ph["days"] if x["date"] != today] + [snap]
+    today = str(S._sp_date(d["status"].get("latestScoringPeriod") or 1))  # the NBA day (US date) this belongs to
+    snap = {"date": today, "week": o["matchup_period"], "ranks": {r["team"]: r["power_rank"] for r in lg["ladder"]},
+            "proj_w": {r["team"]: r["proj_w"] for r in lg["ladder"]},
+            "title": {r["team"]: r["title_pct"] for r in lg["ladder"]},
+            "finals": {r["team"]: r["finals_pct"] for r in lg["ladder"]}}
+    ph["days"] = sorted([x for x in ph["days"] if x["date"] != today] + [snap], key=lambda x: x["date"])
     with open(ppath, "w") as f:
         json.dump(ph, f, separators=(",", ":"))
     for name, obj in (("league", lg), ("odds", o), ("model", m)):

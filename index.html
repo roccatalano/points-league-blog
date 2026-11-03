@@ -437,7 +437,8 @@ async function oddsPage() {
         <div class="pts">${r ? `${f1(r.actual[0])}–${f1(r.actual[1])}` : "–"}<small>final</small></div><div class="mu-team r ${won === "h" ? "lose" : ""}">${esc(away)}</div></div>
         ${marginChart(pts, home, away, fin)}</div>`;
     }).join("");
-    app.innerHTML = `${tabs}<p class="updated">Week ${wk}, final. The line is the projected final margin through the week; the grey band is the model's 80% range.</p>${cards || '<p class="empty">No history for this week.</p>'}`;
+    const rebuilt = Object.values(H).some(pts => pts.some(p => p[7] === "r"));
+    app.innerHTML = `${tabs}<p class="updated">Week ${wk}, final. The line is the projected final margin through the week; the grey band is the model's 80% range.${rebuilt ? " <b>Rebuilt:</b> the site wasn't running yet, so this week was replayed day by day, giving the model only what it could have known each morning (one point per day)." : ""}</p>${cards || '<p class="empty">No history for this week.</p>'}`;
   } else {
     const cards = o.matchups.map(m => {
       const lead = m.proj_margin >= 0 ? m.home : m.away;
@@ -477,7 +478,8 @@ function rankChart(days, teams, hl) {
   const cut = LAD.finals_teams < n ? `<line x1="0" x2="${W}" y1="${(Y(LAD.finals_teams) + Y(LAD.finals_teams + 1)) / 2}" y2="${(Y(LAD.finals_teams) + Y(LAD.finals_teams + 1)) / 2}" stroke="var(--accent)" stroke-dasharray="5 5" stroke-width="1.5" vector-effect="non-scaling-stroke"/>` : "";
   return `<div class="card rk"><div class="rk-h"><b>Power rank by day</b><small>${hl ? "tap again to clear" : "tap a team"}</small></div>
     <div class="rk-wrap"><div class="rk-axis">${ticks}</div><div class="rk-plot"><svg viewBox="0 -6 ${W} ${H + 12}" preserveAspectRatio="none">${grid}${cut}${lines}</svg></div><div class="rk-lbls">${labels}</div></div>
-    <div class="tc-dates" style="margin:6px 96px 0 22px"><span>${day(days[0].date)}</span><span>${day(last.date)}</span></div></div>`;
+    <div class="tc-dates" style="margin:6px 96px 0 22px"><span>${day(days[0].date)}</span><span>${day(last.date)}</span></div>
+    ${days.some(x => x.rebuilt) ? `<p class="note" style="margin:8px 0 0">Up to ${day(days.filter(x => x.rebuilt).slice(-1)[0].date)} the ranks were rebuilt by replaying the season day by day, with only what the model could have known each morning.</p>` : ""}</div>`;
 }
 async function ladderPage() {
   setNav("ladder"); document.title = "Ladder · NBA Fantasy 2026";
@@ -700,7 +702,7 @@ async function recordPage() {
   const tick = (v, l) => `<span class="rc-tick" style="left:${pos(v)}%"><em>${l}</em></span>`;
   const scored = ACC.weeks.filter(w => w.opening && w.finished);
   const hero = S ? `<section class="rc-hero">
-      <div class="rc-eyebrow">Model report card · ${scored.length} finished week${scored.length === 1 ? "" : "s"}</div>
+      <div class="rc-eyebrow">Model report card · ${scored.length} finished week${scored.length === 1 ? "" : "s"}${S.rebuilt_matchups ? ` · ${S.rebuilt_matchups === S.matchups ? "all" : S.rebuilt_matchups} rebuilt` : ""}</div>
       <div class="rc-big">${sk(S.brier) >= 0 ? sk(S.brier) + "% better" : -sk(S.brier) + "% worse"} <span>than guessing</span></div>
       <div class="rc-sub">Brier <strong>${S.brier.toFixed(3)}</strong> · picked <strong>${S.called} of ${S.callable}</strong> winners</div>
       <div class="rc-ruler"><div class="rc-track"><span class="rc-worse" style="width:${pos(0.25)}%"></span></div>
@@ -712,7 +714,7 @@ async function recordPage() {
     : `<section class="rc-hero"><div class="rc-eyebrow">Model report card</div><div class="rc-big">Starts week ${(O && O.matchup_period + 1) || "next"} <span>first Monday forecast</span></div>
        <div class="rc-sub">The model is graded on the forecast it makes each Monday before a ball is bounced. The site started mid-week, so this week's first forecast already knew some scores and doesn't count. Next Monday's will.</div></section>`;
   const cal = S && S.calibration.length ? `<section><h2 class="rc-h">Does it know when it's sure? <small>favourite's chance → how often they won</small></h2><div class="rc-panel">${
-    S.calibration.map(c => { const mid = +c.bucket.split("-")[0] + 5, [k, v] = c.n < 4 ? ["", "Too early"] : c.fav_won_pct > mid + 10 ? ["warn", "Too cautious"] : c.fav_won_pct < mid - 10 ? ["bad", "Too cocky"] : ["good", "About right"];
+    S.calibration.map(c => { const mid = +c.bucket.split("-")[0] + 5, [k, v] = c.n < 8 ? ["", "Too early"] : c.fav_won_pct > mid + 10 ? ["warn", "Too cautious"] : c.fav_won_pct < mid - 10 ? ["bad", "Too cocky"] : ["good", "About right"];
       return `<div class="rc-band"><span class="rc-bl">${esc(c.bucket)}</span><span>won ${c.fav_won_pct}% of ${c.n}<small>expected about ${mid}%</small></span><span class="rc-chip ${k}">${v}</span></div>`; }).join("")}</div></section>` : "";
   const weekRow = w => {
     const done = w.matchups.filter(m => m.actual);
@@ -722,10 +724,12 @@ async function recordPage() {
       const res = m.actual ? `Final ${f1(m.actual[0])}–${f1(m.actual[1])} · projected ${f0(m.proj[0])}–${f0(m.proj[1])} · margin ${m.in_range ? "inside" : "outside"} the 80% range` : `Projected ${f0(m.proj[0])}–${f0(m.proj[1])}`;
       return `<div class="rc-m"><i class="${!m.actual ? "lvl" : m.called ? "ok" : "no"}"></i><div><b>${esc(fav)}</b> <small>${fp}% to beat ${esc(fh ? m.away : m.home)}</small><small>${res}</small></div></div>`;
     }).join("");
-    const label = !w.finished ? "In progress" : `${done.filter(m => m.called).length} of ${done.length} right`;
-    const note = w.opening ? "" : `<p class="rc-note">First forecast was saved mid-week, after games had started, so this week isn't scored.</p>`;
+    const label = (!w.finished ? "In progress" : `${done.filter(m => m.called).length} of ${done.length} right`) + (w.rebuilt ? " · rebuilt" : "");
+    const note = !w.opening ? `<p class="rc-note">First forecast was saved mid-week, after games had started, so this week isn't scored.</p>`
+      : w.rebuilt ? `<p class="rc-note">Rebuilt: the site wasn't running yet, so this Monday forecast was made by replaying the season and giving the model only what it could have known that morning.</p>` : "";
     return `<details class="rc-wk${w.finished ? "" : " live"}"><summary><span class="rc-wn">W${w.week}</span><span class="rc-mid"><span class="rc-lbl">${label}</span>${dots}</span><span class="rc-val">${w.finished ? "" : "live"}</span></summary>${note}${ms}</details>`;
   };
+  const split = S && S.rebuilt_matchups ? `<div class="rc-wait">${S.live_only ? `<b>Live forecasts only:</b> picked ${S.live_only.called} of ${S.live_only.callable}, Brier ${S.live_only.brier.toFixed(3)}. ` : ""}${S.rebuilt_matchups} of the ${S.matchups} graded matchups come from weeks the site rebuilt by replaying the season, giving the model only what it could have known each Monday morning. The one thing it couldn't know was ESPN's injury list at the time, so it treated a player as out once he'd missed his team's last 2 games. Live forecasts start counting from week ${(O && O.matchup_period + 1) || "4"}.</div>` : "";
   const weeks = ACC.weeks.length ? `<section><h2 class="rc-h">Week by week <small>tap a week to see every pick</small></h2><div class="rc-list">${ACC.weeks.slice().reverse().map(weekRow).join("")}</div></section>` : "";
   const how = `<details class="rc-how"><summary>How this works</summary><div class="explain">
     <h3>The model, in five steps</h3>
@@ -738,7 +742,7 @@ async function recordPage() {
     <p><strong>Brier score:</strong> for each matchup, how far short of 100% the model's chance for the eventual winner was, squared. Lower is better and saying 50/50 every time scores 0.25, so that's the line to beat. A confident miss costs far more than a cautious one.</p>
     <p><strong>Average miss:</strong> how far a team's final weekly points were from the Monday projection. <strong>Bias:</strong> whether it keeps projecting too high or too low.</p>
     <p><strong>80% range:</strong> about 8 in 10 final margins should land inside it. Much fewer means the model is overconfident; many more means it's too cautious.</p></div></details>`;
-  app.innerHTML = `<div class="rc">${hero}${cal}${weeks}${how}</div>`;
+  app.innerHTML = `<div class="rc">${hero}${split ? split + "<br>" : ""}${cal}${weeks}${how}</div>`;
 }
 
 // ---------------------------------------------------------------- router

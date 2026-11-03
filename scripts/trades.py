@@ -42,6 +42,8 @@ def load(path, default):
 def player_days(d):
     """{sp: {"date": "YYYY-MM-DD", "p": {player_id: [team_id, started, fpts]}}} for every finished day."""
     cache = load(DAYS, {})
+    for sp, v in cache.items():  # (re)date cached days from opening night
+        v["date"] = str(S._sp_date(int(sp)))
     latest = d["status"].get("latestScoringPeriod") or 1
     first = d["status"].get("firstScoringPeriod") or 1
     today = datetime.now(S.ET).date()
@@ -59,7 +61,7 @@ def player_days(d):
                 st = S._day_line(pl, sp)
                 if st:
                     p[str(pl["id"])] = [t["id"], e["lineupSlotId"] not in (12, 13), round(S._fp(st), 1)]
-        cache[str(sp)] = {"date": str(today - timedelta(days=latest - sp)), "p": p}
+        cache[str(sp)] = {"date": str(S._sp_date(sp)), "p": p}
     with open(DAYS, "w") as f:
         json.dump(cache, f, separators=(",", ":"))
     return cache

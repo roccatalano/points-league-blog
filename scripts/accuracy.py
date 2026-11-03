@@ -62,7 +62,8 @@ def score(log):
     rows, weeks = [], []
     for wk, f in sorted(log["forecasts"].items(), key=lambda x: int(x[0])):
         res = log["results"].get(wk)
-        wrow = {"week": int(wk), "opening": f["opening"], "saved_utc": f["saved_utc"], "finished": bool(res), "matchups": []}
+        wrow = {"week": int(wk), "opening": f["opening"], "rebuilt": bool(f.get("rebuilt")), "saved_utc": f["saved_utc"],
+                "finished": bool(res), "matchups": []}
         for key, fc in f["matchups"].items():
             r = (res or {}).get(key)
             m = {"home": fc["home"], "away": fc["away"], "home_win_pct": round(fc["p_home"] * 100),
@@ -77,26 +78,30 @@ def score(log):
                           "in_range": fc["margin_80"][0] <= margin <= fc["margin_80"][1],
                           "miss": [round(r["home_pts"] - fc["proj"][0], 1), round(r["away_pts"] - fc["proj"][1], 1)]})
                 if f["opening"]:
-                    rows.append((p, won, m))
+                    rows.append((p, won, m, bool(f.get("rebuilt"))))
             wrow["matchups"].append(m)
         weeks.append(wrow)
-    summ = None
-    if rows:
-        misses = [x for _, _, m in rows for x in m["miss"]]
-        called = [m["called"] for _, _, m in rows if m["called"] is not None]
+    def summarise(rs):
+        if not rs:
+            return None
+        misses = [x for _, _, m, _ in rs for x in m["miss"]]
+        called = [m["called"] for _, _, m, _ in rs if m["called"] is not None]
         buckets = {}
-        for p, won, _ in rows:
+        for p, won, _, _ in rs:
             fav = max(p, 1 - p)
             b = min(4, int((fav - 0.5) * 10))  # 50-60, 60-70, 70-80, 80-90, 90-100
-            lab = f"{50 + 10 * b}-{60 + 10 * b}%"
-            buckets.setdefault(lab, []).append(won if p >= 0.5 else 1 - won)
-        summ = {"matchups": len(rows), "called": sum(called), "callable": len(called),
-                "brier": round(sum(m["brier"] for _, _, m in rows) / len(rows), 3),
+            buckets.setdefault(f"{50 + 10 * b}-{60 + 10 * b}%", []).append(won if p >= 0.5 else 1 - won)
+        return {"matchups": len(rs), "called": sum(called), "callable": len(called),
+                "brier": round(sum(m["brier"] for _, _, m, _ in rs) / len(rs), 3),
                 "avg_miss_points": round(sum(abs(x) for x in misses) / len(misses), 1),
                 "bias_points": round(sum(misses) / len(misses), 1),  # + = teams scored more than projected
-                "in_range": sum(m["in_range"] for _, _, m in rows), "range_target_pct": 80,
+                "in_range": sum(m["in_range"] for _, _, m, _ in rs), "range_target_pct": 80,
                 "calibration": [{"bucket": k, "n": len(v), "fav_won_pct": round(100 * sum(v) / len(v))}
                                 for k, v in sorted(buckets.items())]}
+    summ = summarise(rows)
+    if summ:
+        summ["live_only"] = summarise([r for r in rows if not r[3]])
+        summ["rebuilt_matchups"] = sum(r[3] for r in rows)
     return weeks, summ
 
 
