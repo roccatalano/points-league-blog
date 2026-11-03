@@ -170,6 +170,17 @@ def main():
             r[k + "_move"] = round(r[k] - (ref.get(k) or {}).get(r["team"], r[k]), nd)
     lg["moves_since_utc"] = ref["t"]
     lg["history"] = hist
+    # one power-rank snapshot per Melbourne day (the day's last run wins), for the rank chart
+    ppath = os.path.join(ROOT, "data", "power_history.json")
+    try:
+        ph = json.load(open(ppath))
+    except Exception:
+        ph = {"days": []}
+    today = datetime.now(S.MEL).strftime("%Y-%m-%d")
+    snap = {"date": today, "week": o["matchup_period"], "ranks": {r["team"]: r["power_rank"] for r in lg["ladder"]}}
+    ph["days"] = [x for x in ph["days"] if x["date"] != today] + [snap]
+    with open(ppath, "w") as f:
+        json.dump(ph, f, separators=(",", ":"))
     for name, obj in (("league", lg), ("odds", o), ("model", m)):
         with open(os.path.join(ROOT, "data", f"{name}.json"), "w") as f:
             json.dump(obj, f, separators=(",", ":"))

@@ -282,6 +282,14 @@
   .ladder.pw { font-size: 12.5px; } .ladder.pw td small { font-size: 10.5px; } .ld .ladder.pw td, .ld .ladder.pw th { padding-left: 2px; padding-right: 2px; } .ladder.pw td:nth-child(2) { overflow-wrap: anywhere; font-size: 12px; } .ladder.pw th { font-size: 10.5px; letter-spacing: 0; }
   .ld { padding: 6px 10px; }
   .ladder small.up, .ladder .up { color: #2f9e44; } .ladder small.down, .ladder .down { color: #e03131; }
+  .rk-h { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 14px; margin-bottom: 8px; }
+  .rk-h small { color: var(--muted); font-size: 12px; }
+  .rk-wrap { display: grid; grid-template-columns: 22px 1fr 96px; height: 240px; }
+  .rk-axis, .rk-lbls { position: relative; }
+  .rk-plot svg { width: 100%; height: 240px; display: block; overflow: visible; }
+  .rk-y { position: absolute; left: 0; transform: translateY(-50%); font-size: 10.5px; color: var(--muted); }
+  .rk-lbl { position: absolute; left: 8px; transform: translateY(-50%); font-size: 10.5px; font-weight: 700; white-space: nowrap; cursor: pointer; line-height: 1; }
+  .rk-lbl.off { opacity: .3; }
   footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
   .pts { font-family: "Archivo Black", Inter, sans-serif; font-size: 22px; text-align: center; white-space: nowrap; line-height: 1.1; }
   .pts small { display: block; font-family: Inter, sans-serif; font-size: 11.5px; font-weight: 600; color: var(--muted); margin-top: 3px; }
@@ -449,7 +457,28 @@ async function oddsPage() {
 }
 
 // ---------------------------------------------------------------- ladder
-let LAD = null, LAD_SORT = "ladder";
+let LAD = null, LAD_SORT = "ladder", PH = null, LAD_HL = null;
+const TEAM_COLORS = ["#e8590c", "#4c6ef5", "#2f9e44", "#ae3ec9", "#f59f00", "#1098ad", "#e03131", "#5c7cfa", "#74b816", "#d6336c", "#845ef7", "#0ca678", "#fd7e14", "#868e96"];
+function rankChart(days, teams, hl) {
+  if (!days || days.length < 2) return `<div class="card"><p class="note" style="margin:0"><b>Power rank by day</b> · the chart starts today and adds a point each day, so check back tomorrow.</p></div>`;
+  const n = teams.length, W = 600, H = 240, padR = 0;
+  const X = i => i / (days.length - 1) * W, Y = r => (r - 1) / (n - 1) * H;
+  const color = t => TEAM_COLORS[teams.indexOf(t) % TEAM_COLORS.length];
+  const lines = teams.map(t => {
+    const pts = days.map((d, i) => d.ranks[t] ? [X(i), Y(d.ranks[t])] : null).filter(Boolean);
+    if (!pts.length) return "";
+    const on = !hl || hl === t;
+    return `<path d="${pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ")}" fill="none" stroke="${color(t)}" stroke-width="${hl === t ? 3.2 : 2}" stroke-linejoin="round" stroke-linecap="round" opacity="${on ? 1 : 0.15}" vector-effect="non-scaling-stroke"/>`;
+  }).join("");
+  const last = days[days.length - 1];
+  const labels = teams.filter(t => last.ranks[t]).map(t => `<span class="rk-lbl${hl && hl !== t ? " off" : ""}" data-t="${esc(t)}" style="top:${Y(last.ranks[t]) / H * 100}%;color:${color(t)}">${last.ranks[t]} ${esc(short(t))}</span>`).join("");
+  const ticks = [1, 4, 7, 10, 14].filter(r => r <= n).map(r => `<span class="rk-y" style="top:${Y(r) / H * 100}%">${r}</span>`).join("");
+  const grid = [1, 4, 7, 10, 14].filter(r => r <= n).map(r => `<line x1="0" x2="${W}" y1="${Y(r)}" y2="${Y(r)}" class="wp-grid" vector-effect="non-scaling-stroke"/>`).join("");
+  const cut = LAD.finals_teams < n ? `<line x1="0" x2="${W}" y1="${(Y(LAD.finals_teams) + Y(LAD.finals_teams + 1)) / 2}" y2="${(Y(LAD.finals_teams) + Y(LAD.finals_teams + 1)) / 2}" stroke="var(--accent)" stroke-dasharray="5 5" stroke-width="1.5" vector-effect="non-scaling-stroke"/>` : "";
+  return `<div class="card rk"><div class="rk-h"><b>Power rank by day</b><small>${hl ? "tap again to clear" : "tap a team"}</small></div>
+    <div class="rk-wrap"><div class="rk-axis">${ticks}</div><div class="rk-plot"><svg viewBox="0 -6 ${W} ${H + 12}" preserveAspectRatio="none">${grid}${cut}${lines}</svg></div><div class="rk-lbls">${labels}</div></div>
+    <div class="tc-dates" style="margin:6px 96px 0 22px"><span>${day(days[0].date)}</span><span>${day(last.date)}</span></div></div>`;
+}
 async function ladderPage() {
   setNav("ladder"); document.title = "Ladder · NBA Fantasy 2026";
   if (!LAD) {
@@ -478,15 +507,20 @@ async function ladderPage() {
   } else {
     const list = L.ladder.slice().sort((a, b) => a.power_rank - b.power_rank);
     head = `<tr><th>#</th><th>Team</th><th>Wins</th><th>PF</th><th>PA</th><th>Finals</th><th>Title</th></tr>`;
-    rows = list.map((r, i) => `<tr class="${i === L.finals_teams - 1 ? "cut" : ""}"><td>${r.power_rank}</td><td><span class="tm">${esc(r.team)}</span>${r.power_move ? `<small>${mv(r.power_move)} since yesterday</small>` : ""}</td>
+    rows = list.map((r, i) => `<tr data-t="${esc(r.team)}" class="ld-r${i === L.finals_teams - 1 ? " cut" : ""}${LAD_HL === r.team ? " open" : ""}"><td>${r.power_rank}</td><td><span class="tm">${esc(r.team)}</span>${r.power_move ? `<small>${mv(r.power_move)} since yesterday</small>` : ""}</td>
       <td><b>${r.proj_w.toFixed(1)}</b>${chg(r.proj_w_move, 1)}</td><td>${k1(r.proj_pf)}${chg(r.proj_pf_move, 0)}</td><td>${k1(r.proj_pa)}${chg(r.proj_pa_move, 0, true)}</td><td>${pc(r.finals_pct)}${chg(r.finals_move)}</td><td>${pc(r.title_pct)}${chg(r.title_move)}</td></tr>`).join("");
     how = `<p>Every column is a <strong>projection for the end of the regular season</strong>. Teams are ranked by <strong>projected wins</strong> at the end of the ${L.weeks}-week regular season: current record plus the model's forecast for every remaining matchup, from ${L.sims.toLocaleString()} simulated seasons. Arrows show movement over the last day.</p>
       <p><strong>PF / PA</strong> are projected season totals of fantasy points for and against: finished weeks, this week's live projection, then a typical week for each remaining fixture. <strong>Finals</strong> is the chance of finishing top ${L.finals_teams}; <strong>Title</strong> is the chance of winning the championship (the finals bracket is simulated too). Arrows show the change since yesterday: wins in wins, PF and PA in fantasy points, Finals and Title in percentage points. Green is good news, red is bad, so more projected points <em>against</em> shows red.</p>`;
   }
-  app.innerHTML = `${seg}<div class="card ld scroll"><table class="ladder${sort === "power" ? " pw" : ""}">${head}${rows}</table></div>
+  if (sort === "power" && !PH) { try { PH = await getJSON("data/power_history.json"); } catch (e) { PH = { days: [] }; } }
+  const chart = sort === "power" ? rankChart(PH.days, L.ladder.map(r => r.team).sort(), LAD_HL) : "";
+  app.innerHTML = `${seg}${chart}<div class="card ld scroll"><table class="ladder${sort === "power" ? " pw" : ""}">${head}${rows}</table></div>
     <details class="rc-how"><summary>What the columns mean</summary><div class="explain">${how}</div></details>
     <p class="updated">Updated ${esc(ago(L.updated_utc))}.</p>`;
   app.querySelectorAll(".seg button").forEach(b => b.onclick = () => { LAD_SORT = b.dataset.s; ladderPage(); });
+  const pick = t => { LAD_HL = LAD_HL === t ? null : t; ladderPage(); };
+  app.querySelectorAll(".rk-lbl").forEach(el => el.onclick = () => pick(el.dataset.t));
+  if (sort === "power") app.querySelectorAll(".ladder.pw tr[data-t]").forEach(tr => tr.onclick = () => pick(tr.dataset.t));
 }
 
 // ---------------------------------------------------------------- trade calculator
