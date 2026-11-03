@@ -279,7 +279,7 @@
   @media (prefers-color-scheme: dark) { .ld-c.hi { background: #173a20; border-color: #1f4d2b; } .ld-c.hi span { color: #8ce99a; } .ld-c.lo { background: #3b1717; border-color: #5c2020; } .ld-c.lo span { color: #ff8787; } }
   .ld-facts { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); margin-top: 8px; }
   .ld-facts b { color: var(--ink); }
-  .ladder.pw { font-size: 13px; } .ladder.pw th { font-size: 10.5px; letter-spacing: 0; }
+  .ladder.pw { font-size: 12.5px; } .ladder.pw td small { font-size: 10.5px; } .ld .ladder.pw td, .ld .ladder.pw th { padding-left: 2px; padding-right: 2px; } .ladder.pw td:nth-child(2) { overflow-wrap: anywhere; font-size: 12px; } .ladder.pw th { font-size: 10.5px; letter-spacing: 0; }
   .ld { padding: 6px 10px; }
   footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
   .pts { font-family: "Archivo Black", Inter, sans-serif; font-size: 22px; text-align: center; white-space: nowrap; line-height: 1.1; }
@@ -459,6 +459,8 @@ async function ladderPage() {
   const mv = x => !x ? "" : `<span class="${x > 0 ? "up" : "down"}">${x > 0 ? "▲" : "▼"}${Math.abs(x)}</span>`;
   const pc = x => x >= 1 || x === 0 ? Math.round(x) + "%" : x.toFixed(1) + "%";
   const k1 = x => (x / 1000).toFixed(1) + "k";
+  // change in a chance since yesterday, in percentage points
+  const chg = x => !x || Math.abs(x) < 0.05 ? "" : `<small class="${x > 0 ? "up" : "down"}">${x > 0 ? "▲" : "▼"}${Math.abs(x) >= 10 ? Math.round(Math.abs(x)) : Math.abs(x).toFixed(1)}</small>`;
   const seg = `<div class="seg">${[["ladder", "Ladder"], ["power", "Power rankings"]].map(([k, l]) => `<button type="button" data-s="${k}" class="${k === sort ? "on" : ""}">${l}</button>`).join("")}</div>`;
   let head, rows, how;
   if (sort === "ladder") {
@@ -469,11 +471,11 @@ async function ladderPage() {
     how = `<p><strong>W / L / D</strong> are wins, losses and draws. <strong>PF</strong> and <strong>PA</strong> are fantasy points for and against in finished weeks. The dashed line is the finals cut (top ${L.finals_teams}).</p>`;
   } else {
     const list = L.ladder.slice().sort((a, b) => a.power_rank - b.power_rank);
-    head = `<tr><th>#</th><th>Team</th><th>Wins</th><th>PF</th><th>PA</th><th>Finals</th></tr>`;
+    head = `<tr><th>#</th><th>Team</th><th>Wins</th><th>PF</th><th>PA</th><th>Finals</th><th>Title</th></tr>`;
     rows = list.map((r, i) => `<tr class="${i === L.finals_teams - 1 ? "cut" : ""}"><td>${r.power_rank}</td><td><span class="tm">${esc(r.team)}</span>${r.power_move ? `<small>${mv(r.power_move)} since yesterday</small>` : ""}</td>
-      <td><b>${r.proj_w.toFixed(1)}</b></td><td>${k1(r.proj_pf)}</td><td>${k1(r.proj_pa)}</td><td>${pc(r.finals_pct)}</td></tr>`).join("");
+      <td><b>${r.proj_w.toFixed(1)}</b></td><td>${k1(r.proj_pf)}</td><td>${k1(r.proj_pa)}</td><td>${pc(r.finals_pct)}${chg(r.finals_move)}</td><td><b>${pc(r.title_pct)}</b>${chg(r.title_move)}</td></tr>`).join("");
     how = `<p>Every column is a <strong>projection for the end of the regular season</strong>. Teams are ranked by <strong>projected wins</strong> at the end of the ${L.weeks}-week regular season: current record plus the model's forecast for every remaining matchup, from ${L.sims.toLocaleString()} simulated seasons. Arrows show movement over the last day.</p>
-      <p><strong>PF / PA</strong> are projected season totals of fantasy points for and against: finished weeks, this week's live projection, then a typical week for each remaining fixture. <strong>Finals</strong> is the chance of finishing top ${L.finals_teams}.</p>`;
+      <p><strong>PF / PA</strong> are projected season totals of fantasy points for and against: finished weeks, this week's live projection, then a typical week for each remaining fixture. <strong>Finals</strong> is the chance of finishing top ${L.finals_teams}; <strong>Title</strong> is the chance of winning the championship (the finals bracket is simulated too). Green and red arrows show how much each chance has moved since yesterday, in percentage points.</p>`;
   }
   app.innerHTML = `${seg}<div class="card ld scroll"><table class="ladder${sort === "power" ? " pw" : ""}">${head}${rows}</table></div>
     <details class="rc-how"><summary>What the columns mean</summary><div class="explain">${how}</div></details>
