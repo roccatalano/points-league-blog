@@ -54,7 +54,7 @@
   .mu-head { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
   .mu-team { font-weight: 700; font-size: 15px; line-height: 1.25; }
   .mu-team.r { text-align: right; }
-  .mu-team, .tr-team { min-width: 0; overflow-wrap: anywhere; }
+  .mu-team, .tr-team { min-width: 0; overflow-wrap: break-word; }
   .mu-score { font-family: "Archivo Black", Inter, sans-serif; font-size: 22px; text-align: center; white-space: nowrap; }
   .bar { display: flex; height: 8px; border-radius: 99px; overflow: hidden; margin: 10px 0 4px; background: var(--line); }
   .bar i { display: block; background: var(--accent); }
@@ -306,7 +306,7 @@
 <header><div class="wrap">
   <a href="#"><div class="brand">NBA FANTASY <span>2026</span></div></a>
   <div class="tag">Daily posts, trade reviews and weekly roundups for a head-to-head points league. Updated automatically.</div>
-  <nav><a href="#/" data-n="posts">Posts</a><a href="#/odds" data-n="odds">Live odds</a><a href="#/ladder" data-n="ladder">Ladder</a><a href="#/trade" data-n="trade">Trade calculator</a><a href="#/injuries" data-n="injuries">Injuries</a><a href="#/trades" data-n="trades">Trades</a><a href="#/record" data-n="record">Model record</a></nav>
+  <nav><a href="#/" data-n="posts">Posts</a><a href="#/odds" data-n="odds">Live odds</a><a href="#/ladder" data-n="ladder">Ladder</a><a href="#/trade" data-n="trade">Trade calculator</a><a href="#/injuries" data-n="injuries">Injuries</a><a href="#/trades" data-n="trades">Moves</a><a href="#/record" data-n="record">Model record</a></nav>
 </div></header>
 <main class="wrap" id="app"><p class="empty">Loading…</p></main>
 <footer>Odds and projections come from a model, not a crystal ball.</footer>
@@ -649,12 +649,18 @@ function wireTradeCharts() {
   });
 }
 async function tradesPage() {
-  setNav("trades"); document.title = "Trades · NBA Fantasy 2026";
+  setNav("trades"); document.title = "Moves · NBA Fantasy 2026";
   app.innerHTML = '<p class="empty">Loading…</p>';
   try { if (!TR) TR = await getJSON("data/trades.json"); }
   catch (e) { app.innerHTML = '<p class="empty">The trade tracker isn\'t available yet.</p>'; return; }
-  const T = TR.trades;
-  if (!T.length) { app.innerHTML = '<p class="empty">No trades yet. Somebody get on the phone.</p>'; return; }
+  const T = TR.trades, PK = TR.pickups;
+  const pickRow = (x, i) => `<div class="pl"><span style="color:var(--ink)"><b>${i + 1}. ${esc(x.player)}</b><br><small style="color:var(--muted)">${esc(x.team)} · ${esc(x.type)}${x.bid ? ` · $${x.bid}` : ""} · added ${day(x.date)}</small></span><span>${x.starts} start${x.starts === 1 ? "" : "s"}${x.per_start != null ? `<br><small>${f1(x.per_start)} a start</small>` : ""}</span><b>${f1(x.fpts)}</b></div>`;
+  const waiver = PK && PK.count ? `<h2 class="rc-h" style="margin-top:26px">Waiver wire <small>${PK.count} pickups this season · fantasy points in the starting lineup since the add</small></h2>
+    <div class="grp">Best pickups</div><div class="card">${PK.best.map(pickRow).join("")}</div>
+    ${PK.worst.length ? `<div class="grp">Worst pickups <span style="text-transform:none;letter-spacing:0;font-weight:600">· fewest points a start, 3+ starts</span></div><div class="card">${PK.worst.map(pickRow).join("")}</div>` : ""}
+    <div class="grp">By team</div><div class="card scroll"><table class="ladder"><tr><th>#</th><th>Team</th><th>Adds</th><th>Points</th><th>FAAB</th></tr>${
+      PK.by_team.map((r, i) => `<tr><td>${i + 1}</td><td><span class="tm">${esc(r.team)}</span></td><td>${r.pickups}</td><td>${f0(r.fpts)}</td><td>$${r.faab}</td></tr>`).join("")}</table></div>
+    <p class="note">A pickup counts from the day after he's added until he's dropped or traded, and only games he started. "Points" by team = everything its pickups have scored for it.</p>` : "";
   const when = iso => new Date(iso).toLocaleDateString("en-AU", { day: "numeric", month: "short" });
   const gcls = g => !g ? "early" : g[0] === "A" ? "a" : g[0] === "B" ? "b" : g[0] === "C" ? "c" : "d";
   const cards = T.map(t => {
@@ -685,7 +691,8 @@ async function tradesPage() {
     <p><strong>Uneven trades</strong> (say 2-for-1): the team getting fewer players frees up a roster spot, so it gets credited with an average free agent in that spot: ${f1(TR.fa_points_per_game)} FPTS a game (the best ${TR.fa_pool} available free agents right now) on the ~48% of days an NBA team plays, ${f1(TR.fa_points_per_day)} a day.</p>
     <p><strong>Grades</strong> come from the points margin per week and appear after a week.</p>
     <p><strong>The chart</strong> is the running points margin, day by day: above the line the first team is winning the trade, below it the second.</p></div></details>`;
-  app.innerHTML = `<p class="updated">Every trade this season and who's actually winning it · updated ${esc(ago(TR.updated_utc))}.</p>${cards}${how}`;
+  app.innerHTML = `<p class="updated">Every trade and pickup this season, and who's actually winning them · updated ${esc(ago(TR.updated_utc))}.</p>
+    <h2 class="rc-h">Trades <small>${T.length} this season</small></h2>${T.length ? cards + how : '<p class="empty">No trades yet. Somebody get on the phone.</p>'}${waiver}`;
   wireTradeCharts();
 }
 

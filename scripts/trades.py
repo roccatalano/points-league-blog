@@ -71,13 +71,22 @@ def scan_trades(d, log):
     """Find executed trades in ESPN's transaction log. Full-season scan the first time, then recent days."""
     latest = d["status"].get("transactionScoringPeriod") or d["status"].get("latestScoringPeriod") or 1
     known = log.setdefault("_trades", {})
-    start = 0 if not log.get("_scanned_full") else max(0, latest - 4)
+    adds = log.setdefault("_adds", {})
+    start = 0 if not log.get("_scanned_full_v2") else max(0, latest - 4)
     for sp in range(start, latest + 2):
         try:
             tx = S._get(["mTransactions2"], params={"scoringPeriodId": sp}).get("transactions", [])
         except Exception:
             continue
         for t in tx:
+            when = t.get("processDate") or t.get("proposedDate")  # free-agent adds only carry proposedDate
+            if t.get("type") in ("FREEAGENT", "WAIVER") and t.get("status") == "EXECUTED" and when:
+                for i in t.get("items", []):
+                    if i.get("type") == "ADD" and i.get("playerId"):
+                        adds.setdefault(f'{t["id"]}:{i["playerId"]}', {
+                            "team": i.get("toTeamId") or t.get("teamId"), "player": i["playerId"],
+                            "bid": t.get("bidAmount") or 0, "type": t["type"],
+                            "date_utc": datetime.fromtimestamp(when / 1000, timezone.utc).isoformat()})
             if t.get("type") not in ("TRADE_ACCEPT", "TRADE_UPHOLD", "TRADE_PROPOSAL") or t.get("status") != "EXECUTED":
                 continue
             items = [i for i in t.get("items", []) if i.get("playerId") and i.get("toTeamId")]
@@ -94,7 +103,7 @@ def scan_trades(d, log):
             known[key] = {"gets": gets,
                           "accepted_utc": datetime.fromtimestamp((t.get("proposedDate") or t["processDate"]) / 1000, timezone.utc).isoformat(),
                           "processed_utc": datetime.fromtimestamp(t["processDate"] / 1000, timezone.utc).isoformat()}
-    log["_scanned_full"] = True
+    log["_scanned_full"] = log["_scanned_full_v2"] = True
     return known
 
 
@@ -147,6 +156,46 @@ def model_change(d, rosters, side, other, gets, fpg):
     bv, _ = S._fixture_value(before, d, side, wk)
     wpts = S._weekly_dist(after)[0]["FP"] - S._weekly_dist(before)[0]["FP"]
     return {"exp_wins": round((av - bv) * S.GAIN_CALIBRATION, 2), "weekly_points": round(wpts, 1)}
+
+
+def pickups(log, days, names, pool_names):
+    """Every waiver / free-agent pickup this season and what he has given the team that added him:
+    fantasy points in its starting lineup from the day after the add until he leaves."""
+    out = []
+    merged = {}  # a player dropped and re-added by the same team counts once, from his first add
+    for a in log.get("_adds", {}).values():
+        k = (a["team"], a["player"])
+        if k not in merged or a["date_utc"] < merged[k]["date_utc"]:
+            merged[k] = dict(a, bid=max(a["bid"], merged.get(k, {}).get("bid", 0)))
+    for a in merged.values():
+        tid, pid = a["team"], str(a["player"])
+        if tid not in names:
+            continue
+        first = str(datetime.fromisoformat(a["date_utc"]).astimezone(S.ET).date() + timedelta(days=1))
+        starts = fpts = 0.0
+        held = 0
+        for sp in sorted(days, key=int):
+            day = days[sp]
+            if day["date"] < first:
+                continue
+            x = day["p"].get(pid)
+            if x and x[0] == tid:
+                held += 1
+                if x[1]:
+                    starts += 1
+                    fpts += x[2]
+        out.append({"player": pool_names.get(a["player"], pid), "team": names[tid], "bid": a["bid"],
+                    "type": "waiver claim" if a["type"] == "WAIVER" else "free agent",
+                    "date": first, "starts": int(starts), "fpts": round(fpts, 1),
+                    "per_start": round(fpts / starts, 1) if starts else None})
+    out.sort(key=lambda x: -x["fpts"])
+    best_ids = {(x["player"], x["team"]) for x in out[:10]}
+    worst = sorted([x for x in out if x["starts"] >= 3 and (x["player"], x["team"]) not in best_ids], key=lambda x: x["per_start"])
+    return {"count": len(out), "best": out[:10], "worst": worst[:10],
+            "by_team": sorted(({"team": t, "pickups": sum(1 for x in out if x["team"] == t),
+                                "fpts": round(sum(x["fpts"] for x in out if x["team"] == t), 1),
+                                "faab": sum(x["bid"] for x in out if x["team"] == t)} for t in names.values()),
+                              key=lambda r: -r["fpts"])}
 
 
 def grade(margin_per_week):
@@ -236,7 +285,7 @@ def main():
     with open(OUT, "w") as f:
         json.dump({"updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                    "fa_points_per_game": fpg, "fa_points_per_day": fa_day, "fa_pool": FA_POOL,
-                   "trades": out}, f, indent=1)
+                   "trades": out, "pickups": pickups(log, days, names, pool_names)}, f, indent=1)
     print(f"trades: {len(out)}, days cached: {len(days)}, avg FA {fpg} FPTS/game")
 
 
