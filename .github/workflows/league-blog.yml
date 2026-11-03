@@ -1,0 +1,99 @@
+name: League blog
+
+on:
+  schedule:
+    - cron: "45 7 * * *"   # daily post, 6:45pm Melbourne (daylight saving time)
+    - cron: "15 8 * * 1"   # weekly roundup, Monday 7:15pm Melbourne (daylight saving time)
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: "daily or weekly"
+        default: "daily"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: points-league-blog
+  cancel-in-progress: false
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install Python packages
+        run: pip install httpx "mcp[cli]<2"
+
+      - name: Decide post type
+        id: kind
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "kind=${{ inputs.kind }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "15 8 * * 1" ]; then
+            echo "kind=weekly" >> "$GITHUB_OUTPUT"
+          else
+            echo "kind=daily" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Save this week's opening predictions (Monday run, before any games)
+        if: steps.kind.outputs.kind == 'weekly'
+        env:
+          ESPN_LEAGUE_ID: "2039896436"
+          ESPN_SEASON: "2027"
+        run: |
+          python scripts/live.py && python scripts/odds_history.py && python scripts/accuracy.py || echo "Opening capture skipped"
+
+      - name: Refresh the injury report
+        env:
+          ESPN_LEAGUE_ID: "2039896436"
+        run: python scripts/injuries.py || echo "Injury report skipped this time"
+
+      - name: Fetch league data from ESPN
+        env:
+          ESPN_LEAGUE_ID: "2039896436"
+          ESPN_SEASON: "2027"
+        run: python scripts/fetch.py "${{ steps.kind.outputs.kind }}"
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Claude writes the post
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          claude -p "Follow WRITING.md exactly: read data/latest.json and write today's post as a new file in posts/." \
+            --allowedTools "Read,Write,Glob"
+
+      - name: Rebuild the post list
+        run: python scripts/build_index.py
+
+      - name: Publish
+        run: |
+          git config user.name "league-blog-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A posts scripts
+          git add data/odds.json data/model.json data/league.json data/accuracy.json data/prediction_log.json data/odds_history.json data/injuries.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nothing new to publish"
+          else
+            git commit -m "New ${{ steps.kind.outputs.kind }} post"
+            for i in 1 2 3; do
+              git pull --rebase --autostash && git push && exit 0
+              sleep 10
+            done
+            exit 1
+          fi

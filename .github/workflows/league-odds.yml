@@ -1,0 +1,82 @@
+name: Live odds
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-odds
+  cancel-in-progress: false
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+  ESPN_LEAGUE_ID: "2039896436"   # public league: no ESPN cookies needed
+  ESPN_SEASON: "2027"
+
+jobs:
+  odds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install Python packages
+        run: pip install httpx "mcp[cli]<2"
+
+      - name: Refresh odds, ladder and trade calculator data
+        run: python scripts/live.py
+
+      - name: Save win-chance history (for the live charts)
+        run: python scripts/odds_history.py || echo "Odds history skipped this time"
+
+      - name: Update the trade tracker
+        run: python scripts/trades.py || echo "Trade tracker skipped this time"
+
+      - name: Update the model track record
+        run: python scripts/accuracy.py || echo "Model record skipped this time"
+
+      - name: Refresh the injury report
+        run: python scripts/injuries.py || echo "Injury report skipped this time"
+
+      - name: Check for new trades
+        id: trades
+        run: |
+          python scripts/fetch.py trade
+          if [ -f data/latest.json ]; then echo "found=true" >> "$GITHUB_OUTPUT"; fi
+
+      - if: steps.trades.outputs.found == 'true'
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Claude writes the trade post
+        if: steps.trades.outputs.found == 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude -p "Follow WRITING.md exactly: read data/latest.json (kind: trade) and write a trade post as a new file in posts/." \
+            --allowedTools "Read,Write,Glob"
+          python scripts/build_index.py
+
+      - name: Publish
+        run: |
+          git config user.name "league-blog-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/odds.json data/model.json data/league.json data/injuries.json data/accuracy.json data/prediction_log.json data/odds_history.json data/trades.json data/trades_log.json data/player_days.json scripts/blog_trades_reviewed.json
+          if [ "${{ steps.trades.outputs.found }}" = "true" ]; then git add -A posts scripts; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update live odds"
+          for i in 1 2 3; do
+            git pull --rebase --autostash && git push && exit 0
+            sleep 10
+          done
+          exit 1

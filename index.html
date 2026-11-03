@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NBA Fantasy 2026 Blog</title>
-<meta name="description" content="Daily posts, trade reviews and weekly roundups for the NBA FANTASY 2026 league.">
+<title>NBA Fantasy 2026</title>
+<meta name="description" content="Live odds, daily posts, trade reviews and weekly roundups for a head-to-head points league.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -54,6 +54,7 @@
   .mu-head { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
   .mu-team { font-weight: 700; font-size: 15px; line-height: 1.25; }
   .mu-team.r { text-align: right; }
+  .mu-team, .tr-team { min-width: 0; overflow-wrap: anywhere; }
   .mu-score { font-family: "Archivo Black", Inter, sans-serif; font-size: 22px; text-align: center; white-space: nowrap; }
   .bar { display: flex; height: 8px; border-radius: 99px; overflow: hidden; margin: 10px 0 4px; background: var(--line); }
   .bar i { display: block; background: var(--accent); }
@@ -88,12 +89,6 @@
   .ladder small { color: var(--muted); display: block; font-size: 12px; }
   .up { color: #2f9e44; font-size: 12px; } .down { color: #e03131; font-size: 12px; }
   .scroll { overflow-x: auto; }
-  .dg { display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
-  .dg:last-child { border-bottom: 0; }
-  .dg .rk { color: var(--muted); font-size: 13px; }
-  .dg .nm { font-weight: 700; font-size: 15px; line-height: 1.25; }
-  .dg .sub { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
-  .dg .score { font-family: "Archivo Black", Inter, sans-serif; font-size: 24px; min-width: 44px; text-align: right; }
   .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 5px; }
   .chip { font-size: 11.5px; font-weight: 600; padding: 2px 7px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
   .chip.off { background: transparent; color: var(--muted); border: 1px dashed var(--line); }
@@ -205,8 +200,6 @@
   .rc-chip { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: var(--line); color: var(--muted); white-space: nowrap; }
   .rc-chip.good { background: #d3f9d8; color: #2b8a3e; } .rc-chip.bad { background: #ffe3e3; color: #c92a2a; } .rc-chip.warn { background: #fff3bf; color: #946200; }
   @media (prefers-color-scheme: dark) { .rc-chip.good { background: #173a20; color: #8ce99a; } .rc-chip.bad { background: #3b1717; color: #ff8787; } .rc-chip.warn { background: #3a2f0b; color: #ffd43b; } }
-  .rc-cat { display: grid; grid-template-columns: 44px 1fr 92px; gap: 10px; align-items: center; padding: 9px 0; font-size: 13px; }
-  .rc-cat small { color: var(--muted); text-align: right; }
   .rc-bar { position: relative; height: 8px; background: var(--line); border-radius: 99px; }
   .rc-bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 99px; }
   .rc-bar u { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--ink); opacity: .5; }
@@ -283,50 +276,64 @@
   .ld-r.open td { border-bottom-color: transparent; background: var(--accent-soft); }
   .ld .up, .ld .down { margin-left: 3px; font-size: 10.5px; }
   .ld-x td { padding: 4px 4px 14px !important; text-align: left !important; white-space: normal !important; background: var(--accent-soft); color: var(--ink) !important; }
-  .ld-cats { display: grid; grid-template-columns: repeat(9, 1fr); gap: 3px; margin-top: 2px; }
-  .ld-c { background: var(--card); border-radius: 8px; padding: 6px 0; text-align: center; border: 1px solid var(--line); }
-  .ld-c b { display: block; font-size: 10px; color: var(--muted); font-weight: 700; }
-  .ld-c span { display: block; font-family: "Archivo Black", Inter, sans-serif; font-size: 12.5px; margin-top: 2px; }
-  .ld-c small { display: block !important; font-size: 10px !important; color: var(--muted); }
-  .ld-c.hi { background: #d3f9d8; border-color: #b2f2bb; } .ld-c.hi span { color: #2b8a3e; }
-  .ld-c.lo { background: #ffe3e3; border-color: #ffc9c9; } .ld-c.lo span { color: #c92a2a; }
   @media (prefers-color-scheme: dark) { .ld-c.hi { background: #173a20; border-color: #1f4d2b; } .ld-c.hi span { color: #8ce99a; } .ld-c.lo { background: #3b1717; border-color: #5c2020; } .ld-c.lo span { color: #ff8787; } }
   .ld-facts { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); margin-top: 8px; }
   .ld-facts b { color: var(--ink); }
-  @media (max-width: 420px) { .ld-cats { grid-template-columns: repeat(5, 1fr); } }
   footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
+  .pts { font-family: "Archivo Black", Inter, sans-serif; font-size: 22px; text-align: center; white-space: nowrap; line-height: 1.1; }
+  .pts small { display: block; font-family: Inter, sans-serif; font-size: 11.5px; font-weight: 600; color: var(--muted); margin-top: 3px; }
+  .mu-sub { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+  .mg-band { fill: var(--ink); opacity: .08; }
+  .mg-pos { fill: var(--accent); opacity: .18; } .mg-neg { fill: #4c6ef5; opacity: .18; }
+  .mg-y { position: absolute; left: 0; transform: translateY(-50%); font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .pl { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; font-size: 13.5px; padding: 5px 0; border-bottom: 1px solid var(--line); }
+  .pl:last-child { border-bottom: 0; } .pl span { color: var(--muted); }
+  .rc-wait { background: var(--card); border: 1px dashed var(--line); border-radius: 14px; padding: 14px 16px; font-size: 14px; color: var(--muted); }
 </style>
 </head>
 <body>
 <header><div class="wrap">
   <a href="#"><div class="brand">NBA FANTASY <span>2026</span></div></a>
-  <div class="tag">Daily posts, trade reviews and weekly roundups. Updated automatically.</div>
-  <nav><a href="#/" data-n="posts">Posts</a><a href="#/ladder" data-n="ladder">Ladder</a><a href="#/odds" data-n="odds">Live odds</a><a href="#/trade" data-n="trade">Trade calculator</a><a href="#/dawg" data-n="dawg">Dawg index</a><a href="#/stats" data-n="stats">Stat ranks</a><a href="#/injuries" data-n="injuries">Injuries</a><a href="#/trades" data-n="trades">Trades</a><a href="#/record" data-n="record">Model record</a></nav>
+  <div class="tag">Daily posts, trade reviews and weekly roundups for a head-to-head points league. Updated automatically.</div>
+  <nav><a href="#/" data-n="posts">Posts</a><a href="#/odds" data-n="odds">Live odds</a><a href="#/ladder" data-n="ladder">Ladder</a><a href="#/trade" data-n="trade">Trade calculator</a><a href="#/injuries" data-n="injuries">Injuries</a><a href="#/trades" data-n="trades">Trades</a><a href="#/record" data-n="record">Model record</a></nav>
 </div></header>
 <main class="wrap" id="app"><p class="empty">Loading…</p></main>
-<footer>Odds and expected wins come from a model, not a crystal ball.</footer>
+<footer>Odds and projections come from a model, not a crystal ball.</footer>
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
 <script src="model.js"></script>
 <script>
 const app = document.getElementById("app");
-const KIND = { daily: "Daily", weekly: "Weekly roundup", trade: "Trade review", draft: "Draft review" };
+const KIND = { daily: "Daily", weekly: "Weekly roundup", trade: "Trade review", catchup: "Catch-up" };
 let posts = [];
 
 function niceDate(d) {
   const dt = new Date(d + "T12:00:00");
   return isNaN(dt) ? d : dt.toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
 }
-function esc(s) { return String(s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function esc(s) { return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 function meta(p) { return `<div class="meta"><span class="pill">${esc(KIND[p.kind] || p.kind)}</span><span>${esc(niceDate(p.date))}</span></div>`; }
+async function getJSON(path) { const r = await fetch(path, { cache: "no-cache" }); if (!r.ok) throw new Error(path); return r.json(); }
+function setNav(n) { document.querySelectorAll("nav a").forEach(a => a.classList.toggle("on", a.dataset.n === n)); }
+function ago(iso) {
+  const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
+  return m < 1 ? "just now" : m < 60 ? m + " min ago" : m < 2880 ? Math.round(m / 60) + " h ago" : Math.round(m / 1440) + " days ago";
+}
+const short = n => n.replace(/[^A-Za-z0-9 ]/g, "").trim().split(/\s+/)[0].slice(0, 10);
+const f1 = x => (x == null ? "–" : Number.isInteger(+x) ? String(+x) : Number(x).toFixed(1));
+const f0 = x => (x == null ? "–" : Math.round(x).toLocaleString("en-AU"));
+const sgn = (x, d = 0) => x == null ? "–" : (x > 0 ? "+" : x < 0 ? "−" : "") + Math.abs(x).toFixed(d);
+const cls = (x, eps = 0.0005) => x == null ? "" : x > eps ? "pos" : x < -eps ? "neg" : "";
+const day = s => new Date(s + "T12:00:00").toLocaleDateString("en-AU", { day: "numeric", month: "short" });
 
+// ---------------------------------------------------------------- posts
 function home() {
-  document.title = "NBA Fantasy 2026 Blog";
+  setNav("posts"); document.title = "NBA Fantasy 2026";
   if (!posts.length) { app.innerHTML = '<p class="empty">No posts yet.</p>'; return; }
   app.innerHTML = posts.map(p => `<a class="card" href="#/${encodeURIComponent(p.slug)}">${meta(p)}<h2>${esc(p.title)}</h2><p>${esc(p.summary)}</p></a>`).join("");
 }
-
 async function show(slug) {
+  setNav("posts");
   const p = posts.find(x => x.slug === slug);
   if (!p) { home(); return; }
   app.innerHTML = '<p class="empty">Loading…</p>';
@@ -339,228 +346,151 @@ async function show(slug) {
   } catch (e) { app.innerHTML = '<p class="empty">Couldn\'t load that post.</p>'; }
 }
 
-function setNav(n) { document.querySelectorAll("nav a").forEach(a => a.classList.toggle("on", a.dataset.n === n)); }
-const pct = x => (x > 0 ? "+" : "") + (100 * x).toFixed(1) + " pts";
-function ago(iso) {
-  const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
-  return m < 1 ? "just now" : m < 60 ? m + " min ago" : Math.round(m / 60) + " h ago";
-}
-
-const short = n => n.replace(/[^A-Za-z0-9 ]/g, "").trim().split(/\s+/)[0].slice(0, 9);
-let OH = null, ODDS_WEEK = null;
+// ---------------------------------------------------------------- live odds: projected margin chart
 const ET_FMT = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false });
 function etDay(ts) {  // days since 1970 in US Eastern (fractional)
   const p = Object.fromEntries(ET_FMT.formatToParts(new Date(ts)).map(x => [x.type, x.value]));
   return Date.UTC(+p.year, +p.month - 1, +p.day) / 864e5 + ((+p.hour % 24) + +p.minute / 60) / 24;
 }
-function wpChart(pts, home, away, final) {
+function niceStep(big) { return [10, 20, 25, 50, 100, 150, 200, 250, 500].find(s => s * 2 >= big) || 1000; }
+// pts: [[iso, margin, p10, p90, home_win_pct, pts_home, pts_away], ...]; final: {m, s:[h,a]}
+function marginChart(pts, home, away, final) {
   if (!pts || !pts.length) return "";
   const d0 = etDay(pts[0][0]), mon = Math.floor(d0) - ((new Date(Math.floor(d0) * 864e5).getUTCDay() + 6) % 7);
-  const W = 600, H = 150, X = d => (d - mon) / 7 * W, Y = v => (1 - v / 100) * H;
-  let P = pts.map(p => ({ x: X(etDay(p[0])), v: p[1] + p[2] / 2, t: p[0], s: [p[3], p[4]] }));
-  if (P[0].x > 2) P.unshift({ x: 0, v: P[0].v, t: null, s: [0, 0] });
-  if (final) P.push({ x: W, v: final.v, t: "final", s: final.s });
-  const line = P.map((p, i) => (i ? "L" : "M") + p.x.toFixed(1) + " " + Y(p.v).toFixed(1)).join(" ");
-  const area = `${line} L${P[P.length - 1].x.toFixed(1)} ${Y(50)} L0 ${Y(50)} Z`;
+  let P = pts.map(p => ({ x: etDay(p[0]) - mon, m: p[1], lo: p[2], hi: p[3], w: p[4], s: [p[5], p[6]], t: p[0] }));
+  if (final) P.push({ x: 7, m: final.m, lo: final.m, hi: final.m, w: final.m > 0 ? 100 : final.m < 0 ? 0 : 50, s: final.s, t: "final" });
+  const big = Math.max(20, ...P.map(p => Math.max(Math.abs(p.lo), Math.abs(p.hi), Math.abs(p.m))));
+  const step = niceStep(big), lim = step * 2 * 1.06;
+  const W = 600, H = 150, X = d => d / 7 * W, Y = v => (1 - (v + lim) / (2 * lim)) * H;
+  const line = P.map((p, i) => (i ? "L" : "M") + X(p.x).toFixed(1) + " " + Y(p.m).toFixed(1)).join(" ");
+  const band = P.map((p, i) => (i ? "L" : "M") + X(p.x).toFixed(1) + " " + Y(p.hi).toFixed(1)).join(" ") + " " +
+    P.slice().reverse().map(p => "L" + X(p.x).toFixed(1) + " " + Y(p.lo).toFixed(1)).join(" ") + " Z";
+  const area = `${line} L${X(P[P.length - 1].x).toFixed(1)} ${Y(0)} L${X(P[0].x).toFixed(1)} ${Y(0)} Z`;
   const id = "c" + Math.random().toString(36).slice(2, 8);
-  const days = ["M", "T", "W", "T", "F", "S", "S"].map((l, i) => `<line x1="${X(mon + i)}" x2="${X(mon + i)}" y1="0" y2="${H}" class="wp-grid"/><text x="${X(mon + i + 0.5)}" y="${H + 14}" class="wp-day">${l}</text>`).join("");
+  const days = ["M", "T", "W", "T", "F", "S", "S"].map((l, i) => `<line x1="${X(i)}" x2="${X(i)}" y1="0" y2="${H}" class="wp-grid"/><text x="${X(i + 0.5)}" y="${H + 14}" class="wp-day">${l}</text>`).join("");
+  const ticks = [-2, -1, 1, 2].map(k => `<span class="mg-y" style="top:${(Y(k * step) + 2) / (H + 22) * 100}%">${k > 0 ? "+" : "−"}${Math.abs(k * step)}</span>`).join("");
   const last = P[P.length - 1];
-  const data = esc(JSON.stringify(P.map(p => [Math.round(p.x), Math.round(p.v), p.t, p.s])));
+  const data = esc(JSON.stringify(P.map(p => [X(p.x), p.m, p.lo, p.hi, p.w, p.s, p.t])));
   return `<div class="wp" data-p="${data}" data-h="${esc(home)}" data-a="${esc(away)}">
-    <div class="wp-lbl top">${esc(home)}</div>
-    <div class="wp-plot"><svg viewBox="0 -2 ${W} ${H + 22}" preserveAspectRatio="none">
-      <defs><clipPath id="${id}a"><rect x="0" y="0" width="${W}" height="${Y(50)}"/></clipPath><clipPath id="${id}b"><rect x="0" y="${Y(50)}" width="${W}" height="${H}"/></clipPath></defs>
-      ${days}<line x1="0" x2="${W}" y1="${Y(50)}" y2="${Y(50)}" class="wp-mid"/>
-      <path d="${area}" class="wp-fh" clip-path="url(#${id}a)"/><path d="${area}" class="wp-fa" clip-path="url(#${id}b)"/>
+    <div class="wp-lbl top">${esc(home)} ahead ↑</div>
+    <div class="wp-plot">${ticks}<svg viewBox="0 -2 ${W} ${H + 22}" preserveAspectRatio="none">
+      <defs><clipPath id="${id}a"><rect x="0" y="-2" width="${W}" height="${Y(0) + 2}"/></clipPath><clipPath id="${id}b"><rect x="0" y="${Y(0)}" width="${W}" height="${H}"/></clipPath></defs>
+      ${days}<path d="${band}" class="mg-band"/>
+      <line x1="0" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" class="wp-mid"/>
+      <path d="${area}" class="mg-pos" clip-path="url(#${id}a)"/><path d="${area}" class="mg-neg" clip-path="url(#${id}b)"/>
       <path d="${line}" class="wp-line" vector-effect="non-scaling-stroke"/>
       <line class="wp-cur" x1="0" x2="0" y1="0" y2="${H}" style="display:none" vector-effect="non-scaling-stroke"/>
     </svg>
-    <span class="wp-dot${last.v < 50 ? " a" : ""}" style="left:${last.x / W * 100}%;top:${(Y(last.v) + 2) / (H + 22) * 100}%"></span></div>
-    <div class="wp-lbl bot">${esc(away)}</div>
+    <span class="wp-dot${last.m < 0 ? " a" : ""}" style="left:${X(last.x) / W * 100}%;top:${(Y(last.m) + 2) / (H + 22) * 100}%"></span></div>
+    <div class="wp-lbl bot">${esc(away)} ahead ↓</div>
     <div class="wp-tip"></div></div>`;
 }
-function wireCharts() {
-  app.querySelectorAll(".wp").forEach(el => {
+function wireMarginCharts() {
+  app.querySelectorAll(".wp[data-h]").forEach(el => {
     const P = JSON.parse(el.dataset.p), svg = el.querySelector("svg"), cur = el.querySelector(".wp-cur"), tip = el.querySelector(".wp-tip");
     const show = e => {
       const r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 600;
       const p = P.reduce((a, b) => Math.abs(b[0] - x) < Math.abs(a[0] - x) ? b : a);
       cur.setAttribute("x1", p[0]); cur.setAttribute("x2", p[0]); cur.style.display = "";
-      const who = p[1] >= 50 ? el.dataset.h : el.dataset.a, pct = p[1] >= 50 ? p[1] : 100 - p[1];
-      const when = p[2] === "final" ? "Final" : p[2] ? new Date(p[2]).toLocaleString("en-AU", { weekday: "short", hour: "numeric", minute: "2-digit" }) : "Start";
-      tip.innerHTML = `<b>${esc(who)} ${p[2] === "final" ? "won" : pct + "%"}</b> · ${when}${p[3] && (p[3][0] || p[3][1]) ? ` · ${p[3][0]}-${p[3][1]}` : ""}`;
-      tip.style.left = Math.min(Math.max(p[0] / 6, 18), 82) + "%"; tip.style.opacity = 1;
+      const lead = p[1] >= 0 ? el.dataset.h : el.dataset.a;
+      const when = p[6] === "final" ? "Final" : new Date(p[6]).toLocaleString("en-AU", { weekday: "short", hour: "numeric", minute: "2-digit" });
+      const body = p[6] === "final" ? `<b>${esc(lead)} won by ${f1(Math.abs(p[1]))}</b>`
+        : `<b>${esc(short(lead))} by ${Math.round(Math.abs(p[1]))}</b> proj · ${p[4] >= 50 ? p[4] : 100 - p[4]}%<br><small>range ${sgn(p[2])} to ${sgn(p[3])} · score ${f0(p[5][0])}–${f0(p[5][1])}</small>`;
+      tip.innerHTML = `${body}<br><small>${when}</small>`;
+      tip.style.left = Math.min(Math.max(p[0] / 6, 20), 80) + "%"; tip.style.opacity = 1;
     };
     el.addEventListener("pointermove", show); el.addEventListener("pointerdown", show);
     el.addEventListener("pointerleave", () => { cur.style.display = "none"; tip.style.opacity = 0; });
   });
 }
 
+let OH = null, ODDS_WEEK = null, ACC = null;
 async function oddsPage() {
   setNav("odds"); document.title = "Live odds · NBA Fantasy 2026";
   app.innerHTML = '<p class="empty">Loading…</p>';
   let o;
-  try { o = await (await fetch("data/odds.json", { cache: "no-cache" })).json(); }
-  catch (e) { app.innerHTML = '<p class="empty">Live odds aren\'t available yet.</p>'; return; }
-  try { if (!OH) OH = await (await fetch("data/odds_history.json", { cache: "no-cache" })).json(); } catch (e) { OH = {}; }
-  try { if (!ACC) ACC = await (await fetch("data/accuracy.json", { cache: "no-cache" })).json(); } catch (e) {}
+  try { o = await getJSON("data/odds.json"); } catch (e) { app.innerHTML = '<p class="empty">Live odds aren\'t available yet.</p>'; return; }
+  try { if (!OH) OH = await getJSON("data/odds_history.json"); } catch (e) { OH = {}; }
+  try { if (!ACC) ACC = await getJSON("data/accuracy.json"); } catch (e) { ACC = null; }
   const curWk = String(o.matchup_period), wk = ODDS_WEEK && OH[ODDS_WEEK] ? ODDS_WEEK : curWk;
   const weeks = [...new Set([curWk, ...Object.keys(OH)])].sort((a, b) => b - a);
   const tabs = weeks.length > 1 ? `<div class="seg">${weeks.map(w => `<button type="button" data-w="${w}" class="${w === wk ? "on" : ""}">${w === curWk ? "This week" : "Week " + w}</button>`).join("")}</div>` : "";
-  const H = (OH && OH[wk]) || {};
-  if (wk !== curWk) {  // a finished week: chart + final result
-    const res = ((ACC && ACC.weeks) || []).find(w => String(w.period) === wk);
+  const H = OH[wk] || {};
+  if (wk !== curWk) {
+    const res = ((ACC && ACC.weeks) || []).find(w => String(w.week) === wk);
     const cards = Object.entries(H).map(([k, pts]) => {
-      const [home, away] = k.split("|"), r = res && res.matchups.find(m => m.home === home && m.away === away);
-      const fin = r ? { v: r.winner === "HOME" ? 100 : r.winner === "AWAY" ? 0 : 50, s: r.score } : null;
-      const sc = r ? `${r.score[0]}-${r.score[1]}${r.score[2] ? "-" + r.score[2] : ""}` : "–";
-      return `<div class="card"><div class="mu-head"><div class="mu-team ${r && r.winner === "HOME" ? "" : "lose"}">${esc(home)}</div><div class="mu-score">${sc}</div><div class="mu-team r ${r && r.winner === "AWAY" ? "" : "lose"}">${esc(away)}</div></div>
-        ${wpChart(pts, home, away, fin)}</div>`;
+      const [home, away] = k.split("|"), r = res && res.matchups.find(m => m.home === home && m.away === away && m.actual);
+      const fin = r ? { m: r.actual[0] - r.actual[1], s: r.actual } : null;
+      const won = r ? (r.actual[0] > r.actual[1] ? "h" : r.actual[1] > r.actual[0] ? "a" : "") : "";
+      return `<div class="card"><div class="mu-head"><div class="mu-team ${won === "a" ? "lose" : ""}">${esc(home)}</div>
+        <div class="pts">${r ? `${f1(r.actual[0])}–${f1(r.actual[1])}` : "–"}<small>final</small></div><div class="mu-team r ${won === "h" ? "lose" : ""}">${esc(away)}</div></div>
+        ${marginChart(pts, home, away, fin)}</div>`;
     }).join("");
-    app.innerHTML = `${tabs}<p class="updated">Week ${wk}, final. The line shows ${esc("each team's")} win chance through the week; it ends at 100% for the winner.</p>${cards || '<p class="empty">No history for this week.</p>'}`;
+    app.innerHTML = `${tabs}<p class="updated">Week ${wk}, final. The line is the projected final margin through the week; the grey band is the model's 80% range.</p>${cards || '<p class="empty">No history for this week.</p>'}`;
   } else {
     const cards = o.matchups.map(m => {
-    const rows = m.categories.map(c => {
-      const h = c.home_win_pct, fmt = v => c.cat.includes("%") ? Number(v).toFixed(3).replace(/^0/, "") : Math.round(v);
-      return `<tr><td>${esc(c.cat)}</td><td>${fmt(c.now_home)}</td><td>${fmt(c.now_away)}</td><td class="${h >= 50 ? "win" : ""}">${h}%</td><td class="${h < 50 ? "win" : ""}">${100 - h}%</td></tr>`;
+      const lead = m.proj_margin >= 0 ? m.home : m.away;
+      return `<div class="card"><div class="mu-head"><div class="mu-team">${esc(m.home)}</div>
+        <div class="pts">${f1(m.points_now[0])}–${f1(m.points_now[1])}<small>so far</small></div>
+        <div class="mu-team r">${esc(m.away)}</div></div>
+        <div class="bar"><i style="width:${m.home_win_pct}%"></i><b style="width:${m.away_win_pct}%"></b></div>
+        <div class="mu-odds"><span><strong>${m.home_win_pct}%</strong> · $${m.price_home.toFixed(2)}</span><span>$${m.price_away.toFixed(2)} · <strong>${m.away_win_pct}%</strong></span></div>
+        <div class="mu-sub"><span>Proj <b>${f0(m.proj_final[0])}</b> · ${m.games_left[0]} games left</span><span>${m.games_left[1]} games left · <b>${f0(m.proj_final[1])}</b> proj</span></div>
+        <p class="note" style="margin:8px 0 0">${esc(lead)} by <b>${Math.round(Math.abs(m.proj_margin))}</b> projected · 80% range ${esc(short(m.home))} ${sgn(m.margin_80[0])} to ${sgn(m.margin_80[1])}</p>
+        ${marginChart(H[m.home + "|" + m.away], m.home, m.away)}</div>`;
     }).join("");
-    return `<div class="card"><div class="mu-head"><div class="mu-team">${esc(m.home)}</div>
-      <div class="mu-score">${m.score_now[0]}-${m.score_now[1]}${m.score_now[2] ? "-" + m.score_now[2] : ""}</div>
-      <div class="mu-team r">${esc(m.away)}</div></div>
-      <div class="bar"><i style="width:${m.home_win_pct}%"></i><b style="width:${m.away_win_pct}%"></b></div>
-      <div class="mu-odds"><span><strong>${m.home_win_pct}%</strong> · $${m.price_home.toFixed(2)}</span><span>$${m.price_away.toFixed(2)} · <strong>${m.away_win_pct}%</strong></span></div>
-      ${wpChart(H[m.home + "|" + m.away], m.home, m.away)}
-      <details><summary>Categories</summary><table class="cats"><tr><th></th><th colspan="2">Right now</th><th colspan="2">Chance to win</th></tr><tr><th>Cat</th><th>${esc(short(m.home))}</th><th>${esc(short(m.away))}</th><th>${esc(short(m.home))}</th><th>${esc(short(m.away))}</th></tr>${rows}</table></details></div>`;
-  }).join("");
-  app.innerHTML = `${tabs}<p class="updated">Week ${o.matchup_period} · updated ${esc(ago(o.updated_utc))} · refreshes every few hours. Score = categories won right now; win % simulates the rest of the week 1,000 times. The chart shows how the win chance has moved this week (tap it for any moment).</p>${cards}`;
+    app.innerHTML = `${tabs}<p class="updated">Week ${o.matchup_period} · updated ${esc(ago(o.updated_utc))} · refreshes every 30 minutes. Win % comes from simulating the rest of the week 1,000 times (real NBA schedule, best lineup each day, injuries). The chart tracks the <b>projected final margin</b>: above the line the home team is ahead, below it the away team; the grey band is the 80% range. Tap it for any moment.</p>${cards}`;
   }
   app.querySelectorAll(".seg button").forEach(b => b.onclick = () => { ODDS_WEEK = b.dataset.w; oddsPage(); });
-  wireCharts();
+  wireMarginCharts();
 }
 
-
+// ---------------------------------------------------------------- ladder
 let LAD = null, LAD_SORT = "ladder", LAD_OPEN = null;
 async function ladderPage() {
   setNav("ladder"); document.title = "Ladder · NBA Fantasy 2026";
   if (!LAD) {
     app.innerHTML = '<p class="empty">Loading…</p>';
-    try { LAD = await (await fetch("data/league.json", { cache: "no-cache" })).json(); }
-    catch (e) { app.innerHTML = '<p class="empty">The ladder isn\'t available yet.</p>'; return; }
+    try { LAD = await getJSON("data/league.json"); } catch (e) { app.innerHTML = '<p class="empty">The ladder isn\'t available yet.</p>'; return; }
   }
-  const L = LAD, has = L.ladder[0].power_rank != null;
+  const L = LAD;
   const mv = (x, d = 0) => !x || Math.abs(x) < 0.05 ? "" : `<span class="${x > 0 ? "up" : "down"}">${x > 0 ? "▲" : "▼"}${Math.abs(x).toFixed(d)}</span>`;
   const price = x => "$" + (x >= 10 ? Math.round(x) : x.toFixed(2));
   const pc = x => x >= 1 || x === 0 ? Math.round(x) + "%" : x.toFixed(1) + "%";
   const SORTS = { ladder: ["Ladder", (a, b) => (a.seed ?? 99) - (b.seed ?? 99)],
                   power: ["Power", (a, b) => a.power_rank - b.power_rank],
-                  proj: ["Projected", (a, b) => b.proj_w - a.proj_w] };
-  const sort = has ? LAD_SORT : "ladder", list = L.ladder.slice().sort(SORTS[sort][1]);
-  const seg = has ? `<div class="seg">${Object.entries(SORTS).map(([k, [l]]) => `<button type="button" data-s="${k}" class="${k === sort ? "on" : ""}">${l}</button>`).join("")}</div>` : "";
-  const CATS = ["PTS", "REB", "AST", "STL", "BLK", "3PM", "TO", "FG%", "FT%"];
-  const ord = k => k + (["th", "st", "nd", "rd"][(k % 100 > 10 && k % 100 < 14) ? 0 : (k % 10 < 4 ? k % 10 : 0)]);
-  const detail = r => {
-    if (!has) return "";
-    const cells = CATS.map(c => { const v = r.cat_strength[c], k = r.cat_rank[c];
-      const tone = k <= 3 ? "hi" : k >= 12 ? "lo" : "";
-      return `<div class="ld-c ${tone}"><b>${c}</b><span>${v}%</span><small>${ord(k)}</small></div>`; }).join("");
-    return `<tr class="ld-x"><td colspan="5">
-      <div class="ld-cats">${cells}</div>
-      <p class="note" style="font-size:12px;margin:6px 0 0">Chance to win each category vs an average opponent in a typical week · league rank.</p>
-      <div class="ld-facts"><span>Categories <b>${r.cats[0]}-${r.cats[1]}-${r.cats[2]}</b></span><span>Title <b>${pc(r.title_pct)}</b> ${price(r.title_price)}${mv(r.title_move, 1)}</span><span>Finals ${price(r.finals_price)}</span><span>FAAB <b>$${r.faab_left}</b></span></div></td></tr>`;
-  };
+                  pf: ["Points for", (a, b) => b.pf - a.pf] };
+  const sort = LAD_SORT, list = L.ladder.slice().sort(SORTS[sort][1]);
+  const seg = `<div class="seg">${Object.entries(SORTS).map(([k, [l]]) => `<button type="button" data-s="${k}" class="${k === sort ? "on" : ""}">${l}</button>`).join("")}</div>`;
+  const detail = r => `<tr class="ld-x"><td colspan="5"><div class="ld-facts">
+      <span>Points for <b>${f0(r.pf)}</b></span><span>Against <b>${f0(r.pa)}</b></span><span>Avg week <b>${f0(r.pf_avg)}</b></span>
+      <span>Typical week now <b>${f0(r.proj_week)}</b></span><span>Title <b>${pc(r.title_pct)}</b> ${price(r.title_price)}${mv(r.title_move, 1)}</span>
+      <span>Finals ${price(r.finals_price)}</span><span>FAAB <b>$${r.faab_left}</b></span></div></td></tr>`;
   const rows = list.map((r, i) => {
     const cut = sort === "ladder" && i === L.finals_teams - 1 ? " cut" : "", open = LAD_OPEN === r.team;
     const rank = sort === "ladder" ? (r.seed ?? i + 1) : sort === "power" ? r.power_rank : i + 1;
     return `<tr class="ld-r${cut}${open ? " open" : ""}" data-t="${esc(r.team)}">
       <td>${rank}</td>
-      <td><span class="tm">${esc(r.team)}</span><small>${r.w}-${r.l}${r.t ? "-" + r.t : ""} · ${r.cats[0]}-${r.cats[1]}${r.cats[2] ? "-" + r.cats[2] : ""} cats</small></td>
-      ${has ? `<td>${r.proj_w.toFixed(1)}<small>${r.proj_l.toFixed(1)} L</small></td><td>${r.power_rank}${mv(r.power_move)}<small>${r.power_pct}%</small></td>` : ""}
+      <td><span class="tm">${esc(r.team)}</span><small>${r.w}-${r.l}${r.t ? "-" + r.t : ""} · ${f0(r.pf)} pts for</small></td>
+      <td>${r.proj_w.toFixed(1)}<small>${r.proj_l.toFixed(1)} L</small></td><td>${r.power_rank}${mv(r.power_move)}<small>${r.power_pct}%</small></td>
       <td><b>${pc(r.finals_pct)}</b>${mv(r.finals_move)}</td></tr>${open ? detail(r) : ""}`;
   }).join("");
-  const head = `<tr><th>#</th><th>Team</th>${has ? "<th>Proj</th><th>Power</th>" : ""}<th>Finals</th></tr>`;
-  app.innerHTML = `${seg}<div class="card ld"><table class="ladder">${head}${rows}</table></div>
+  app.innerHTML = `${seg}<div class="card ld"><table class="ladder"><tr><th>#</th><th>Team</th><th>Proj</th><th>Power</th><th>Finals</th></tr>${rows}</table></div>
     <details class="rc-how"><summary>What the columns mean</summary><div class="explain">
-      <p><strong>Proj</strong> is each team's expected final number of wins (current record plus the model's forecast for every remaining week, from ${L.sims.toLocaleString()} simulated seasons). The small number underneath is projected losses out of ${L.weeks || 18} weeks.</p>
-      <p><strong>Power</strong> ranks teams by roster strength alone: the average chance of beating every other team in a normal week, ignoring the schedule. The % underneath is that average. Arrows show movement over the last day.</p>
-      <p><strong>Finals</strong> is the chance of finishing top ${L.finals_teams}${sort === "ladder" ? " (the dashed line)" : ""}. <strong>Tap a team</strong> for its category strengths, title odds and FAAB left.</p></div></details>
+      <p><strong>Proj</strong> is each team's expected final number of wins (current record plus the model's forecast for every remaining week, from ${L.sims.toLocaleString()} simulated seasons). The small number underneath is projected losses out of ${L.weeks} weeks.</p>
+      <p><strong>Power</strong> ranks teams by roster strength alone: the average chance of outscoring every other team in a normal week, ignoring the schedule. Arrows show movement over the last day.</p>
+      <p><strong>Finals</strong> is the chance of finishing top ${L.finals_teams}${sort === "ladder" ? " (the dashed line)" : ""}. <strong>Tap a team</strong> for points for and against, title odds and FAAB left.</p></div></details>
     <p class="updated">Updated ${esc(ago(L.updated_utc))}.</p>`;
   app.querySelectorAll(".seg button").forEach(b => b.onclick = () => { LAD_SORT = b.dataset.s; ladderPage(); });
   app.querySelectorAll(".ld-r").forEach(tr => tr.onclick = () => { LAD_OPEN = LAD_OPEN === tr.dataset.t ? null : tr.dataset.t; ladderPage(); });
 }
 
-let STATS = null, STAT_MODE = "matchup";
-async function statsPage() {
-  setNav("stats"); document.title = "Stat ranks · NBA Fantasy 2026";
-  app.innerHTML = '<p class="empty">Loading…</p>';
-  try { if (!STATS) STATS = await (await fetch("data/stats.json", { cache: "no-cache" })).json(); }
-  catch (e) { app.innerHTML = '<p class="empty">Stat ranks aren\'t available yet. They appear after the next data refresh.</p>'; return; }
-  const S = STATS, MODES = { total: "Total", matchup: "Per matchup", day: "Per day", game: "Per game" };
-  if (!S.days_done) { app.innerHTML = '<p class="empty">Stat ranks appear after the next data refresh.</p>'; return; }
-  const open = new Set([...app.querySelectorAll("details[open]")].map(d => d.dataset.cat));
-  if (!open.size) { open.add("PTS"); open.add("GP"); }
-  const mode = STAT_MODE;
-  const basis = mode === "matchup" ? `${S.weeks_done} finished matchup${S.weeks_done === 1 ? "" : "s"}` : `${S.days_done} finished days`;
-  const g = [...S.games].sort((a, b) => (b.per_day ?? -1) - (a.per_day ?? -1));
-  const gRows = g.map((r, i) => `<tr><td>${i + 1}</td><td><span class="tm">${esc(r.team)}</span><small>${r.games} games</small></td><td>${r.per_day == null ? "–" : r.per_day.toFixed(2)}</td><td>${r.per_matchup == null ? "–" : r.per_matchup.toFixed(1)}</td></tr>`).join("");
-  const gCard = `<details class="card scroll" data-cat="GP"${open.has("GP") ? " open" : ""}><summary>Games played — most: ${esc(g[0].team)} (${g[0].per_day.toFixed(2)}/day)</summary>
-    <table class="ladder"><tr><th>#</th><th>Team</th><th>Per day</th><th>Per matchup</th></tr>${gRows}</table>
-    <p class="note">Starters' games only. Per day uses all ${S.days_done} finished days; per matchup uses finished matchups. More games usually means more streaming.</p></details>`;
-  const cards = S.categories.map(c => {
-    const pct = c.cat.includes("%"), fmt = v => v == null ? "–" : pct ? v.toFixed(3).replace(/^0/, "") : v.toFixed(mode === "total" ? 0 : mode === "matchup" ? 1 : 2);
-    const rows = c.rows.filter(r => r[mode] != null).sort((a, b) => c.cat === "TO" ? a[mode] - b[mode] : b[mode] - a[mode]);
-    const sub = r => mode === "game" || mode === "total" ? `<small>${r.games} games</small>` : "";
-    const body = rows.map((r, i) => `<tr><td>${i + 1}</td><td><span class="tm">${esc(r.team)}</span>${sub(r)}</td><td>${fmt(r[mode])}</td></tr>`).join("");
-    const top = rows[0] ? ` — top: ${esc(rows[0].team)} (${fmt(rows[0][mode])})` : "";
-    return `<details class="card scroll" data-cat="${esc(c.cat)}"${open.has(c.cat) ? " open" : ""}><summary>${esc(c.cat)}${c.cat === "TO" ? " · fewest first" : ""}${top}</summary>
-      <table class="ladder"><tr><th>#</th><th>Team</th><th>${MODES[mode]}</th></tr>${body}</table></details>`;
-  }).join("");
-  const toggles = Object.entries(MODES).map(([k, v]) => `<button type="button" data-m="${k}" class="${k === mode ? "on" : ""}">${v}</button>`).join("");
-  const pctNote = mode === "matchup" ? "FG% and FT% are the average of each week's percentage." : "FG% and FT% are season makes ÷ attempts.";
-  app.innerHTML = `${gCard}<div class="seg">${toggles}</div>
-    <p class="updated">Based on ${basis} · updated ${esc(ago(S.updated_utc))}. Per game spreads totals over the games starters actually played, so it rewards player quality, not streaming volume. ${pctNote}</p>${cards}`;
-  app.querySelectorAll(".seg button").forEach(b => b.onclick = () => { STAT_MODE = b.dataset.m; statsPage(); });
-}
-
-let DAWG = null;
-async function dawgPage() {
-  setNav("dawg"); document.title = "Dawg index · NBA Fantasy 2026";
-  app.innerHTML = '<p class="empty">Loading…</p>';
-  try { if (!DAWG) DAWG = await (await fetch("data/dawg.json", { cache: "no-cache" })).json(); }
-  catch (e) { app.innerHTML = '<p class="empty">The Dawg index isn\'t available yet.</p>'; return; }
-  const teams = [...new Set(DAWG.players.map(p => p.team))].sort();
-  app.innerHTML = `<p class="updated">Who's playing like a dawg? A 0-100 score for every rostered player, updated ${esc(ago(DAWG.updated_utc))}.</p>
-    <details class="card explain"><summary>How the Dawg index works</summary>
-      <p>Every player gets three scores from 0 to 100. Each one is a <strong>percentile</strong>: a Hustle of 90 means he's out-hustling 90% of the players on a fantasy roster in this league.</p>
-      <h3>🐶 Hustle (40%)</h3>
-      <p>The dirty work, per 36 minutes this season: rebounds, steals and blocks, minus turnovers. Steals and blocks count 2.5 times as much as a rebound. Rebounds are scaled by position, because a guard grabbing boards is grittier than a centre doing it: guards ×1.4, small forwards ×1.1, power forwards ×0.8, centres ×0.6. Then it's scaled by availability: a player who has played every one of his team's games keeps 100%, one who has played none keeps 70%. Needs 2+ games and 8+ minutes a night.</p>
-      <h3>🔥 Heat check (40%)</h3>
-      <p>His fantasy score per game over the last 7 days, compared with his normal level (ESPN's projection for him, or last season if there isn't one). The "+30%" next to it means he's been 30% better than usual this week. Fantasy score = points + 1.2×rebounds + 1.5×assists + 3×steals + 3×blocks + threes − 1.5×turnovers. Needs 2+ games in the last week.</p>
-      <h3>💪 Big-game (20%)</h3>
-      <p>Does he show up when it matters? We take every game he started for his fantasy team while that team's matchup was close (decided by 2 categories or fewer, or within 2 right now for this week), and compare his fantasy score in those games with his average in all his games. Needs 2+ close-matchup games, so it's blank for most players early in the season. When it's blank, Hustle and Heat count 50/50.</p>
-      <h3>The Dawg index</h3>
-      <p>40% Hustle + 40% Heat + 20% Big-game, rounded to a 0-100 score. It's for fun and bragging rights: it rewards effort and form, not overall fantasy value, which is why role players can top it.</p>
-    </details>
-    <div class="filters"><select id="dt"><option value="">All teams</option>${teams.map(t => `<option>${esc(t)}</option>`).join("")}</select></div>
-    <div class="card" id="dl"></div>`;
-  const draw = () => {
-    const team = document.getElementById("dt").value;
-    const list = DAWG.players.filter(p => p.dawg !== null && (!team || p.team === team));
-    const shown = team ? list : list.slice(0, 50);
-    const chip = (label, v, extra) => v === null || v === undefined ? `<span class="chip off">${label} —</span>` : `<span class="chip">${label} ${v}${extra || ""}</span>`;
-    const sgn = x => x === undefined || x === null ? "" : ` (${x >= 0 ? "+" : ""}${x}%)`;
-    document.getElementById("dl").innerHTML = shown.map((p, i) => `<div class="dg"><div class="rk">${i + 1}</div>
-      <div><div class="nm">${esc(p.name)}</div><div class="sub">${esc(p.pos)} · ${esc(p.team)}${p.status !== "ACTIVE" ? " · " + esc(p.status.replace(/_/g, " ").toLowerCase()) : ""}</div>
-      <div class="chips">${chip("Hustle", p.hustle)}${chip("Heat", p.heat, sgn(p.heat_vs_normal_pct))}${chip("Big-game", p.big, sgn(p.big_vs_normal_pct))}</div></div>
-      <div class="score">${p.dawg}</div></div>`).join("") + (team ? "" : `<p class="note">Top 50 shown. Pick a team to see its whole roster.</p>`);
-  };
-  document.getElementById("dt").onchange = draw; draw();
-}
-
+// ---------------------------------------------------------------- trade calculator
 let MODEL = null, LM = null;
 async function tradePage() {
   setNav("trade"); document.title = "Trade calculator · NBA Fantasy 2026";
   app.innerHTML = '<p class="empty">Loading…</p>';
-  try { if (!MODEL) { MODEL = await (await fetch("data/model.json", { cache: "no-cache" })).json(); LM = LeagueModel.make(MODEL); } }
+  try { if (!MODEL) { MODEL = await getJSON("data/model.json"); LM = LeagueModel.make(MODEL); } }
   catch (e) { app.innerHTML = '<p class="empty">The calculator isn\'t available yet.</p>'; return; }
   const teams = MODEL.teams.slice().sort((x, y) => x.name.localeCompare(y.name));
   const opts = sel => teams.map(t => `<option value="${t.id}" ${t.id === sel ? "selected" : ""}>${esc(t.name)}</option>`).join("");
@@ -572,32 +502,28 @@ async function tradePage() {
   const ta = document.getElementById("ta"), tb = document.getElementById("tb");
   const list = (sel, box) => {
     const t = MODEL.teams.find(x => x.id === +sel.value);
-    box.innerHTML = t.players.slice().sort((x, y) => (y.rates ? y.rates["0"] : 0) - (x.rates ? x.rates["0"] : 0)).map(p => {
-      const r = p.rates, line = r ? `${r["0"].toFixed(1)} pts · ${r["6"].toFixed(1)} reb · ${r["3"].toFixed(1)} ast` : "no stats";
-      const back = p.ret ? `, back ${new Date(p.ret + "T12:00:00").toLocaleDateString("en-AU", { day: "numeric", month: "short" })}` : "";
+    box.innerHTML = t.players.slice().sort((x, y) => (y.fp || 0) - (x.fp || 0)).map(p => {
+      const g = p.pg, line = g ? `<b>${f1(p.fp)} FPTS</b> · ${f1(g.PTS)} pts · ${f1(g.REB)} reb · ${f1(g.AST)} ast` : "no stats";
+      const back = p.ret ? `, back ${day(p.ret)}` : "";
       const inj = p.status && p.status !== "ACTIVE" ? ` · ${esc(p.status.replace(/_/g, " ").toLowerCase())}${back}` : "";
       return `<label><input type="checkbox" value="${esc(p.name)}"> <span>${esc(p.name)}<br><small>${line}${inj}</small></span></label>`;
     }).join("");
   };
   const movesNote = (n, m) => (m.drops.length ? `<p class="note">${esc(n)} would have to drop ${m.drops.map(esc).join(" and ")} (their least valuable player) to fit everyone in.</p>` : "")
-    + (m.adds ? `<p class="note">${esc(n)} gets ${m.adds === 1 ? "an open roster spot" : m.adds + " open roster spots"}, counted as a replacement-level free agent.</p>` : "");
+    + (m.adds ? `<p class="note">${esc(n)} gets ${m.adds === 1 ? "an open roster spot" : m.adds + " open roster spots"}, filled with an average free agent (${f1(MODEL.fa_fpg)} FPTS a game).</p>` : "");
   const run = () => {
-    const out = document.getElementById("out");
-    const a = +ta.value, b = +tb.value;
+    const out = document.getElementById("out"), a = +ta.value, b = +tb.value;
     const give = [...document.querySelectorAll("#pa input:checked")].map(x => x.value);
     const get = [...document.querySelectorAll("#pb input:checked")].map(x => x.value);
     if (a === b) { out.innerHTML = '<p class="note">Pick two different teams.</p>'; return; }
     if (!give.length || !get.length) { out.innerHTML = '<p class="note">Tick at least one player on each side.</p>'; return; }
     const r = LM.evaluate(a, b, give, get), na = MODEL.teams.find(t => t.id === a).name, nb = MODEL.teams.find(t => t.id === b).name;
-    const sgn = x => (x >= 0 ? "+" : "") + x.toFixed(3), cls = x => x > 0.0005 ? "pos" : x < -0.0005 ? "neg" : "";
-    const rows = Object.keys(r.a.cats).map(k => `<tr><td>${k}</td><td class="${cls(r.a.cats[k])}">${pct(r.a.cats[k])}</td><td class="${cls(r.b.cats[k])}">${pct(r.b.cats[k])}</td></tr>`).join("");
-    const winner = Math.abs(r.a.change - r.b.change) < 0.03 ? "Pretty even trade." : (r.a.change > r.b.change ? esc(na) : esc(nb)) + " win this one.";
+    const winner = Math.abs(r.a.change - r.b.change) < 0.05 ? "Pretty even trade." : (r.a.change > r.b.change ? esc(na) : esc(nb)) + " win this one.";
     out.innerHTML = `<div class="card"><div class="res">
-      <div><div class="note">${esc(na)}</div><div class="big ${cls(r.a.change)}">${sgn(r.a.change)}</div><div class="note">expected wins</div></div>
-      <div><div class="note">${esc(nb)}</div><div class="big ${cls(r.b.change)}">${sgn(r.b.change)}</div><div class="note">expected wins</div></div></div>
+      <div><div class="note">${esc(na)}</div><div class="big ${cls(r.a.change, 0.005)}">${sgn(r.a.change, 2)}</div><div class="note">expected wins</div><div class="note"><b class="${cls(r.a.weekly, 0.5)}">${sgn(r.a.weekly)}</b> FPTS a week</div></div>
+      <div><div class="note">${esc(nb)}</div><div class="big ${cls(r.b.change, 0.005)}">${sgn(r.b.change, 2)}</div><div class="note">expected wins</div><div class="note"><b class="${cls(r.b.weekly, 0.5)}">${sgn(r.b.weekly)}</b> FPTS a week</div></div></div>
       <p><strong>${winner}</strong></p>${movesNote(na, r.a.moves)}${movesNote(nb, r.b.moves)}
-      <table class="cats"><tr><th>Category win rate vs league</th><th>${esc(na)}</th><th>${esc(nb)}</th></tr>${rows}</table>
-      <p class="note">Same model as the trade reviews. Rosters as of ${esc(ago(MODEL.updated_utc))}.</p></div>`;
+      <p class="note">Expected wins = change in matchups won over the rest of the regular season. FPTS a week = change in a typical week's fantasy points (best lineup, ~3.4 games a player, injuries counted until each player's return date). Rosters as of ${esc(ago(MODEL.updated_utc))}.</p></div>`;
   };
   ta.onchange = () => { list(ta, document.getElementById("pa")); run(); };
   tb.onchange = () => { list(tb, document.getElementById("pb")); run(); };
@@ -605,21 +531,22 @@ async function tradePage() {
   list(ta, document.getElementById("pa")); list(tb, document.getElementById("pb")); run();
 }
 
+// ---------------------------------------------------------------- injuries
 let INJ = null, INJ_F = "owned";
 async function injuriesPage() {
   setNav("injuries"); document.title = "Injuries · NBA Fantasy 2026";
   app.innerHTML = '<p class="empty">Loading…</p>';
-  try { if (!INJ) INJ = await (await fetch("data/injuries.json", { cache: "no-cache" })).json(); }
-  catch (e) { app.innerHTML = '<p class="empty">The injury report isn\'t available yet. It appears after the next data refresh.</p>'; return; }
+  try { if (!INJ) INJ = await getJSON("data/injuries.json"); }
+  catch (e) { app.innerHTML = '<p class="empty">The injury report isn\'t available yet.</p>'; return; }
   const all = INJ.players, teams = [...new Set(all.map(p => p.fantasy_team).filter(Boolean))].sort();
   const f = INJ_F, list = all.filter(p => f === "all" ? true : f === "owned" ? p.fantasy_team : f === "fa" ? !p.fantasy_team : p.fantasy_team === f);
   const ORDER = ["Days", "1 week", "1-2 weeks", "2-4 weeks", "1-2 months", "2+ months", "Season", "Unknown"];
   const LABEL = { "Days": "Back within a couple of days", "1 week": "Out up to a week", "1-2 weeks": "Out 1–2 weeks", "2-4 weeks": "Out 2–4 weeks",
                   "1-2 months": "Out 1–2 months", "2+ months": "Out 2+ months", "Season": "Out for the season", "Unknown": "No return date" };
-  const d = s => s ? new Date(s + "T12:00:00").toLocaleDateString("en-AU", { day: "numeric", month: "short" }) : "–";
+  const d = s => s ? day(s) : "–";
   const chip = p => { const s = (p.status || "").toLowerCase(); return `<span class="chip ${s.startsWith("day") ? "dtd" : "out"}">${esc(p.status)}</span>`; };
   const row = p => {
-    const line = p.per_game ? ` · ${p.per_game.PTS}/${p.per_game.REB}/${p.per_game.AST}` : "";
+    const line = p.per_game ? ` · <b>${f1(p.per_game.FPTS)} FPTS</b>/g` : "";
     const owner = p.fantasy_team ? `${esc(p.fantasy_team)}${p.on_ir ? " (IR)" : ""}` : "Free agent";
     const ret = p.timeframe === "Season" ? "Season" : p.days_out === 0 ? "Any day" : d(p.return_date);
     const g = p.games_missed == null ? "" : `${p.games_missed} game${p.games_missed === 1 ? "" : "s"} missed`;
@@ -633,167 +560,48 @@ async function injuriesPage() {
     .map(([k, l]) => `<div class="grp">${LABEL[k]} · ${l.length}</div><div class="card">${l.map(row).join("")}</div>`).join("");
   const opt = (v, t) => `<option value="${esc(v)}"${v === f ? " selected" : ""}>${esc(t)}</option>`;
   app.innerHTML = `<div class="filters"><select id="injf">${opt("owned", "On a fantasy team")}${opt("fa", "Free agents")}${opt("all", "Whole NBA")}${teams.map(t => opt(t, t)).join("")}</select></div>
-    <p class="updated">${list.length} injured · updated ${esc(ago(INJ.updated_utc))} · refreshes every few hours. "Back" is ESPN's projected return date (US time); games missed counts that NBA team's games until then. Projections often move, so check the latest note.</p>
+    <p class="updated">${list.length} injured · updated ${esc(ago(INJ.updated_utc))}. "Back" is ESPN's projected return date (US time); games missed counts that NBA team's games until then. The model counts each player as out until that date, then healthy.</p>
     ${groups || '<p class="empty">Nobody injured here. Enjoy it while it lasts.</p>'}`;
   document.getElementById("injf").onchange = e => { INJ_F = e.target.value; injuriesPage(); };
 }
 
-let ACC = null, PLOG = null;
-async function recordPage() {
-  setNav("record"); document.title = "Model record · NBA Fantasy 2026";
-  app.innerHTML = '<p class="empty">Loading…</p>';
-  let ODDS = null;
-  try {
-    if (!ACC) ACC = await (await fetch("data/accuracy.json", { cache: "no-cache" })).json();
-    if (!PLOG) PLOG = await (await fetch("data/prediction_log.json", { cache: "no-cache" })).json();
-    ODDS = await (await fetch("data/odds.json", { cache: "no-cache" })).json();
-  } catch (e) { if (!ACC) { app.innerHTML = '<p class="empty">The model record isn\'t available yet. It appears after the next data refresh.</p>'; return; } }
-  const O = ACC.overall, W = ACC.weeks.slice().sort((a, b) => b.period - a.period);
-  const pc = x => Math.round(x * 100) + "%";
-  const sk = b => Math.round((0.25 - b) / 0.25 * 100);
-  const skTxt = b => { const x = sk(b); return x >= 0 ? `${x}% better` : `${-x}% worse`; };
-  const MAX = 0.30, pos = b => Math.max(0, Math.min(100, (1 - Math.min(b, MAX) / MAX) * 100));  // 0.30 left → 0.00 right
-  const sc = s => `${Math.max(s[0], s[1])}-${Math.min(s[0], s[1])}${s[2] ? "-" + s[2] : ""}`;
-  const dots = list => `<span class="rc-dots">${list.map(x => `<i class="${x}"></i>`).join("")}</span>`;
-
-  // ---------- hero: the ruler
-  const tick = (v, l) => `<span class="rc-tick" style="left:${pos(v)}%"><em>${l}</em></span>`;
-  const hero = `<section class="rc-hero">
-    <div class="rc-eyebrow">Model report card · ${W.length} finished week${W.length === 1 ? "" : "s"}</div>
-    <div class="rc-big">${skTxt(O.brier)} <span>than guessing</span></div>
-    <div class="rc-sub">Brier score <strong>${O.brier.toFixed(3)}</strong> · picked <strong>${O.called} of ${O.matchups}</strong> winners</div>
-    <div class="rc-ruler">
-      <div class="rc-track"><span class="rc-worse" style="width:${pos(0.25)}%"></span></div>
-      ${tick(0.25, "guessing")}${tick(0.15, "good")}${tick(0.05, "elite")}
-      <span class="rc-me" style="left:${pos(O.brier)}%"></span>
-      <div class="rc-ends"><span>← worse</span><span>better →</span></div>
-    </div>
-  </section>`;
-
-  // ---------- weeks (in progress + finished)
-  let rows = "";
-  const cur = ODDS && PLOG && PLOG[String(ODDS.matchup_period)];
-  if (cur && !W.some(w => w.period === ODDS.matchup_period)) {
-    const ms = cur.matchups.map(m => {
-      const now = ODDS.matchups.find(x => x.home === m.home && x.away === m.away);
-      const favHome = m.p_home >= 0.5, fav = favHome ? m.home : m.away, fp = Math.max(m.p_home, 1 - m.p_home);
-      let st = "lvl", txt = "level";
-      if (now && now.score_now[0] !== now.score_now[1]) {
-        const homeLead = now.score_now[0] > now.score_now[1];
-        st = homeLead === favHome ? "up" : "dn"; txt = (st === "up" ? "favourite ahead " : "underdog ahead ") + sc(now.score_now);
-      }
-      return { st, html: `<div class="rc-m"><i class="${st}"></i><div><b>${esc(fav)}</b> <small>${pc(fp)} to beat ${esc(favHome ? m.away : m.home)}</small><small>Now: ${txt}</small></div></div>` };
-    });
-    rows += `<details class="rc-wk live"><summary><span class="rc-wn">W${ODDS.matchup_period}</span>
-      <span class="rc-mid"><span class="rc-lbl">In progress</span>${dots(ms.map(m => m.st))}</span><span class="rc-val">live</span></summary>
-      <p class="rc-note">Monday's picks vs the score now. Early leads swing a lot. Scored when the week ends.</p>${ms.map(m => m.html).join("")}</details>`;
-  }
-  rows += W.map(w => {
-    const ms = w.matchups.map(m => {
-      const win = m.winner === "TIE" ? "Tied" : (m.winner === "HOME" ? m.home : m.away) + " won";
-      return `<div class="rc-m"><i class="${m.called ? "ok" : "no"}"></i><div><b>${esc(m.fav)}</b> <small>${pc(m.fav_p)} to beat ${esc(m.fav === m.home ? m.away : m.home)}</small><small>${esc(win)} ${sc(m.score)}</small></div></div>`;
-    }).join("");
-    const x = sk(w.brier);
-    const note = w.started ? `<p class="rc-note">Picks were saved after Monday's games had started (a one-off, now fixed), so this week flatters the model slightly.</p>`
-      : w.source === "live" || w.source.startsWith("stored") ? "" : `<p class="rc-note">Picks taken from the first daily post a few days in, so this week flatters the model a little.</p>`;
-    return `<details class="rc-wk"><summary><span class="rc-wn">W${w.period}</span>
-      <span class="rc-mid"><span class="rc-lbl">${w.called} of ${w.n} right · Brier ${w.brier.toFixed(3)}</span>${dots(w.matchups.map(m => m.called ? "ok" : "no"))}</span>
-      <span class="rc-val ${x >= 0 ? "pos" : "neg"}">${x >= 0 ? "+" : "−"}${Math.abs(x)}%</span></summary>${note}${ms}</details>`;
-  }).join("");
-  const asc = W.slice().sort((a, b) => a.period - b.period);
-  const top = Math.max(30, ...asc.map(w => sk(w.brier))), bot = Math.max(10, ...asc.map(w => -sk(w.brier)));
-  const span = top + bot, zero = top / span * 100, seasonY = (top - sk(O.brier)) / span * 100;
-  const bars = asc.map(w => {
-    const x = sk(w.brier), h = Math.abs(x) / span * 100;
-    return `<div class="rc-col"><div class="rc-plot"><span class="rc-b ${x >= 0 ? "up" : "dn"}" style="${x >= 0 ? `bottom:${100 - zero}%` : `top:${zero}%`};height:${h}%"><em>${x >= 0 ? "+" : "−"}${Math.abs(x)}%</em></span></div><span class="rc-x">W${w.period}</span></div>`;
-  }).join("");
-  const chart = `<div class="rc-chart"><div class="rc-cols" style="--z:${zero}%">
-      <span class="rc-zero" style="top:${zero}%"><em>guessing</em></span>
-      <span class="rc-avg" style="top:${seasonY}%"><em>season ${sk(O.brier) >= 0 ? "+" : "−"}${Math.abs(sk(O.brier))}%</em></span>${bars}</div>
-      <p class="rc-cap">Each bar is one week's Brier score turned into % better (green, up) or worse (red, down) than guessing. The dashed line is the season so far.</p></div>`;
-  const weeks = `<section><h2 class="rc-h">Week by week <small>tap a week to see every pick</small></h2>${chart}<div class="rc-list">${rows}</div></section>`;
-
-  // ---------- confidence
-  const all = W.flatMap(w => w.matchups);
-  const bands = [["50–60%", .5, .6], ["60–75%", .6, .75], ["75–90%", .75, .9], ["90%+", .9, 1.01]].map(([l, lo, hi]) => {
-    const g = all.filter(m => m.fav_p >= lo && m.fav_p < hi).sort((a, b) => b.called - a.called);
-    if (!g.length) return "";
-    const won = g.filter(m => m.called).length, exp = g.reduce((t, m) => t + m.fav_p, 0);
-    const [cls, v] = g.length < 4 ? ["", "Too early"] : won > exp + 1 ? ["warn", "Too cautious"] : won < exp - 1 ? ["bad", "Too cocky"] : ["good", "About right"];
-    return `<div class="rc-band"><span class="rc-bl">${l}</span><span>${dots(g.map(m => m.called ? "ok" : "no"))}<small>won ${won} of ${g.length} · expected ${exp.toFixed(1)}</small></span><span class="rc-chip ${cls}">${v}</span></div>`;
-  }).join("");
-  const conf = `<section><h2 class="rc-h">Does it know when it's sure? <small>favourite's chance → how often they won</small></h2><div class="rc-panel">${bands}</div></section>`;
-
-  // ---------- categories
-  const catPending = `<section><h2 class="rc-h">By category <small>which stats the model reads best</small></h2><div class="rc-panel"><p class="rc-cap" style="margin:12px 0">Starts with week 3. The model only began saving its Monday chance for each category this week, so weeks 1 and 2 can't be scored fairly. From next Monday this section ranks all 9 categories, best to worst, by how much better than guessing it calls each one.</p></div></section>`;
-  const cats = !O.categories ? catPending : `<section><h2 class="rc-h">By category <small>${Math.round(O.cat_called)} of ${O.categories} right</small></h2><div class="rc-panel rc-cats">${
-    O.by_category.slice().sort((a, b) => a.brier - b.brier).map(c => `<div class="rc-cat"><b>${esc(c.cat)}</b><span class="rc-bar"><i style="width:${pos(c.brier)}%"></i><u style="left:${pos(0.25)}%"></u></span><small>${skTxt(c.brier)}</small></div>`).join("")}</div></section>`;
-
-  // ---------- how it works (one drawer)
-  const how = `<details class="rc-how"><summary>How this works</summary><div class="explain">
-    <h3>The model, in five steps</h3>
-    <ol><li><strong>How good is each player?</strong> Their per-game averages in all 9 categories, mixed with last season early on so one hot week doesn't fool it.</li>
-      <li><strong>How many games?</strong> The real NBA schedule. Healthy players play about 93% of games; injured players count as out until their projected return.</li>
-      <li><strong>Who starts?</strong> It assumes every manager sets their best lineup each day.</li>
-      <li><strong>Play the week 1,000 times</strong> with real-game randomness. Win 700 of the runs and that's a 70% chance.</li>
-      <li><strong>Odds</strong> are that % turned into bookie prices, just for fun.</li></ol>
-    <h3>The Brier score</h3>
-    <p>Counting right picks treats a lucky 51% call the same as a 95% "lock". The Brier score rewards being <strong>confident and right</strong> and punishes being <strong>confident and wrong</strong>.</p>
-    <p>For each matchup, take the chance the model gave the team that won, see how far short of 100% it was, and square it. That's the penalty:</p>
-    <table class="cats"><tr><th>Model gave the winner</th><th>Penalty</th></tr>
-      <tr><td>95%</td><td class="pos">0.00</td></tr><tr><td>80%</td><td class="pos">0.04</td></tr><tr><td>50%</td><td>0.25</td></tr>
-      <tr><td>20% (backed the loser)</td><td class="neg">0.64</td></tr><tr><td>5% (backed the loser hard)</td><td class="neg">0.90</td></tr></table>
-    <p>The score is the average penalty, so <strong>lower is better</strong>. One confident miss costs as much as about 20 decent calls.</p>
-    <h3>Why guessing scores 0.25</h3>
-    <p>"Guessing" means saying 50/50 for every matchup. Whoever wins, that's 0.50 short of 100%, and 0.50 × 0.50 = 0.25. Every time. That's the line to beat.</p>
-    <p><strong>% better than guessing = (0.25 − score) ÷ 0.25.</strong> So 0.10 is 60% better, 0.15 is 40% better, 0.20 is 20% better, and anything over 0.25 is worse than guessing.</p>
-  </div></details>`;
-
-  app.innerHTML = `<div class="rc">${hero}${weeks}${conf}${cats}${how}</div>`;
-}
-
+// ---------------------------------------------------------------- trades
 let TR = null;
 function tradeChart(series, A, B) {
-  // each team's matchup wins added since the trade, day by day (series: [date, margin, winsA, winsB])
-  if (!series || !series.length || series[0].length < 4) return "";
-  const pts = [[null, 0, 0, 0], ...series], n = pts.length - 1;
-  const big = Math.max(0.005, ...pts.map(p => Math.max(Math.abs(p[2]), Math.abs(p[3]))));
-  const step = [0.005, 0.01, 0.02, 0.025, 0.05, 0.1, 0.2, 0.25, 0.5, 1].find(s => s * 2 >= big) || 1;
-  const lim = step * 2 * 1.08;
+  // series: [[date, A's points lead], ...] since the trade
+  if (!series || !series.length) return "";
+  const pts = [[null, 0], ...series], n = pts.length - 1;
+  const step = niceStep(Math.max(10, ...pts.map(p => Math.abs(p[1])))), lim = step * 2 * 1.08;
   const W = 600, H = 132, X = i => i / n * W, Y = v => (1 - (v + lim) / (2 * lim)) * H, pct = y => (y + 2) / (H + 4) * 100;
-  const path = k => pts.map((p, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(p[k]).toFixed(1)).join(" ");
-  const sg = x => (x > 0 ? "+" : x < 0 ? "−" : "") + Math.abs(x).toFixed(Math.abs(x) >= 0.1 || step >= 0.05 ? 2 : 3).replace(/^0\./, ".");
-  const fd = x => new Date(x + "T12:00:00").toLocaleDateString("en-AU", { day: "numeric", month: "short" });
-  const ticks = [-2, -1, 0, 1, 2].map(k => `<span class="tc-y" style="top:${pct(Y(k * step))}%">${k ? sg(k * step) : "0"}</span>`).join("");
+  const path = pts.map((p, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(p[1]).toFixed(1)).join(" ");
+  const area = `${path} L${W} ${Y(0)} L0 ${Y(0)} Z`, id = "t" + Math.random().toString(36).slice(2, 8);
+  const ticks = [-2, -1, 0, 1, 2].map(k => `<span class="tc-y" style="top:${pct(Y(k * step))}%">${k ? sgn(k * step) : "0"}</span>`).join("");
   const grid = [-2, -1, 1, 2].map(k => `<line x1="0" x2="${W}" y1="${Y(k * step)}" y2="${Y(k * step)}" class="wp-grid" vector-effect="non-scaling-stroke"/>`).join("");
-  // end labels: nudge apart if they'd overlap
-  let ya = pct(Y(pts[n][2])), yb = pct(Y(pts[n][3]));
-  if (Math.abs(ya - yb) < 13) { const m = (ya + yb) / 2, d = ya <= yb ? -6.5 : 6.5; ya = m + d; yb = m - d; }
-  const data = esc(JSON.stringify(pts.map((p, i) => [X(i) / W * 100, p[0], p[2], p[3]])));
+  const end = pts[n][1], data = esc(JSON.stringify(pts.map((p, i) => [X(i) / W * 100, p[0], p[1]])));
   return `<div class="wp tc" data-p="${data}" data-a="${esc(A)}" data-b="${esc(B)}">
     <div class="tc-wrap"><div class="tc-axis">${ticks}</div><div class="wp-plot" style="height:136px">
       <svg viewBox="0 -2 ${W} ${H + 4}" preserveAspectRatio="none" style="height:136px">${grid}
+        <defs><clipPath id="${id}a"><rect x="0" y="-2" width="${W}" height="${Y(0) + 2}"/></clipPath><clipPath id="${id}b"><rect x="0" y="${Y(0)}" width="${W}" height="${H}"/></clipPath></defs>
         <line x1="0" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" class="wp-mid"/>
-        <path d="${path(3)}" class="tc-b" vector-effect="non-scaling-stroke"/>
-        <path d="${path(2)}" class="tc-a" vector-effect="non-scaling-stroke"/>
+        <path d="${area}" class="mg-pos" clip-path="url(#${id}a)"/><path d="${area}" class="mg-neg" clip-path="url(#${id}b)"/>
+        <path d="${path}" class="wp-line" vector-effect="non-scaling-stroke"/>
         <line class="wp-cur" x1="0" x2="0" y1="0" y2="${H}" style="display:none" vector-effect="non-scaling-stroke"/></svg>
-      <span class="wp-dot a" style="left:100%;top:${pct(Y(pts[n][3]))}%"></span><span class="wp-dot" style="left:100%;top:${pct(Y(pts[n][2]))}%"></span>
-      <span class="tc-end ka ${pts[n][2] >= 0 ? "pos" : "neg"}" style="top:${ya}%">${sg(pts[n][2])}</span>
-      <span class="tc-end kb ${pts[n][3] >= 0 ? "pos" : "neg"}" style="top:${yb}%">${sg(pts[n][3])}</span>
+      <span class="wp-dot${end < 0 ? " a" : ""}" style="left:100%;top:${pct(Y(end))}%"></span>
+      <span class="tc-end ${end >= 0 ? "ka" : "kb"}" style="top:${pct(Y(end))}%">${sgn(end)}</span>
       <div class="wp-tip"></div></div></div>
-    <div class="tc-dates"><span>Trade</span><span>${fd(series[n - 1][0])}</span></div>
-    <div class="tc-key"><span class="ka">${esc(A)}</span><span class="kb">${esc(B)}</span><span class="kn">wins added · tap for any day</span></div></div>`;
+    <div class="tc-dates"><span>Trade</span><span>${day(series[n - 1][0])}</span></div>
+    <div class="tc-key"><span class="ka">${esc(A)} ahead ↑</span><span class="kb">${esc(B)} ahead ↓</span><span class="kn">points margin · tap for any day</span></div></div>`;
 }
 function wireTradeCharts() {
   app.querySelectorAll(".tc").forEach(el => {
     const P = JSON.parse(el.dataset.p), plot = el.querySelector(".wp-plot"), cur = el.querySelector(".wp-cur"), tip = el.querySelector(".wp-tip");
-    const f = x => `<span class="${x > 0.0005 ? "pos" : x < -0.0005 ? "neg" : ""}">${(x >= 0 ? "+" : "−") + Math.abs(x).toFixed(3)}</span>`;
     const show = e => {
       const r = plot.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 100;
       const p = P.reduce((a, b) => Math.abs(b[0] - x) < Math.abs(a[0] - x) ? b : a);
       cur.setAttribute("x1", p[0] * 6); cur.setAttribute("x2", p[0] * 6); cur.style.display = "";
-      const day = p[1] ? new Date(p[1] + "T12:00:00").toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short" }) : "Trade day";
-      tip.innerHTML = `<b>${day}</b><br>${esc(el.dataset.a)} ${f(p[2])}<br>${esc(el.dataset.b)} ${f(p[3])}`;
+      const when = p[1] ? new Date(p[1] + "T12:00:00").toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short" }) : "Trade day";
+      const lead = p[2] > 0 ? el.dataset.a : p[2] < 0 ? el.dataset.b : null;
+      tip.innerHTML = `<b>${when}</b><br>${lead ? `${esc(short(lead))} +${f1(Math.abs(p[2]))}` : "Level"}`;
       tip.style.left = Math.min(Math.max(p[0], 22), 78) + "%"; tip.style.opacity = 1;
     };
     plot.addEventListener("pointermove", show); plot.addEventListener("pointerdown", show);
@@ -803,69 +611,108 @@ function wireTradeCharts() {
 async function tradesPage() {
   setNav("trades"); document.title = "Trades · NBA Fantasy 2026";
   app.innerHTML = '<p class="empty">Loading…</p>';
-  try { if (!TR) TR = await (await fetch("data/trades.json", { cache: "no-cache" })).json(); }
-  catch (e) { app.innerHTML = '<p class="empty">The trade tracker isn\'t available yet. It appears after the next data refresh.</p>'; return; }
+  try { if (!TR) TR = await getJSON("data/trades.json"); }
+  catch (e) { app.innerHTML = '<p class="empty">The trade tracker isn\'t available yet.</p>'; return; }
   const T = TR.trades;
   if (!T.length) { app.innerHTML = '<p class="empty">No trades yet. Somebody get on the phone.</p>'; return; }
-  const sg = x => x == null ? "–" : (x >= 0 ? "+" : "−") + Math.abs(x).toFixed(3);
-  const cls = x => x == null ? "" : x > 0.0005 ? "pos" : x < -0.0005 ? "neg" : "";
   const when = iso => new Date(iso).toLocaleDateString("en-AU", { day: "numeric", month: "short" });
-  const gets = (t, team) => t.gets[team].map(esc).join(" + ");
-
+  const gcls = g => !g ? "early" : g[0] === "A" ? "a" : g[0] === "B" ? "b" : g[0] === "C" ? "c" : "d";
   const cards = T.map(t => {
-    const [A, B] = Object.keys(t.gets).sort(), F = t.so_far;
-    const head = (mid) => `<div class="mu-head"><div class="mu-team">${esc(A)}<small>${gets(t, A)}</small></div>${mid}<div class="mu-team r">${esc(B)}<small>${gets(t, B)}</small></div></div>`;
-    if (!F) {
-      const at = t.at_time ? `<div class="mu-odds"><span><strong class="${cls(t.at_time[A])}">${sg(t.at_time[A])}</strong> expected</span><span>expected <strong class="${cls(t.at_time[B])}">${sg(t.at_time[B])}</strong></span></div>` : "";
-      return `<div class="card tr"><div class="tr-meta">${when(t.accepted_utc)} · in league review</div>${head('<div class="mu-score tr-pend">vs</div>')}${at}</div>`;
-    }
-    const [w, l, d] = F.score, g = F.grade, wa = F.wins_added || {};
-    const total = Math.max(w + l, 1);
-    const gr = x => x === "Too early" ? "" : ` · <b>${esc(x)}</b>`;
-    const rows = F.cats.map(c => { const f = v => v == null ? "–" : c.cat.includes("%") ? v.toFixed(3).replace(/^0/, "") : Math.round(v);
-      return `<tr><td>${c.cat}</td><td class="${c.res === 1 ? "win" : ""}">${f(c.got)}</td><td class="${c.res === -1 ? "win" : ""}">${f(c.gave)}</td></tr>`; }).join("");
-    const row = (label, o, strong) => o ? `<tr><td>${label}</td><td class="${cls(o[A])}">${strong ? "<strong>" : ""}${sg(o[A])}${strong ? "</strong>" : ""}</td><td class="${cls(o[B])}">${strong ? "<strong>" : ""}${sg(o[B])}${strong ? "</strong>" : ""}</td></tr>` : "";
-    const early = Math.min(...Object.values(F.games)) < 12 ? " · early days" : "";
-    return `<div class="card tr"><div class="tr-meta">${when(t.accepted_utc)} · ${F.days} day${F.days === 1 ? "" : "s"}${early}</div>
-      ${head(`<div class="mu-score">${w}-${l}${d ? `<small>-${d}</small>` : ""}</div>`)}
-      <div class="bar"><i style="width:${w / total * 100}%"></i><b style="width:${l / total * 100}%"></b></div>
-      <div class="mu-odds"><span><strong class="${cls(wa[A])}">${sg(wa[A])}</strong> wins${gr(g[A])}</span><span>${gr(g[B]).replace(" · ", "")}${g[B] === "Too early" ? "" : " · "}wins <strong class="${cls(wa[B])}">${sg(wa[B])}</strong></span></div>
+    const [A, B] = t.teams, F = t.so_far, mA = F.margin[A];
+    const gets = team => t.gets[team].map(esc).join(" + ");
+    const grade = team => `<span class="tr-grade ${gcls(F.grade[team])}">${F.grade[team] ? esc(F.grade[team]) : "Too early"}</span>`;
+    const plist = team => F.players[team].map(p => `<div class="pl">${esc(p.name)}<span>${p.games} starts</span><b>${f1(p.fpts)}</b></div>`).join("")
+      + (F.fa_credit[team] ? `<div class="pl">Average free agent (open roster spot)<span>credit</span><b>${f1(F.fa_credit[team])}</b></div>` : "");
+    const mrow = (label, o, key) => o ? `<tr><td>${label}</td><td class="${cls(o[A] && o[A][key], 0.005)}">${o[A] ? sgn(o[A][key], key === "exp_wins" ? 2 : 0) : "–"}</td><td class="${cls(o[B] && o[B][key], 0.005)}">${o[B] ? sgn(o[B][key], key === "exp_wins" ? 2 : 0) : "–"}</td></tr>` : "";
+    const nowNote = t.now_frozen ? `<p class="note">Not every player is still where the trade sent him, so the "from today" view is frozen and the running score stops counting a player once he leaves.</p>` : "";
+    return `<div class="card tr"><div class="tr-meta">${when(t.processed_utc)} · ${F.days} day${F.days === 1 ? "" : "s"} since</div>
+      <div class="tr-head"><div class="tr-side"><div class="tr-team">${esc(A)}</div><div class="tr-gets">gets ${gets(A)}</div>${grade(A)}</div>
+        <div class="tr-mid"><div class="tr-score">${f0(F.points[A])}–${f0(F.points[B])}</div><div class="tr-lead">${mA > 0 ? esc(short(A)) + " +" + f0(mA) : mA < 0 ? esc(short(B)) + " +" + f0(-mA) : "level"}</div></div>
+        <div class="tr-side"><div class="tr-team">${esc(B)}</div><div class="tr-gets">gets ${gets(B)}</div>${grade(B)}</div></div>
       ${tradeChart(F.series, A, B)}
       <details><summary>Details</summary>
-        <table class="cats"><tr><th>Since ${when(F.from + "T12:00:00")}</th><th>${esc(short(A))}</th><th>${esc(short(B))}</th></tr>
-          <tr><td>Games started</td><td>${F.games[A]}</td><td>${F.games[B]}</td></tr>${rows}</table>
-        <table class="cats" style="margin-top:14px"><tr><th>Matchup wins</th><th>${esc(short(A))}</th><th>${esc(short(B))}</th></tr>
-          ${row("Added so far", wa, true)}${row(`Expected at the time${t.post ? ` · <a href="#/${esc(t.post)}">review</a>` : ""}`, t.at_time)}${row(t.now_frozen ? "Expected from today (frozen)" : "Expected from today", t.now)}</table>
+        <p class="note" style="margin:10px 0 4px"><b>${esc(A)}</b> received</p>${plist(A)}
+        <p class="note" style="margin:12px 0 4px"><b>${esc(B)}</b> received</p>${plist(B)}
+        <table class="cats" style="margin-top:14px"><tr><th>Model</th><th>${esc(short(A))}</th><th>${esc(short(B))}</th></tr>
+          ${mrow("Expected wins, at the time", t.at_time, "exp_wins")}${mrow("FPTS a week, at the time", t.at_time, "weekly_points")}
+          ${mrow("Expected wins, from today", t.now, "exp_wins")}${mrow("FPTS a week, from today", t.now, "weekly_points")}</table>
+        ${t.at_time_source ? `<p class="note">At the time: ${esc(t.at_time_source)}.</p>` : `<p class="note">No model view from the time of the trade: it happened before the tracker started and the players have since moved.</p>`}
+        ${nowNote}${t.post ? `<p class="note"><a href="#/${esc(t.post)}">Read the trade review →</a></p>` : ""}
       </details></div>`;
   }).join("");
-
   const how = `<details class="rc-how"><summary>How this works</summary><div class="explain">
-    <p><strong>The score</strong> treats each trade as a matchup between the two hauls: one team's new players against the other's, across all 9 categories. Only games a player started for his new team count, and he stops counting if he's dropped or traded on.</p>
-    <p><strong>Wins</strong> is how many matchup wins the trade has actually been worth to each team so far. It weighs each category by how much it moves that team's real chances, so stats a team didn't need barely count. That's why the score and the wins can disagree.</p>
-    <p><strong>Grades</strong> come from wins added per week and appear once both sides have 12 games.</p>
-    <p><strong>The chart</strong> tracks each team's wins added, day by day since the trade. Both lines start at 0; the one climbing is the team winning the trade.</p>
-    <p><strong>Details</strong> has the stats behind it, plus what the model expected when the trade happened and what it expects from today on.</p></div></details>`;
+    <p><strong>The score</strong> is the fantasy points each team's new players have scored <em>in its starting lineup</em> since the day after the trade. Bench games don't count, and a player stops counting once he's dropped or traded on.</p>
+    <p><strong>Uneven trades</strong> (say 2-for-1): the team getting fewer players frees up a roster spot, so it gets credited with an average free agent in that spot: ${f1(TR.fa_points_per_game)} FPTS a game (the best ${TR.fa_pool} available free agents right now) on the ~48% of days an NBA team plays, ${f1(TR.fa_points_per_day)} a day.</p>
+    <p><strong>Grades</strong> come from the points margin per week and appear after a week.</p>
+    <p><strong>The chart</strong> is the running points margin, day by day: above the line the first team is winning the trade, below it the second.</p></div></details>`;
   app.innerHTML = `<p class="updated">Every trade this season and who's actually winning it · updated ${esc(ago(TR.updated_utc))}.</p>${cards}${how}`;
   wireTradeCharts();
 }
 
-function route() {
-  const slug = decodeURIComponent(location.hash.replace(/^#\/?/, ""));
-  if (slug === "odds") return oddsPage();
-  if (slug === "ladder") return ladderPage();
-  if (slug === "dawg") return dawgPage();
-  if (slug === "trade") return tradePage();
-  if (slug === "stats") return statsPage();
-  if (slug === "injuries") return injuriesPage();
-  if (slug === "record") return recordPage();
-  if (slug === "trades") return tradesPage();
-  setNav("posts");
-  slug ? show(slug) : home();
+// ---------------------------------------------------------------- model record
+async function recordPage() {
+  setNav("record"); document.title = "Model record · NBA Fantasy 2026";
+  app.innerHTML = '<p class="empty">Loading…</p>';
+  let O = null;
+  try { ACC = await getJSON("data/accuracy.json"); } catch (e) { app.innerHTML = '<p class="empty">The model record isn\'t available yet.</p>'; return; }
+  try { O = await getJSON("data/odds.json"); } catch (e) {}
+  const S = ACC.summary, pc = x => Math.round(x) + "%";
+  const sk = b => Math.round((0.25 - b) / 0.25 * 100);
+  const MAX = 0.30, pos = b => Math.max(0, Math.min(100, (1 - Math.min(b, MAX) / MAX) * 100));
+  const tick = (v, l) => `<span class="rc-tick" style="left:${pos(v)}%"><em>${l}</em></span>`;
+  const scored = ACC.weeks.filter(w => w.opening && w.finished);
+  const hero = S ? `<section class="rc-hero">
+      <div class="rc-eyebrow">Model report card · ${scored.length} finished week${scored.length === 1 ? "" : "s"}</div>
+      <div class="rc-big">${sk(S.brier) >= 0 ? sk(S.brier) + "% better" : -sk(S.brier) + "% worse"} <span>than guessing</span></div>
+      <div class="rc-sub">Brier <strong>${S.brier.toFixed(3)}</strong> · picked <strong>${S.called} of ${S.callable}</strong> winners</div>
+      <div class="rc-ruler"><div class="rc-track"><span class="rc-worse" style="width:${pos(0.25)}%"></span></div>
+        ${tick(0.25, "guessing")}${tick(0.15, "good")}${tick(0.05, "elite")}<span class="rc-me" style="left:${pos(S.brier)}%"></span>
+        <div class="rc-ends"><span>← worse</span><span>better →</span></div></div></section>
+    <div class="kpis"><div class="kpi"><b>${f1(S.avg_miss_points)}</b><span>average miss on a team's weekly points</span></div>
+      <div class="kpi"><b class="${cls(S.bias_points, 5)}">${sgn(S.bias_points, 1)}</b><span>bias (+ = teams beat their projection)</span></div>
+      <div class="kpi"><b>${pc(100 * S.in_range / S.matchups)}</b><span>final margins inside the 80% range (target 80%)</span></div></div>`
+    : `<section class="rc-hero"><div class="rc-eyebrow">Model report card</div><div class="rc-big">Starts week ${(O && O.matchup_period + 1) || "next"} <span>first Monday forecast</span></div>
+       <div class="rc-sub">The model is graded on the forecast it makes each Monday before a ball is bounced. The site started mid-week, so this week's first forecast already knew some scores and doesn't count. Next Monday's will.</div></section>`;
+  const cal = S && S.calibration.length ? `<section><h2 class="rc-h">Does it know when it's sure? <small>favourite's chance → how often they won</small></h2><div class="rc-panel">${
+    S.calibration.map(c => { const mid = +c.bucket.split("-")[0] + 5, [k, v] = c.n < 4 ? ["", "Too early"] : c.fav_won_pct > mid + 10 ? ["warn", "Too cautious"] : c.fav_won_pct < mid - 10 ? ["bad", "Too cocky"] : ["good", "About right"];
+      return `<div class="rc-band"><span class="rc-bl">${esc(c.bucket)}</span><span>won ${c.fav_won_pct}% of ${c.n}<small>expected about ${mid}%</small></span><span class="rc-chip ${k}">${v}</span></div>`; }).join("")}</div></section>` : "";
+  const weekRow = w => {
+    const done = w.matchups.filter(m => m.actual);
+    const dots = `<span class="rc-dots">${w.matchups.map(m => `<i class="${!m.actual ? "lvl" : m.called ? "ok" : "no"}"></i>`).join("")}</span>`;
+    const ms = w.matchups.map(m => {
+      const fh = m.home_win_pct >= 50, fav = fh ? m.home : m.away, fp = Math.max(m.home_win_pct, 100 - m.home_win_pct);
+      const res = m.actual ? `Final ${f1(m.actual[0])}–${f1(m.actual[1])} · projected ${f0(m.proj[0])}–${f0(m.proj[1])} · margin ${m.in_range ? "inside" : "outside"} the 80% range` : `Projected ${f0(m.proj[0])}–${f0(m.proj[1])}`;
+      return `<div class="rc-m"><i class="${!m.actual ? "lvl" : m.called ? "ok" : "no"}"></i><div><b>${esc(fav)}</b> <small>${fp}% to beat ${esc(fh ? m.away : m.home)}</small><small>${res}</small></div></div>`;
+    }).join("");
+    const label = !w.finished ? "In progress" : `${done.filter(m => m.called).length} of ${done.length} right`;
+    const note = w.opening ? "" : `<p class="rc-note">First forecast was saved mid-week, after games had started, so this week isn't scored.</p>`;
+    return `<details class="rc-wk${w.finished ? "" : " live"}"><summary><span class="rc-wn">W${w.week}</span><span class="rc-mid"><span class="rc-lbl">${label}</span>${dots}</span><span class="rc-val">${w.finished ? "" : "live"}</span></summary>${note}${ms}</details>`;
+  };
+  const weeks = ACC.weeks.length ? `<section><h2 class="rc-h">Week by week <small>tap a week to see every pick</small></h2><div class="rc-list">${ACC.weeks.slice().reverse().map(weekRow).join("")}</div></section>` : "";
+  const how = `<details class="rc-how"><summary>How this works</summary><div class="explain">
+    <h3>The model, in five steps</h3>
+    <ol><li><strong>How good is each player?</strong> Fantasy points per game, using the league's own scoring. Early in the season it's mixed with ESPN's projection so one hot week doesn't fool it.</li>
+      <li><strong>How many games?</strong> The real NBA schedule. Healthy players play about 93% of games; injured players count as out until their projected return date, then healthy.</li>
+      <li><strong>Who starts?</strong> Every manager is assumed to set their best lineup each day, within the 10 starting slots, so a crowded night wastes games.</li>
+      <li><strong>Play the week 1,000 times</strong> with real-game randomness. Win 700 of the runs and that's a 70% chance; the middle 80% of the margins is the 80% range.</li>
+      <li><strong>Odds</strong> are that % turned into bookie prices, just for fun.</li></ol>
+    <h3>What it's graded on</h3>
+    <p><strong>Brier score:</strong> for each matchup, how far short of 100% the model's chance for the eventual winner was, squared. Lower is better and saying 50/50 every time scores 0.25, so that's the line to beat. A confident miss costs far more than a cautious one.</p>
+    <p><strong>Average miss:</strong> how far a team's final weekly points were from the Monday projection. <strong>Bias:</strong> whether it keeps projecting too high or too low.</p>
+    <p><strong>80% range:</strong> about 8 in 10 final margins should land inside it. Much fewer means the model is overconfident; many more means it's too cautious.</p></div></details>`;
+  app.innerHTML = `<div class="rc">${hero}${cal}${weeks}${how}</div>`;
 }
 
+// ---------------------------------------------------------------- router
+function route() {
+  const slug = decodeURIComponent(location.hash.replace(/^#\/?/, ""));
+  const pages = { odds: oddsPage, ladder: ladderPage, trade: tradePage, injuries: injuriesPage, record: recordPage, trades: tradesPage };
+  if (pages[slug]) return pages[slug]();
+  slug ? show(slug) : home();
+}
 fetch("posts/index.json", { cache: "no-cache" })
   .then(r => r.json()).then(j => { posts = j; route(); })
-  .catch(() => { app.innerHTML = '<p class="empty">Couldn\'t load posts.</p>'; });
+  .catch(() => { posts = []; route(); });
 window.addEventListener("hashchange", route);
 </script>
 </body>

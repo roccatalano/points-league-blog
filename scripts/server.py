@@ -45,7 +45,11 @@ def _get(views, params=None, headers=None, url=BASE):
     if r.status_code in (301, 302, 401, 403):
         raise RuntimeError(f"ESPN returned {r.status_code}. Your espn_s2/SWID cookies are probably missing or expired.")
     r.raise_for_status()
-    return r.json()
+    j = r.json()
+    for t in j.get("teams", []) if isinstance(j, dict) else []:
+        if isinstance(t.get("name"), str):
+            t["name"] = " ".join(t["name"].split())  # ESPN names can carry stray spaces
+    return j
 
 
 def _stats(player, split="season"):
@@ -611,11 +615,16 @@ def _weekly_dist(players, games_per_player=3.4, cap=38.0):
             break
         used += g
         f = _fp(p["rates"])
-        # per game: shared form swing + independent stat noise (same shape as the day-by-day sim)
-        vg = (FORM_SD * f) ** 2 + sum(w * w * 0.81 * max(0.0, p["rates"].get(k, 0)) for k, w in SCORING.items())
+        vg = _game_var(p["rates"])
         mean += g * f
         var += g * vg + 0.5 * f * f  # per-game noise + games-played noise
     return {"FP": mean}, {"FP": var}
+
+
+def _game_var(r):
+    """Variance of one game's fantasy points: shared form swing + independent stat noise
+    (same shape as the day-by-day simulator)."""
+    return (FORM_SD * _fp(r)) ** 2 + sum(w * w * 0.81 * max(0.0, r.get(k, 0)) for k, w in SCORING.items())
 
 
 def _cat_probs(da, db):

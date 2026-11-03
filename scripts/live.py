@@ -97,6 +97,8 @@ def league(d, names, live_pairs):
 
 
 def model(d, names):
+    from trades import fa_level
+    fa_fpg = fa_level()
     weeks = S._remaining_weeks(d)
     teams = []
     for t in d["teams"]:
@@ -105,12 +107,14 @@ def model(d, names):
                       "players": [{"name": p["name"], "status": p["status"], "slot": p["slot"],
                                    "avail": round(S._avail(p), 3), "ret": p["ret"].isoformat() if p.get("ret") else None,
                                    "fp": round(S._fp(p["rates"]), 2) if p["rates"] else None,
+                                   "vg": round(S._game_var(p["rates"]), 1) if p["rates"] else None,
                                    "pg": S._per_game(p["rates"]) if p["rates"] else None}
                                   for p in pl]})
     fixtures = [{"week": m["matchupPeriodId"], "home": m["home"]["teamId"], "away": m["away"]["teamId"]}
                 for m in d["schedule"] if m["matchupPeriodId"] in weeks and m.get("away")]
     return {"weeks": [weeks[0], weeks[-1]], "teams": teams, "fixtures": fixtures,
             "scoring": {S.CN.get(k, k): v for k, v in S.SCORING.items()},
+            "fa_fpg": fa_fpg,
             "consts": {"VAR_SCALE": S.VAR_SCALE, "FORM_SD": S.FORM_SD, "GAIN_CALIBRATION": S.GAIN_CALIBRATION,
                        "GAMES_PER_PLAYER": 3.4, "CAP": 38.0}}
 

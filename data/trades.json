@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-03T05:35:46+00:00",
+ "updated_utc": "2026-11-03T05:43:27+00:00",
  "fa_points_per_game": 24.5,
  "fa_points_per_day": 11.76,
  "fa_pool": 10,
@@ -22,7 +22,7 @@
    },
    "at_time": null,
    "at_time_source": null,
-   "post": null,
+   "post": "2026-10-20-trade",
    "so_far": {
     "from": "2026-10-21",
     "days": 13,

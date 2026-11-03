@@ -1,7 +1,7 @@
-"""Pull today's league data for the blog post. Writes data/latest.json.
+"""Pull the data for a blog post. Writes data/latest.json for Claude to write from (see WRITING.md).
 
-Usage: python scripts/fetch.py daily|weekly
-Needs ESPN_S2 and ESPN_SWID in the environment (GitHub secrets).
+Usage: python scripts/fetch.py daily|weekly|trade
+Trade reviews come from data/trades.json (scripts/trades.py runs first); each trade is reviewed once.
 """
 import json, os, sys, logging
 from datetime import datetime, timedelta, timezone
@@ -12,21 +12,7 @@ sys.path.insert(0, HERE)
 logging.disable(logging.CRITICAL)
 import server as S  # noqa: E402
 
-# Players with no NBA team (unsigned) can't play: count them as OUT everywhere.
-_team_players_orig = S._team_players
-
-
-def _team_players(team_id, d=None):
-    name, players = _team_players_orig(team_id, d)
-    for p in players:
-        if not p.get("pro"):
-            p["status"] = "OUT"
-    return name, players
-
-
-S._team_players = _team_players
-
-TRADES_SEEN = os.path.join(HERE, "blog_trades_seen_v2.json")
+REVIEWED = os.path.join(HERE, "blog_trades_reviewed.json")
 
 
 def _load(path, default):
@@ -37,105 +23,42 @@ def _load(path, default):
         return default
 
 
-def _brief(p):
-    """Name, injury status and the per-game rates the model uses."""
-    r = p.get("rates") or {}
-    pg = {S.CN[k]: round(v, 1) for k, v in r.items() if k in S.CN and S.CN[k] not in ("FG%", "FT%")}
-    if r.get(14):
-        pg["FG%"] = round(r[13] / r[14], 3)
-    if r.get(16):
-        pg["FT%"] = round(r[15] / r[16], 3)
-    return {"name": p["name"], "injury": p["status"], "model_per_game": pg}
-
-
-def trade_reviews():
-    """Find trades not yet reviewed and score both sides with the model."""
-    seen = set(_load(TRADES_SEEN, []))
-    tx = json.loads(S.get_recent_transactions(limit=60))
-    d = S._get(["mRoster", "mTeam", "mSettings", "mStatus", "mMatchup"])
-    weeks = S._remaining_weeks(d)
-    names = {t["id"]: t.get("name") for t in d["teams"]}
-    ids = {v: k for k, v in names.items()}
-    rosters = {t["id"]: S._team_players(t["id"], d)[1] for t in d["teams"]}
+def trade_reviews(mark=True):
+    """Trades in data/trades.json that haven't had a post yet, with the model's view and each
+    player's per-game numbers."""
+    seen = set(_load(REVIEWED, []))
+    tr = _load(os.path.join(ROOT, "data", "trades.json"), {"trades": []})
+    model = _load(os.path.join(ROOT, "data", "model.json"), {"teams": []})
+    by_name = {p["name"]: p for t in model["teams"] for p in t["players"]}
     out = []
-    for entry in tx:
-        moves = [m for m in entry["moves"] if m["action"] == "traded"]
-        if not moves:
+    for t in tr["trades"]:
+        if t["key"] in seen:
             continue
-        key = entry["date"] + "|" + "|".join(sorted(m["player"] for m in moves))
-        if key in seen:
-            continue
-        teams = sorted({m["team"] for m in moves})
-        if len(teams) != 2 or any(t not in ids for t in teams):
-            continue
-        a, b = ids[teams[0]], ids[teams[1]]
-        # ESPN logs each traded player under the team RECEIVING him.
-        gets = {a: [m["player"] for m in moves if m["team"] == teams[0]],
-                b: [m["player"] for m in moves if m["team"] == teams[1]]}
-
-        def find(name):
-            for tid, pl in rosters.items():
-                for p in pl:
-                    if (p["name"] or "") == name:
-                        return tid, p
-            return None, None
-
-        objs = {}
-        ok = True
-        for side in (a, b):
-            for n in gets[side]:
-                tid, p = find(n)
-                if p is None:
-                    ok = False
-                objs[n] = (tid, p)
-        if not ok:
-            continue
-        processed = all(objs[n][0] == side for side in (a, b) for n in gets[side])
-        other = {a: b, b: a}
-        result = {"date_utc": entry["date"],
-                  "status": "processed" if processed else "accepted, in league review (players not moved yet)",
-                  "sides": []}
-        for side in (a, b):
-            get_p = [objs[n][1] for n in gets[side]]
-            give_p = [objs[n][1] for n in gets[other[side]]]
-            cur = rosters[side]
-            if processed:
-                after = cur
-                before = [p for p in cur if p not in get_p] + give_p
-            else:
-                before = cur
-                after = [p for p in cur if p not in give_p] + get_p
-            bv, _ = S._fixture_value(before, d, side, weeks)
-            av, _ = S._fixture_value(after, d, side, weeks)
-            league = {t: S._weekly_dist(rosters[t]) for t in rosters if t != side}
-
-            def prof(pl):
-                md = S._weekly_dist(pl)
-                pr = [S._cat_probs(md, od) for od in league.values()]
-                return {S.CN[k]: sum(p[k] for p in pr) / len(pr) for k in S.CATS}
-            pb, pa = prof(before), prof(after)
-            result["sides"].append({
-                "team": names[side],
-                "gets": [_brief(p) | {"on_fantasy_team_now": names.get(objs[p["name"]][0])} for p in get_p],
-                "gives": [_brief(p) for p in give_p],
-                "expected_wins_change_rest_of_season": round((av - bv) * S.GAIN_CALIBRATION, 3),
-                "category_win_rate_change_vs_league": {k: round(pa[k] - pb[k], 3) for k in pb if abs(pa[k] - pb[k]) >= 0.005},
-            })
-        result["weeks_counted"] = f"{weeks[0]}-{weeks[-1]}"
-        out.append(result)
-        seen.add(key)
-    with open(TRADES_SEEN, "w") as f:
-        json.dump(sorted(seen), f, indent=1)
+        def brief(n):
+            p = by_name.get(n) or {}
+            return {"name": n, "fpts_per_game": p.get("fp"), "per_game": p.get("pg"), "injury": p.get("status")}
+        A, B = t["teams"]
+        out.append({"processed_utc": t["processed_utc"], "status": "processed",
+                    "sides": [{"team": s, "gets": [brief(n) for n in t["gets"][s]],
+                               "gives": [brief(n) for n in t["gets"][o]],
+                               "model_rest_of_season": (t.get("now") or t.get("at_time") or {}).get(s)}
+                              for s, o in ((A, B), (B, A))],
+                    "so_far": {k: t["so_far"][k] for k in ("days", "points", "margin", "players", "fa_credit")},
+                    "avg_free_agent_fpts_per_game": tr.get("fa_points_per_game")})
+        seen.add(t["key"])
+    if mark:
+        with open(REVIEWED, "w") as f:
+            json.dump(sorted(seen), f, indent=1)
     return out
 
 
 def main():
     kind = sys.argv[1] if len(sys.argv) > 1 else "daily"
-    now_mel = datetime.now(timezone.utc) + timedelta(hours=11)
+    now_mel = datetime.now(S.MEL)
     data = {"kind": kind, "generated_utc": datetime.now(timezone.utc).isoformat(),
-            "date_melbourne_approx": now_mel.strftime("%Y-%m-%d")}
+            "date_melbourne_approx": now_mel.strftime("%Y-%m-%d"),
+            "league": {"format": "head-to-head points", "scoring": {S.CN.get(k, k): v for k, v in S.SCORING.items()}}}
     out_path = os.path.join(ROOT, "data", "latest.json")
-    os.makedirs(os.path.join(ROOT, "data"), exist_ok=True)
     if kind == "weekly":
         data["weekly"] = json.loads(S.weekly_post_data())
     elif kind == "trade":
@@ -151,7 +74,7 @@ def main():
         inj = _load(os.path.join(ROOT, "data", "injuries.json"), {})
         data["injury_report"] = [
             {k: x.get(k) for k in ("name", "nba_team", "fantasy_team", "on_ir", "status", "injury",
-                                   "return_date", "games_missed", "timeframe", "note")}
+                                   "return_date", "games_missed", "timeframe", "note", "per_game")}
             for x in inj.get("players", []) if x.get("fantasy_team")]
     with open(out_path, "w") as f:
         json.dump(data, f, indent=1, default=str)

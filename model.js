@@ -1,4 +1,5 @@
-// Port of the expected-wins model in scripts/server.py (_weekly_dist, _cat_probs, _match_win, _fixture_value).
+// Port of the points model in scripts/server.py (_weekly_dist, _cat_probs, _fixture_value) for the
+// trade calculator. Each player carries fp (fantasy points per game) and vg (variance of one game).
 (function (root) {
   function erf(x) { // Abramowitz-Stegun 7.1.26
     const s = x < 0 ? -1 : 1; x = Math.abs(x);
@@ -7,47 +8,26 @@
     return s * y;
   }
   function make(M) {
-    const C = M.consts, KEYS = C.KEYS, CATS = C.CATS, PP = C.PLAY_PROB;
-    const pp = s => (s in PP ? PP[s] : 0.8);
-    // season availability incl. injury return date (server.py _avail); falls back to status for old data
-    const av = p => (typeof p.avail === "number" ? p.avail : pp(p.status));
-    const value = r => r ? (r["0"] + 1.2 * r["6"] + 1.5 * r["3"] + 3 * r["2"] + 3 * r["1"] + r["17"] - r["11"]) : 0;
-    function weeklyDist(players, gpp = 3.4, cap = 38) {
-      const ps = players.filter(p => p.rates && av(p) > 0)
-        .sort((a, b) => value(b.rates) - value(a.rates));
-      const mean = {}, vr = {}; KEYS.forEach(k => { mean[k] = 0; vr[k] = 0; });
-      let used = 0;
+    const C = M.consts;
+    const av = p => (typeof p.avail === "number" ? p.avail : 0.9);
+    const fp = p => p.fp || 0;
+    // weekly fantasy points of a roster: best players first, ~10 starters x 3.4 games of capacity
+    function weeklyDist(players) {
+      const ps = players.filter(p => p.fp != null && av(p) > 0).sort((a, b) => fp(b) - fp(a));
+      let mean = 0, vr = 0, used = 0;
       for (const p of ps) {
-        const g = Math.min(gpp * av(p), Math.max(0, cap - used));
+        const g = Math.min(C.GAMES_PER_PLAYER * av(p), Math.max(0, C.CAP - used));
         if (g <= 0) break;
         used += g;
-        for (const k of KEYS) { const m = p.rates[k] || 0; mean[k] += g * m; vr[k] += g * (0.8 * m + 0.07 * m * m) + 0.5 * m * m; }
+        mean += g * fp(p);
+        vr += g * (p.vg || (C.FORM_SD * fp(p)) ** 2 + 2 * fp(p)) + 0.5 * fp(p) * fp(p);
       }
       return [mean, vr];
     }
-    function catProbs(da, db) {
-      const [ma, va] = da, [mb, vb] = db, out = {}, VS = C.VAR_SCALE;
-      for (const k of CATS.slice(0, 7)) {
-        const sd = Math.sqrt(VS * (va[k] + vb[k])) || 1, z = (ma[k] - mb[k]) / sd;
-        out[k] = 0.5 * (1 + erf((k === "11" ? -z : z) / Math.SQRT2));
-      }
-      for (const [k, mk, ak] of [["19", "13", "14"], ["20", "15", "16"]]) {
-        if (!ma[ak] || !mb[ak]) { out[k] = 0.5; continue; }
-        const pa = ma[mk] / ma[ak], pb = mb[mk] / mb[ak];
-        const sd = Math.sqrt(pa * (1 - pa) / ma[ak] * 3 * VS + pb * (1 - pb) / mb[ak] * 3 * VS) || 1;
-        out[k] = 0.5 * (1 + erf((pa - pb) / sd / Math.SQRT2));
-      }
-      return out;
-    }
-    function matchWin(probs) {
-      let dist = [1];
-      for (const p of Object.values(probs)) {
-        const nd = new Array(dist.length + 1).fill(0);
-        dist.forEach((x, i) => { nd[i] += x * (1 - p); nd[i + 1] += x * p; });
-        dist = nd;
-      }
-      return dist.slice(5).reduce((a, b) => a + b, 0);
-    }
+    const winProb = (da, db) => {
+      const sd = Math.sqrt(C.VAR_SCALE * (da[1] + db[1])) || 1;
+      return 0.5 * (1 + erf((da[0] - db[0]) / sd / Math.SQRT2));
+    };
     const rosterOf = id => M.teams.find(t => t.id === id).players;
     function fixtureValue(tid, rosters) {
       const mine = weeklyDist(rosters[tid] || rosterOf(tid));
@@ -55,49 +35,42 @@
       for (const f of M.fixtures) {
         if (f.home !== tid && f.away !== tid) continue;
         const o = f.home === tid ? f.away : f.home;
-        exp += matchWin(catProbs(mine, weeklyDist(rosters[o] || rosterOf(o))));
+        exp += winProb(mine, weeklyDist(rosters[o] || rosterOf(o)));
       }
       return exp;
     }
-    function profile(tid, players, rosters) {
-      const md = weeklyDist(players), acc = {}; CATS.forEach(k => acc[k] = 0);
-      const others = M.teams.filter(t => t.id !== tid);
-      for (const t of others) { const pr = catProbs(md, weeklyDist(rosters[t.id] || t.players)); CATS.forEach(k => acc[k] += pr[k] / others.length); }
-      return acc;
-    }
-    const REPL = C.REPLACEMENT || { "0": 8.0, "6": 3.5, "3": 1.8, "2": 0.7, "1": 0.4, "17": 0.9, "11": 1.0, "13": 3.1, "14": 7.0, "15": 1.0, "16": 1.3 };
+    const FA = { name: "Free agent", status: "ACTIVE", slot: 0, avail: 0.93, fp: M.fa_fpg || 20, vg: null };
     const active = r => r.filter(p => p.slot !== 13).length;  // IR spots don't count toward the roster limit
     // Uneven trades: the team that ends up with too many players drops its least valuable one;
-    // the team left with an open spot picks up a replacement-level free agent.
+    // the team left with an open spot picks up an average free agent.
     function balance(before, after, protect) {
       const r = after.slice(), moves = { drops: [], adds: 0 };
       while (active(r) > active(before)) {
         const cands = r.filter(p => p.slot !== 13 && !protect.includes(p));
         const pool = cands.length ? cands : r.filter(p => p.slot !== 13);
-        const worst = pool.reduce((x, y) => (av(y) * value(y.rates) < av(x) * value(x.rates) ? y : x));
+        const worst = pool.reduce((x, y) => (av(y) * fp(y) < av(x) * fp(x) ? y : x));
         r.splice(r.indexOf(worst), 1); moves.drops.push(worst.name);
       }
-      while (active(r) < active(before)) { r.push({ name: "Free agent", status: "ACTIVE", slot: 0, rates: REPL }); moves.adds++; }
+      while (active(r) < active(before)) { r.push(Object.assign({}, FA)); moves.adds++; }
       return [r, moves];
     }
     // give = names leaving team a, get = names leaving team b
-    function evaluate(a, b, giveNames, getNames, opts = {}) {
+    function evaluate(a, b, giveNames, getNames) {
       const ra = rosterOf(a), rb = rosterOf(b);
       const give = ra.filter(p => giveNames.includes(p.name)), get = rb.filter(p => getNames.includes(p.name));
-      let na = ra.filter(p => !give.includes(p)).concat(get), nb = rb.filter(p => !get.includes(p)).concat(give);
-      let ma = { drops: [], adds: 0 }, mb = { drops: [], adds: 0 };
-      if (!opts.noBalance) { [na, ma] = balance(ra, na, get); [nb, mb] = balance(rb, nb, give); }
-      const after = opts.originalOpponents ? {} : { [a]: na, [b]: nb };
+      let [na, ma] = balance(ra, ra.filter(p => !give.includes(p)).concat(get), get);
+      let [nb, mb] = balance(rb, rb.filter(p => !get.includes(p)).concat(give), give);
+      const after = { [a]: na, [b]: nb };
       const side = (tid, before, aft) => {
         const bv = fixtureValue(tid, { [tid]: before });
-        const av = fixtureValue(tid, Object.assign({}, after, { [tid]: aft }));
-        const pb = profile(tid, before, {}), pa = profile(tid, aft, after);
-        const cats = {}; CATS.forEach(k => cats[C.CN[k]] = pa[k] - pb[k]);
-        return { change: (av - bv) * C.GAIN_CALIBRATION, cats };
+        const avv = fixtureValue(tid, Object.assign({}, after, { [tid]: aft }));
+        return { change: (avv - bv) * C.GAIN_CALIBRATION,
+                 weekly: weeklyDist(aft)[0] - weeklyDist(before)[0],   // fantasy points per week
+                 per_game_in: get.concat(give).length ? null : null };
       };
       return { a: Object.assign(side(a, ra, na), { moves: ma }), b: Object.assign(side(b, rb, nb), { moves: mb }) };
     }
-    return { evaluate, weeklyDist, catProbs, matchWin, fixtureValue };
+    return { evaluate, weeklyDist, winProb, fixtureValue };
   }
   root.LeagueModel = { make };
   if (typeof module !== "undefined") module.exports = { make };
