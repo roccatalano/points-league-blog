@@ -461,7 +461,12 @@ async function ladderPage() {
   const pc = x => x >= 1 || x === 0 ? Math.round(x) + "%" : x.toFixed(1) + "%";
   const k1 = x => (x / 1000).toFixed(1) + "k";
   // change in a chance since yesterday, in percentage points
-  const chg = x => !x || Math.abs(x) < 0.05 ? "" : `<small class="${x > 0 ? "up" : "down"}">${x > 0 ? "▲" : "▼"}${Math.abs(x) >= 10 ? Math.round(Math.abs(x)) : Math.abs(x).toFixed(1)}</small>`;
+  // change since yesterday; bad = true flips the colours (more points against is bad news)
+  const chg = (x, d, bad) => {
+    if (!x || Math.abs(x) < (d === 0 ? 1 : 0.05)) return "";
+    const good = bad ? x < 0 : x > 0, v = Math.abs(x);
+    return `<small class="${good ? "up" : "down"}">${x > 0 ? "▲" : "▼"}${d === 0 ? Math.round(v) : v >= 10 ? Math.round(v) : v.toFixed(1)}</small>`;
+  };
   const seg = `<div class="seg">${[["ladder", "Ladder"], ["power", "Power rankings"]].map(([k, l]) => `<button type="button" data-s="${k}" class="${k === sort ? "on" : ""}">${l}</button>`).join("")}</div>`;
   let head, rows, how;
   if (sort === "ladder") {
@@ -474,9 +479,9 @@ async function ladderPage() {
     const list = L.ladder.slice().sort((a, b) => a.power_rank - b.power_rank);
     head = `<tr><th>#</th><th>Team</th><th>Wins</th><th>PF</th><th>PA</th><th>Finals</th><th>Title</th></tr>`;
     rows = list.map((r, i) => `<tr class="${i === L.finals_teams - 1 ? "cut" : ""}"><td>${r.power_rank}</td><td><span class="tm">${esc(r.team)}</span>${r.power_move ? `<small>${mv(r.power_move)} since yesterday</small>` : ""}</td>
-      <td><b>${r.proj_w.toFixed(1)}</b></td><td>${k1(r.proj_pf)}</td><td>${k1(r.proj_pa)}</td><td>${pc(r.finals_pct)}${chg(r.finals_move)}</td><td>${pc(r.title_pct)}${chg(r.title_move)}</td></tr>`).join("");
+      <td><b>${r.proj_w.toFixed(1)}</b>${chg(r.proj_w_move, 1)}</td><td>${k1(r.proj_pf)}${chg(r.proj_pf_move, 0)}</td><td>${k1(r.proj_pa)}${chg(r.proj_pa_move, 0, true)}</td><td>${pc(r.finals_pct)}${chg(r.finals_move)}</td><td>${pc(r.title_pct)}${chg(r.title_move)}</td></tr>`).join("");
     how = `<p>Every column is a <strong>projection for the end of the regular season</strong>. Teams are ranked by <strong>projected wins</strong> at the end of the ${L.weeks}-week regular season: current record plus the model's forecast for every remaining matchup, from ${L.sims.toLocaleString()} simulated seasons. Arrows show movement over the last day.</p>
-      <p><strong>PF / PA</strong> are projected season totals of fantasy points for and against: finished weeks, this week's live projection, then a typical week for each remaining fixture. <strong>Finals</strong> is the chance of finishing top ${L.finals_teams}; <strong>Title</strong> is the chance of winning the championship (the finals bracket is simulated too). Green and red arrows show how much each chance has moved since yesterday, in percentage points.</p>`;
+      <p><strong>PF / PA</strong> are projected season totals of fantasy points for and against: finished weeks, this week's live projection, then a typical week for each remaining fixture. <strong>Finals</strong> is the chance of finishing top ${L.finals_teams}; <strong>Title</strong> is the chance of winning the championship (the finals bracket is simulated too). Arrows show the change since yesterday: wins in wins, PF and PA in fantasy points, Finals and Title in percentage points. Green is good news, red is bad, so more projected points <em>against</em> shows red.</p>`;
   }
   app.innerHTML = `${seg}<div class="card ld scroll"><table class="ladder${sort === "power" ? " pw" : ""}">${head}${rows}</table></div>
     <details class="rc-how"><summary>What the columns mean</summary><div class="explain">${how}</div></details>

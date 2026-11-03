@@ -154,7 +154,10 @@ def main():
         hist = []
     hist.append({"t": stamp, "title": {r["team"]: r["title_pct"] for r in lg["ladder"]},
                  "finals": {r["team"]: r["finals_pct"] for r in lg["ladder"]},
-                 "power": {r["team"]: r["power_rank"] for r in lg["ladder"]}})
+                 "power": {r["team"]: r["power_rank"] for r in lg["ladder"]},
+                 "proj_w": {r["team"]: r["proj_w"] for r in lg["ladder"]},
+                 "proj_pf": {r["team"]: r["proj_pf"] for r in lg["ladder"]},
+                 "proj_pa": {r["team"]: r["proj_pa"] for r in lg["ladder"]}})
     hist = hist[-64:]
     now_ts = datetime.fromisoformat(stamp).timestamp()
     old = [h for h in hist if now_ts - datetime.fromisoformat(h["t"]).timestamp() >= 20 * 3600]
@@ -163,6 +166,8 @@ def main():
         r["title_move"] = round(r["title_pct"] - ref["title"].get(r["team"], r["title_pct"]), 1)
         r["finals_move"] = round(r["finals_pct"] - ref["finals"].get(r["team"], r["finals_pct"]), 1)
         r["power_move"] = (ref.get("power") or {}).get(r["team"], r["power_rank"]) - r["power_rank"]  # + = climbed
+        for k, nd in (("proj_w", 1), ("proj_pf", 0), ("proj_pa", 0)):
+            r[k + "_move"] = round(r[k] - (ref.get(k) or {}).get(r["team"], r[k]), nd)
     lg["moves_since_utc"] = ref["t"]
     lg["history"] = hist
     for name, obj in (("league", lg), ("odds", o), ("model", m)):
