@@ -1,9 +1,124 @@
 {
- "updated_utc": "2026-11-03T06:35:38+00:00",
+ "updated_utc": "2026-11-03T06:38:25+00:00",
  "fa_points_per_game": 24.5,
  "fa_points_per_day": 11.76,
  "fa_pool": 10,
  "trades": [
+  {
+   "key": "roster:2026-10-30:4871145-5093267-5203685-6442",
+   "accepted_utc": "2026-10-30T04:00:00+00:00",
+   "processed_utc": "2026-10-30T04:00:00+00:00",
+   "teams": [
+    "Joseph's Scary Team",
+    "coachcainzey"
+   ],
+   "gets": {
+    "Joseph's Scary Team": [
+     "Collin Murray-Boyles",
+     "Kyrie Irving"
+    ],
+    "coachcainzey": [
+     "Khaman Maluach",
+     "Josh Giddey"
+    ]
+   },
+   "at_time": {
+    "Joseph's Scary Team": {
+     "exp_wins": 0.2,
+     "weekly_points": 12.8
+    },
+    "coachcainzey": {
+     "exp_wins": -0.14,
+     "weekly_points": -10.6
+    }
+   },
+   "at_time_source": "model on 2026-11-03 (trade made before the tracker started)",
+   "post": "2026-10-30-trade",
+   "so_far": {
+    "from": "2026-10-30",
+    "days": 3,
+    "points": {
+     "Joseph's Scary Team": 103.0,
+     "coachcainzey": 33.0
+    },
+    "margin": {
+     "Joseph's Scary Team": 70.0,
+     "coachcainzey": -70.0
+    },
+    "per_week": {
+     "Joseph's Scary Team": 163.3,
+     "coachcainzey": -163.3
+    },
+    "games": {
+     "Joseph's Scary Team": 3,
+     "coachcainzey": 2
+    },
+    "fa_credit": {},
+    "players": {
+     "Joseph's Scary Team": [
+      {
+       "name": "Collin Murray-Boyles",
+       "games": 2,
+       "fpts": 40.0
+      },
+      {
+       "name": "Kyrie Irving",
+       "games": 1,
+       "fpts": 63.0
+      }
+     ],
+     "coachcainzey": [
+      {
+       "name": "Khaman Maluach",
+       "games": 1,
+       "fpts": 13.0
+      },
+      {
+       "name": "Josh Giddey",
+       "games": 1,
+       "fpts": 20.0
+      }
+     ]
+    },
+    "series": [
+     [
+      "2026-10-30",
+      55.0
+     ],
+     [
+      "2026-10-31",
+      55.0
+     ],
+     [
+      "2026-11-01",
+      70.0
+     ]
+    ],
+    "grade": {
+     "Joseph's Scary Team": null,
+     "coachcainzey": null
+    }
+   },
+   "now": {
+    "date": "2026-11-03",
+    "Joseph's Scary Team": {
+     "exp_wins": 0.2,
+     "weekly_points": 12.8
+    },
+    "coachcainzey": {
+     "exp_wins": -0.14,
+     "weekly_points": -10.6
+    }
+   },
+   "now_frozen": false,
+   "now_history": [
+    [
+     "2026-11-03",
+     0.2,
+     -0.14
+    ]
+   ]
+  },
   {
    "key": "6e762812-5a9b-450a-86f2-0b5e6cfe8ca0",
    "accepted_utc": "2026-10-20T10:01:03.386000+00:00",

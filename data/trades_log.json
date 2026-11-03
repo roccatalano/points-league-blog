@@ -11,6 +11,21 @@
    },
    "accepted_utc": "2026-10-20T10:01:03.386000+00:00",
    "processed_utc": "2026-10-20T10:01:03.412000+00:00"
+  },
+  "roster:2026-10-30:4871145-5093267-5203685-6442": {
+   "gets": {
+    "9": [
+     5203685,
+     4871145
+    ],
+    "16": [
+     5093267,
+     6442
+    ]
+   },
+   "accepted_utc": "2026-10-30T04:00:00+00:00",
+   "processed_utc": "2026-10-30T04:00:00+00:00",
+   "source": "daily rosters"
   }
  },
  "_scanned_full": true,
@@ -958,5 +973,38 @@
    "date_utc": "2026-11-02T04:37:57.870000+00:00"
   }
  },
- "_scanned_full_v2": true
+ "_scanned_full_v2": true,
+ "roster:2026-10-30:4871145-5093267-5203685-6442": {
+  "first_seen": "2026-11-03",
+  "history": [
+   [
+    "2026-11-03",
+    0.2,
+    -0.14
+   ]
+  ],
+  "at_time": {
+   "Joseph's Scary Team": {
+    "exp_wins": 0.2,
+    "weekly_points": 12.8
+   },
+   "coachcainzey": {
+    "exp_wins": -0.14,
+    "weekly_points": -10.6
+   }
+  },
+  "at_time_source": "model on 2026-11-03 (trade made before the tracker started)",
+  "now": {
+   "date": "2026-11-03",
+   "Joseph's Scary Team": {
+    "exp_wins": 0.2,
+    "weekly_points": 12.8
+   },
+   "coachcainzey": {
+    "exp_wins": -0.14,
+    "weekly_points": -10.6
+   }
+  },
+  "post": "2026-10-30-trade"
+ }
 }

@@ -111,6 +111,36 @@ def scan_trades(d, log):
     return known
 
 
+def infer_from_rosters(days, known, log):
+    """Trades ESPN logs without a player list: players moving straight from one fantasy team to another on
+    the same day, in both directions, between the same two teams."""
+    adds = log.get("_adds", {}).values()
+    prev, moves = {}, {}
+    for sp in sorted(days, key=int):
+        date = days[sp]["date"]
+        for pid, x in days[sp]["p"].items():
+            if pid in prev and prev[pid][0] != x[0]:
+                a, b = prev[pid][0], x[0]
+                claimed = any(ad["player"] == int(pid) and ad["team"] == b and abs(
+                    (datetime.fromisoformat(ad["date_utc"]).astimezone(S.ET).date() - datetime.fromisoformat(date).date()).days) <= 3
+                    for ad in adds)
+                if not claimed:
+                    moves.setdefault((date, frozenset((a, b))), []).append((int(pid), a, b))
+            prev[pid] = x
+    have = {frozenset(p for lst in t["gets"].values() for p in lst) for t in known.values()}
+    for (date, pair), mv in moves.items():
+        if len(pair) != 2 or len({a for _, a, _ in mv}) != 2:
+            continue  # need players going both ways
+        gets = {}
+        for pid, a, b in mv:
+            gets.setdefault(str(b), []).append(pid)
+        if frozenset(p for _, p, _ in [(0, pid, 0) for pid, _, _ in mv]) in have:
+            continue
+        stamp = datetime.combine(datetime.fromisoformat(date).date(), datetime.min.time(), S.ET).astimezone(timezone.utc).isoformat()
+        known[f"roster:{date}:{'-'.join(sorted(str(p) for p, _, _ in mv))}"] = {
+            "gets": gets, "accepted_utc": stamp, "processed_utc": stamp, "source": "daily rosters"}
+
+
 def fa_level():
     """Average free agent's fantasy points per game (best FA_POOL available, 3+ games or a projection)."""
     vals = []
@@ -259,6 +289,7 @@ def main():
     days = player_days(d)
     log = load(LOG, {})
     known = scan_trades(d, log)
+    infer_from_rosters(days, known, log)
     fpg = fa_level()
     fa_day = round(fpg * TEAM_PLAY_SHARE, 2)
     today = str(datetime.now(S.ET).date())
