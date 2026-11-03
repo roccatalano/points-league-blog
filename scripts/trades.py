@@ -191,7 +191,7 @@ def pickups(log, days, names, pool_names):
     out.sort(key=lambda x: -x["fpts"])
     best_ids = {(x["player"], x["team"]) for x in out[:10]}
     worst = sorted([x for x in out if x["starts"] >= 3 and (x["player"], x["team"]) not in best_ids], key=lambda x: x["per_start"])
-    return {"count": len(out), "best": out[:10], "worst": worst[:10],
+    return {"count": len(out), "best": out[:10], "worst": worst[:10], "all": out,
             "by_team": sorted(({"team": t, "pickups": sum(1 for x in out if x["team"] == t),
                                 "fpts": round(sum(x["fpts"] for x in out if x["team"] == t), 1),
                                 "faab": sum(x["bid"] for x in out if x["team"] == t)} for t in names.values()),

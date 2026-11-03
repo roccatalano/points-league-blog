@@ -290,6 +290,8 @@
   .rk-y { position: absolute; left: 0; transform: translateY(-50%); font-size: 10.5px; color: var(--muted); }
   .rk-lbl { position: absolute; left: 8px; transform: translateY(-50%); font-size: 10.5px; font-weight: 700; white-space: nowrap; cursor: pointer; line-height: 1; }
   .rk-lbl.off { opacity: .3; }
+  th.srt { cursor: pointer; user-select: none; } th.srt.on { color: var(--accent); }
+  .ladder.pk td small { white-space: normal; }
   footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
   .pts { font-family: "Archivo Black", Inter, sans-serif; font-size: 22px; text-align: center; white-space: nowrap; line-height: 1.1; }
   .pts small { display: block; font-family: Inter, sans-serif; font-size: 11.5px; font-weight: 600; color: var(--muted); margin-top: 3px; }
@@ -606,7 +608,7 @@ async function injuriesPage() {
 }
 
 // ---------------------------------------------------------------- trades
-let TR = null;
+let TR = null, PICK_SORT = { best: "fpts", worst: "per_start" };
 function tradeChart(series, A, B) {
   // series: [[date, A's points lead], ...] since the trade
   if (!series || !series.length) return "";
@@ -654,10 +656,20 @@ async function tradesPage() {
   try { if (!TR) TR = await getJSON("data/trades.json"); }
   catch (e) { app.innerHTML = '<p class="empty">The trade tracker isn\'t available yet.</p>'; return; }
   const T = TR.trades, PK = TR.pickups;
-  const pickRow = (x, i) => `<div class="pl"><span style="color:var(--ink)"><b>${i + 1}. ${esc(x.player)}</b><br><small style="color:var(--muted)">${esc(x.team)} · ${esc(x.type)}${x.bid ? ` · $${x.bid}` : ""} · added ${day(x.date)}</small></span><span>${x.starts} start${x.starts === 1 ? "" : "s"}${x.per_start != null ? `<br><small>${f1(x.per_start)} a start</small>` : ""}</span><b>${f1(x.fpts)}</b></div>`;
-  const waiver = PK && PK.count ? `<h2 class="rc-h" style="margin-top:26px">Waiver wire <small>${PK.count} pickups this season · fantasy points in the starting lineup since the add</small></h2>
-    <div class="grp">Best pickups</div><div class="card">${PK.best.map(pickRow).join("")}</div>
-    ${PK.worst.length ? `<div class="grp">Worst pickups <span style="text-transform:none;letter-spacing:0;font-weight:600">· fewest points a start, 3+ starts</span></div><div class="card">${PK.worst.map(pickRow).join("")}</div>` : ""}
+  const COLS = [["starts", "Starts"], ["per_start", "Per start"], ["fpts", "Total"]];
+  const pickTable = (kind) => {
+    const col = PICK_SORT[kind], best = kind === "best";
+    const pool = PK.all.filter(x => best && col !== "per_start" ? x.starts > 0 : x.starts >= 3);  // per start needs 3+ starts
+    const v = x => x[col] ?? 0;
+    const list = pool.slice().sort((a, b) => best ? v(b) - v(a) || b.fpts - a.fpts : v(a) - v(b) || a.fpts - b.fpts).slice(0, 10);
+    const th = COLS.map(([k, l]) => `<th class="srt${k === col ? " on" : ""}" data-k="${kind}" data-c="${k}">${l}${k === col ? (best ? " ▼" : " ▲") : ""}</th>`).join("");
+    const rows = list.map((x, i) => `<tr><td>${i + 1}</td><td><span class="tm">${esc(x.player)}</span><small>${esc(x.team)} · ${esc(x.type)}${x.bid ? ` · $${x.bid}` : ""} · added ${day(x.date)}</small></td>
+      <td>${x.starts}</td><td>${f1(x.per_start)}</td><td>${f1(x.fpts)}</td></tr>`).join("");
+    return `<div class="card ld scroll"><table class="ladder pk"><tr><th>#</th><th>Player</th>${th}</tr>${rows}</table></div>`;
+  };
+  const waiver = PK && PK.count ? `<h2 class="rc-h" style="margin-top:26px">Waiver wire <small>${PK.count} pickups this season · fantasy points in the starting lineup since the add · tap a column to sort</small></h2>
+    <div class="grp">Best pickups${PICK_SORT.best === "per_start" ? ' <span style="text-transform:none;letter-spacing:0;font-weight:600">· 3+ starts</span>' : ""}</div>${pickTable("best")}
+    <div class="grp">Worst pickups <span style="text-transform:none;letter-spacing:0;font-weight:600">· 3+ starts</span></div>${pickTable("worst")}
     <div class="grp">By team</div><div class="card scroll"><table class="ladder"><tr><th>#</th><th>Team</th><th>Adds</th><th>Points</th><th>FAAB</th></tr>${
       PK.by_team.map((r, i) => `<tr><td>${i + 1}</td><td><span class="tm">${esc(r.team)}</span></td><td>${r.pickups}</td><td>${f0(r.fpts)}</td><td>$${r.faab}</td></tr>`).join("")}</table></div>
     <p class="note">A pickup counts from the day after he's added until he's dropped or traded, and only games he started. "Points" by team = everything its pickups have scored for it.</p>` : "";
@@ -693,6 +705,7 @@ async function tradesPage() {
     <p><strong>The chart</strong> is the running points margin, day by day: above the line the first team is winning the trade, below it the second.</p></div></details>`;
   app.innerHTML = `<p class="updated">Every trade and pickup this season, and who's actually winning them · updated ${esc(ago(TR.updated_utc))}.</p>
     <h2 class="rc-h">Trades <small>${T.length} this season</small></h2>${T.length ? cards + how : '<p class="empty">No trades yet. Somebody get on the phone.</p>'}${waiver}`;
+  app.querySelectorAll("th.srt").forEach(th => th.onclick = () => { const y = scrollY; PICK_SORT[th.dataset.k] = th.dataset.c; tradesPage().then(() => scrollTo(0, y)); });
   wireTradeCharts();
 }
 
