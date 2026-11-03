@@ -281,6 +281,7 @@
   .ld-facts b { color: var(--ink); }
   .ladder.pw { font-size: 12.5px; } .ladder.pw td small { font-size: 10.5px; } .ld .ladder.pw td, .ld .ladder.pw th { padding-left: 2px; padding-right: 2px; } .ladder.pw td:nth-child(2) { overflow-wrap: anywhere; font-size: 12px; } .ladder.pw th { font-size: 10.5px; letter-spacing: 0; }
   .ld { padding: 6px 10px; }
+  .ladder small.up, .ladder .up { color: #2f9e44; } .ladder small.down, .ladder .down { color: #e03131; }
   footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
   .pts { font-family: "Archivo Black", Inter, sans-serif; font-size: 22px; text-align: center; white-space: nowrap; line-height: 1.1; }
   .pts small { display: block; font-family: Inter, sans-serif; font-size: 11.5px; font-weight: 600; color: var(--muted); margin-top: 3px; }
@@ -473,7 +474,7 @@ async function ladderPage() {
     const list = L.ladder.slice().sort((a, b) => a.power_rank - b.power_rank);
     head = `<tr><th>#</th><th>Team</th><th>Wins</th><th>PF</th><th>PA</th><th>Finals</th><th>Title</th></tr>`;
     rows = list.map((r, i) => `<tr class="${i === L.finals_teams - 1 ? "cut" : ""}"><td>${r.power_rank}</td><td><span class="tm">${esc(r.team)}</span>${r.power_move ? `<small>${mv(r.power_move)} since yesterday</small>` : ""}</td>
-      <td><b>${r.proj_w.toFixed(1)}</b></td><td>${k1(r.proj_pf)}</td><td>${k1(r.proj_pa)}</td><td>${pc(r.finals_pct)}${chg(r.finals_move)}</td><td><b>${pc(r.title_pct)}</b>${chg(r.title_move)}</td></tr>`).join("");
+      <td><b>${r.proj_w.toFixed(1)}</b></td><td>${k1(r.proj_pf)}</td><td>${k1(r.proj_pa)}</td><td>${pc(r.finals_pct)}${chg(r.finals_move)}</td><td>${pc(r.title_pct)}${chg(r.title_move)}</td></tr>`).join("");
     how = `<p>Every column is a <strong>projection for the end of the regular season</strong>. Teams are ranked by <strong>projected wins</strong> at the end of the ${L.weeks}-week regular season: current record plus the model's forecast for every remaining matchup, from ${L.sims.toLocaleString()} simulated seasons. Arrows show movement over the last day.</p>
       <p><strong>PF / PA</strong> are projected season totals of fantasy points for and against: finished weeks, this week's live projection, then a typical week for each remaining fixture. <strong>Finals</strong> is the chance of finishing top ${L.finals_teams}; <strong>Title</strong> is the chance of winning the championship (the finals bracket is simulated too). Green and red arrows show how much each chance has moved since yesterday, in percentage points.</p>`;
   }
