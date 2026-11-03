@@ -448,7 +448,7 @@ async function oddsPage() {
         <div class="bar"><i style="width:${m.home_win_pct}%"></i><b style="width:${m.away_win_pct}%"></b></div>
         <div class="mu-odds"><span><strong>${m.home_win_pct}%</strong> · $${m.price_home.toFixed(2)}</span><span>$${m.price_away.toFixed(2)} · <strong>${m.away_win_pct}%</strong></span></div>
         <div class="mu-sub"><span>Proj <b>${f0(m.proj_final[0])}</b> · ${m.games_left[0]} games left</span><span>${m.games_left[1]} games left · <b>${f0(m.proj_final[1])}</b> proj</span></div>
-        <p class="note" style="margin:8px 0 0">${esc(lead)} by <b>${Math.round(Math.abs(m.proj_margin))}</b> projected · 80% range ${esc(short(m.home))} ${sgn(m.margin_80[0])} to ${sgn(m.margin_80[1])}</p>
+        <p class="note" style="margin:8px 0 0">${esc(lead)} by <b>${Math.round(Math.abs(m.proj_margin))}</b> projected</p>
         ${marginChart(H[m.home + "|" + m.away], m.home, m.away)}</div>`;
     }).join("");
     app.innerHTML = `${tabs}<p class="updated">Week ${o.matchup_period} · updated ${esc(ago(o.updated_utc))} · refreshes every 30 minutes. Win % comes from simulating the rest of the week 1,000 times (real NBA schedule, best lineup each day, injuries). The chart tracks the <b>projected final margin</b>: above the line the home team is ahead, below it the away team; the grey band is the 80% range. Tap it for any moment.</p>${cards}`;
