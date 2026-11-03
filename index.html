@@ -610,7 +610,7 @@ async function injuriesPage() {
 }
 
 // ---------------------------------------------------------------- trades
-let TR = null, PICK_SORT = { best: "fpts", worst: "per_start" };
+let TR = null, PICK_SORT = { best: "fpts", drop: "fpts" };
 function tradeChart(series, A, B) {
   // series: [[date, A's points lead], ...] since the trade
   if (!series || !series.length) return "";
@@ -670,12 +670,23 @@ async function tradesPage() {
     const seg = `<div class="seg pks">${COLS.map(([k, l]) => `<button type="button" class="${k === col ? "on" : ""}" data-k="${kind}" data-c="${k}">${l}</button>`).join("")}</div>`;
     return `${seg}<div class="card ld scroll"><table class="ladder pk c-${col}"><tr><th>#</th><th>Player</th>${th}</tr>${rows}</table></div>`;
   };
+  const DR = TR.drops;
+  const DCOLS = [["games", "Games"], ["per_game", "Per game"], ["fpts", "Total"]];
+  const dropTable = () => {
+    const col = PICK_SORT.drop, v = x => x[col] ?? 0;
+    const list = DR.all.filter(x => col === "per_game" ? x.games >= 3 : x.games > 0).sort((a, b) => v(b) - v(a) || b.fpts - a.fpts).slice(0, 10);
+    const th = DCOLS.map(([k, l]) => `<th class="srt${k === col ? " on" : ""}" data-k="drop" data-c="${k}">${l}${k === col ? " ▼" : ""}</th>`).join("");
+    const rows = list.map((x, i) => `<tr><td>${i + 1}</td><td><span class="tm">${esc(x.player)}</span><small>dropped by ${esc(x.team)} ${day(x.date)} · now ${esc(x.now)}</small></td>
+      <td>${x.games}</td><td>${f1(x.per_game)}</td><td>${f1(x.fpts)}</td></tr>`).join("");
+    const seg = `<div class="seg pks">${DCOLS.map(([k, l]) => `<button type="button" class="${k === col ? "on" : ""}" data-k="drop" data-c="${k}">${l}</button>`).join("")}</div>`;
+    return `${seg}<div class="card ld scroll"><table class="ladder pk c-${col === "games" ? "starts" : col === "per_game" ? "per_start" : "fpts"}"><tr><th>#</th><th>Player</th>${th}</tr>${rows}</table></div>`;
+  };
   const waiver = PK && PK.count ? `<h2 class="rc-h" style="margin-top:26px">Waiver wire <small>${PK.count} pickups this season · fantasy points in the starting lineup since the add · tap the buttons or a column to sort</small></h2>
     <div class="grp">Best pickups${PICK_SORT.best === "per_start" ? ' <span style="text-transform:none;letter-spacing:0;font-weight:600">· 3+ starts</span>' : ""}</div>${pickTable("best")}
-    <div class="grp">Worst pickups <span style="text-transform:none;letter-spacing:0;font-weight:600">· 3+ starts</span></div>${pickTable("worst")}
+    ${DR && DR.count ? `<div class="grp">Worst drops <span style="text-transform:none;letter-spacing:0;font-weight:600">· what he's scored since, for anyone${PICK_SORT.drop === "per_game" ? " · 3+ games" : ""}</span></div>${dropTable()}` : ""}
     <div class="grp">By team</div><div class="card scroll"><table class="ladder"><tr><th>#</th><th>Team</th><th>Adds</th><th>Points</th><th>FAAB</th></tr>${
       PK.by_team.map((r, i) => `<tr><td>${i + 1}</td><td><span class="tm">${esc(r.team)}</span></td><td>${r.pickups}</td><td>${f0(r.fpts)}</td><td>$${r.faab}</td></tr>`).join("")}</table></div>
-    <p class="note">A pickup only counts for the team that added him: games he started for them, from the day he was added until he's dropped or traded. It's not his season total. "Points" by team = everything its pickups have scored for it.</p>` : "";
+    <p class="note">A pickup only counts for the team that added him: games he started for them, from the day he was added until he's dropped or traded. It's not his season total. A drop counts every game the player has played since, wherever he is now; if the same team picked him back up, it doesn't count. "Points" by team = everything its pickups have scored for it.</p>` : "";
   const when = iso => new Date(iso).toLocaleDateString("en-AU", { day: "numeric", month: "short" });
   const gcls = g => !g ? "early" : g[0] === "A" ? "a" : g[0] === "B" ? "b" : g[0] === "C" ? "c" : "d";
   const cards = T.map(t => {

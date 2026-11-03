@@ -82,6 +82,10 @@ def scan_trades(d, log):
             when = t.get("processDate") or t.get("proposedDate")  # free-agent adds only carry proposedDate
             if t.get("type") in ("FREEAGENT", "WAIVER") and t.get("status") == "EXECUTED" and when:
                 for i in t.get("items", []):
+                    if i.get("type") == "DROP" and i.get("playerId"):
+                        log.setdefault("_drops", {}).setdefault(f'{t["id"]}:{i["playerId"]}', {
+                            "team": i.get("fromTeamId") or t.get("teamId"), "player": i["playerId"],
+                            "date_utc": datetime.fromtimestamp(when / 1000, timezone.utc).isoformat()})
                     if i.get("type") == "ADD" and i.get("playerId"):
                         adds.setdefault(f'{t["id"]}:{i["playerId"]}', {
                             "team": i.get("toTeamId") or t.get("teamId"), "player": i["playerId"],
@@ -199,6 +203,45 @@ def pickups(log, days, names, pool_names):
                               key=lambda r: -r["fpts"])}
 
 
+def drops(log, names, pool):
+    """Every drop this season and what the player has done since, in all his NBA games (wherever he is
+    now): fantasy points from the first game after the drop. A player the same team later re-added
+    doesn't count as a drop."""
+    adds = log.get("_adds", {}).values()
+    latest = {}
+    for x in log.get("_drops", {}).values():
+        k = (x["team"], x["player"])
+        if k not in latest or x["date_utc"] > latest[k]["date_utc"]:
+            latest[k] = x
+    keep = [x for (tid, pid), x in latest.items() if tid in names and not any(
+        a["team"] == tid and a["player"] == pid and a["date_utc"] > x["date_utc"] for a in adds)]
+    ids = sorted({x["player"] for x in keep})
+    logs = {}
+    for i in range(0, len(ids), 50):
+        flt = {"players": {"filterIds": {"value": ids[i:i + 50]},
+                           "filterStatsForTopScoringPeriodIds": {"value": 200, "additionalValue": []}}}
+        try:
+            got = S._get(["kona_player_info"], headers={"X-Fantasy-Filter": json.dumps(flt)}).get("players", [])
+        except Exception:
+            got = []
+        for x in got:
+            logs[x["player"]["id"]] = [(S._sp_date(s["scoringPeriodId"]), S._fp(s["stats"]))
+                                       for s in x["player"].get("stats", [])
+                                       if s.get("statSplitTypeId") == 5 and s.get("seasonId") == int(S.SEASON)
+                                       and s.get("statSourceId") == 0 and s.get("stats") and s["stats"].get("40")]
+    out = []
+    for x in keep:
+        t = datetime.fromisoformat(x["date_utc"]).astimezone(S.ET)
+        first = t.date() if t.hour < 19 else t.date() + timedelta(days=1)  # dropped before tip-off counts that day
+        g = [fp for dt, fp in logs.get(x["player"], []) if dt >= first]
+        p = pool.get(x["player"], {})
+        out.append({"player": p.get("player", {}).get("fullName", str(x["player"])), "team": names[x["team"]],
+                    "now": names.get(p.get("onTeamId"), "free agent"), "date": str(t.date()),
+                    "games": len(g), "fpts": round(sum(g), 1), "per_game": round(sum(g) / len(g), 1) if g else None})
+    out.sort(key=lambda r: -r["fpts"])
+    return {"count": len(out), "all": out}
+
+
 def grade(margin_per_week):
     """Letter grade from fantasy points per week gained vs the other side."""
     for lim, g in ((60, "A+"), (40, "A"), (25, "A-"), (12, "B+"), (4, "B"), (-4, "C"), (-12, "C-"),
@@ -286,7 +329,8 @@ def main():
     with open(OUT, "w") as f:
         json.dump({"updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                    "fa_points_per_game": fpg, "fa_points_per_day": fa_day, "fa_pool": FA_POOL,
-                   "trades": out, "pickups": pickups(log, days, names, pool_names)}, f, indent=1)
+                   "trades": out, "pickups": pickups(log, days, names, pool_names),
+                   "drops": drops(log, names, {x["player"]["id"]: x for x in S._pool()})}, f, indent=1)
     print(f"trades: {len(out)}, days cached: {len(days)}, avg FA {fpg} FPTS/game")
 
 
