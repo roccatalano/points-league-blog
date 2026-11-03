@@ -82,7 +82,7 @@
   .ladder { width: 100%; border-collapse: collapse; font-size: 14px; }
   .ladder th { color: var(--muted); font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; padding: 6px 4px; text-align: right; border-bottom: 1px solid var(--line); }
   .ladder td { padding: 9px 4px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
-  .ladder th:nth-child(2), .ladder td:nth-child(2) { text-align: left; white-space: normal; }
+  .ladder th:nth-child(2), .ladder td:nth-child(2) { text-align: left; white-space: normal; overflow-wrap: break-word; }
   .ladder th:first-child, .ladder td:first-child { text-align: left; color: var(--muted); width: 22px; }
   .ladder tr.cut td { border-bottom: 2px dashed var(--accent); }
   .ladder .tm { font-weight: 700; }
@@ -279,6 +279,8 @@
   @media (prefers-color-scheme: dark) { .ld-c.hi { background: #173a20; border-color: #1f4d2b; } .ld-c.hi span { color: #8ce99a; } .ld-c.lo { background: #3b1717; border-color: #5c2020; } .ld-c.lo span { color: #ff8787; } }
   .ld-facts { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); margin-top: 8px; }
   .ld-facts b { color: var(--ink); }
+  .ladder.pw { font-size: 13px; } .ladder.pw th { font-size: 10.5px; letter-spacing: 0; }
+  .ld { padding: 6px 10px; }
   footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
   .pts { font-family: "Archivo Black", Inter, sans-serif; font-size: 22px; text-align: center; white-space: nowrap; line-height: 1.1; }
   .pts small { display: block; font-family: Inter, sans-serif; font-size: 11.5px; font-weight: 600; color: var(--muted); margin-top: 3px; }
@@ -446,43 +448,37 @@ async function oddsPage() {
 }
 
 // ---------------------------------------------------------------- ladder
-let LAD = null, LAD_SORT = "ladder", LAD_OPEN = null;
+let LAD = null, LAD_SORT = "ladder";
 async function ladderPage() {
   setNav("ladder"); document.title = "Ladder · NBA Fantasy 2026";
   if (!LAD) {
     app.innerHTML = '<p class="empty">Loading…</p>';
     try { LAD = await getJSON("data/league.json"); } catch (e) { app.innerHTML = '<p class="empty">The ladder isn\'t available yet.</p>'; return; }
   }
-  const L = LAD;
-  const mv = (x, d = 0) => !x || Math.abs(x) < 0.05 ? "" : `<span class="${x > 0 ? "up" : "down"}">${x > 0 ? "▲" : "▼"}${Math.abs(x).toFixed(d)}</span>`;
-  const price = x => "$" + (x >= 10 ? Math.round(x) : x.toFixed(2));
+  const L = LAD, sort = LAD_SORT;
+  const mv = x => !x ? "" : `<span class="${x > 0 ? "up" : "down"}">${x > 0 ? "▲" : "▼"}${Math.abs(x)}</span>`;
   const pc = x => x >= 1 || x === 0 ? Math.round(x) + "%" : x.toFixed(1) + "%";
-  const SORTS = { ladder: ["Ladder", (a, b) => (a.seed ?? 99) - (b.seed ?? 99)],
-                  power: ["Power", (a, b) => a.power_rank - b.power_rank],
-                  pf: ["Points for", (a, b) => b.pf - a.pf] };
-  const sort = LAD_SORT, list = L.ladder.slice().sort(SORTS[sort][1]);
-  const seg = `<div class="seg">${Object.entries(SORTS).map(([k, [l]]) => `<button type="button" data-s="${k}" class="${k === sort ? "on" : ""}">${l}</button>`).join("")}</div>`;
-  const detail = r => `<tr class="ld-x"><td colspan="5"><div class="ld-facts">
-      <span>Points for <b>${f0(r.pf)}</b></span><span>Against <b>${f0(r.pa)}</b></span><span>Avg week <b>${f0(r.pf_avg)}</b></span>
-      <span>Typical week now <b>${f0(r.proj_week)}</b></span><span>Title <b>${pc(r.title_pct)}</b> ${price(r.title_price)}${mv(r.title_move, 1)}</span>
-      <span>Finals ${price(r.finals_price)}</span><span>FAAB <b>$${r.faab_left}</b></span></div></td></tr>`;
-  const rows = list.map((r, i) => {
-    const cut = sort === "ladder" && i === L.finals_teams - 1 ? " cut" : "", open = LAD_OPEN === r.team;
-    const rank = sort === "ladder" ? (r.seed ?? i + 1) : sort === "power" ? r.power_rank : i + 1;
-    return `<tr class="ld-r${cut}${open ? " open" : ""}" data-t="${esc(r.team)}">
-      <td>${rank}</td>
-      <td><span class="tm">${esc(r.team)}</span><small>${r.w}-${r.l}${r.t ? "-" + r.t : ""} · ${f0(r.pf)} pts for</small></td>
-      <td>${r.proj_w.toFixed(1)}<small>${r.proj_l.toFixed(1)} L</small></td><td>${r.power_rank}${mv(r.power_move)}<small>${r.power_pct}%</small></td>
-      <td><b>${pc(r.finals_pct)}</b>${mv(r.finals_move)}</td></tr>${open ? detail(r) : ""}`;
-  }).join("");
-  app.innerHTML = `${seg}<div class="card ld"><table class="ladder"><tr><th>#</th><th>Team</th><th>Proj</th><th>Power</th><th>Finals</th></tr>${rows}</table></div>
-    <details class="rc-how"><summary>What the columns mean</summary><div class="explain">
-      <p><strong>Proj</strong> is each team's expected final number of wins (current record plus the model's forecast for every remaining week, from ${L.sims.toLocaleString()} simulated seasons). The small number underneath is projected losses out of ${L.weeks} weeks.</p>
-      <p><strong>Power</strong> ranks teams by roster strength alone: the average chance of outscoring every other team in a normal week, ignoring the schedule. Arrows show movement over the last day.</p>
-      <p><strong>Finals</strong> is the chance of finishing top ${L.finals_teams}${sort === "ladder" ? " (the dashed line)" : ""}. <strong>Tap a team</strong> for points for and against, title odds and FAAB left.</p></div></details>
+  const k1 = x => (x / 1000).toFixed(1) + "k";
+  const seg = `<div class="seg">${[["ladder", "Ladder"], ["power", "Power rankings"]].map(([k, l]) => `<button type="button" data-s="${k}" class="${k === sort ? "on" : ""}">${l}</button>`).join("")}</div>`;
+  let head, rows, how;
+  if (sort === "ladder") {
+    const list = L.ladder.slice().sort((a, b) => (a.seed ?? 99) - (b.seed ?? 99));
+    head = `<tr><th>#</th><th>Team</th><th>W</th><th>L</th><th>D</th><th>PF</th><th>PA</th></tr>`;
+    rows = list.map((r, i) => `<tr class="${i === L.finals_teams - 1 ? "cut" : ""}"><td>${r.seed ?? i + 1}</td><td><span class="tm">${esc(r.team)}</span></td>
+      <td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${f0(r.pf)}</td><td>${f0(r.pa)}</td></tr>`).join("");
+    how = `<p><strong>W / L / D</strong> are wins, losses and draws. <strong>PF</strong> and <strong>PA</strong> are fantasy points for and against in finished weeks. The dashed line is the finals cut (top ${L.finals_teams}).</p>`;
+  } else {
+    const list = L.ladder.slice().sort((a, b) => a.power_rank - b.power_rank);
+    head = `<tr><th>#</th><th>Team</th><th>Wins</th><th>PF</th><th>PA</th><th>Finals</th></tr>`;
+    rows = list.map((r, i) => `<tr class="${i === L.finals_teams - 1 ? "cut" : ""}"><td>${r.power_rank}</td><td><span class="tm">${esc(r.team)}</span>${r.power_move ? `<small>${mv(r.power_move)} since yesterday</small>` : ""}</td>
+      <td><b>${r.proj_w.toFixed(1)}</b></td><td>${k1(r.proj_pf)}</td><td>${k1(r.proj_pa)}</td><td>${pc(r.finals_pct)}</td></tr>`).join("");
+    how = `<p>Every column is a <strong>projection for the end of the regular season</strong>. Teams are ranked by <strong>projected wins</strong> at the end of the ${L.weeks}-week regular season: current record plus the model's forecast for every remaining matchup, from ${L.sims.toLocaleString()} simulated seasons. Arrows show movement over the last day.</p>
+      <p><strong>PF / PA</strong> are projected season totals of fantasy points for and against: finished weeks, this week's live projection, then a typical week for each remaining fixture. <strong>Finals</strong> is the chance of finishing top ${L.finals_teams}.</p>`;
+  }
+  app.innerHTML = `${seg}<div class="card ld scroll"><table class="ladder${sort === "power" ? " pw" : ""}">${head}${rows}</table></div>
+    <details class="rc-how"><summary>What the columns mean</summary><div class="explain">${how}</div></details>
     <p class="updated">Updated ${esc(ago(L.updated_utc))}.</p>`;
   app.querySelectorAll(".seg button").forEach(b => b.onclick = () => { LAD_SORT = b.dataset.s; ladderPage(); });
-  app.querySelectorAll(".ld-r").forEach(tr => tr.onclick = () => { LAD_OPEN = LAD_OPEN === tr.dataset.t ? null : tr.dataset.t; ladderPage(); });
 }
 
 // ---------------------------------------------------------------- trade calculator

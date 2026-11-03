@@ -15,6 +15,7 @@ logging.disable(logging.CRITICAL)
 import server as S  # noqa: E402
 
 LIVE = {}
+PROJ = {}  # team id -> projected final points this week (live sim)
 
 
 def odds(d, names):
@@ -36,6 +37,7 @@ def odds(d, names):
         p_a = max(0.0, 1 - p_h - tie)
         mk = S._h2h_market(p_h, tie)
         proj_h, proj_a = res["proj_points"]["me"], res["proj_points"]["opp"]
+        PROJ[h], PROJ[a] = proj_h, proj_a
 
         def games_left(players):
             total = 0
@@ -76,7 +78,23 @@ def league(d, names, live_pairs):
         pf[h] += hp; pa[h] += ap; played[h] += 1
         pf[a] += ap; pa[a] += hp; played[a] += 1
     dists = {t: S._weekly_dist(S._team_players(t, d)[1]) for t in ids}
-    order = sorted(ids, key=lambda t: -power[t])
+    # projected season points for / against: finished weeks + this week's live projection + the
+    # season model's typical week for every remaining fixture
+    cur = d["status"].get("currentMatchupPeriod") or 1
+    ppf, ppa = dict(pf), dict(pa)
+    for m in d["schedule"]:
+        if "away" not in m or m["matchupPeriodId"] > reg or m["matchupPeriodId"] < cur:
+            continue
+        if m["matchupPeriodId"] < cur or m.get("winner") not in (None, "UNDECIDED"):
+            continue
+        h, a = m["home"]["teamId"], m["away"]["teamId"]
+        if m["matchupPeriodId"] == cur and h in PROJ:
+            xh, xa = PROJ[h], PROJ[a]
+        else:
+            xh, xa = dists[h][0]["FP"], dists[a][0]["FP"]
+        ppf[h] += xh; ppa[h] += xa
+        ppf[a] += xa; ppa[a] += xh
+    order = sorted(ids, key=lambda t: -sim[t]["exp_wins"])  # power rank = most projected wins
     rows = []
     for i, t in enumerate(d["teams"]):
         tid = t["id"]
@@ -84,6 +102,7 @@ def league(d, names, live_pairs):
         rows.append({"team": names[tid], "seed": t.get("playoffSeed"),
                      "w": r["wins"], "l": r["losses"], "t": r["ties"],
                      "pf": round(pf[tid], 1), "pa": round(pa[tid], 1),
+                     "proj_pf": round(ppf[tid]), "proj_pa": round(ppa[tid]),
                      "pf_avg": round(pf[tid] / played[tid], 1) if played[tid] else None,
                      "proj_week": round(dists[tid][0]["FP"]),  # typical full week, season model
                      "faab_left": 500 - (t.get("transactionCounter", {}) or {}).get("acquisitionBudgetSpent", 0),
