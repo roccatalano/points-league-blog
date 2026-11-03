@@ -306,7 +306,7 @@
 <header><div class="wrap">
   <a href="#"><div class="brand">NBA FANTASY <span>2026</span></div></a>
   <div class="tag">Daily posts, trade reviews and weekly roundups for a head-to-head points league. Updated automatically.</div>
-  <nav><a href="#/" data-n="posts">Posts</a><a href="#/odds" data-n="odds">Live odds</a><a href="#/ladder" data-n="ladder">Ladder</a><a href="#/trade" data-n="trade">Trade calculator</a><a href="#/injuries" data-n="injuries">Injuries</a><a href="#/trades" data-n="trades">Moves</a><a href="#/record" data-n="record">Model record</a></nav>
+  <nav><a href="#/" data-n="posts">Posts</a><a href="#/odds" data-n="odds">Live matchups</a><a href="#/ladder" data-n="ladder">Ladder</a><a href="#/trade" data-n="trade">Trade calculator</a><a href="#/injuries" data-n="injuries">Injuries</a><a href="#/trades" data-n="trades">Moves</a><a href="#/record" data-n="record">Model record</a></nav>
 </div></header>
 <main class="wrap" id="app"><p class="empty">Loading…</p></main>
 <footer>Odds and projections come from a model, not a crystal ball.</footer>
@@ -417,7 +417,7 @@ function wireMarginCharts() {
 
 let OH = null, ODDS_WEEK = null, ACC = null;
 async function oddsPage() {
-  setNav("odds"); document.title = "Live odds · NBA Fantasy 2026";
+  setNav("odds"); document.title = "Live matchups · NBA Fantasy 2026";
   app.innerHTML = '<p class="empty">Loading…</p>';
   let o;
   try { o = await getJSON("data/odds.json"); } catch (e) { app.innerHTML = '<p class="empty">Live odds aren\'t available yet.</p>'; return; }
