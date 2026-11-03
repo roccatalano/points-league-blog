@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NBA Fantasy 2026 Blog</title>
+<meta name="description" content="Daily posts, trade reviews and weekly roundups for the NBA FANTASY 2026 league.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f4ef; --card: #ffffff; --ink: #16181d; --muted: #5d6270; --line: #e3e0d8;
+    --accent: #e8590c; --accent-soft: #fdebe0; --head: #121826; --head-ink: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1218; --card: #171b23; --ink: #eceef2; --muted: #9aa1ae; --line: #262c37;
+            --accent: #ff7a2f; --accent-soft: #2b1d14; --head: #0a0d12; --head-ink: #ffffff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 17px/1.6 Inter, system-ui, -apple-system, sans-serif; }
+  header { background: var(--head); color: var(--head-ink); padding: 28px 16px 24px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+  header .wrap { padding: 0; }
+  header a { color: inherit; text-decoration: none; }
+  .brand { font-family: "Archivo Black", Inter, sans-serif; font-size: clamp(26px, 6vw, 38px);
+           letter-spacing: -0.5px; line-height: 1.1; }
+  .brand span { color: var(--accent); }
+  .tag { color: #b8bfcc; font-size: 14px; margin-top: 6px; }
+  main { padding: 24px 0 48px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+          padding: 18px 20px; margin-bottom: 14px; display: block; color: inherit; text-decoration: none; }
+  a.card:hover { border-color: var(--accent); }
+  .meta { font-size: 13px; color: var(--muted); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .pill { background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 11px;
+          text-transform: uppercase; letter-spacing: 0.6px; padding: 2px 8px; border-radius: 99px; }
+  .card h2 { margin: 6px 0 4px; font-size: 20px; line-height: 1.3; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  article h1 { font-family: "Archivo Black", Inter, sans-serif; font-size: clamp(26px, 6vw, 34px);
+               line-height: 1.15; margin: 8px 0 16px; }
+  article h2 { font-size: 20px; margin: 28px 0 8px; }
+  article a { color: var(--accent); }
+  article table { border-collapse: collapse; width: 100%; font-size: 15px; display: block; overflow-x: auto; }
+  article th, article td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; white-space: nowrap; }
+  article ul, article ol { padding-left: 22px; }
+  article blockquote { margin: 16px 0; padding: 4px 16px; border-left: 3px solid var(--accent); color: var(--muted); }
+  .back { display: inline-block; margin-bottom: 8px; color: var(--accent); text-decoration: none; font-weight: 600; font-size: 15px; }
+  .empty { color: var(--muted); }
+  nav { display: flex; gap: 6px; margin-top: 16px; flex-wrap: wrap; }
+  nav a { color: #cfd5e0; text-decoration: none; font-weight: 600; font-size: 14px; padding: 6px 12px;
+          border-radius: 99px; border: 1px solid #2c3446; }
+  nav a.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .updated { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+  .mu-head { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
+  .mu-team { font-weight: 700; font-size: 15px; line-height: 1.25; }
+  .mu-team.r { text-align: right; }
+  .mu-score { font-family: "Archivo Black", Inter, sans-serif; font-size: 22px; text-align: center; white-space: nowrap; }
+  .bar { display: flex; height: 8px; border-radius: 99px; overflow: hidden; margin: 10px 0 4px; background: var(--line); }
+  .bar i { display: block; background: var(--accent); }
+  .bar b { display: block; background: #4c6ef5; opacity: .75; }
+  .mu-odds { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+  .mu-odds strong { color: var(--ink); }
+  details { margin-top: 10px; }
+  summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--accent); }
+  .cats { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 8px; }
+  .cats td, .cats th { padding: 5px 4px; border-bottom: 1px solid var(--line); text-align: center; }
+  .cats th { color: var(--muted); font-weight: 600; font-size: 12px; }
+  .cats td:first-child, .cats th:first-child { text-align: left; font-weight: 600; }
+  .win { font-weight: 700; }
+  .calc label.lbl { display: block; font-size: 13px; color: var(--muted); font-weight: 600; margin: 4px 0; }
+  .calc select { width: 100%; font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line);
+                 background: var(--card); color: var(--ink); }
+  .plist { margin-top: 10px; display: grid; gap: 4px; }
+  .plist label { display: flex; gap: 10px; align-items: center; font-size: 15px; padding: 6px 4px; border-radius: 8px; }
+  .plist label:hover { background: var(--accent-soft); }
+  .plist small { color: var(--muted); }
+  .res { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .res .big { font-family: "Archivo Black", Inter, sans-serif; font-size: 28px; }
+  .pos { color: #2f9e44; } .neg { color: #e03131; }
+  .note { font-size: 13px; color: var(--muted); }
+  .ladder { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .ladder th { color: var(--muted); font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; padding: 6px 4px; text-align: right; border-bottom: 1px solid var(--line); }
+  .ladder td { padding: 9px 4px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  .ladder th:nth-child(2), .ladder td:nth-child(2) { text-align: left; white-space: normal; }
+  .ladder th:first-child, .ladder td:first-child { text-align: left; color: var(--muted); width: 22px; }
+  .ladder tr.cut td { border-bottom: 2px dashed var(--accent); }
+  .ladder .tm { font-weight: 700; }
+  .ladder small { color: var(--muted); display: block; font-size: 12px; }
+  .up { color: #2f9e44; font-size: 12px; } .down { color: #e03131; font-size: 12px; }
+  .scroll { overflow-x: auto; }
+  .dg { display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .dg:last-child { border-bottom: 0; }
+  .dg .rk { color: var(--muted); font-size: 13px; }
+  .dg .nm { font-weight: 700; font-size: 15px; line-height: 1.25; }
+  .dg .sub { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .dg .score { font-family: "Archivo Black", Inter, sans-serif; font-size: 24px; min-width: 44px; text-align: right; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 5px; }
+  .chip { font-size: 11.5px; font-weight: 600; padding: 2px 7px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
+  .chip.off { background: transparent; color: var(--muted); border: 1px dashed var(--line); }
+  .explain h3 { font-size: 16px; margin: 16px 0 4px; }
+  .explain p, .explain li { font-size: 14.5px; }
+  .filters { display: flex; gap: 8px; margin-bottom: 12px; }
+  .filters select { flex: 1; font: inherit; font-size: 14px; padding: 7px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+  .seg { display: flex; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 99px; padding: 4px; margin-bottom: 12px; }
+  .seg button { flex: 1; font: inherit; font-size: 13.5px; font-weight: 600; border: 0; background: none; color: var(--muted); padding: 7px 6px; border-radius: 99px; cursor: pointer; }
+  .seg button.on { background: var(--accent); color: #fff; }
+  .inj { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .inj:last-child { border-bottom: 0; }
+  .inj .nm { font-weight: 700; font-size: 15px; line-height: 1.25; }
+  .inj .sub { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .inj .ret { text-align: right; white-space: nowrap; }
+  .inj .ret b { display: block; font-family: "Archivo Black", Inter, sans-serif; font-size: 18px; font-weight: 400; }
+  .inj .ret small { color: var(--muted); font-size: 12px; }
+  .inj .nt { grid-column: 1 / -1; font-size: 13px; color: var(--muted); }
+  .grp { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 18px 0 6px; }
+  .chip.out { background: #fde2e2; color: #c92a2a; } .chip.dtd { background: #fff3bf; color: #946200; } .chip.ft { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+  @media (prefers-color-scheme: dark) { .chip.out { background: #3b1717; color: #ff8787; } .chip.dtd { background: #3a2f0b; color: #ffd43b; } }
+  .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+  .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+  .kpi b { display: block; font-family: "Archivo Black", Inter, sans-serif; font-size: 24px; font-weight: 400; line-height: 1.1; }
+  .kpi span { font-size: 12px; color: var(--muted); line-height: 1.3; display: block; margin-top: 4px; }
+  .cal { display: grid; grid-template-columns: 64px 1fr 74px; gap: 8px; align-items: center; font-size: 13px; padding: 5px 0; }
+  .cal .track { position: relative; height: 10px; background: var(--line); border-radius: 99px; }
+  .cal .act { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 99px; }
+  .cal .pred { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--ink); }
+  .mrow { display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .mrow:last-child { border-bottom: 0; }
+  .mrow small { color: var(--muted); display: block; font-size: 12px; }
+  .cats.bl td:last-child, .cats.bl th:last-child { text-align: left; }
+  .ok { color: #2f9e44; font-weight: 700; } .miss { color: #e03131; font-weight: 700; }
+  @media (max-width: 420px) { .kpi b { font-size: 20px; } }
+  /* ---- model record ---- */
+  .rc { padding-top: 0; }
+  main.wrap { padding-top: 24px; }
+  .cats a { color: var(--accent); }
+  .rc section { margin-bottom: 26px; }
+  .rc-chart { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px 12px 16px; margin-bottom: 12px; }
+  .rc-cols { position: relative; height: 150px; display: flex; gap: 10px; padding-left: 4px; padding-right: 74px; margin-bottom: 44px; }
+  .rc-col { flex: 1; max-width: 64px; display: flex; flex-direction: column; position: relative; }
+  .rc-plot { position: relative; flex: 1; }
+  .rc-b { position: absolute; left: 12%; right: 12%; border-radius: 5px; animation: rcGrow .6s cubic-bezier(.2,.8,.2,1) both; }
+  .rc-b.up { background: #2f9e44; } .rc-b.dn { background: #e03131; }
+  .rc-b em { position: absolute; left: 50%; transform: translateX(-50%); font-style: normal; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+  .rc-b.up em { bottom: 100%; margin-bottom: 3px; color: #2f9e44; } .rc-b.dn em { top: 100%; margin-top: 3px; color: #e03131; }
+  @keyframes rcGrow { from { transform: scaleY(0); } }
+  .rc-b.up { transform-origin: bottom; } .rc-b.dn { transform-origin: top; }
+  .rc-x { position: absolute; left: 0; right: 0; top: 100%; margin-top: 24px; text-align: center; font-size: 11.5px; font-weight: 700; color: var(--muted); }
+  .rc-zero, .rc-avg { position: absolute; left: 0; right: 0; height: 0; pointer-events: none; }
+  .rc-cols .rc-zero, .rc-cols .rc-avg { bottom: auto; }
+  .rc-zero { border-top: 1.5px solid var(--ink); opacity: .55; margin-top: -1px; }
+  .rc-avg { border-top: 1.5px dashed var(--accent); }
+  .rc-zero em, .rc-avg em { position: absolute; right: 0; transform: translateY(-50%); font-style: normal; font-size: 10.5px; font-weight: 700; background: var(--card); padding: 0 0 0 6px; white-space: nowrap; }
+  .rc-zero em { color: var(--muted); } .rc-avg em { color: var(--accent); }
+  .rc-cap { font-size: 12.5px; color: var(--muted); margin: 0; line-height: 1.45; }
+  .rc-hero { background: var(--head); color: #fff; border-radius: 18px; padding: 20px 20px 16px; margin-bottom: 26px; position: relative; overflow: hidden; }
+  .rc-hero::after { content: ""; position: absolute; right: -60px; top: -60px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(232,89,12,.35), transparent 70%); }
+  .rc-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; color: #9aa3b5; }
+  .rc-big { font-family: "Archivo Black", Inter, sans-serif; font-size: clamp(30px, 8.5vw, 42px); line-height: 1.02; margin: 8px 0 6px; color: var(--accent); }
+  .rc-big span { color: #fff; display: block; font-size: .62em; }
+  .rc-sub { font-size: 14px; color: #c3c9d5; }
+  .rc-sub strong { color: #fff; }
+  .rc-ruler { position: relative; margin: 34px 4px 0; padding-bottom: 4px; }
+  .rc-track { height: 8px; border-radius: 99px; background: linear-gradient(90deg, #3a2a24, #2f3a2f 60%, #2f9e44); position: relative; overflow: hidden; }
+  .rc-worse { position: absolute; left: 0; top: 0; bottom: 0; background: repeating-linear-gradient(135deg, rgba(224,49,49,.55) 0 4px, transparent 4px 8px); }
+  .rc-tick { position: absolute; top: -4px; width: 1px; height: 16px; background: rgba(255,255,255,.45); }
+  .rc-tick em { position: absolute; top: 19px; transform: translateX(-50%); font-style: normal; font-size: 10.5px; color: #9aa3b5; white-space: nowrap; }
+  .rc-me { position: absolute; top: -6px; width: 20px; height: 20px; margin-left: -10px; border-radius: 50%; background: var(--accent); border: 3px solid #fff; box-shadow: 0 0 0 4px rgba(232,89,12,.3); animation: rcIn .7s cubic-bezier(.2,.8,.2,1) both; }
+  .rc-me b { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); font-size: 10.5px; letter-spacing: .5px; text-transform: uppercase; color: #fff; white-space: nowrap; }
+  .rc-pin { position: absolute; top: -18px; transform: translateX(-50%); font-size: 9.5px; font-weight: 700; color: #16181d; background: #cfd5e0; border-radius: 4px; padding: 0 4px; line-height: 14px; opacity: .85; }
+  .rc-pin::before { content: "W"; }
+  .rc-key { position: static; transform: none; display: inline-block; }
+  .rc-ends > span:nth-child(2) { color: #9aa3b5; }
+  @media (prefers-color-scheme: dark) { .rc-hero { border: 1px solid #262c37; } }
+  .rc-ends { display: flex; justify-content: space-between; font-size: 10.5px; color: #6f7889; margin-top: 30px; }
+  @keyframes rcIn { from { left: 0; opacity: 0; } }
+  .rc-h { font-family: "Archivo Black", Inter, sans-serif; font-weight: 400; font-size: 18px; margin: 0 0 10px; }
+  .rc-h small { display: block; font-family: Inter, sans-serif; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .rc-list, .rc-panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .rc-panel { padding: 4px 16px; }
+  .rc-wk { border-bottom: 1px solid var(--line); margin: 0; }
+  .rc-wk:last-child { border-bottom: 0; }
+  .rc-wk summary { list-style: none; display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; padding: 13px 16px; color: var(--ink); font-weight: 400; }
+  .rc-wk summary::-webkit-details-marker { display: none; }
+  .rc-wk[open] summary { background: var(--accent-soft); }
+  .rc-wn { font-family: "Archivo Black", Inter, sans-serif; font-size: 17px; color: var(--muted); }
+  .rc-mid { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+  .rc-lbl { font-size: 13.5px; font-weight: 600; }
+  .rc-val { font-family: "Archivo Black", Inter, sans-serif; font-size: 18px; }
+  .rc-wk.live .rc-val { font-family: Inter, sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--accent); }
+  .rc-wk.live .rc-val::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-right: 5px; animation: rcPulse 1.6s infinite; }
+  @keyframes rcPulse { 50% { opacity: .25; } }
+  .rc-dots { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+  .rc-dots i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+  i.ok, i.up { background: #2f9e44; } i.no, i.dn { background: #e03131; } i.lvl { background: var(--line); }
+  i.up, i.dn { background: transparent; border: 2px solid; } i.up { border-color: #2f9e44; } i.dn { border-color: #e03131; }
+  .rc-m { display: grid; grid-template-columns: 10px 1fr; gap: 12px; align-items: start; padding: 9px 16px 9px 66px; font-size: 14px; border-top: 1px dashed var(--line); }
+  .rc-m i { width: 10px; height: 10px; border-radius: 50%; margin-top: 6px; display: block; }
+  .rc-m small { display: block; color: var(--muted); font-size: 12.5px; }
+  .rc-m b small { display: inline; }
+  .rc-note { margin: 0; padding: 8px 16px 8px 66px; font-size: 12.5px; color: var(--muted); }
+  .rc-band { display: grid; grid-template-columns: 70px 1fr auto; gap: 10px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .rc-band:last-child { border-bottom: 0; }
+  .rc-bl { font-family: "Archivo Black", Inter, sans-serif; font-size: 13.5px; white-space: nowrap; }
+  .rc-band small { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .rc-chip { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: var(--line); color: var(--muted); white-space: nowrap; }
+  .rc-chip.good { background: #d3f9d8; color: #2b8a3e; } .rc-chip.bad { background: #ffe3e3; color: #c92a2a; } .rc-chip.warn { background: #fff3bf; color: #946200; }
+  @media (prefers-color-scheme: dark) { .rc-chip.good { background: #173a20; color: #8ce99a; } .rc-chip.bad { background: #3b1717; color: #ff8787; } .rc-chip.warn { background: #3a2f0b; color: #ffd43b; } }
+  .rc-cat { display: grid; grid-template-columns: 44px 1fr 92px; gap: 10px; align-items: center; padding: 9px 0; font-size: 13px; }
+  .rc-cat small { color: var(--muted); text-align: right; }
+  .rc-bar { position: relative; height: 8px; background: var(--line); border-radius: 99px; }
+  .rc-bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 99px; }
+  .rc-bar u { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--ink); opacity: .5; }
+  .rc-how { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+  .rc-how summary { font-weight: 700; color: var(--accent); }
+  .rc-how ol { padding-left: 20px; } .rc-how li { margin-bottom: 6px; }
+  @media (max-width: 400px) { .rc-m, .rc-note { padding-left: 16px; } }
+  .wp { position: relative; margin: 14px 0 4px; padding: 14px 0 0; touch-action: pan-y; }
+  .wp-plot { position: relative; height: 172px; }
+  .wp svg { width: 100%; height: 172px; display: block; overflow: visible; }
+  .wp-grid { stroke: var(--line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .wp-mid { stroke: var(--muted); stroke-dasharray: 3 4; stroke-width: 1; vector-effect: non-scaling-stroke; opacity: .7; }
+  .wp-day { font-size: 11px; fill: var(--muted); text-anchor: middle; font-weight: 600; }
+  .wp-fh { fill: var(--accent); opacity: .22; } .wp-fa { fill: #4c6ef5; opacity: .2; }
+  .wp-line { fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linejoin: round; }
+  .wp-cur { stroke: var(--ink); stroke-width: 1; opacity: .5; }
+  .wp-dot { position: absolute; width: 10px; height: 10px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); pointer-events: none; }
+  .wp-dot.a { background: #4c6ef5; box-shadow: 0 0 0 4px rgba(76,110,245,.2); }
+  .wp-lbl { font-size: 10.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wp-lbl.top { position: absolute; top: 0; left: 0; color: var(--accent); }
+  .wp-lbl.bot { margin-top: 2px; color: #4c6ef5; }
+  .wp-tip { position: absolute; top: -6px; transform: translateX(-50%); background: var(--ink); color: var(--bg); font-size: 12px; padding: 4px 8px; border-radius: 8px; white-space: nowrap; opacity: 0; transition: opacity .15s; pointer-events: none; z-index: 2; }
+  .mu-team.lose { opacity: .5; }
+  .tr-head { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: start; margin-top: 6px; }
+  .tr-side:last-child { text-align: right; }
+  .tr-team { font-weight: 700; font-size: 15px; line-height: 1.25; }
+  .tr-gets { font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.35; }
+  .tr-grade { display: inline-block; margin-top: 8px; font-family: "Archivo Black", Inter, sans-serif; font-size: 20px; line-height: 1; padding: 6px 10px; border-radius: 10px; }
+  .tr-grade.a { background: #d3f9d8; color: #2b8a3e; } .tr-grade.b { background: #e7f5ff; color: #1971c2; } .tr-grade.c { background: #fff3bf; color: #946200; } .tr-grade.d { background: #ffe3e3; color: #c92a2a; }
+  .tr-grade.early { font-family: Inter, sans-serif; font-size: 11px; font-weight: 700; padding: 4px 8px; background: var(--line); color: var(--muted); }
+  @media (prefers-color-scheme: dark) { .tr-grade.a { background: #173a20; color: #8ce99a; } .tr-grade.b { background: #132c44; color: #74c0fc; } .tr-grade.c { background: #3a2f0b; color: #ffd43b; } .tr-grade.d { background: #3b1717; color: #ff8787; } }
+  .tr-mid { text-align: center; padding-top: 2px; min-width: 64px; }
+  .tr-score { font-family: "Archivo Black", Inter, sans-serif; font-size: 30px; line-height: 1; }
+  .tr-score small { font-size: 14px; color: var(--muted); }
+  .tr-lead { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; margin-top: 4px; max-width: 90px; }
+  .tc { margin-top: 16px; }
+  .tc-dates { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: var(--muted); margin: 4px 0 2px; }
+  .tb-row { display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; align-items: center; padding: 11px 0; border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; }
+  .tb-row:last-child { border-bottom: 0; }
+  .tb-row small { display: block; color: var(--muted); font-size: 12px; }
+  .tb-rk { font-family: "Archivo Black", Inter, sans-serif; color: var(--muted); }
+  .tb-sc { font-family: "Archivo Black", Inter, sans-serif; font-size: 18px; }
+  .tr-wa { font-family: "Archivo Black", Inter, sans-serif; font-size: 15px; margin-top: 6px; }
+  .tr-wa small { display: block; font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; color: var(--muted); }
+  .tr-meta { font-size: 12.5px; color: var(--muted); margin-bottom: 8px; }
+  .mu-team small { display: block; font-weight: 400; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .mu-score small { font-size: 14px; color: var(--muted); }
+  .tr-pend { font-size: 16px; color: var(--muted); }
+  .mu-odds b { color: var(--ink); }
+  .tc-a, .tc-b { fill: none; stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; }
+  .tc-a { stroke: var(--accent); } .tc-b { stroke: #4c6ef5; }
+  .tc-zero { position: absolute; left: -2px; transform: translate(-100%, -50%); font-size: 10.5px; font-weight: 700; color: var(--muted); padding-right: 4px; }
+  .tc .wp-plot { margin-left: 12px; margin-right: 6px; }
+  .tc-key { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; font-weight: 600; margin-top: 6px; color: var(--muted); }
+  .tc-key span::before { content: ""; display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+  .tc-key .ka { color: var(--ink); } .tc-key .ka::before { background: var(--accent); }
+  .tc-key .kb { color: var(--ink); } .tc-key .kb::before { background: #4c6ef5; }
+  .tc-key .kn::before { display: none; } .tc-key .kn { margin-left: auto; }
+  .mu-odds strong.pos, .tc-end.pos, .wp-tip .pos { color: #2f9e44; } .mu-odds strong.neg, .tc-end.neg, .wp-tip .neg { color: #e03131; }
+  .tc-wrap { display: grid; grid-template-columns: 38px 1fr 50px; }
+  .tc-wrap .wp-plot { grid-column: 2; margin: 0; }
+  .tc .wp-plot { margin-left: 0; margin-right: 0; }
+  .tc-axis { position: relative; grid-column: 1; }
+  .tc-y { position: absolute; right: 6px; transform: translateY(-50%); font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .tc-end { position: absolute; left: 100%; margin-left: 10px; transform: translateY(-50%); font-family: "Archivo Black", Inter, sans-serif; font-size: 12.5px; white-space: nowrap; }
+  .tc .wp-tip { top: -8px; line-height: 1.45; white-space: nowrap; text-align: left; }
+  .tc .wp-tip .pos { color: #69db7c; } .tc .wp-tip .neg { color: #ff8787; }
+  .tc-dates { margin-left: 38px; margin-right: 50px; }
+  .ld { padding: 6px 14px; }
+  .ld .ladder td, .ld .ladder th { padding-left: 3px; padding-right: 3px; }
+  .ld .ladder td { font-variant-numeric: tabular-nums; }
+  .ld-r { cursor: pointer; }
+  .ld-r:hover td { background: var(--accent-soft); }
+  .ld-r.open td { border-bottom-color: transparent; background: var(--accent-soft); }
+  .ld .up, .ld .down { margin-left: 3px; font-size: 10.5px; }
+  .ld-x td { padding: 4px 4px 14px !important; text-align: left !important; white-space: normal !important; background: var(--accent-soft); color: var(--ink) !important; }
+  .ld-cats { display: grid; grid-template-columns: repeat(9, 1fr); gap: 3px; margin-top: 2px; }
+  .ld-c { background: var(--card); border-radius: 8px; padding: 6px 0; text-align: center; border: 1px solid var(--line); }
+  .ld-c b { display: block; font-size: 10px; color: var(--muted); font-weight: 700; }
+  .ld-c span { display: block; font-family: "Archivo Black", Inter, sans-serif; font-size: 12.5px; margin-top: 2px; }
+  .ld-c small { display: block !important; font-size: 10px !important; color: var(--muted); }
+  .ld-c.hi { background: #d3f9d8; border-color: #b2f2bb; } .ld-c.hi span { color: #2b8a3e; }
+  .ld-c.lo { background: #ffe3e3; border-color: #ffc9c9; } .ld-c.lo span { color: #c92a2a; }
+  @media (prefers-color-scheme: dark) { .ld-c.hi { background: #173a20; border-color: #1f4d2b; } .ld-c.hi span { color: #8ce99a; } .ld-c.lo { background: #3b1717; border-color: #5c2020; } .ld-c.lo span { color: #ff8787; } }
+  .ld-facts { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); margin-top: 8px; }
+  .ld-facts b { color: var(--ink); }
+  @media (max-width: 420px) { .ld-cats { grid-template-columns: repeat(5, 1fr); } }
+  footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="#"><div class="brand">NBA FANTASY <span>2026</span></div></a>
+  <div class="tag">Daily posts, trade reviews and weekly roundups. Updated automatically.</div>
+  <nav><a href="#/" data-n="posts">Posts</a><a href="#/ladder" data-n="ladder">Ladder</a><a href="#/odds" data-n="odds">Live odds</a><a href="#/trade" data-n="trade">Trade calculator</a><a href="#/dawg" data-n="dawg">Dawg index</a><a href="#/stats" data-n="stats">Stat ranks</a><a href="#/injuries" data-n="injuries">Injuries</a><a href="#/trades" data-n="trades">Trades</a><a href="#/record" data-n="record">Model record</a></nav>
+</div></header>
+<main class="wrap" id="app"><p class="empty">Loading…</p></main>
+<footer>Odds and expected wins come from a model, not a crystal ball.</footer>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script src="model.js"></script>
+<script>
+const app = document.getElementById("app");
+const KIND = { daily: "Daily", weekly: "Weekly roundup", trade: "Trade review", draft: "Draft review" };
+let posts = [];
+
+function niceDate(d) {
+  const dt = new Date(d + "T12:00:00");
+  return isNaN(dt) ? d : dt.toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+}
+function esc(s) { return String(s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function meta(p) { return `<div class="meta"><span class="pill">${esc(KIND[p.kind] || p.kind)}</span><span>${esc(niceDate(p.date))}</span></div>`; }
+
+function home() {
+  document.title = "NBA Fantasy 2026 Blog";
+  if (!posts.length) { app.innerHTML = '<p class="empty">No posts yet.</p>'; return; }
+  app.innerHTML = posts.map(p => `<a class="card" href="#/${encodeURIComponent(p.slug)}">${meta(p)}<h2>${esc(p.title)}</h2><p>${esc(p.summary)}</p></a>`).join("");
+}
+
+async function show(slug) {
+  const p = posts.find(x => x.slug === slug);
+  if (!p) { home(); return; }
+  app.innerHTML = '<p class="empty">Loading…</p>';
+  try {
+    let md = await (await fetch(`posts/${encodeURIComponent(slug)}.md`, { cache: "no-cache" })).text();
+    md = md.replace(/^---[\s\S]*?\n---\s*/, "");
+    document.title = p.title + " · NBA Fantasy 2026";
+    app.innerHTML = `<a class="back" href="#">← All posts</a><article>${meta(p)}<h1>${esc(p.title)}</h1>${DOMPurify.sanitize(marked.parse(md))}</article>`;
+    window.scrollTo(0, 0);
+  } catch (e) { app.innerHTML = '<p class="empty">Couldn\'t load that post.</p>'; }
+}
+
+function setNav(n) { document.querySelectorAll("nav a").forEach(a => a.classList.toggle("on", a.dataset.n === n)); }
+const pct = x => (x > 0 ? "+" : "") + (100 * x).toFixed(1) + " pts";
+function ago(iso) {
+  const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
+  return m < 1 ? "just now" : m < 60 ? m + " min ago" : Math.round(m / 60) + " h ago";
+}
+
+const short = n => n.replace(/[^A-Za-z0-9 ]/g, "").trim().split(/\s+/)[0].slice(0, 9);
+let OH = null, ODDS_WEEK = null;
+const ET_FMT = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false });
+function etDay(ts) {  // days since 1970 in US Eastern (fractional)
+  const p = Object.fromEntries(ET_FMT.formatToParts(new Date(ts)).map(x => [x.type, x.value]));
+  return Date.UTC(+p.year, +p.month - 1, +p.day) / 864e5 + ((+p.hour % 24) + +p.minute / 60) / 24;
+}
+function wpChart(pts, home, away, final) {
+  if (!pts || !pts.length) return "";
+  const d0 = etDay(pts[0][0]), mon = Math.floor(d0) - ((new Date(Math.floor(d0) * 864e5).getUTCDay() + 6) % 7);
+  const W = 600, H = 150, X = d => (d - mon) / 7 * W, Y = v => (1 - v / 100) * H;
+  let P = pts.map(p => ({ x: X(etDay(p[0])), v: p[1] + p[2] / 2, t: p[0], s: [p[3], p[4]] }));
+  if (P[0].x > 2) P.unshift({ x: 0, v: P[0].v, t: null, s: [0, 0] });
+  if (final) P.push({ x: W, v: final.v, t: "final", s: final.s });
+  const line = P.map((p, i) => (i ? "L" : "M") + p.x.toFixed(1) + " " + Y(p.v).toFixed(1)).join(" ");
+  const area = `${line} L${P[P.length - 1].x.toFixed(1)} ${Y(50)} L0 ${Y(50)} Z`;
+  const id = "c" + Math.random().toString(36).slice(2, 8);
+  const days = ["M", "T", "W", "T", "F", "S", "S"].map((l, i) => `<line x1="${X(mon + i)}" x2="${X(mon + i)}" y1="0" y2="${H}" class="wp-grid"/><text x="${X(mon + i + 0.5)}" y="${H + 14}" class="wp-day">${l}</text>`).join("");
+  const last = P[P.length - 1];
+  const data = esc(JSON.stringify(P.map(p => [Math.round(p.x), Math.round(p.v), p.t, p.s])));
+  return `<div class="wp" data-p="${data}" data-h="${esc(home)}" data-a="${esc(away)}">
+    <div class="wp-lbl top">${esc(home)}</div>
+    <div class="wp-plot"><svg viewBox="0 -2 ${W} ${H + 22}" preserveAspectRatio="none">
+      <defs><clipPath id="${id}a"><rect x="0" y="0" width="${W}" height="${Y(50)}"/></clipPath><clipPath id="${id}b"><rect x="0" y="${Y(50)}" width="${W}" height="${H}"/></clipPath></defs>
+      ${days}<line x1="0" x2="${W}" y1="${Y(50)}" y2="${Y(50)}" class="wp-mid"/>
+      <path d="${area}" class="wp-fh" clip-path="url(#${id}a)"/><path d="${area}" class="wp-fa" clip-path="url(#${id}b)"/>
+      <path d="${line}" class="wp-line" vector-effect="non-scaling-stroke"/>
+      <line class="wp-cur" x1="0" x2="0" y1="0" y2="${H}" style="display:none" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <span class="wp-dot${last.v < 50 ? " a" : ""}" style="left:${last.x / W * 100}%;top:${(Y(last.v) + 2) / (H + 22) * 100}%"></span></div>
+    <div class="wp-lbl bot">${esc(away)}</div>
+    <div class="wp-tip"></div></div>`;
+}
+function wireCharts() {
+  app.querySelectorAll(".wp").forEach(el => {
+    const P = JSON.parse(el.dataset.p), svg = el.querySelector("svg"), cur = el.querySelector(".wp-cur"), tip = el.querySelector(".wp-tip");
+    const show = e => {
+      const r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 600;
+      const p = P.reduce((a, b) => Math.abs(b[0] - x) < Math.abs(a[0] - x) ? b : a);
+      cur.setAttribute("x1", p[0]); cur.setAttribute("x2", p[0]); cur.style.display = "";
+      const who = p[1] >= 50 ? el.dataset.h : el.dataset.a, pct = p[1] >= 50 ? p[1] : 100 - p[1];
+      const when = p[2] === "final" ? "Final" : p[2] ? new Date(p[2]).toLocaleString("en-AU", { weekday: "short", hour: "numeric", minute: "2-digit" }) : "Start";
+      tip.innerHTML = `<b>${esc(who)} ${p[2] === "final" ? "won" : pct + "%"}</b> · ${when}${p[3] && (p[3][0] || p[3][1]) ? ` · ${p[3][0]}-${p[3][1]}` : ""}`;
+      tip.style.left = Math.min(Math.max(p[0] / 6, 18), 82) + "%"; tip.style.opacity = 1;
+    };
+    el.addEventListener("pointermove", show); el.addEventListener("pointerdown", show);
+    el.addEventListener("pointerleave", () => { cur.style.display = "none"; tip.style.opacity = 0; });
+  });
+}
+
+async function oddsPage() {
+  setNav("odds"); document.title = "Live odds · NBA Fantasy 2026";
+  app.innerHTML = '<p class="empty">Loading…</p>';
+  let o;
+  try { o = await (await fetch("data/odds.json", { cache: "no-cache" })).json(); }
+  catch (e) { app.innerHTML = '<p class="empty">Live odds aren\'t available yet.</p>'; return; }
+  try { if (!OH) OH = await (await fetch("data/odds_history.json", { cache: "no-cache" })).json(); } catch (e) { OH = {}; }
+  try { if (!ACC) ACC = await (await fetch("data/accuracy.json", { cache: "no-cache" })).json(); } catch (e) {}
+  const curWk = String(o.matchup_period), wk = ODDS_WEEK && OH[ODDS_WEEK] ? ODDS_WEEK : curWk;
+  const weeks = [...new Set([curWk, ...Object.keys(OH)])].sort((a, b) => b - a);
+  const tabs = weeks.length > 1 ? `<div class="seg">${weeks.map(w => `<button type="button" data-w="${w}" class="${w === wk ? "on" : ""}">${w === curWk ? "This week" : "Week " + w}</button>`).join("")}</div>` : "";
+  const H = (OH && OH[wk]) || {};
+  if (wk !== curWk) {  // a finished week: chart + final result
+    const res = ((ACC && ACC.weeks) || []).find(w => String(w.period) === wk);
+    const cards = Object.entries(H).map(([k, pts]) => {
+      const [home, away] = k.split("|"), r = res && res.matchups.find(m => m.home === home && m.away === away);
+      const fin = r ? { v: r.winner === "HOME" ? 100 : r.winner === "AWAY" ? 0 : 50, s: r.score } : null;
+      const sc = r ? `${r.score[0]}-${r.score[1]}${r.score[2] ? "-" + r.score[2] : ""}` : "–";
+      return `<div class="card"><div class="mu-head"><div class="mu-team ${r && r.winner === "HOME" ? "" : "lose"}">${esc(home)}</div><div class="mu-score">${sc}</div><div class="mu-team r ${r && r.winner === "AWAY" ? "" : "lose"}">${esc(away)}</div></div>
+        ${wpChart(pts, home, away, fin)}</div>`;
+    }).join("");
+    app.innerHTML = `${tabs}<p class="updated">Week ${wk}, final. The line shows ${esc("each team's")} win chance through the week; it ends at 100% for the winner.</p>${cards || '<p class="empty">No history for this week.</p>'}`;
+  } else {
+    const cards = o.matchups.map(m => {
+    const rows = m.categories.map(c => {
+      const h = c.home_win_pct, fmt = v => c.cat.includes("%") ? Number(v).toFixed(3).replace(/^0/, "") : Math.round(v);
+      return `<tr><td>${esc(c.cat)}</td><td>${fmt(c.now_home)}</td><td>${fmt(c.now_away)}</td><td class="${h >= 50 ? "win" : ""}">${h}%</td><td class="${h < 50 ? "win" : ""}">${100 - h}%</td></tr>`;
+    }).join("");
+    return `<div class="card"><div class="mu-head"><div class="mu-team">${esc(m.home)}</div>
+      <div class="mu-score">${m.score_now[0]}-${m.score_now[1]}${m.score_now[2] ? "-" + m.score_now[2] : ""}</div>
+      <div class="mu-team r">${esc(m.away)}</div></div>
+      <div class="bar"><i style="width:${m.home_win_pct}%"></i><b style="width:${m.away_win_pct}%"></b></div>
+      <div class="mu-odds"><span><strong>${m.home_win_pct}%</strong> · $${m.price_home.toFixed(2)}</span><span>$${m.price_away.toFixed(2)} · <strong>${m.away_win_pct}%</strong></span></div>
+      ${wpChart(H[m.home + "|" + m.away], m.home, m.away)}
+      <details><summary>Categories</summary><table class="cats"><tr><th></th><th colspan="2">Right now</th><th colspan="2">Chance to win</th></tr><tr><th>Cat</th><th>${esc(short(m.home))}</th><th>${esc(short(m.away))}</th><th>${esc(short(m.home))}</th><th>${esc(short(m.away))}</th></tr>${rows}</table></details></div>`;
+  }).join("");
+  app.innerHTML = `${tabs}<p class="updated">Week ${o.matchup_period} · updated ${esc(ago(o.updated_utc))} · refreshes every few hours. Score = categories won right now; win % simulates the rest of the week 1,000 times. The chart shows how the win chance has moved this week (tap it for any moment).</p>${cards}`;
+  }
+  app.querySelectorAll(".seg button").forEach(b => b.onclick = () => { ODDS_WEEK = b.dataset.w; oddsPage(); });
+  wireCharts();
+}
+
+
+let LAD = null, LAD_SORT = "ladder", LAD_OPEN = null;
+async function ladderPage() {
+  setNav("ladder"); document.title = "Ladder · NBA Fantasy 2026";
+  if (!LAD) {
+    app.innerHTML = '<p class="empty">Loading…</p>';
+    try { LAD = await (await fetch("data/league.json", { cache: "no-cache" })).json(); }
+    catch (e) { app.innerHTML = '<p class="empty">The ladder isn\'t available yet.</p>'; return; }
+  }
+  const L = LAD, has = L.ladder[0].power_rank != null;
+  const mv = (x, d = 0) => !x || Math.abs(x) < 0.05 ? "" : `<span class="${x > 0 ? "up" : "down"}">${x > 0 ? "▲" : "▼"}${Math.abs(x).toFixed(d)}</span>`;
+  const price = x => "$" + (x >= 10 ? Math.round(x) : x.toFixed(2));
+  const pc = x => x >= 1 || x === 0 ? Math.round(x) + "%" : x.toFixed(1) + "%";
+  const SORTS = { ladder: ["Ladder", (a, b) => (a.seed ?? 99) - (b.seed ?? 99)],
+                  power: ["Power", (a, b) => a.power_rank - b.power_rank],
+                  proj: ["Projected", (a, b) => b.proj_w - a.proj_w] };
+  const sort = has ? LAD_SORT : "ladder", list = L.ladder.slice().sort(SORTS[sort][1]);
+  const seg = has ? `<div class="seg">${Object.entries(SORTS).map(([k, [l]]) => `<button type="button" data-s="${k}" class="${k === sort ? "on" : ""}">${l}</button>`).join("")}</div>` : "";
+  const CATS = ["PTS", "REB", "AST", "STL", "BLK", "3PM", "TO", "FG%", "FT%"];
+  const ord = k => k + (["th", "st", "nd", "rd"][(k % 100 > 10 && k % 100 < 14) ? 0 : (k % 10 < 4 ? k % 10 : 0)]);
+  const detail = r => {
+    if (!has) return "";
+    const cells = CATS.map(c => { const v = r.cat_strength[c], k = r.cat_rank[c];
+      const tone = k <= 3 ? "hi" : k >= 12 ? "lo" : "";
+      return `<div class="ld-c ${tone}"><b>${c}</b><span>${v}%</span><small>${ord(k)}</small></div>`; }).join("");
+    return `<tr class="ld-x"><td colspan="5">
+      <div class="ld-cats">${cells}</div>
+      <p class="note" style="font-size:12px;margin:6px 0 0">Chance to win each category vs an average opponent in a typical week · league rank.</p>
+      <div class="ld-facts"><span>Categories <b>${r.cats[0]}-${r.cats[1]}-${r.cats[2]}</b></span><span>Title <b>${pc(r.title_pct)}</b> ${price(r.title_price)}${mv(r.title_move, 1)}</span><span>Finals ${price(r.finals_price)}</span><span>FAAB <b>$${r.faab_left}</b></span></div></td></tr>`;
+  };
+  const rows = list.map((r, i) => {
+    const cut = sort === "ladder" && i === L.finals_teams - 1 ? " cut" : "", open = LAD_OPEN === r.team;
+    const rank = sort === "ladder" ? (r.seed ?? i + 1) : sort === "power" ? r.power_rank : i + 1;
+    return `<tr class="ld-r${cut}${open ? " open" : ""}" data-t="${esc(r.team)}">
+      <td>${rank}</td>
+      <td><span class="tm">${esc(r.team)}</span><small>${r.w}-${r.l}${r.t ? "-" + r.t : ""} · ${r.cats[0]}-${r.cats[1]}${r.cats[2] ? "-" + r.cats[2] : ""} cats</small></td>
+      ${has ? `<td>${r.proj_w.toFixed(1)}<small>${r.proj_l.toFixed(1)} L</small></td><td>${r.power_rank}${mv(r.power_move)}<small>${r.power_pct}%</small></td>` : ""}
+      <td><b>${pc(r.finals_pct)}</b>${mv(r.finals_move)}</td></tr>${open ? detail(r) : ""}`;
+  }).join("");
+  const head = `<tr><th>#</th><th>Team</th>${has ? "<th>Proj</th><th>Power</th>" : ""}<th>Finals</th></tr>`;
+  app.innerHTML = `${seg}<div class="card ld"><table class="ladder">${head}${rows}</table></div>
+    <details class="rc-how"><summary>What the columns mean</summary><div class="explain">
+      <p><strong>Proj</strong> is each team's expected final number of wins (current record plus the model's forecast for every remaining week, from ${L.sims.toLocaleString()} simulated seasons). The small number underneath is projected losses out of ${L.weeks || 18} weeks.</p>
+      <p><strong>Power</strong> ranks teams by roster strength alone: the average chance of beating every other team in a normal week, ignoring the schedule. The % underneath is that average. Arrows show movement over the last day.</p>
+      <p><strong>Finals</strong> is the chance of finishing top ${L.finals_teams}${sort === "ladder" ? " (the dashed line)" : ""}. <strong>Tap a team</strong> for its category strengths, title odds and FAAB left.</p></div></details>
+    <p class="updated">Updated ${esc(ago(L.updated_utc))}.</p>`;
+  app.querySelectorAll(".seg button").forEach(b => b.onclick = () => { LAD_SORT = b.dataset.s; ladderPage(); });
+  app.querySelectorAll(".ld-r").forEach(tr => tr.onclick = () => { LAD_OPEN = LAD_OPEN === tr.dataset.t ? null : tr.dataset.t; ladderPage(); });
+}
+
+let STATS = null, STAT_MODE = "matchup";
+async function statsPage() {
+  setNav("stats"); document.title = "Stat ranks · NBA Fantasy 2026";
+  app.innerHTML = '<p class="empty">Loading…</p>';
+  try { if (!STATS) STATS = await (await fetch("data/stats.json", { cache: "no-cache" })).json(); }
+  catch (e) { app.innerHTML = '<p class="empty">Stat ranks aren\'t available yet. They appear after the next data refresh.</p>'; return; }
+  const S = STATS, MODES = { total: "Total", matchup: "Per matchup", day: "Per day", game: "Per game" };
+  if (!S.days_done) { app.innerHTML = '<p class="empty">Stat ranks appear after the next data refresh.</p>'; return; }
+  const open = new Set([...app.querySelectorAll("details[open]")].map(d => d.dataset.cat));
+  if (!open.size) { open.add("PTS"); open.add("GP"); }
+  const mode = STAT_MODE;
+  const basis = mode === "matchup" ? `${S.weeks_done} finished matchup${S.weeks_done === 1 ? "" : "s"}` : `${S.days_done} finished days`;
+  const g = [...S.games].sort((a, b) => (b.per_day ?? -1) - (a.per_day ?? -1));
+  const gRows = g.map((r, i) => `<tr><td>${i + 1}</td><td><span class="tm">${esc(r.team)}</span><small>${r.games} games</small></td><td>${r.per_day == null ? "–" : r.per_day.toFixed(2)}</td><td>${r.per_matchup == null ? "–" : r.per_matchup.toFixed(1)}</td></tr>`).join("");
+  const gCard = `<details class="card scroll" data-cat="GP"${open.has("GP") ? " open" : ""}><summary>Games played — most: ${esc(g[0].team)} (${g[0].per_day.toFixed(2)}/day)</summary>
+    <table class="ladder"><tr><th>#</th><th>Team</th><th>Per day</th><th>Per matchup</th></tr>${gRows}</table>
+    <p class="note">Starters' games only. Per day uses all ${S.days_done} finished days; per matchup uses finished matchups. More games usually means more streaming.</p></details>`;
+  const cards = S.categories.map(c => {
+    const pct = c.cat.includes("%"), fmt = v => v == null ? "–" : pct ? v.toFixed(3).replace(/^0/, "") : v.toFixed(mode === "total" ? 0 : mode === "matchup" ? 1 : 2);
+    const rows = c.rows.filter(r => r[mode] != null).sort((a, b) => c.cat === "TO" ? a[mode] - b[mode] : b[mode] - a[mode]);
+    const sub = r => mode === "game" || mode === "total" ? `<small>${r.games} games</small>` : "";
+    const body = rows.map((r, i) => `<tr><td>${i + 1}</td><td><span class="tm">${esc(r.team)}</span>${sub(r)}</td><td>${fmt(r[mode])}</td></tr>`).join("");
+    const top = rows[0] ? ` — top: ${esc(rows[0].team)} (${fmt(rows[0][mode])})` : "";
+    return `<details class="card scroll" data-cat="${esc(c.cat)}"${open.has(c.cat) ? " open" : ""}><summary>${esc(c.cat)}${c.cat === "TO" ? " · fewest first" : ""}${top}</summary>
+      <table class="ladder"><tr><th>#</th><th>Team</th><th>${MODES[mode]}</th></tr>${body}</table></details>`;
+  }).join("");
+  const toggles = Object.entries(MODES).map(([k, v]) => `<button type="button" data-m="${k}" class="${k === mode ? "on" : ""}">${v}</button>`).join("");
+  const pctNote = mode === "matchup" ? "FG% and FT% are the average of each week's percentage." : "FG% and FT% are season makes ÷ attempts.";
+  app.innerHTML = `${gCard}<div class="seg">${toggles}</div>
+    <p class="updated">Based on ${basis} · updated ${esc(ago(S.updated_utc))}. Per game spreads totals over the games starters actually played, so it rewards player quality, not streaming volume. ${pctNote}</p>${cards}`;
+  app.querySelectorAll(".seg button").forEach(b => b.onclick = () => { STAT_MODE = b.dataset.m; statsPage(); });
+}
+
+let DAWG = null;
+async function dawgPage() {
+  setNav("dawg"); document.title = "Dawg index · NBA Fantasy 2026";
+  app.innerHTML = '<p class="empty">Loading…</p>';
+  try { if (!DAWG) DAWG = await (await fetch("data/dawg.json", { cache: "no-cache" })).json(); }
+  catch (e) { app.innerHTML = '<p class="empty">The Dawg index isn\'t available yet.</p>'; return; }
+  const teams = [...new Set(DAWG.players.map(p => p.team))].sort();
+  app.innerHTML = `<p class="updated">Who's playing like a dawg? A 0-100 score for every rostered player, updated ${esc(ago(DAWG.updated_utc))}.</p>
+    <details class="card explain"><summary>How the Dawg index works</summary>
+      <p>Every player gets three scores from 0 to 100. Each one is a <strong>percentile</strong>: a Hustle of 90 means he's out-hustling 90% of the players on a fantasy roster in this league.</p>
+      <h3>🐶 Hustle (40%)</h3>
+      <p>The dirty work, per 36 minutes this season: rebounds, steals and blocks, minus turnovers. Steals and blocks count 2.5 times as much as a rebound. Rebounds are scaled by position, because a guard grabbing boards is grittier than a centre doing it: guards ×1.4, small forwards ×1.1, power forwards ×0.8, centres ×0.6. Then it's scaled by availability: a player who has played every one of his team's games keeps 100%, one who has played none keeps 70%. Needs 2+ games and 8+ minutes a night.</p>
+      <h3>🔥 Heat check (40%)</h3>
+      <p>His fantasy score per game over the last 7 days, compared with his normal level (ESPN's projection for him, or last season if there isn't one). The "+30%" next to it means he's been 30% better than usual this week. Fantasy score = points + 1.2×rebounds + 1.5×assists + 3×steals + 3×blocks + threes − 1.5×turnovers. Needs 2+ games in the last week.</p>
+      <h3>💪 Big-game (20%)</h3>
+      <p>Does he show up when it matters? We take every game he started for his fantasy team while that team's matchup was close (decided by 2 categories or fewer, or within 2 right now for this week), and compare his fantasy score in those games with his average in all his games. Needs 2+ close-matchup games, so it's blank for most players early in the season. When it's blank, Hustle and Heat count 50/50.</p>
+      <h3>The Dawg index</h3>
+      <p>40% Hustle + 40% Heat + 20% Big-game, rounded to a 0-100 score. It's for fun and bragging rights: it rewards effort and form, not overall fantasy value, which is why role players can top it.</p>
+    </details>
+    <div class="filters"><select id="dt"><option value="">All teams</option>${teams.map(t => `<option>${esc(t)}</option>`).join("")}</select></div>
+    <div class="card" id="dl"></div>`;
+  const draw = () => {
+    const team = document.getElementById("dt").value;
+    const list = DAWG.players.filter(p => p.dawg !== null && (!team || p.team === team));
+    const shown = team ? list : list.slice(0, 50);
+    const chip = (label, v, extra) => v === null || v === undefined ? `<span class="chip off">${label} —</span>` : `<span class="chip">${label} ${v}${extra || ""}</span>`;
+    const sgn = x => x === undefined || x === null ? "" : ` (${x >= 0 ? "+" : ""}${x}%)`;
+    document.getElementById("dl").innerHTML = shown.map((p, i) => `<div class="dg"><div class="rk">${i + 1}</div>
+      <div><div class="nm">${esc(p.name)}</div><div class="sub">${esc(p.pos)} · ${esc(p.team)}${p.status !== "ACTIVE" ? " · " + esc(p.status.replace(/_/g, " ").toLowerCase()) : ""}</div>
+      <div class="chips">${chip("Hustle", p.hustle)}${chip("Heat", p.heat, sgn(p.heat_vs_normal_pct))}${chip("Big-game", p.big, sgn(p.big_vs_normal_pct))}</div></div>
+      <div class="score">${p.dawg}</div></div>`).join("") + (team ? "" : `<p class="note">Top 50 shown. Pick a team to see its whole roster.</p>`);
+  };
+  document.getElementById("dt").onchange = draw; draw();
+}
+
+let MODEL = null, LM = null;
+async function tradePage() {
+  setNav("trade"); document.title = "Trade calculator · NBA Fantasy 2026";
+  app.innerHTML = '<p class="empty">Loading…</p>';
+  try { if (!MODEL) { MODEL = await (await fetch("data/model.json", { cache: "no-cache" })).json(); LM = LeagueModel.make(MODEL); } }
+  catch (e) { app.innerHTML = '<p class="empty">The calculator isn\'t available yet.</p>'; return; }
+  const teams = MODEL.teams.slice().sort((x, y) => x.name.localeCompare(y.name));
+  const opts = sel => teams.map(t => `<option value="${t.id}" ${t.id === sel ? "selected" : ""}>${esc(t.name)}</option>`).join("");
+  app.innerHTML = `<div class="calc">
+    <p class="updated">Pick two teams and tick the players each side sends. The model scores every remaining matchup (weeks ${MODEL.weeks[0]}-${MODEL.weeks[1]}) before and after.</p>
+    <div class="card"><label class="lbl">Team A sends</label><select id="ta">${opts(teams[0].id)}</select><div class="plist" id="pa"></div></div>
+    <div class="card"><label class="lbl">Team B sends</label><select id="tb">${opts(teams[1].id)}</select><div class="plist" id="pb"></div></div>
+    <div id="out"></div></div>`;
+  const ta = document.getElementById("ta"), tb = document.getElementById("tb");
+  const list = (sel, box) => {
+    const t = MODEL.teams.find(x => x.id === +sel.value);
+    box.innerHTML = t.players.slice().sort((x, y) => (y.rates ? y.rates["0"] : 0) - (x.rates ? x.rates["0"] : 0)).map(p => {
+      const r = p.rates, line = r ? `${r["0"].toFixed(1)} pts · ${r["6"].toFixed(1)} reb · ${r["3"].toFixed(1)} ast` : "no stats";
+      const back = p.ret ? `, back ${new Date(p.ret + "T12:00:00").toLocaleDateString("en-AU", { day: "numeric", month: "short" })}` : "";
+      const inj = p.status && p.status !== "ACTIVE" ? ` · ${esc(p.status.replace(/_/g, " ").toLowerCase())}${back}` : "";
+      return `<label><input type="checkbox" value="${esc(p.name)}"> <span>${esc(p.name)}<br><small>${line}${inj}</small></span></label>`;
+    }).join("");
+  };
+  const movesNote = (n, m) => (m.drops.length ? `<p class="note">${esc(n)} would have to drop ${m.drops.map(esc).join(" and ")} (their least valuable player) to fit everyone in.</p>` : "")
+    + (m.adds ? `<p class="note">${esc(n)} gets ${m.adds === 1 ? "an open roster spot" : m.adds + " open roster spots"}, counted as a replacement-level free agent.</p>` : "");
+  const run = () => {
+    const out = document.getElementById("out");
+    const a = +ta.value, b = +tb.value;
+    const give = [...document.querySelectorAll("#pa input:checked")].map(x => x.value);
+    const get = [...document.querySelectorAll("#pb input:checked")].map(x => x.value);
+    if (a === b) { out.innerHTML = '<p class="note">Pick two different teams.</p>'; return; }
+    if (!give.length || !get.length) { out.innerHTML = '<p class="note">Tick at least one player on each side.</p>'; return; }
+    const r = LM.evaluate(a, b, give, get), na = MODEL.teams.find(t => t.id === a).name, nb = MODEL.teams.find(t => t.id === b).name;
+    const sgn = x => (x >= 0 ? "+" : "") + x.toFixed(3), cls = x => x > 0.0005 ? "pos" : x < -0.0005 ? "neg" : "";
+    const rows = Object.keys(r.a.cats).map(k => `<tr><td>${k}</td><td class="${cls(r.a.cats[k])}">${pct(r.a.cats[k])}</td><td class="${cls(r.b.cats[k])}">${pct(r.b.cats[k])}</td></tr>`).join("");
+    const winner = Math.abs(r.a.change - r.b.change) < 0.03 ? "Pretty even trade." : (r.a.change > r.b.change ? esc(na) : esc(nb)) + " win this one.";
+    out.innerHTML = `<div class="card"><div class="res">
+      <div><div class="note">${esc(na)}</div><div class="big ${cls(r.a.change)}">${sgn(r.a.change)}</div><div class="note">expected wins</div></div>
+      <div><div class="note">${esc(nb)}</div><div class="big ${cls(r.b.change)}">${sgn(r.b.change)}</div><div class="note">expected wins</div></div></div>
+      <p><strong>${winner}</strong></p>${movesNote(na, r.a.moves)}${movesNote(nb, r.b.moves)}
+      <table class="cats"><tr><th>Category win rate vs league</th><th>${esc(na)}</th><th>${esc(nb)}</th></tr>${rows}</table>
+      <p class="note">Same model as the trade reviews. Rosters as of ${esc(ago(MODEL.updated_utc))}.</p></div>`;
+  };
+  ta.onchange = () => { list(ta, document.getElementById("pa")); run(); };
+  tb.onchange = () => { list(tb, document.getElementById("pb")); run(); };
+  app.querySelector(".calc").addEventListener("change", e => { if (e.target.type === "checkbox") run(); });
+  list(ta, document.getElementById("pa")); list(tb, document.getElementById("pb")); run();
+}
+
+let INJ = null, INJ_F = "owned";
+async function injuriesPage() {
+  setNav("injuries"); document.title = "Injuries · NBA Fantasy 2026";
+  app.innerHTML = '<p class="empty">Loading…</p>';
+  try { if (!INJ) INJ = await (await fetch("data/injuries.json", { cache: "no-cache" })).json(); }
+  catch (e) { app.innerHTML = '<p class="empty">The injury report isn\'t available yet. It appears after the next data refresh.</p>'; return; }
+  const all = INJ.players, teams = [...new Set(all.map(p => p.fantasy_team).filter(Boolean))].sort();
+  const f = INJ_F, list = all.filter(p => f === "all" ? true : f === "owned" ? p.fantasy_team : f === "fa" ? !p.fantasy_team : p.fantasy_team === f);
+  const ORDER = ["Days", "1 week", "1-2 weeks", "2-4 weeks", "1-2 months", "2+ months", "Season", "Unknown"];
+  const LABEL = { "Days": "Back within a couple of days", "1 week": "Out up to a week", "1-2 weeks": "Out 1–2 weeks", "2-4 weeks": "Out 2–4 weeks",
+                  "1-2 months": "Out 1–2 months", "2+ months": "Out 2+ months", "Season": "Out for the season", "Unknown": "No return date" };
+  const d = s => s ? new Date(s + "T12:00:00").toLocaleDateString("en-AU", { day: "numeric", month: "short" }) : "–";
+  const chip = p => { const s = (p.status || "").toLowerCase(); return `<span class="chip ${s.startsWith("day") ? "dtd" : "out"}">${esc(p.status)}</span>`; };
+  const row = p => {
+    const line = p.per_game ? ` · ${p.per_game.PTS}/${p.per_game.REB}/${p.per_game.AST}` : "";
+    const owner = p.fantasy_team ? `${esc(p.fantasy_team)}${p.on_ir ? " (IR)" : ""}` : "Free agent";
+    const ret = p.timeframe === "Season" ? "Season" : p.days_out === 0 ? "Any day" : d(p.return_date);
+    const g = p.games_missed == null ? "" : `${p.games_missed} game${p.games_missed === 1 ? "" : "s"} missed`;
+    return `<div class="inj"><div><div class="nm">${esc(p.name)}</div>
+      <div class="sub">${esc(p.nba_team)} ${esc(p.pos || "")} · ${owner}${line}</div>
+      <div class="chips">${chip(p)}${p.injury ? `<span class="chip ft">${esc(p.injury)}</span>` : ""}</div></div>
+      <div class="ret"><small>Back</small><b>${esc(ret)}</b><small>${g}</small></div>
+      ${p.note ? `<div class="nt">${esc(p.note)} <small>(${d(p.note_date)})</small></div>` : ""}</div>`;
+  };
+  const groups = ORDER.map(k => [k, list.filter(p => p.timeframe === k)]).filter(([, l]) => l.length)
+    .map(([k, l]) => `<div class="grp">${LABEL[k]} · ${l.length}</div><div class="card">${l.map(row).join("")}</div>`).join("");
+  const opt = (v, t) => `<option value="${esc(v)}"${v === f ? " selected" : ""}>${esc(t)}</option>`;
+  app.innerHTML = `<div class="filters"><select id="injf">${opt("owned", "On a fantasy team")}${opt("fa", "Free agents")}${opt("all", "Whole NBA")}${teams.map(t => opt(t, t)).join("")}</select></div>
+    <p class="updated">${list.length} injured · updated ${esc(ago(INJ.updated_utc))} · refreshes every few hours. "Back" is ESPN's projected return date (US time); games missed counts that NBA team's games until then. Projections often move, so check the latest note.</p>
+    ${groups || '<p class="empty">Nobody injured here. Enjoy it while it lasts.</p>'}`;
+  document.getElementById("injf").onchange = e => { INJ_F = e.target.value; injuriesPage(); };
+}
+
+let ACC = null, PLOG = null;
+async function recordPage() {
+  setNav("record"); document.title = "Model record · NBA Fantasy 2026";
+  app.innerHTML = '<p class="empty">Loading…</p>';
+  let ODDS = null;
+  try {
+    if (!ACC) ACC = await (await fetch("data/accuracy.json", { cache: "no-cache" })).json();
+    if (!PLOG) PLOG = await (await fetch("data/prediction_log.json", { cache: "no-cache" })).json();
+    ODDS = await (await fetch("data/odds.json", { cache: "no-cache" })).json();
+  } catch (e) { if (!ACC) { app.innerHTML = '<p class="empty">The model record isn\'t available yet. It appears after the next data refresh.</p>'; return; } }
+  const O = ACC.overall, W = ACC.weeks.slice().sort((a, b) => b.period - a.period);
+  const pc = x => Math.round(x * 100) + "%";
+  const sk = b => Math.round((0.25 - b) / 0.25 * 100);
+  const skTxt = b => { const x = sk(b); return x >= 0 ? `${x}% better` : `${-x}% worse`; };
+  const MAX = 0.30, pos = b => Math.max(0, Math.min(100, (1 - Math.min(b, MAX) / MAX) * 100));  // 0.30 left → 0.00 right
+  const sc = s => `${Math.max(s[0], s[1])}-${Math.min(s[0], s[1])}${s[2] ? "-" + s[2] : ""}`;
+  const dots = list => `<span class="rc-dots">${list.map(x => `<i class="${x}"></i>`).join("")}</span>`;
+
+  // ---------- hero: the ruler
+  const tick = (v, l) => `<span class="rc-tick" style="left:${pos(v)}%"><em>${l}</em></span>`;
+  const hero = `<section class="rc-hero">
+    <div class="rc-eyebrow">Model report card · ${W.length} finished week${W.length === 1 ? "" : "s"}</div>
+    <div class="rc-big">${skTxt(O.brier)} <span>than guessing</span></div>
+    <div class="rc-sub">Brier score <strong>${O.brier.toFixed(3)}</strong> · picked <strong>${O.called} of ${O.matchups}</strong> winners</div>
+    <div class="rc-ruler">
+      <div class="rc-track"><span class="rc-worse" style="width:${pos(0.25)}%"></span></div>
+      ${tick(0.25, "guessing")}${tick(0.15, "good")}${tick(0.05, "elite")}
+      <span class="rc-me" style="left:${pos(O.brier)}%"></span>
+      <div class="rc-ends"><span>← worse</span><span>better →</span></div>
+    </div>
+  </section>`;
+
+  // ---------- weeks (in progress + finished)
+  let rows = "";
+  const cur = ODDS && PLOG && PLOG[String(ODDS.matchup_period)];
+  if (cur && !W.some(w => w.period === ODDS.matchup_period)) {
+    const ms = cur.matchups.map(m => {
+      const now = ODDS.matchups.find(x => x.home === m.home && x.away === m.away);
+      const favHome = m.p_home >= 0.5, fav = favHome ? m.home : m.away, fp = Math.max(m.p_home, 1 - m.p_home);
+      let st = "lvl", txt = "level";
+      if (now && now.score_now[0] !== now.score_now[1]) {
+        const homeLead = now.score_now[0] > now.score_now[1];
+        st = homeLead === favHome ? "up" : "dn"; txt = (st === "up" ? "favourite ahead " : "underdog ahead ") + sc(now.score_now);
+      }
+      return { st, html: `<div class="rc-m"><i class="${st}"></i><div><b>${esc(fav)}</b> <small>${pc(fp)} to beat ${esc(favHome ? m.away : m.home)}</small><small>Now: ${txt}</small></div></div>` };
+    });
+    rows += `<details class="rc-wk live"><summary><span class="rc-wn">W${ODDS.matchup_period}</span>
+      <span class="rc-mid"><span class="rc-lbl">In progress</span>${dots(ms.map(m => m.st))}</span><span class="rc-val">live</span></summary>
+      <p class="rc-note">Monday's picks vs the score now. Early leads swing a lot. Scored when the week ends.</p>${ms.map(m => m.html).join("")}</details>`;
+  }
+  rows += W.map(w => {
+    const ms = w.matchups.map(m => {
+      const win = m.winner === "TIE" ? "Tied" : (m.winner === "HOME" ? m.home : m.away) + " won";
+      return `<div class="rc-m"><i class="${m.called ? "ok" : "no"}"></i><div><b>${esc(m.fav)}</b> <small>${pc(m.fav_p)} to beat ${esc(m.fav === m.home ? m.away : m.home)}</small><small>${esc(win)} ${sc(m.score)}</small></div></div>`;
+    }).join("");
+    const x = sk(w.brier);
+    const note = w.started ? `<p class="rc-note">Picks were saved after Monday's games had started (a one-off, now fixed), so this week flatters the model slightly.</p>`
+      : w.source === "live" || w.source.startsWith("stored") ? "" : `<p class="rc-note">Picks taken from the first daily post a few days in, so this week flatters the model a little.</p>`;
+    return `<details class="rc-wk"><summary><span class="rc-wn">W${w.period}</span>
+      <span class="rc-mid"><span class="rc-lbl">${w.called} of ${w.n} right · Brier ${w.brier.toFixed(3)}</span>${dots(w.matchups.map(m => m.called ? "ok" : "no"))}</span>
+      <span class="rc-val ${x >= 0 ? "pos" : "neg"}">${x >= 0 ? "+" : "−"}${Math.abs(x)}%</span></summary>${note}${ms}</details>`;
+  }).join("");
+  const asc = W.slice().sort((a, b) => a.period - b.period);
+  const top = Math.max(30, ...asc.map(w => sk(w.brier))), bot = Math.max(10, ...asc.map(w => -sk(w.brier)));
+  const span = top + bot, zero = top / span * 100, seasonY = (top - sk(O.brier)) / span * 100;
+  const bars = asc.map(w => {
+    const x = sk(w.brier), h = Math.abs(x) / span * 100;
+    return `<div class="rc-col"><div class="rc-plot"><span class="rc-b ${x >= 0 ? "up" : "dn"}" style="${x >= 0 ? `bottom:${100 - zero}%` : `top:${zero}%`};height:${h}%"><em>${x >= 0 ? "+" : "−"}${Math.abs(x)}%</em></span></div><span class="rc-x">W${w.period}</span></div>`;
+  }).join("");
+  const chart = `<div class="rc-chart"><div class="rc-cols" style="--z:${zero}%">
+      <span class="rc-zero" style="top:${zero}%"><em>guessing</em></span>
+      <span class="rc-avg" style="top:${seasonY}%"><em>season ${sk(O.brier) >= 0 ? "+" : "−"}${Math.abs(sk(O.brier))}%</em></span>${bars}</div>
+      <p class="rc-cap">Each bar is one week's Brier score turned into % better (green, up) or worse (red, down) than guessing. The dashed line is the season so far.</p></div>`;
+  const weeks = `<section><h2 class="rc-h">Week by week <small>tap a week to see every pick</small></h2>${chart}<div class="rc-list">${rows}</div></section>`;
+
+  // ---------- confidence
+  const all = W.flatMap(w => w.matchups);
+  const bands = [["50–60%", .5, .6], ["60–75%", .6, .75], ["75–90%", .75, .9], ["90%+", .9, 1.01]].map(([l, lo, hi]) => {
+    const g = all.filter(m => m.fav_p >= lo && m.fav_p < hi).sort((a, b) => b.called - a.called);
+    if (!g.length) return "";
+    const won = g.filter(m => m.called).length, exp = g.reduce((t, m) => t + m.fav_p, 0);
+    const [cls, v] = g.length < 4 ? ["", "Too early"] : won > exp + 1 ? ["warn", "Too cautious"] : won < exp - 1 ? ["bad", "Too cocky"] : ["good", "About right"];
+    return `<div class="rc-band"><span class="rc-bl">${l}</span><span>${dots(g.map(m => m.called ? "ok" : "no"))}<small>won ${won} of ${g.length} · expected ${exp.toFixed(1)}</small></span><span class="rc-chip ${cls}">${v}</span></div>`;
+  }).join("");
+  const conf = `<section><h2 class="rc-h">Does it know when it's sure? <small>favourite's chance → how often they won</small></h2><div class="rc-panel">${bands}</div></section>`;
+
+  // ---------- categories
+  const catPending = `<section><h2 class="rc-h">By category <small>which stats the model reads best</small></h2><div class="rc-panel"><p class="rc-cap" style="margin:12px 0">Starts with week 3. The model only began saving its Monday chance for each category this week, so weeks 1 and 2 can't be scored fairly. From next Monday this section ranks all 9 categories, best to worst, by how much better than guessing it calls each one.</p></div></section>`;
+  const cats = !O.categories ? catPending : `<section><h2 class="rc-h">By category <small>${Math.round(O.cat_called)} of ${O.categories} right</small></h2><div class="rc-panel rc-cats">${
+    O.by_category.slice().sort((a, b) => a.brier - b.brier).map(c => `<div class="rc-cat"><b>${esc(c.cat)}</b><span class="rc-bar"><i style="width:${pos(c.brier)}%"></i><u style="left:${pos(0.25)}%"></u></span><small>${skTxt(c.brier)}</small></div>`).join("")}</div></section>`;
+
+  // ---------- how it works (one drawer)
+  const how = `<details class="rc-how"><summary>How this works</summary><div class="explain">
+    <h3>The model, in five steps</h3>
+    <ol><li><strong>How good is each player?</strong> Their per-game averages in all 9 categories, mixed with last season early on so one hot week doesn't fool it.</li>
+      <li><strong>How many games?</strong> The real NBA schedule. Healthy players play about 93% of games; injured players count as out until their projected return.</li>
+      <li><strong>Who starts?</strong> It assumes every manager sets their best lineup each day.</li>
+      <li><strong>Play the week 1,000 times</strong> with real-game randomness. Win 700 of the runs and that's a 70% chance.</li>
+      <li><strong>Odds</strong> are that % turned into bookie prices, just for fun.</li></ol>
+    <h3>The Brier score</h3>
+    <p>Counting right picks treats a lucky 51% call the same as a 95% "lock". The Brier score rewards being <strong>confident and right</strong> and punishes being <strong>confident and wrong</strong>.</p>
+    <p>For each matchup, take the chance the model gave the team that won, see how far short of 100% it was, and square it. That's the penalty:</p>
+    <table class="cats"><tr><th>Model gave the winner</th><th>Penalty</th></tr>
+      <tr><td>95%</td><td class="pos">0.00</td></tr><tr><td>80%</td><td class="pos">0.04</td></tr><tr><td>50%</td><td>0.25</td></tr>
+      <tr><td>20% (backed the loser)</td><td class="neg">0.64</td></tr><tr><td>5% (backed the loser hard)</td><td class="neg">0.90</td></tr></table>
+    <p>The score is the average penalty, so <strong>lower is better</strong>. One confident miss costs as much as about 20 decent calls.</p>
+    <h3>Why guessing scores 0.25</h3>
+    <p>"Guessing" means saying 50/50 for every matchup. Whoever wins, that's 0.50 short of 100%, and 0.50 × 0.50 = 0.25. Every time. That's the line to beat.</p>
+    <p><strong>% better than guessing = (0.25 − score) ÷ 0.25.</strong> So 0.10 is 60% better, 0.15 is 40% better, 0.20 is 20% better, and anything over 0.25 is worse than guessing.</p>
+  </div></details>`;
+
+  app.innerHTML = `<div class="rc">${hero}${weeks}${conf}${cats}${how}</div>`;
+}
+
+let TR = null;
+function tradeChart(series, A, B) {
+  // each team's matchup wins added since the trade, day by day (series: [date, margin, winsA, winsB])
+  if (!series || !series.length || series[0].length < 4) return "";
+  const pts = [[null, 0, 0, 0], ...series], n = pts.length - 1;
+  const big = Math.max(0.005, ...pts.map(p => Math.max(Math.abs(p[2]), Math.abs(p[3]))));
+  const step = [0.005, 0.01, 0.02, 0.025, 0.05, 0.1, 0.2, 0.25, 0.5, 1].find(s => s * 2 >= big) || 1;
+  const lim = step * 2 * 1.08;
+  const W = 600, H = 132, X = i => i / n * W, Y = v => (1 - (v + lim) / (2 * lim)) * H, pct = y => (y + 2) / (H + 4) * 100;
+  const path = k => pts.map((p, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(p[k]).toFixed(1)).join(" ");
+  const sg = x => (x > 0 ? "+" : x < 0 ? "−" : "") + Math.abs(x).toFixed(Math.abs(x) >= 0.1 || step >= 0.05 ? 2 : 3).replace(/^0\./, ".");
+  const fd = x => new Date(x + "T12:00:00").toLocaleDateString("en-AU", { day: "numeric", month: "short" });
+  const ticks = [-2, -1, 0, 1, 2].map(k => `<span class="tc-y" style="top:${pct(Y(k * step))}%">${k ? sg(k * step) : "0"}</span>`).join("");
+  const grid = [-2, -1, 1, 2].map(k => `<line x1="0" x2="${W}" y1="${Y(k * step)}" y2="${Y(k * step)}" class="wp-grid" vector-effect="non-scaling-stroke"/>`).join("");
+  // end labels: nudge apart if they'd overlap
+  let ya = pct(Y(pts[n][2])), yb = pct(Y(pts[n][3]));
+  if (Math.abs(ya - yb) < 13) { const m = (ya + yb) / 2, d = ya <= yb ? -6.5 : 6.5; ya = m + d; yb = m - d; }
+  const data = esc(JSON.stringify(pts.map((p, i) => [X(i) / W * 100, p[0], p[2], p[3]])));
+  return `<div class="wp tc" data-p="${data}" data-a="${esc(A)}" data-b="${esc(B)}">
+    <div class="tc-wrap"><div class="tc-axis">${ticks}</div><div class="wp-plot" style="height:136px">
+      <svg viewBox="0 -2 ${W} ${H + 4}" preserveAspectRatio="none" style="height:136px">${grid}
+        <line x1="0" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" class="wp-mid"/>
+        <path d="${path(3)}" class="tc-b" vector-effect="non-scaling-stroke"/>
+        <path d="${path(2)}" class="tc-a" vector-effect="non-scaling-stroke"/>
+        <line class="wp-cur" x1="0" x2="0" y1="0" y2="${H}" style="display:none" vector-effect="non-scaling-stroke"/></svg>
+      <span class="wp-dot a" style="left:100%;top:${pct(Y(pts[n][3]))}%"></span><span class="wp-dot" style="left:100%;top:${pct(Y(pts[n][2]))}%"></span>
+      <span class="tc-end ka ${pts[n][2] >= 0 ? "pos" : "neg"}" style="top:${ya}%">${sg(pts[n][2])}</span>
+      <span class="tc-end kb ${pts[n][3] >= 0 ? "pos" : "neg"}" style="top:${yb}%">${sg(pts[n][3])}</span>
+      <div class="wp-tip"></div></div></div>
+    <div class="tc-dates"><span>Trade</span><span>${fd(series[n - 1][0])}</span></div>
+    <div class="tc-key"><span class="ka">${esc(A)}</span><span class="kb">${esc(B)}</span><span class="kn">wins added · tap for any day</span></div></div>`;
+}
+function wireTradeCharts() {
+  app.querySelectorAll(".tc").forEach(el => {
+    const P = JSON.parse(el.dataset.p), plot = el.querySelector(".wp-plot"), cur = el.querySelector(".wp-cur"), tip = el.querySelector(".wp-tip");
+    const f = x => `<span class="${x > 0.0005 ? "pos" : x < -0.0005 ? "neg" : ""}">${(x >= 0 ? "+" : "−") + Math.abs(x).toFixed(3)}</span>`;
+    const show = e => {
+      const r = plot.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 100;
+      const p = P.reduce((a, b) => Math.abs(b[0] - x) < Math.abs(a[0] - x) ? b : a);
+      cur.setAttribute("x1", p[0] * 6); cur.setAttribute("x2", p[0] * 6); cur.style.display = "";
+      const day = p[1] ? new Date(p[1] + "T12:00:00").toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short" }) : "Trade day";
+      tip.innerHTML = `<b>${day}</b><br>${esc(el.dataset.a)} ${f(p[2])}<br>${esc(el.dataset.b)} ${f(p[3])}`;
+      tip.style.left = Math.min(Math.max(p[0], 22), 78) + "%"; tip.style.opacity = 1;
+    };
+    plot.addEventListener("pointermove", show); plot.addEventListener("pointerdown", show);
+    plot.addEventListener("pointerleave", () => { cur.style.display = "none"; tip.style.opacity = 0; });
+  });
+}
+async function tradesPage() {
+  setNav("trades"); document.title = "Trades · NBA Fantasy 2026";
+  app.innerHTML = '<p class="empty">Loading…</p>';
+  try { if (!TR) TR = await (await fetch("data/trades.json", { cache: "no-cache" })).json(); }
+  catch (e) { app.innerHTML = '<p class="empty">The trade tracker isn\'t available yet. It appears after the next data refresh.</p>'; return; }
+  const T = TR.trades;
+  if (!T.length) { app.innerHTML = '<p class="empty">No trades yet. Somebody get on the phone.</p>'; return; }
+  const sg = x => x == null ? "–" : (x >= 0 ? "+" : "−") + Math.abs(x).toFixed(3);
+  const cls = x => x == null ? "" : x > 0.0005 ? "pos" : x < -0.0005 ? "neg" : "";
+  const when = iso => new Date(iso).toLocaleDateString("en-AU", { day: "numeric", month: "short" });
+  const gets = (t, team) => t.gets[team].map(esc).join(" + ");
+
+  const cards = T.map(t => {
+    const [A, B] = Object.keys(t.gets).sort(), F = t.so_far;
+    const head = (mid) => `<div class="mu-head"><div class="mu-team">${esc(A)}<small>${gets(t, A)}</small></div>${mid}<div class="mu-team r">${esc(B)}<small>${gets(t, B)}</small></div></div>`;
+    if (!F) {
+      const at = t.at_time ? `<div class="mu-odds"><span><strong class="${cls(t.at_time[A])}">${sg(t.at_time[A])}</strong> expected</span><span>expected <strong class="${cls(t.at_time[B])}">${sg(t.at_time[B])}</strong></span></div>` : "";
+      return `<div class="card tr"><div class="tr-meta">${when(t.accepted_utc)} · in league review</div>${head('<div class="mu-score tr-pend">vs</div>')}${at}</div>`;
+    }
+    const [w, l, d] = F.score, g = F.grade, wa = F.wins_added || {};
+    const total = Math.max(w + l, 1);
+    const gr = x => x === "Too early" ? "" : ` · <b>${esc(x)}</b>`;
+    const rows = F.cats.map(c => { const f = v => v == null ? "–" : c.cat.includes("%") ? v.toFixed(3).replace(/^0/, "") : Math.round(v);
+      return `<tr><td>${c.cat}</td><td class="${c.res === 1 ? "win" : ""}">${f(c.got)}</td><td class="${c.res === -1 ? "win" : ""}">${f(c.gave)}</td></tr>`; }).join("");
+    const row = (label, o, strong) => o ? `<tr><td>${label}</td><td class="${cls(o[A])}">${strong ? "<strong>" : ""}${sg(o[A])}${strong ? "</strong>" : ""}</td><td class="${cls(o[B])}">${strong ? "<strong>" : ""}${sg(o[B])}${strong ? "</strong>" : ""}</td></tr>` : "";
+    const early = Math.min(...Object.values(F.games)) < 12 ? " · early days" : "";
+    return `<div class="card tr"><div class="tr-meta">${when(t.accepted_utc)} · ${F.days} day${F.days === 1 ? "" : "s"}${early}</div>
+      ${head(`<div class="mu-score">${w}-${l}${d ? `<small>-${d}</small>` : ""}</div>`)}
+      <div class="bar"><i style="width:${w / total * 100}%"></i><b style="width:${l / total * 100}%"></b></div>
+      <div class="mu-odds"><span><strong class="${cls(wa[A])}">${sg(wa[A])}</strong> wins${gr(g[A])}</span><span>${gr(g[B]).replace(" · ", "")}${g[B] === "Too early" ? "" : " · "}wins <strong class="${cls(wa[B])}">${sg(wa[B])}</strong></span></div>
+      ${tradeChart(F.series, A, B)}
+      <details><summary>Details</summary>
+        <table class="cats"><tr><th>Since ${when(F.from + "T12:00:00")}</th><th>${esc(short(A))}</th><th>${esc(short(B))}</th></tr>
+          <tr><td>Games started</td><td>${F.games[A]}</td><td>${F.games[B]}</td></tr>${rows}</table>
+        <table class="cats" style="margin-top:14px"><tr><th>Matchup wins</th><th>${esc(short(A))}</th><th>${esc(short(B))}</th></tr>
+          ${row("Added so far", wa, true)}${row(`Expected at the time${t.post ? ` · <a href="#/${esc(t.post)}">review</a>` : ""}`, t.at_time)}${row(t.now_frozen ? "Expected from today (frozen)" : "Expected from today", t.now)}</table>
+      </details></div>`;
+  }).join("");
+
+  const how = `<details class="rc-how"><summary>How this works</summary><div class="explain">
+    <p><strong>The score</strong> treats each trade as a matchup between the two hauls: one team's new players against the other's, across all 9 categories. Only games a player started for his new team count, and he stops counting if he's dropped or traded on.</p>
+    <p><strong>Wins</strong> is how many matchup wins the trade has actually been worth to each team so far. It weighs each category by how much it moves that team's real chances, so stats a team didn't need barely count. That's why the score and the wins can disagree.</p>
+    <p><strong>Grades</strong> come from wins added per week and appear once both sides have 12 games.</p>
+    <p><strong>The chart</strong> tracks each team's wins added, day by day since the trade. Both lines start at 0; the one climbing is the team winning the trade.</p>
+    <p><strong>Details</strong> has the stats behind it, plus what the model expected when the trade happened and what it expects from today on.</p></div></details>`;
+  app.innerHTML = `<p class="updated">Every trade this season and who's actually winning it · updated ${esc(ago(TR.updated_utc))}.</p>${cards}${how}`;
+  wireTradeCharts();
+}
+
+function route() {
+  const slug = decodeURIComponent(location.hash.replace(/^#\/?/, ""));
+  if (slug === "odds") return oddsPage();
+  if (slug === "ladder") return ladderPage();
+  if (slug === "dawg") return dawgPage();
+  if (slug === "trade") return tradePage();
+  if (slug === "stats") return statsPage();
+  if (slug === "injuries") return injuriesPage();
+  if (slug === "record") return recordPage();
+  if (slug === "trades") return tradesPage();
+  setNav("posts");
+  slug ? show(slug) : home();
+}
+
+fetch("posts/index.json", { cache: "no-cache" })
+  .then(r => r.json()).then(j => { posts = j; route(); })
+  .catch(() => { app.innerHTML = '<p class="empty">Couldn\'t load posts.</p>'; });
+window.addEventListener("hashchange", route);
+</script>
+</body>
+</html>
