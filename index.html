@@ -670,6 +670,12 @@ async function tradesPage() {
     const seg = `<div class="seg pks">${COLS.map(([k, l]) => `<button type="button" class="${k === col ? "on" : ""}" data-k="${kind}" data-c="${k}">${l}</button>`).join("")}</div>`;
     return `${seg}<div class="card ld scroll"><table class="ladder pk c-${col}"><tr><th>#</th><th>Player</th>${th}</tr>${rows}</table></div>`;
   };
+  const RJ = TR.rejected || [];
+  const rejected = RJ.length ? `<h2 class="rc-h" style="margin-top:26px">Rejected offers <small>${RJ.length} declined or withdrawn</small></h2><div class="card">${RJ.map(r => {
+      const deal = r.gets ? Object.entries(r.gets).map(([t, ps]) => `<b>${esc(t)}</b> get ${ps.map(esc).join(" + ")}`).join("<br>") : `<span style="color:var(--muted)">Players not public (ESPN hides a declined offer's players)</span>`;
+      const what = r.outcome === "withdrawn" ? `Offered by <b>${esc(r.proposed_by)}</b>, then withdrawn` : `Declined by <b>${esc(r.by)}</b>${r.proposed_by ? ` · offered by ${esc(r.proposed_by)}` : ""}`;
+      return `<div class="pl" style="grid-template-columns:1fr auto"><span style="color:var(--ink)">${what}<br><small>${deal}</small></span><span>${new Date(r.date).toLocaleDateString("en-AU", { day: "numeric", month: "short" })}</span></div>`;
+    }).join("")}</div>` : "";
   const DR = TR.drops;
   const DCOLS = [["games", "Games"], ["per_game", "Per game"], ["fpts", "Total"]];
   const dropTable = () => {
@@ -718,7 +724,7 @@ async function tradesPage() {
     <p><strong>Grades</strong> come from the points margin per week and appear after a week.</p>
     <p><strong>The chart</strong> is the running points margin, day by day: above the line the first team is winning the trade, below it the second.</p></div></details>`;
   app.innerHTML = `<p class="updated">Every trade and pickup this season, and who's actually winning them · updated ${esc(ago(TR.updated_utc))}.</p>
-    <h2 class="rc-h">Trades <small>${T.length} this season</small></h2>${T.length ? cards + how : '<p class="empty">No trades yet. Somebody get on the phone.</p>'}${waiver}`;
+    <h2 class="rc-h">Trades <small>${T.length} this season</small></h2>${T.length ? cards + how : '<p class="empty">No trades yet. Somebody get on the phone.</p>'}${rejected}${waiver}`;
   app.querySelectorAll("th.srt, .pks button").forEach(th => th.onclick = () => { const y = scrollY; PICK_SORT[th.dataset.k] = th.dataset.c; tradesPage().then(() => scrollTo(0, y)); });
   wireTradeCharts();
 }

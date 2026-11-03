@@ -91,6 +91,18 @@ def scan_trades(d, log):
                             "team": i.get("toTeamId") or t.get("teamId"), "player": i["playerId"],
                             "bid": t.get("bidAmount") or 0, "type": t["type"],
                             "date_utc": datetime.fromtimestamp(when / 1000, timezone.utc).isoformat()})
+            # remember every offer we see (players are only visible while it's live or after a cancel) and every decline
+            if t.get("type") == "TRADE_PROPOSAL":
+                off = log.setdefault("_offers", {}).setdefault(t["id"], {})
+                items = [i for i in t.get("items", []) if i.get("playerId")]
+                off.update(status=t.get("status"), team=t.get("teamId"),
+                           date_utc=datetime.fromtimestamp((t.get("proposedDate") or 0) / 1000, timezone.utc).isoformat())
+                if items:
+                    off["items"] = [[i["playerId"], i.get("fromTeamId"), i.get("toTeamId")] for i in items]
+            if t.get("type") == "TRADE_DECLINE":
+                log.setdefault("_declines", {})[t["id"]] = {
+                    "team": t.get("teamId"), "offer": t.get("relatedTransactionId"),
+                    "date_utc": datetime.fromtimestamp((t.get("proposedDate") or 0) / 1000, timezone.utc).isoformat()}
             if t.get("type") not in ("TRADE_ACCEPT", "TRADE_UPHOLD", "TRADE_PROPOSAL") or t.get("status") != "EXECUTED":
                 continue
             items = [i for i in t.get("items", []) if i.get("playerId") and i.get("toTeamId")]
@@ -272,6 +284,29 @@ def drops(log, names, pool):
     return {"count": len(out), "all": out}
 
 
+def rejected(log, names, pool_names):
+    """Declined and cancelled offers. Players are only known when the offer was seen while live or cancelled."""
+    offers = log.get("_offers", {})
+    out = []
+    def side(items):
+        if not items:
+            return None
+        gets = {}
+        for pid, frm, to in items:
+            gets.setdefault(names.get(to, "?"), []).append(pool_names.get(pid, str(pid)))
+        return gets
+    for x in log.get("_declines", {}).values():
+        o = offers.get(x["offer"], {})
+        out.append({"date": x["date_utc"], "outcome": "declined", "by": names.get(x["team"]),
+                    "proposed_by": names.get(o.get("team")), "gets": side(o.get("items"))})
+    for oid, o in offers.items():
+        if o.get("status") == "CANCELED":
+            out.append({"date": o["date_utc"], "outcome": "withdrawn", "by": names.get(o.get("team")),
+                        "proposed_by": names.get(o.get("team")), "gets": side(o.get("items"))})
+    out.sort(key=lambda r: r["date"], reverse=True)
+    return out
+
+
 def grade(margin_per_week):
     """Letter grade from fantasy points per week gained vs the other side."""
     for lim, g in ((60, "A+"), (40, "A"), (25, "A-"), (12, "B+"), (4, "B"), (-4, "C"), (-12, "C-"),
@@ -361,7 +396,8 @@ def main():
         json.dump({"updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                    "fa_points_per_game": fpg, "fa_points_per_day": fa_day, "fa_pool": FA_POOL,
                    "trades": out, "pickups": pickups(log, days, names, pool_names),
-                   "drops": drops(log, names, {x["player"]["id"]: x for x in S._pool()})}, f, indent=1)
+                   "drops": drops(log, names, {x["player"]["id"]: x for x in S._pool()}),
+                   "rejected": rejected(log, names, pool_names)}, f, indent=1)
     print(f"trades: {len(out)}, days cached: {len(days)}, avg FA {fpg} FPTS/game")
 
 

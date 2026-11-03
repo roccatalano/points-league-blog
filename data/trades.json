@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-03T06:38:25+00:00",
+ "updated_utc": "2026-11-03T06:40:19+00:00",
  "fa_points_per_game": 24.5,
  "fa_points_per_day": 11.76,
  "fa_pool": 10,
@@ -1933,5 +1933,56 @@
     "per_game": -1.0
    }
   ]
- }
+ },
+ "rejected": [
+  {
+   "date": "2026-10-28T08:08:56.648000+00:00",
+   "outcome": "declined",
+   "by": "Kawhi Me A River",
+   "proposed_by": null,
+   "gets": null
+  },
+  {
+   "date": "2026-10-28T03:49:34.398000+00:00",
+   "outcome": "withdrawn",
+   "by": "coachcainzey",
+   "proposed_by": "coachcainzey",
+   "gets": {
+    "coachcainzey": [
+     "Ivica Zubac"
+    ],
+    "Spicy town Mayo": [
+     "Isaiah Hartenstein"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-28T03:49:30.710000+00:00",
+   "outcome": "declined",
+   "by": "coachcainzey",
+   "proposed_by": null,
+   "gets": null
+  },
+  {
+   "date": "2026-10-21T05:45:13.876000+00:00",
+   "outcome": "declined",
+   "by": "Rye RSL",
+   "proposed_by": null,
+   "gets": null
+  },
+  {
+   "date": "2026-10-21T05:45:06.772000+00:00",
+   "outcome": "declined",
+   "by": "Rye RSL",
+   "proposed_by": null,
+   "gets": null
+  },
+  {
+   "date": "2026-10-21T02:13:51.809000+00:00",
+   "outcome": "declined",
+   "by": "Spicy town Mayo",
+   "proposed_by": null,
+   "gets": null
+  }
+ ]
 }
