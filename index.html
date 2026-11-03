@@ -675,7 +675,7 @@ async function tradesPage() {
     <div class="grp">Worst pickups <span style="text-transform:none;letter-spacing:0;font-weight:600">· 3+ starts</span></div>${pickTable("worst")}
     <div class="grp">By team</div><div class="card scroll"><table class="ladder"><tr><th>#</th><th>Team</th><th>Adds</th><th>Points</th><th>FAAB</th></tr>${
       PK.by_team.map((r, i) => `<tr><td>${i + 1}</td><td><span class="tm">${esc(r.team)}</span></td><td>${r.pickups}</td><td>${f0(r.fpts)}</td><td>$${r.faab}</td></tr>`).join("")}</table></div>
-    <p class="note">A pickup counts from the day after he's added until he's dropped or traded, and only games he started. "Points" by team = everything its pickups have scored for it.</p>` : "";
+    <p class="note">A pickup only counts for the team that added him: games he started for them, from the day he was added until he's dropped or traded. It's not his season total. "Points" by team = everything its pickups have scored for it.</p>` : "";
   const when = iso => new Date(iso).toLocaleDateString("en-AU", { day: "numeric", month: "short" });
   const gcls = g => !g ? "early" : g[0] === "A" ? "a" : g[0] === "B" ? "b" : g[0] === "C" ? "c" : "d";
   const cards = T.map(t => {
@@ -702,7 +702,7 @@ async function tradesPage() {
       </details></div>`;
   }).join("");
   const how = `<details class="rc-how"><summary>How this works</summary><div class="explain">
-    <p><strong>The score</strong> is the fantasy points each team's new players have scored <em>in its starting lineup</em> since the day after the trade. Bench games don't count, and a player stops counting once he's dropped or traded on.</p>
+    <p><strong>The score</strong> is the fantasy points each team's new players have scored <em>in its starting lineup</em> from the day of the trade. Bench games don't count, and a player stops counting once he's dropped or traded on.</p>
     <p><strong>Uneven trades</strong> (say 2-for-1): the team getting fewer players frees up a roster spot, so it gets credited with an average free agent in that spot: ${f1(TR.fa_points_per_game)} FPTS a game (the best ${TR.fa_pool} available free agents right now) on the ~48% of days an NBA team plays, ${f1(TR.fa_points_per_day)} a day.</p>
     <p><strong>Grades</strong> come from the points margin per week and appear after a week.</p>
     <p><strong>The chart</strong> is the running points margin, day by day: above the line the first team is winning the trade, below it the second.</p></div></details>`;

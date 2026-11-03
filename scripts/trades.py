@@ -3,8 +3,8 @@ Writes data/trades.json.
 
 For each trade:
   gets      - who each team received
-  so_far    - fantasy points each team's incoming players have scored IN ITS STARTING LINEUP since the
-              trade (bench games don't count; a player stops counting once he leaves that team).
+  so_far    - fantasy points each team's incoming players have scored IN ITS STARTING LINEUP from the
+              trade day on, on days ESPN's roster shows him on that team (bench games don't count; a player stops counting once he leaves that team).
               Uneven trades (2-for-1 etc.): the team receiving fewer players frees a roster spot, so it is
               credited with an average free agent in each freed spot (FA points per game x the share of
               days an NBA team plays). Day-by-day running margin for the chart.
@@ -171,7 +171,8 @@ def pickups(log, days, names, pool_names):
         tid, pid = a["team"], str(a["player"])
         if tid not in names:
             continue
-        first = str(datetime.fromisoformat(a["date_utc"]).astimezone(S.ET).date() + timedelta(days=1))
+        # from the day of the add (US date): each day's ESPN roster says whether he was really on the team
+        first = str(datetime.fromisoformat(a["date_utc"]).astimezone(S.ET).date())
         starts = fpts = 0.0
         held = 0
         for sp in sorted(days, key=int):
@@ -230,7 +231,7 @@ def main():
                 rec["at_time_source"] = "model when first seen" if rec["first_seen"] <= t["processed_utc"][:10] \
                     else f"model on {rec['first_seen']} (trade made before the tracker started)"
         # ---- so far: day by day from the day after processing
-        first_day = str(datetime.fromisoformat(t["processed_utc"]).astimezone(S.ET).date() + timedelta(days=1))
+        first_day = str(datetime.fromisoformat(t["processed_utc"]).astimezone(S.ET).date())  # roster check per day
         open_spots = {A: max(0, len(gets[str(B)]) - len(gets[str(A)])), B: max(0, len(gets[str(A)]) - len(gets[str(B)]))}
         tot = {A: 0.0, B: 0.0}
         games = {A: 0, B: 0}
