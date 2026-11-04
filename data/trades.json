@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-04T00:45:57+00:00",
+ "updated_utc": "2026-11-04T07:11:54+00:00",
  "fa_points_per_game": 24.5,
  "fa_points_per_day": 11.76,
  "fa_pool": 10,
@@ -104,7 +104,7 @@
     }
    },
    "now": {
-    "date": "2026-11-03",
+    "date": "2026-11-04",
     "Joseph's Scary Team": {
      "exp_wins": 0.2,
      "weekly_points": 13.0
@@ -118,6 +118,11 @@
    "now_history": [
     [
      "2026-11-03",
+     0.2,
+     -0.14
+    ],
+    [
+     "2026-11-04",
      0.2,
      -0.14
     ]
@@ -247,7 +252,7 @@
   }
  ],
  "pickups": {
-  "count": 82,
+  "count": 83,
   "best": [
    {
     "player": "Jalen Smith",
@@ -1272,6 +1277,16 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Karlo Matkovic",
+    "team": "Kuminga Lot",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-03",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -1337,7 +1352,7 @@
    },
    {
     "team": "Kuminga Lot",
-    "pickups": 3,
+    "pickups": 4,
     "fpts": 123.0,
     "faab": 0
    },
@@ -1362,7 +1377,7 @@
   ]
  },
  "drops": {
-  "count": 64,
+  "count": 65,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -1927,6 +1942,15 @@
     "team": "Spicy town Mayo",
     "now": "RayJayDaPawnSTAH",
     "date": "2026-10-27",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Jared McCain",
+    "team": "Kuminga Lot",
+    "now": "free agent",
+    "date": "2026-11-03",
     "games": 0,
     "fpts": 0,
     "per_game": null
