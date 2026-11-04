@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-04T07:11:54+00:00",
- "fa_points_per_game": 24.5,
- "fa_points_per_day": 11.76,
+ "updated_utc": "2026-11-04T15:39:44+00:00",
+ "fa_points_per_game": 25.2,
+ "fa_points_per_day": 12.1,
  "fa_pool": 10,
  "trades": [
   {
@@ -36,7 +36,7 @@
    "post": "2026-10-30-trade",
    "so_far": {
     "from": "2026-10-30",
-    "days": 4,
+    "days": 5,
     "points": {
      "Joseph's Scary Team": 103.0,
      "coachcainzey": 72.0
@@ -46,8 +46,8 @@
      "coachcainzey": -31.0
     },
     "per_week": {
-     "Joseph's Scary Team": 54.2,
-     "coachcainzey": -54.2
+     "Joseph's Scary Team": 43.4,
+     "coachcainzey": -43.4
     },
     "games": {
      "Joseph's Scary Team": 3,
@@ -95,6 +95,10 @@
      ],
      [
       "2026-11-02",
+      31.0
+     ],
+     [
+      "2026-11-03",
       31.0
      ]
     ],
@@ -149,7 +153,7 @@
    "post": "2026-10-20-trade",
    "so_far": {
     "from": "2026-10-20",
-    "days": 14,
+    "days": 15,
     "points": {
      "Kream team": 50.0,
      "coachcainzey": 76.0
@@ -159,8 +163,8 @@
      "coachcainzey": 26.0
     },
     "per_week": {
-     "Kream team": -13.0,
-     "coachcainzey": 13.0
+     "Kream team": -12.1,
+     "coachcainzey": 12.1
     },
     "games": {
      "Kream team": 4,
@@ -239,6 +243,10 @@
      [
       "2026-11-02",
       -26.0
+     ],
+     [
+      "2026-11-03",
+      -26.0
      ]
     ],
     "grade": {
@@ -252,7 +260,7 @@
   }
  ],
  "pickups": {
-  "count": 83,
+  "count": 85,
   "best": [
    {
     "player": "Jalen Smith",
@@ -1287,6 +1295,26 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Nolan Traore",
+    "team": "Spicy town Mayo",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-04",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
+   },
+   {
+    "player": "Ziaire Williams",
+    "team": "Downtown Euros",
+    "bid": 0,
+    "type": "waiver claim",
+    "date": "2026-11-04",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -1310,7 +1338,7 @@
    },
    {
     "team": "Downtown Euros",
-    "pickups": 6,
+    "pickups": 7,
     "fpts": 453.0,
     "faab": 0
    },
@@ -1358,7 +1386,7 @@
    },
    {
     "team": "Spicy town Mayo",
-    "pickups": 6,
+    "pickups": 7,
     "fpts": 119.0,
     "faab": 0
    },
@@ -1377,7 +1405,7 @@
   ]
  },
  "drops": {
-  "count": 65,
+  "count": 67,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -1814,7 +1842,7 @@
    {
     "player": "Ziaire Williams",
     "team": "coachcainzey",
-    "now": "free agent",
+    "now": "Downtown Euros",
     "date": "2026-11-03",
     "games": 0,
     "fpts": 0,
@@ -1951,6 +1979,24 @@
     "team": "Kuminga Lot",
     "now": "free agent",
     "date": "2026-11-03",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Cam Spencer",
+    "team": "Spicy town Mayo",
+    "now": "free agent",
+    "date": "2026-11-04",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "DeMar DeRozan",
+    "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-11-04",
     "games": 0,
     "fpts": 0,
     "per_game": null

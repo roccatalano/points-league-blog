@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-04T07:11:58.235123+00:00",
+ "updated_utc": "2026-11-04T15:39:48.111962+00:00",
  "today_et": "2026-11-04",
  "players": [
   {
@@ -390,7 +390,7 @@
    "note": "Claxton (hamstring) is questionable for Wednesday against the Knicks.",
    "note_date": "2026-11-03",
    "fantasy_team": "Spicy town Mayo",
-   "on_ir": true,
+   "on_ir": false,
    "per_game": {
     "FPTS": 30.3,
     "PTS": 11.6,
@@ -1031,7 +1031,7 @@
    "note": "Suggs has been diagnosed with a mild bone bruise in his right knee and will be re-evaluated in two weeks, Shams Charania of ESPN reports.",
    "note_date": "2026-10-26",
    "fantasy_team": "Spicy town Mayo",
-   "on_ir": false,
+   "on_ir": true,
    "per_game": {
     "FPTS": 28.5,
     "PTS": 12.4,
