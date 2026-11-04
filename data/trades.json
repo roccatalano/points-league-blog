@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-03T20:23:19+00:00",
+ "updated_utc": "2026-11-04T00:45:57+00:00",
  "fa_points_per_game": 24.5,
  "fa_points_per_day": 11.76,
  "fa_pool": 10,
@@ -107,11 +107,11 @@
     "date": "2026-11-03",
     "Joseph's Scary Team": {
      "exp_wins": 0.2,
-     "weekly_points": 12.9
+     "weekly_points": 13.0
     },
     "coachcainzey": {
      "exp_wins": -0.14,
-     "weekly_points": -10.5
+     "weekly_points": -10.6
     }
    },
    "now_frozen": false,
