@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-05T01:58:26+00:00",
- "fa_points_per_game": 25.4,
- "fa_points_per_day": 12.19,
+ "updated_utc": "2026-11-05T09:10:43+00:00",
+ "fa_points_per_game": 24.9,
+ "fa_points_per_day": 11.95,
  "fa_pool": 10,
  "trades": [
   {
@@ -36,35 +36,35 @@
    "post": "2026-10-30-trade",
    "so_far": {
     "from": "2026-10-30",
-    "days": 5,
+    "days": 6,
     "points": {
-     "Joseph's Scary Team": 103.0,
-     "coachcainzey": 72.0
+     "Joseph's Scary Team": 164.0,
+     "coachcainzey": 90.0
     },
     "margin": {
-     "Joseph's Scary Team": 31.0,
-     "coachcainzey": -31.0
+     "Joseph's Scary Team": 74.0,
+     "coachcainzey": -74.0
     },
     "per_week": {
-     "Joseph's Scary Team": 43.4,
-     "coachcainzey": -43.4
+     "Joseph's Scary Team": 86.3,
+     "coachcainzey": -86.3
     },
     "games": {
-     "Joseph's Scary Team": 3,
-     "coachcainzey": 3
+     "Joseph's Scary Team": 5,
+     "coachcainzey": 4
     },
     "fa_credit": {},
     "players": {
      "Joseph's Scary Team": [
       {
        "name": "Collin Murray-Boyles",
-       "games": 2,
-       "fpts": 40.0
+       "games": 3,
+       "fpts": 59.0
       },
       {
        "name": "Kyrie Irving",
-       "games": 1,
-       "fpts": 63.0
+       "games": 2,
+       "fpts": 105.0
       }
      ],
      "coachcainzey": [
@@ -75,8 +75,8 @@
       },
       {
        "name": "Josh Giddey",
-       "games": 2,
-       "fpts": 59.0
+       "games": 3,
+       "fpts": 77.0
       }
      ]
     },
@@ -100,6 +100,10 @@
      [
       "2026-11-03",
       31.0
+     ],
+     [
+      "2026-11-04",
+      74.0
      ]
     ],
     "grade": {
@@ -108,14 +112,14 @@
     }
    },
    "now": {
-    "date": "2026-11-04",
+    "date": "2026-11-05",
     "Joseph's Scary Team": {
      "exp_wins": 0.26,
-     "weekly_points": 16.7
+     "weekly_points": 16.8
     },
     "coachcainzey": {
-     "exp_wins": -0.2,
-     "weekly_points": -14.3
+     "exp_wins": -0.19,
+     "weekly_points": -13.4
     }
    },
    "now_frozen": false,
@@ -129,6 +133,11 @@
      "2026-11-04",
      0.26,
      -0.2
+    ],
+    [
+     "2026-11-05",
+     0.26,
+     -0.19
     ]
    ]
   },
@@ -153,7 +162,7 @@
    "post": "2026-10-20-trade",
    "so_far": {
     "from": "2026-10-20",
-    "days": 15,
+    "days": 16,
     "points": {
      "Kream team": 50.0,
      "coachcainzey": 76.0
@@ -163,8 +172,8 @@
      "coachcainzey": 26.0
     },
     "per_week": {
-     "Kream team": -12.1,
-     "coachcainzey": 12.1
+     "Kream team": -11.4,
+     "coachcainzey": 11.4
     },
     "games": {
      "Kream team": 4,
@@ -247,11 +256,15 @@
      [
       "2026-11-03",
       -26.0
+     ],
+     [
+      "2026-11-04",
+      -26.0
      ]
     ],
     "grade": {
-     "Kream team": "D+",
-     "coachcainzey": "B+"
+     "Kream team": "C-",
+     "coachcainzey": "B"
     }
    },
    "now": null,
@@ -260,37 +273,17 @@
   }
  ],
  "pickups": {
-  "count": 86,
+  "count": 88,
   "best": [
-   {
-    "player": "Jalen Smith",
-    "team": "Kawhi Me A River",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-20",
-    "starts": 7,
-    "fpts": 201.0,
-    "per_start": 28.7
-   },
-   {
-    "player": "Christian Braun",
-    "team": "coachcainzey",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-21",
-    "starts": 6,
-    "fpts": 196.0,
-    "per_start": 32.7
-   },
    {
     "player": "Davion Mitchell",
     "team": "Joseph's Scary Team",
     "bid": 0,
     "type": "free agent",
     "date": "2026-10-21",
-    "starts": 5,
-    "fpts": 194.0,
-    "per_start": 38.8
+    "starts": 6,
+    "fpts": 242.0,
+    "per_start": 40.3
    },
    {
     "player": "Grayson Allen",
@@ -298,9 +291,29 @@
     "bid": 0,
     "type": "waiver claim",
     "date": "2026-10-21",
+    "starts": 9,
+    "fpts": 229.0,
+    "per_start": 25.4
+   },
+   {
+    "player": "Christian Braun",
+    "team": "coachcainzey",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-21",
+    "starts": 7,
+    "fpts": 222.0,
+    "per_start": 31.7
+   },
+   {
+    "player": "Jalen Smith",
+    "team": "Kawhi Me A River",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-20",
     "starts": 8,
-    "fpts": 187.0,
-    "per_start": 23.4
+    "fpts": 210.0,
+    "per_start": 26.2
    },
    {
     "player": "Paul Reed",
@@ -308,9 +321,39 @@
     "bid": 0,
     "type": "free agent",
     "date": "2026-10-20",
+    "starts": 7,
+    "fpts": 198.0,
+    "per_start": 28.3
+   },
+   {
+    "player": "Tari Eason",
+    "team": "No Scrubs",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-25",
     "starts": 6,
-    "fpts": 181.0,
-    "per_start": 30.2
+    "fpts": 168.0,
+    "per_start": 28.0
+   },
+   {
+    "player": "Precious Achiuwa",
+    "team": "Downtown Euros",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-25",
+    "starts": 6,
+    "fpts": 166.0,
+    "per_start": 27.7
+   },
+   {
+    "player": "P.J. Washington",
+    "team": "NAWSectual",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-21",
+    "starts": 7,
+    "fpts": 164.0,
+    "per_start": 23.4
    },
    {
     "player": "Zaccharie Risacher",
@@ -323,44 +366,14 @@
     "per_start": 26.5
    },
    {
-    "player": "Precious Achiuwa",
-    "team": "Downtown Euros",
+    "player": "Isaiah Hartenstein",
+    "team": "coachcainzey",
     "bid": 0,
     "type": "free agent",
-    "date": "2026-10-25",
+    "date": "2026-10-26",
     "starts": 5,
     "fpts": 146.0,
     "per_start": 29.2
-   },
-   {
-    "player": "Aaron Wiggins",
-    "team": "Joseph's Scary Team",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-23",
-    "starts": 6,
-    "fpts": 145.0,
-    "per_start": 24.2
-   },
-   {
-    "player": "Tari Eason",
-    "team": "No Scrubs",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-25",
-    "starts": 5,
-    "fpts": 144.0,
-    "per_start": 28.8
-   },
-   {
-    "player": "P.J. Washington",
-    "team": "NAWSectual",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-21",
-    "starts": 6,
-    "fpts": 127.0,
-    "per_start": 21.2
    }
   ],
   "worst": [
@@ -375,13 +388,23 @@
     "per_start": 10.2
    },
    {
+    "player": "Sandro Mamukelashvili",
+    "team": "No Scrubs",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-30",
+    "starts": 3,
+    "fpts": 40.0,
+    "per_start": 13.3
+   },
+   {
     "player": "Dennis Schroder",
     "team": "Rye RSL",
     "bid": 0,
     "type": "waiver claim",
     "date": "2026-10-26",
-    "starts": 5,
-    "fpts": 79.0,
+    "starts": 6,
+    "fpts": 95.0,
     "per_start": 15.8
    },
    {
@@ -425,6 +448,16 @@
     "per_start": 17.6
    },
    {
+    "player": "Dean Wade",
+    "team": "Kream team",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-27",
+    "starts": 5,
+    "fpts": 93.0,
+    "per_start": 18.6
+   },
+   {
     "player": "Mo Bamba",
     "team": "Kream team",
     "bid": 0,
@@ -435,66 +468,26 @@
     "per_start": 18.7
    },
    {
-    "player": "Keldon Johnson",
-    "team": "coachcainzey",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-20",
-    "starts": 3,
-    "fpts": 59.0,
-    "per_start": 19.7
-   },
-   {
-    "player": "Jaylen Wells",
-    "team": "coachcainzey",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-24",
-    "starts": 4,
-    "fpts": 81.0,
-    "per_start": 20.2
-   },
-   {
-    "player": "Dean Wade",
-    "team": "Kream team",
+    "player": "Pelle Larsson",
+    "team": "RayJayDaPawnSTAH",
     "bid": 0,
     "type": "free agent",
     "date": "2026-10-27",
-    "starts": 4,
-    "fpts": 82.0,
-    "per_start": 20.5
+    "starts": 3,
+    "fpts": 57.0,
+    "per_start": 19.0
    }
   ],
   "all": [
-   {
-    "player": "Jalen Smith",
-    "team": "Kawhi Me A River",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-20",
-    "starts": 7,
-    "fpts": 201.0,
-    "per_start": 28.7
-   },
-   {
-    "player": "Christian Braun",
-    "team": "coachcainzey",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-21",
-    "starts": 6,
-    "fpts": 196.0,
-    "per_start": 32.7
-   },
    {
     "player": "Davion Mitchell",
     "team": "Joseph's Scary Team",
     "bid": 0,
     "type": "free agent",
     "date": "2026-10-21",
-    "starts": 5,
-    "fpts": 194.0,
-    "per_start": 38.8
+    "starts": 6,
+    "fpts": 242.0,
+    "per_start": 40.3
    },
    {
     "player": "Grayson Allen",
@@ -502,9 +495,29 @@
     "bid": 0,
     "type": "waiver claim",
     "date": "2026-10-21",
+    "starts": 9,
+    "fpts": 229.0,
+    "per_start": 25.4
+   },
+   {
+    "player": "Christian Braun",
+    "team": "coachcainzey",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-21",
+    "starts": 7,
+    "fpts": 222.0,
+    "per_start": 31.7
+   },
+   {
+    "player": "Jalen Smith",
+    "team": "Kawhi Me A River",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-20",
     "starts": 8,
-    "fpts": 187.0,
-    "per_start": 23.4
+    "fpts": 210.0,
+    "per_start": 26.2
    },
    {
     "player": "Paul Reed",
@@ -512,9 +525,39 @@
     "bid": 0,
     "type": "free agent",
     "date": "2026-10-20",
+    "starts": 7,
+    "fpts": 198.0,
+    "per_start": 28.3
+   },
+   {
+    "player": "Tari Eason",
+    "team": "No Scrubs",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-25",
     "starts": 6,
-    "fpts": 181.0,
-    "per_start": 30.2
+    "fpts": 168.0,
+    "per_start": 28.0
+   },
+   {
+    "player": "Precious Achiuwa",
+    "team": "Downtown Euros",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-25",
+    "starts": 6,
+    "fpts": 166.0,
+    "per_start": 27.7
+   },
+   {
+    "player": "P.J. Washington",
+    "team": "NAWSectual",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-21",
+    "starts": 7,
+    "fpts": 164.0,
+    "per_start": 23.4
    },
    {
     "player": "Zaccharie Risacher",
@@ -527,11 +570,11 @@
     "per_start": 26.5
    },
    {
-    "player": "Precious Achiuwa",
-    "team": "Downtown Euros",
+    "player": "Isaiah Hartenstein",
+    "team": "coachcainzey",
     "bid": 0,
     "type": "free agent",
-    "date": "2026-10-25",
+    "date": "2026-10-26",
     "starts": 5,
     "fpts": 146.0,
     "per_start": 29.2
@@ -545,36 +588,6 @@
     "starts": 6,
     "fpts": 145.0,
     "per_start": 24.2
-   },
-   {
-    "player": "Tari Eason",
-    "team": "No Scrubs",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-25",
-    "starts": 5,
-    "fpts": 144.0,
-    "per_start": 28.8
-   },
-   {
-    "player": "P.J. Washington",
-    "team": "NAWSectual",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-21",
-    "starts": 6,
-    "fpts": 127.0,
-    "per_start": 21.2
-   },
-   {
-    "player": "Isaiah Hartenstein",
-    "team": "coachcainzey",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-26",
-    "starts": 4,
-    "fpts": 116.0,
-    "per_start": 29.0
    },
    {
     "player": "Keaton Wagler",
@@ -597,6 +610,36 @@
     "per_start": 23.8
    },
    {
+    "player": "Dennis Schroder",
+    "team": "Rye RSL",
+    "bid": 0,
+    "type": "waiver claim",
+    "date": "2026-10-26",
+    "starts": 6,
+    "fpts": 95.0,
+    "per_start": 15.8
+   },
+   {
+    "player": "Dean Wade",
+    "team": "Kream team",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-27",
+    "starts": 5,
+    "fpts": 93.0,
+    "per_start": 18.6
+   },
+   {
+    "player": "Obi Toppin",
+    "team": "No Scrubs",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-24",
+    "starts": 4,
+    "fpts": 89.0,
+    "per_start": 22.2
+   },
+   {
     "player": "Keon Ellis",
     "team": "No Scrubs",
     "bid": 0,
@@ -607,14 +650,14 @@
     "per_start": 17.6
    },
    {
-    "player": "Dean Wade",
-    "team": "Kream team",
+    "player": "Ja'Kobe Walter",
+    "team": "Ant Social Behaviour",
     "bid": 0,
     "type": "free agent",
-    "date": "2026-10-27",
+    "date": "2026-10-26",
     "starts": 4,
-    "fpts": 82.0,
-    "per_start": 20.5
+    "fpts": 84.0,
+    "per_start": 21.0
    },
    {
     "player": "Jaylen Wells",
@@ -627,34 +670,14 @@
     "per_start": 20.2
    },
    {
-    "player": "Dennis Schroder",
-    "team": "Rye RSL",
-    "bid": 0,
-    "type": "waiver claim",
-    "date": "2026-10-26",
-    "starts": 5,
-    "fpts": 79.0,
-    "per_start": 15.8
-   },
-   {
-    "player": "Ja'Kobe Walter",
-    "team": "Ant Social Behaviour",
+    "player": "Kingston Flemings",
+    "team": "Big Herro Glick",
     "bid": 0,
     "type": "free agent",
-    "date": "2026-10-26",
+    "date": "2026-10-29",
     "starts": 3,
-    "fpts": 77.0,
-    "per_start": 25.7
-   },
-   {
-    "player": "Obi Toppin",
-    "team": "No Scrubs",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-24",
-    "starts": 3,
-    "fpts": 76.0,
-    "per_start": 25.3
+    "fpts": 74.0,
+    "per_start": 24.7
    },
    {
     "player": "Jaxson Hayes",
@@ -665,6 +688,16 @@
     "starts": 3,
     "fpts": 69.0,
     "per_start": 23.0
+   },
+   {
+    "player": "Derrick Jones Jr.",
+    "team": "Rye RSL",
+    "bid": 0,
+    "type": "waiver claim",
+    "date": "2026-10-28",
+    "starts": 3,
+    "fpts": 67.0,
+    "per_start": 22.3
    },
    {
     "player": "Brook Lopez",
@@ -695,6 +728,16 @@
     "starts": 3,
     "fpts": 59.0,
     "per_start": 19.7
+   },
+   {
+    "player": "Pelle Larsson",
+    "team": "RayJayDaPawnSTAH",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-27",
+    "starts": 3,
+    "fpts": 57.0,
+    "per_start": 19.0
    },
    {
     "player": "Mo Bamba",
@@ -737,6 +780,16 @@
     "per_start": 26.5
    },
    {
+    "player": "Matisse Thybulle",
+    "team": "Kream team",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-10-30",
+    "starts": 2,
+    "fpts": 50.0,
+    "per_start": 25.0
+   },
+   {
     "player": "Keldon Johnson",
     "team": "Big Herro Glick",
     "bid": 0,
@@ -755,16 +808,6 @@
     "starts": 3,
     "fpts": 48.0,
     "per_start": 16.0
-   },
-   {
-    "player": "Kingston Flemings",
-    "team": "Big Herro Glick",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-29",
-    "starts": 2,
-    "fpts": 48.0,
-    "per_start": 24.0
    },
    {
     "player": "Andre Drummond",
@@ -817,14 +860,24 @@
     "per_start": 10.2
    },
    {
-    "player": "Pelle Larsson",
-    "team": "RayJayDaPawnSTAH",
+    "player": "Sandro Mamukelashvili",
+    "team": "No Scrubs",
     "bid": 0,
     "type": "free agent",
-    "date": "2026-10-27",
-    "starts": 2,
-    "fpts": 41.0,
-    "per_start": 20.5
+    "date": "2026-10-30",
+    "starts": 3,
+    "fpts": 40.0,
+    "per_start": 13.3
+   },
+   {
+    "player": "Nolan Traore",
+    "team": "Spicy town Mayo",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-04",
+    "starts": 1,
+    "fpts": 39.0,
+    "per_start": 39.0
    },
    {
     "player": "Bilal Coulibaly",
@@ -847,16 +900,6 @@
     "per_start": 34.0
    },
    {
-    "player": "Sandro Mamukelashvili",
-    "team": "No Scrubs",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-10-30",
-    "starts": 2,
-    "fpts": 32.0,
-    "per_start": 16.0
-   },
-   {
     "player": "Ziaire Williams",
     "team": "coachcainzey",
     "bid": 0,
@@ -877,24 +920,24 @@
     "per_start": 15.0
    },
    {
-    "player": "Derrick Jones Jr.",
-    "team": "Rye RSL",
-    "bid": 0,
-    "type": "waiver claim",
-    "date": "2026-10-28",
-    "starts": 2,
-    "fpts": 30.0,
-    "per_start": 15.0
-   },
-   {
-    "player": "Matisse Thybulle",
-    "team": "Kream team",
+    "player": "Kyle Kuzma",
+    "team": "NAWSectual",
     "bid": 0,
     "type": "free agent",
-    "date": "2026-10-30",
+    "date": "2026-11-02",
+    "starts": 2,
+    "fpts": 26.0,
+    "per_start": 13.0
+   },
+   {
+    "player": "Tre Jones",
+    "team": "Rye RSL",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-02",
     "starts": 1,
-    "fpts": 28.0,
-    "per_start": 28.0
+    "fpts": 26.0,
+    "per_start": 26.0
    },
    {
     "player": "Derrick Jones Jr.",
@@ -915,6 +958,16 @@
     "starts": 2,
     "fpts": 22.0,
     "per_start": 11.0
+   },
+   {
+    "player": "Karlo Matkovic",
+    "team": "Kuminga Lot",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-03",
+    "starts": 1,
+    "fpts": 17.0,
+    "per_start": 17.0
    },
    {
     "player": "Oso Ighodaro",
@@ -977,16 +1030,6 @@
     "per_start": 6.0
    },
    {
-    "player": "Kyle Kuzma",
-    "team": "NAWSectual",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-11-02",
-    "starts": 1,
-    "fpts": 10.0,
-    "per_start": 10.0
-   },
-   {
     "player": "De'Anthony Melton",
     "team": "No Scrubs",
     "bid": 0,
@@ -1047,6 +1090,16 @@
     "per_start": 5.0
    },
    {
+    "player": "Marcus Smart",
+    "team": "NAWSectual",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-04",
+    "starts": 1,
+    "fpts": 4.0,
+    "per_start": 4.0
+   },
+   {
     "player": "Matisse Thybulle",
     "team": "Big Herro Glick",
     "bid": 0,
@@ -1092,16 +1145,6 @@
     "bid": 0,
     "type": "free agent",
     "date": "2026-11-03",
-    "starts": 0,
-    "fpts": 0.0,
-    "per_start": null
-   },
-   {
-    "player": "Tre Jones",
-    "team": "Rye RSL",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-11-02",
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
@@ -1287,26 +1330,6 @@
     "per_start": null
    },
    {
-    "player": "Karlo Matkovic",
-    "team": "Kuminga Lot",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-11-03",
-    "starts": 0,
-    "fpts": 0.0,
-    "per_start": null
-   },
-   {
-    "player": "Nolan Traore",
-    "team": "Spicy town Mayo",
-    "bid": 0,
-    "type": "free agent",
-    "date": "2026-11-04",
-    "starts": 0,
-    "fpts": 0.0,
-    "per_start": null
-   },
-   {
     "player": "Ziaire Williams",
     "team": "Downtown Euros",
     "bid": 0,
@@ -1317,11 +1340,21 @@
     "per_start": null
    },
    {
-    "player": "Marcus Smart",
-    "team": "NAWSectual",
+    "player": "Klay Thompson",
+    "team": "No Scrubs",
     "bid": 0,
     "type": "free agent",
     "date": "2026-11-04",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
+   },
+   {
+    "player": "Oso Ighodaro",
+    "team": "Big Herro Glick",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-05",
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
@@ -1331,79 +1364,79 @@
    {
     "team": "Joseph's Scary Team",
     "pickups": 6,
-    "fpts": 601.0,
+    "fpts": 649.0,
     "faab": 0
    },
    {
     "team": "coachcainzey",
     "pickups": 10,
-    "fpts": 571.0,
+    "fpts": 627.0,
     "faab": 0
    },
    {
     "team": "No Scrubs",
-    "pickups": 10,
-    "fpts": 570.0,
+    "pickups": 11,
+    "fpts": 615.0,
     "faab": 0
    },
    {
     "team": "Downtown Euros",
     "pickups": 7,
-    "fpts": 453.0,
+    "fpts": 490.0,
     "faab": 0
    },
    {
     "team": "RayJayDaPawnSTAH",
     "pickups": 6,
-    "fpts": 306.0,
+    "fpts": 364.0,
     "faab": 0
    },
    {
     "team": "Ant Social Behaviour",
     "pickups": 6,
-    "fpts": 255.0,
+    "fpts": 262.0,
     "faab": 0
    },
    {
     "team": "Kawhi Me A River",
     "pickups": 2,
-    "fpts": 201.0,
+    "fpts": 210.0,
     "faab": 0
    },
    {
     "team": "Kream team",
     "pickups": 5,
-    "fpts": 166.0,
-    "faab": 0
-   },
-   {
-    "team": "Big Herro Glick",
-    "pickups": 9,
-    "fpts": 150.0,
+    "fpts": 199.0,
     "faab": 0
    },
    {
     "team": "NAWSectual",
     "pickups": 3,
-    "fpts": 137.0,
-    "faab": 0
-   },
-   {
-    "team": "Kuminga Lot",
-    "pickups": 4,
-    "fpts": 123.0,
-    "faab": 0
-   },
-   {
-    "team": "Spicy town Mayo",
-    "pickups": 7,
-    "fpts": 119.0,
+    "fpts": 194.0,
     "faab": 0
    },
    {
     "team": "Rye RSL",
     "pickups": 4,
-    "fpts": 114.0,
+    "fpts": 193.0,
+    "faab": 0
+   },
+   {
+    "team": "Big Herro Glick",
+    "pickups": 10,
+    "fpts": 176.0,
+    "faab": 0
+   },
+   {
+    "team": "Spicy town Mayo",
+    "pickups": 7,
+    "fpts": 158.0,
+    "faab": 0
+   },
+   {
+    "team": "Kuminga Lot",
+    "pickups": 4,
+    "fpts": 140.0,
     "faab": 0
    },
    {
@@ -1415,16 +1448,16 @@
   ]
  },
  "drops": {
-  "count": 68,
+  "count": 70,
   "all": [
    {
     "player": "Davion Mitchell",
     "team": "Kawhi Me A River",
     "now": "Joseph's Scary Team",
     "date": "2026-10-20",
-    "games": 7,
-    "fpts": 257.0,
-    "per_game": 36.7
+    "games": 8,
+    "fpts": 305.0,
+    "per_game": 38.1
    },
    {
     "player": "Dennis Schroder",
@@ -1432,8 +1465,8 @@
     "now": "Rye RSL",
     "date": "2026-10-20",
     "games": 9,
-    "fpts": 164.0,
-    "per_game": 18.2
+    "fpts": 166.0,
+    "per_game": 18.4
    },
    {
     "player": "Kingston Flemings",
@@ -1441,8 +1474,26 @@
     "now": "Big Herro Glick",
     "date": "2026-10-22",
     "games": 7,
-    "fpts": 154.0,
-    "per_game": 22.0
+    "fpts": 158.0,
+    "per_game": 22.6
+   },
+   {
+    "player": "Bones Hyland",
+    "team": "BYE",
+    "now": "Big Herro Glick",
+    "date": "2026-10-27",
+    "games": 5,
+    "fpts": 143.0,
+    "per_game": 28.6
+   },
+   {
+    "player": "Klay Thompson",
+    "team": "Ant Social Behaviour",
+    "now": "No Scrubs",
+    "date": "2026-10-26",
+    "games": 5,
+    "fpts": 132.0,
+    "per_game": 26.4
    },
    {
     "player": "Tristan da Silva",
@@ -1459,26 +1510,8 @@
     "now": "Rye RSL",
     "date": "2026-10-24",
     "games": 7,
-    "fpts": 127.0,
-    "per_game": 18.1
-   },
-   {
-    "player": "Bones Hyland",
-    "team": "BYE",
-    "now": "Big Herro Glick",
-    "date": "2026-10-27",
-    "games": 5,
-    "fpts": 120.0,
-    "per_game": 24.0
-   },
-   {
-    "player": "Kevin Huerter",
-    "team": "Spicy town Mayo",
-    "now": "free agent",
-    "date": "2026-10-22",
-    "games": 7,
-    "fpts": 112.0,
-    "per_game": 16.0
+    "fpts": 129.0,
+    "per_game": 18.4
    },
    {
     "player": "Mario Hezonja",
@@ -1486,8 +1519,53 @@
     "now": "free agent",
     "date": "2026-10-25",
     "games": 6,
+    "fpts": 124.0,
+    "per_game": 20.7
+   },
+   {
+    "player": "Walter Clayton Jr.",
+    "team": "BYE",
+    "now": "free agent",
+    "date": "2026-10-20",
+    "games": 7,
+    "fpts": 120.0,
+    "per_game": 17.1
+   },
+   {
+    "player": "Kevin Huerter",
+    "team": "Spicy town Mayo",
+    "now": "free agent",
+    "date": "2026-10-22",
+    "games": 7,
+    "fpts": 119.0,
+    "per_game": 17.0
+   },
+   {
+    "player": "Matisse Thybulle",
+    "team": "Big Herro Glick",
+    "now": "Kream team",
+    "date": "2026-10-28",
+    "games": 5,
+    "fpts": 116.0,
+    "per_game": 23.2
+   },
+   {
+    "player": "Derrick Jones Jr.",
+    "team": "coachcainzey",
+    "now": "Rye RSL",
+    "date": "2026-10-26",
+    "games": 4,
     "fpts": 112.0,
-    "per_game": 18.7
+    "per_game": 28.0
+   },
+   {
+    "player": "Bilal Coulibaly",
+    "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-10-25",
+    "games": 5,
+    "fpts": 111.0,
+    "per_game": 22.2
    },
    {
     "player": "Anfernee Simons",
@@ -1499,22 +1577,31 @@
     "per_game": 22.2
    },
    {
-    "player": "Bilal Coulibaly",
-    "team": "Downtown Euros",
-    "now": "free agent",
-    "date": "2026-10-25",
-    "games": 5,
-    "fpts": 103.0,
-    "per_game": 20.6
+    "player": "Tre Jones",
+    "team": "coachcainzey",
+    "now": "Rye RSL",
+    "date": "2026-10-26",
+    "games": 4,
+    "fpts": 106.0,
+    "per_game": 26.5
    },
    {
-    "player": "Walter Clayton Jr.",
-    "team": "BYE",
-    "now": "free agent",
-    "date": "2026-10-20",
-    "games": 6,
-    "fpts": 97.0,
-    "per_game": 16.2
+    "player": "Khaman Maluach",
+    "team": "RayJayDaPawnSTAH",
+    "now": "coachcainzey",
+    "date": "2026-10-21",
+    "games": 5,
+    "fpts": 100.0,
+    "per_game": 20.0
+   },
+   {
+    "player": "Collin Gillespie",
+    "team": "Big Herro Glick",
+    "now": "coachcainzey",
+    "date": "2026-10-25",
+    "games": 4,
+    "fpts": 99.0,
+    "per_game": 24.8
    },
    {
     "player": "Kelly Oubre Jr.",
@@ -1535,49 +1622,22 @@
     "per_game": 31.7
    },
    {
-    "player": "Matisse Thybulle",
+    "player": "Trevon Brazile",
     "team": "Big Herro Glick",
-    "now": "Kream team",
-    "date": "2026-10-28",
-    "games": 4,
-    "fpts": 94.0,
-    "per_game": 23.5
-   },
-   {
-    "player": "Tre Jones",
-    "team": "coachcainzey",
-    "now": "Rye RSL",
-    "date": "2026-10-26",
-    "games": 4,
-    "fpts": 92.0,
-    "per_game": 23.0
-   },
-   {
-    "player": "Collin Gillespie",
-    "team": "Big Herro Glick",
-    "now": "coachcainzey",
-    "date": "2026-10-25",
-    "games": 3,
-    "fpts": 89.0,
-    "per_game": 29.7
-   },
-   {
-    "player": "Klay Thompson",
-    "team": "Ant Social Behaviour",
     "now": "free agent",
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "games": 4,
-    "fpts": 83.0,
-    "per_game": 20.8
+    "fpts": 86.0,
+    "per_game": 21.5
    },
    {
-    "player": "Khaman Maluach",
-    "team": "RayJayDaPawnSTAH",
-    "now": "coachcainzey",
-    "date": "2026-10-21",
-    "games": 4,
-    "fpts": 81.0,
-    "per_game": 20.2
+    "player": "Aday Mara",
+    "team": "Ant Social Behaviour",
+    "now": "Joseph's Scary Team",
+    "date": "2026-10-29",
+    "games": 3,
+    "fpts": 86.0,
+    "per_game": 28.7
    },
    {
     "player": "Herbert Jones",
@@ -1585,17 +1645,62 @@
     "now": "free agent",
     "date": "2026-10-24",
     "games": 5,
-    "fpts": 79.0,
-    "per_game": 15.8
+    "fpts": 85.0,
+    "per_game": 17.0
    },
    {
-    "player": "Derrick Jones Jr.",
-    "team": "coachcainzey",
-    "now": "Rye RSL",
-    "date": "2026-10-26",
+    "player": "Quentin Grimes",
+    "team": "Kuminga Lot",
+    "now": "free agent",
+    "date": "2026-10-28",
+    "games": 5,
+    "fpts": 83.0,
+    "per_game": 16.6
+   },
+   {
+    "player": "Neemias Queta",
+    "team": "Kream team",
+    "now": "free agent",
+    "date": "2026-10-30",
     "games": 3,
-    "fpts": 75.0,
-    "per_game": 25.0
+    "fpts": 83.0,
+    "per_game": 27.7
+   },
+   {
+    "player": "Andre Drummond",
+    "team": "Joseph's Scary Team",
+    "now": "free agent",
+    "date": "2026-10-24",
+    "games": 6,
+    "fpts": 79.0,
+    "per_game": 13.2
+   },
+   {
+    "player": "Malik Monk",
+    "team": "Rye RSL",
+    "now": "free agent",
+    "date": "2026-10-28",
+    "games": 4,
+    "fpts": 78.0,
+    "per_game": 19.5
+   },
+   {
+    "player": "Oso Ighodaro",
+    "team": "Downtown Euros",
+    "now": "Big Herro Glick",
+    "date": "2026-10-22",
+    "games": 3,
+    "fpts": 76.0,
+    "per_game": 25.3
+   },
+   {
+    "player": "De'Andre Hunter",
+    "team": "Ant Social Behaviour",
+    "now": "Kuminga Lot",
+    "date": "2026-10-27",
+    "games": 4,
+    "fpts": 74.0,
+    "per_game": 18.5
    },
    {
     "player": "Jaylon Tyson",
@@ -1607,40 +1712,13 @@
     "per_game": 18.2
    },
    {
-    "player": "Quentin Grimes",
-    "team": "Kuminga Lot",
-    "now": "free agent",
-    "date": "2026-10-28",
-    "games": 4,
-    "fpts": 73.0,
-    "per_game": 18.2
-   },
-   {
-    "player": "Andre Drummond",
-    "team": "Joseph's Scary Team",
-    "now": "free agent",
-    "date": "2026-10-24",
-    "games": 6,
-    "fpts": 72.0,
-    "per_game": 12.0
-   },
-   {
-    "player": "Trevon Brazile",
-    "team": "Big Herro Glick",
-    "now": "free agent",
-    "date": "2026-10-27",
-    "games": 3,
-    "fpts": 67.0,
-    "per_game": 22.3
-   },
-   {
     "player": "Keldon Johnson",
     "team": "coachcainzey",
     "now": "free agent",
     "date": "2026-10-25",
-    "games": 4,
-    "fpts": 65.0,
-    "per_game": 16.2
+    "games": 5,
+    "fpts": 71.0,
+    "per_game": 14.2
    },
    {
     "player": "Bennedict Mathurin",
@@ -1648,44 +1726,17 @@
     "now": "free agent",
     "date": "2026-10-23",
     "games": 6,
-    "fpts": 64.0,
-    "per_game": 10.7
+    "fpts": 63.0,
+    "per_game": 10.5
    },
    {
-    "player": "Malik Monk",
-    "team": "Rye RSL",
+    "player": "Leaky Black",
+    "team": "BYE",
     "now": "free agent",
-    "date": "2026-10-28",
-    "games": 3,
-    "fpts": 64.0,
-    "per_game": 21.3
-   },
-   {
-    "player": "Aday Mara",
-    "team": "Ant Social Behaviour",
-    "now": "Joseph's Scary Team",
-    "date": "2026-10-29",
+    "date": "2026-10-27",
     "games": 3,
     "fpts": 62.0,
     "per_game": 20.7
-   },
-   {
-    "player": "De'Andre Hunter",
-    "team": "Ant Social Behaviour",
-    "now": "Kuminga Lot",
-    "date": "2026-10-27",
-    "games": 3,
-    "fpts": 60.0,
-    "per_game": 20.0
-   },
-   {
-    "player": "Neemias Queta",
-    "team": "Kream team",
-    "now": "free agent",
-    "date": "2026-10-30",
-    "games": 3,
-    "fpts": 60.0,
-    "per_game": 20.0
    },
    {
     "player": "Brice Sensabaugh",
@@ -1693,8 +1744,8 @@
     "now": "free agent",
     "date": "2026-10-27",
     "games": 4,
-    "fpts": 57.0,
-    "per_game": 14.2
+    "fpts": 62.0,
+    "per_game": 15.5
    },
    {
     "player": "Egor Demin",
@@ -1706,22 +1757,13 @@
     "per_game": 17.7
    },
    {
-    "player": "Leaky Black",
-    "team": "BYE",
-    "now": "free agent",
-    "date": "2026-10-27",
-    "games": 2,
-    "fpts": 50.0,
-    "per_game": 25.0
-   },
-   {
     "player": "Kyle Kuzma",
     "team": "coachcainzey",
     "now": "NAWSectual",
     "date": "2026-10-30",
     "games": 3,
-    "fpts": 46.0,
-    "per_game": 15.3
+    "fpts": 51.0,
+    "per_game": 17.0
    },
    {
     "player": "Kentavious Caldwell-Pope",
@@ -1729,8 +1771,26 @@
     "now": "free agent",
     "date": "2026-10-25",
     "games": 5,
-    "fpts": 42.0,
-    "per_game": 8.4
+    "fpts": 49.0,
+    "per_game": 9.8
+   },
+   {
+    "player": "Keaton Wagler",
+    "team": "Joseph's Scary Team",
+    "now": "free agent",
+    "date": "2026-10-30",
+    "games": 3,
+    "fpts": 48.0,
+    "per_game": 16.0
+   },
+   {
+    "player": "Scoot Henderson",
+    "team": "coachcainzey",
+    "now": "free agent",
+    "date": "2026-10-24",
+    "games": 5,
+    "fpts": 46.0,
+    "per_game": 9.2
    },
    {
     "player": "Gui Santos",
@@ -1751,40 +1811,31 @@
     "per_game": 13.7
    },
    {
-    "player": "Scoot Henderson",
-    "team": "coachcainzey",
-    "now": "free agent",
-    "date": "2026-10-24",
-    "games": 4,
-    "fpts": 39.0,
-    "per_game": 9.8
-   },
-   {
-    "player": "Oso Ighodaro",
-    "team": "Downtown Euros",
-    "now": "free agent",
-    "date": "2026-10-22",
-    "games": 2,
-    "fpts": 36.0,
-    "per_game": 18.0
-   },
-   {
-    "player": "Keaton Wagler",
-    "team": "Joseph's Scary Team",
-    "now": "free agent",
-    "date": "2026-10-30",
-    "games": 2,
-    "fpts": 30.0,
-    "per_game": 15.0
-   },
-   {
     "player": "Cam Spencer",
     "team": "Spicy town Mayo",
     "now": "free agent",
     "date": "2026-11-04",
     "games": 1,
-    "fpts": 26.0,
-    "per_game": 26.0
+    "fpts": 34.0,
+    "per_game": 34.0
+   },
+   {
+    "player": "Ziaire Williams",
+    "team": "coachcainzey",
+    "now": "Downtown Euros",
+    "date": "2026-11-03",
+    "games": 1,
+    "fpts": 24.0,
+    "per_game": 24.0
+   },
+   {
+    "player": "Jakob Poeltl",
+    "team": "RayJayDaPawnSTAH",
+    "now": "free agent",
+    "date": "2026-11-02",
+    "games": 1,
+    "fpts": 18.0,
+    "per_game": 18.0
    },
    {
     "player": "Deandre Ayton",
@@ -1792,17 +1843,8 @@
     "now": "free agent",
     "date": "2026-11-04",
     "games": 1,
-    "fpts": 13.0,
-    "per_game": 13.0
-   },
-   {
-    "player": "Chris Youngblood",
-    "team": "BYE",
-    "now": "free agent",
-    "date": "2026-10-27",
-    "games": 2,
-    "fpts": 12.0,
-    "per_game": 6.0
+    "fpts": 18.0,
+    "per_game": 18.0
    },
    {
     "player": "Daniss Jenkins",
@@ -1810,8 +1852,8 @@
     "now": "free agent",
     "date": "2026-10-31",
     "games": 2,
-    "fpts": 9.0,
-    "per_game": 4.5
+    "fpts": 16.0,
+    "per_game": 8.0
    },
    {
     "player": "Kentavious Caldwell-Pope",
@@ -1819,26 +1861,44 @@
     "now": "free agent",
     "date": "2026-11-01",
     "games": 2,
+    "fpts": 13.0,
+    "per_game": 6.5
+   },
+   {
+    "player": "Chris Youngblood",
+    "team": "BYE",
+    "now": "free agent",
+    "date": "2026-10-27",
+    "games": 3,
+    "fpts": 12.0,
+    "per_game": 4.0
+   },
+   {
+    "player": "Keldon Johnson",
+    "team": "Big Herro Glick",
+    "now": "free agent",
+    "date": "2026-11-03",
+    "games": 1,
     "fpts": 6.0,
-    "per_game": 3.0
+    "per_game": 6.0
+   },
+   {
+    "player": "Jared McCain",
+    "team": "Kuminga Lot",
+    "now": "free agent",
+    "date": "2026-11-03",
+    "games": 1,
+    "fpts": 6.0,
+    "per_game": 6.0
    },
    {
     "player": "Bronny James",
     "team": "BYE",
     "now": "free agent",
     "date": "2026-10-27",
-    "games": 3,
+    "games": 4,
     "fpts": 4.0,
-    "per_game": 1.3
-   },
-   {
-    "player": "Jose Alvarado",
-    "team": "Rye RSL",
-    "now": "free agent",
-    "date": "2026-10-26",
-    "games": 1,
-    "fpts": 3.0,
-    "per_game": 3.0
+    "per_game": 1.0
    },
    {
     "player": "Scotty Pippen Jr.",
@@ -1859,35 +1919,8 @@
     "per_game": null
    },
    {
-    "player": "Keldon Johnson",
-    "team": "Big Herro Glick",
-    "now": "free agent",
-    "date": "2026-11-03",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
-    "player": "Ziaire Williams",
-    "team": "coachcainzey",
-    "now": "Downtown Euros",
-    "date": "2026-11-03",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
     "player": "Justin Champagnie",
     "team": "Rye RSL",
-    "now": "free agent",
-    "date": "2026-11-02",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
-    "player": "Jakob Poeltl",
-    "team": "RayJayDaPawnSTAH",
     "now": "free agent",
     "date": "2026-11-02",
     "games": 0,
@@ -2003,19 +2036,28 @@
     "per_game": null
    },
    {
-    "player": "Jared McCain",
-    "team": "Kuminga Lot",
-    "now": "free agent",
-    "date": "2026-11-03",
-    "games": 1,
-    "fpts": 0.0,
-    "per_game": 0.0
-   },
-   {
     "player": "DeMar DeRozan",
     "team": "Downtown Euros",
     "now": "free agent",
     "date": "2026-11-04",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Keon Ellis",
+    "team": "No Scrubs",
+    "now": "free agent",
+    "date": "2026-11-04",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Morez Johnson Jr.",
+    "team": "Big Herro Glick",
+    "now": "free agent",
+    "date": "2026-11-05",
     "games": 0,
     "fpts": 0,
     "per_game": null
@@ -2028,6 +2070,15 @@
     "games": 1,
     "fpts": -1.0,
     "per_game": -1.0
+   },
+   {
+    "player": "Jose Alvarado",
+    "team": "Rye RSL",
+    "now": "free agent",
+    "date": "2026-10-26",
+    "games": 2,
+    "fpts": -1.0,
+    "per_game": -0.5
    }
   ]
  },
