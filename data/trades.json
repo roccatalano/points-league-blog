@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-05T09:10:43+00:00",
+ "updated_utc": "2026-11-05T17:31:30+00:00",
  "fa_points_per_game": 24.9,
  "fa_points_per_day": 11.95,
  "fa_pool": 10,
@@ -273,7 +273,7 @@
   }
  ],
  "pickups": {
-  "count": 88,
+  "count": 90,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -1358,6 +1358,26 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Brandon Williams",
+    "team": "No Scrubs",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-05",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
+   },
+   {
+    "player": "Jusuf Nurkic",
+    "team": "No Scrubs",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-05",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -1375,7 +1395,7 @@
    },
    {
     "team": "No Scrubs",
-    "pickups": 11,
+    "pickups": 13,
     "fpts": 615.0,
     "faab": 0
    },
@@ -1705,7 +1725,7 @@
    {
     "player": "Jaylon Tyson",
     "team": "Spicy town Mayo",
-    "now": "No Scrubs",
+    "now": "free agent",
     "date": "2026-10-22",
     "games": 4,
     "fpts": 73.0,

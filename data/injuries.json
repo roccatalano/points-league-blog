@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-05T15:48:27.523459+00:00",
+ "updated_utc": "2026-11-05T17:31:34.648112+00:00",
  "today_et": "2026-11-05",
  "players": [
   {
@@ -205,14 +205,9 @@
    "timeframe": "Days",
    "note": "According to Cavaliers head coach Kenny Atkinson, Tyson (ankle) has been \"on the court lately progressing well,\" Chris Fedor of The Cleveland Plain Dealer reports.",
    "note_date": "2026-11-05",
-   "fantasy_team": "No Scrubs",
-   "on_ir": true,
-   "per_game": {
-    "FPTS": 23.6,
-    "PTS": 11.6,
-    "REB": 4.7,
-    "AST": 2.3
-   }
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
   },
   {
    "name": "Jayson Tatum",
@@ -271,7 +266,7 @@
    "name": "Kon Knueppel",
    "nba_team": "CHA",
    "pos": "G",
-   "status": "Out",
+   "status": "Day-To-Day",
    "injury": "Left Leg",
    "return_date": "2026-11-06",
    "days_out": 1,
@@ -664,8 +659,8 @@
    "days_out": 3,
    "games_missed": 0,
    "timeframe": "1 week",
-   "note": "Claxton (hamstring) is listed as out for Wednesday's game against New York.",
-   "note_date": "2026-11-04",
+   "note": "The Bulls assigned Claxton (hamstring) to the G League's Windy City Bulls on Thursday.",
+   "note_date": "2026-11-05",
    "fantasy_team": "Spicy town Mayo",
    "on_ir": false,
    "per_game": {
@@ -1005,9 +1000,14 @@
    "timeframe": "1-2 weeks",
    "note": "Nurkic (foot) is out for Wednesday's game against the Pelicans.",
    "note_date": "2026-11-03",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
+   "fantasy_team": "No Scrubs",
+   "on_ir": true,
+   "per_game": {
+    "FPTS": 27.6,
+    "PTS": 9.4,
+    "REB": 9.1,
+    "AST": 3.4
+   }
   },
   {
    "name": "Nikola Topic",

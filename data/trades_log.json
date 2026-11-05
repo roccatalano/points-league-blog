@@ -671,6 +671,20 @@
    "bid": 0,
    "type": "FREEAGENT",
    "date_utc": "2026-11-05T09:06:51.228000+00:00"
+  },
+  "fbf44d0d-4de8-46d5-bc0d-007c86fe524d:4397040": {
+   "team": 1,
+   "player": 4397040,
+   "bid": 0,
+   "type": "FREEAGENT",
+   "date_utc": "2026-11-05T09:38:56.662000+00:00"
+  },
+  "2fd4d77a-66a3-46f3-abdf-3aee7e59f24e:3102530": {
+   "team": 1,
+   "player": 3102530,
+   "bid": 0,
+   "type": "FREEAGENT",
+   "date_utc": "2026-11-05T09:38:34.266000+00:00"
   }
  },
  "_drops": {
