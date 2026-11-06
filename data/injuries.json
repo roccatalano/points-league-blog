@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-05T23:12:37.748355+00:00",
+ "updated_utc": "2026-11-06T03:31:01.612126+00:00",
  "today_et": "2026-11-05",
  "players": [
   {
@@ -40,22 +40,6 @@
    "per_game": null
   },
   {
-   "name": "Adou Thiero",
-   "nba_team": "LAL",
-   "pos": "F",
-   "status": "Out",
-   "injury": "Left Knee",
-   "return_date": "2026-11-06",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "The Lakers recalled Thiero (knee) from the G League's Coachella Valley Lakers on Thursday, per Ryan Ward of SI.com.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "Anthony Davis",
    "nba_team": "WSH",
    "pos": "F",
@@ -75,22 +59,6 @@
     "REB": 10.6,
     "AST": 2.8
    }
-  },
-  {
-   "name": "Daeqwon Plowden",
-   "nba_team": "SAC",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Illness",
-   "return_date": "2026-11-06",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Plowden (illness) is out for Wednesday's game against the Lakers.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
   },
   {
    "name": "Dennis Schroder",
@@ -154,38 +122,6 @@
     "REB": 9.2,
     "AST": 1.9
    }
-  },
-  {
-   "name": "Jaylin Williams",
-   "nba_team": "OKC",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Back",
-   "return_date": "2026-11-06",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Williams (back) is listed as out for Wednesday's game versus Cleveland, Clemente Almanza of USA Today reports.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Kam Jones",
-   "nba_team": "MIL",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Right Ankle",
-   "return_date": "2026-11-06",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Jones (ankle) won't play Wednesday in Boston.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
   },
   {
    "name": "Max Christie",
@@ -267,6 +203,22 @@
    }
   },
   {
+   "name": "Sandro Mamukelashvili",
+   "nba_team": "LAL",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-06",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Mamukelashvili (illness) is listed as questionable for Friday's game against Portland.",
+   "note_date": "2026-11-06",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Santi Aldama",
    "nba_team": "DAL",
    "pos": "F",
@@ -281,6 +233,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Scottie Barnes",
+   "nba_team": "TOR",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Left Groin",
+   "return_date": "2026-11-06",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Barnes (groin) is questionable to play Friday's game against the Bucks.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "No Scrubs",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 43.3,
+    "PTS": 20.4,
+    "REB": 7.7,
+    "AST": 5.7
+   }
   },
   {
    "name": "Terrence Shannon Jr.",
@@ -416,6 +389,22 @@
    "per_game": null
   },
   {
+   "name": "Jaylin Williams",
+   "nba_team": "OKC",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Back",
+   "return_date": "2026-11-07",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Williams (back) has been ruled out for Friday's game against the Grizzlies.",
+   "note_date": "2026-11-05",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Jaylon Tyson",
    "nba_team": "CLE",
    "pos": "G",
@@ -495,6 +484,22 @@
    "games_missed": 0,
    "timeframe": "Days",
    "note": "Oubre (calf) has been ruled out for Wednesday's game against the Grizzlies.",
+   "note_date": "2026-11-05",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Keshon Gilbert",
+   "nba_team": "ATL",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Left Knee",
+   "return_date": "2026-11-07",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Gilbert is out for Friday's game against the Wizards due to left knee inflammation.",
    "note_date": "2026-11-05",
    "fantasy_team": null,
    "on_ir": false,
@@ -607,17 +612,17 @@
    }
   },
   {
-   "name": "Keshon Gilbert",
-   "nba_team": "ATL",
+   "name": "Kam Jones",
+   "nba_team": "MIL",
    "pos": "G",
    "status": "Out",
-   "injury": "Left Knee",
+   "injury": "Right Ankle",
    "return_date": "2026-11-08",
    "days_out": 3,
-   "games_missed": 2,
+   "games_missed": 1,
    "timeframe": "1 week",
-   "note": "Gilbert (knee) is available for Friday's preseason finale against the Mavericks, Brad Rowland of the Locked On Podcast Network reports.",
-   "note_date": "2026-11-05",
+   "note": "Jones (ankle/two-way player) is out for Friday's game against Toronto.",
+   "note_date": "2026-11-06",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -632,7 +637,7 @@
    "days_out": 3,
    "games_missed": 0,
    "timeframe": "1 week",
-   "note": "The Bulls assigned Claxton (hamstring) to the G League's Windy City Bulls on Thursday.",
+   "note": "Claxton (hamstring) was recalled from the G League's Windy City Bulls on Thursday.",
    "note_date": "2026-11-05",
    "fantasy_team": "Spicy town Mayo",
    "on_ir": false,
@@ -676,27 +681,6 @@
    "per_game": null
   },
   {
-   "name": "Yves Missi",
-   "nba_team": "NO",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Left Knee",
-   "return_date": "2026-11-08",
-   "days_out": 3,
-   "games_missed": 1,
-   "timeframe": "1 week",
-   "note": "Missi (knee) is out for Friday's game against Minnesota.",
-   "note_date": "2026-11-05",
-   "fantasy_team": "Kuminga Lot",
-   "on_ir": true,
-   "per_game": {
-    "FPTS": 26.0,
-    "PTS": 7.8,
-    "REB": 7.5,
-    "AST": 1.7
-   }
-  },
-  {
    "name": "Zach Collins",
    "nba_team": "CHI",
    "pos": "F",
@@ -738,7 +722,7 @@
    "days_out": 4,
    "games_missed": 1,
    "timeframe": "1 week",
-   "note": "Stewart (knee) exited Wednesday's 107-103 loss to the Pacers and did not return, finishing with six points (3-4 FG) and one rebound in 10 minutes.",
+   "note": "Stewart (knee) has been ruled out for Friday's game against the Thunder.",
    "note_date": "2026-11-05",
    "fantasy_team": null,
    "on_ir": false,
@@ -812,8 +796,8 @@
    "days_out": 4,
    "games_missed": 1,
    "timeframe": "1 week",
-   "note": "Pippen (back) won't play Wednesday against the Pacers.",
-   "note_date": "2026-11-03",
+   "note": "Pippen (back) has been ruled out for Friday's game against Oklahoma City.",
+   "note_date": "2026-11-05",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -886,6 +870,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Yves Missi",
+   "nba_team": "NO",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Left Knee",
+   "return_date": "2026-11-09",
+   "days_out": 4,
+   "games_missed": 2,
+   "timeframe": "1 week",
+   "note": "Missi (knee) is out for Friday's game against Minnesota.",
+   "note_date": "2026-11-05",
+   "fantasy_team": "Kuminga Lot",
+   "on_ir": true,
+   "per_game": {
+    "FPTS": 26.0,
+    "PTS": 7.8,
+    "REB": 7.5,
+    "AST": 1.7
+   }
   },
   {
    "name": "Jalen Suggs",
