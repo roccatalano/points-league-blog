@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-06T18:49:18.900093+00:00",
+ "updated_utc": "2026-11-06T23:37:08.647154+00:00",
  "today_et": "2026-11-06",
  "players": [
   {
@@ -24,40 +24,24 @@
    }
   },
   {
-   "name": "Adem Bona",
-   "nba_team": "PHI",
-   "pos": "C",
-   "status": "Day-To-Day",
-   "injury": "Back",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Bona (back) is doubtful to play in Friday's game against the Cavaliers, Ky Carlin of USA Today reports.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Anthony Davis",
-   "nba_team": "WSH",
+   "name": "De'Andre Hunter",
+   "nba_team": "SAC",
    "pos": "F",
    "status": "Day-To-Day",
-   "injury": "Right Ankle",
+   "injury": "Illness",
    "return_date": "2026-11-06",
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Davis is questionable for Friday's game against the Hawks due to a right ankle sprain, Josh Robbins of The Athletic reports.",
-   "note_date": "2026-11-05",
-   "fantasy_team": "No Scrubs",
+   "note": "Hunter is questionable for Friday against the Spurs due to an illness.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "Kuminga Lot",
    "on_ir": false,
    "per_game": {
-    "FPTS": 47.2,
-    "PTS": 22.9,
-    "REB": 10.6,
-    "AST": 2.8
+    "FPTS": 22.0,
+    "PTS": 14.6,
+    "REB": 4.3,
+    "AST": 1.5
    }
   },
   {
@@ -114,27 +98,6 @@
    "per_game": null
   },
   {
-   "name": "Jalen Johnson",
-   "nba_team": "ATL",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Left Ankle",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Johnson is questionable to suit up for Friday's game against Washington.",
-   "note_date": "2026-11-05",
-   "fantasy_team": "Joseph's Scary Team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 47.1,
-    "PTS": 21.5,
-    "REB": 10.1,
-    "AST": 7.9
-   }
-  },
-  {
    "name": "Jarrett Allen",
    "nba_team": "CLE",
    "pos": "C",
@@ -188,22 +151,6 @@
    "per_game": null
   },
   {
-   "name": "Max Christie",
-   "nba_team": "DAL",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Right Hip",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Christie (hip) is probable for Friday's game against the Jazz.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "Peyton Watson",
    "nba_team": "CLE",
    "pos": "G",
@@ -223,38 +170,6 @@
     "REB": 4.7,
     "AST": 2.4
    }
-  },
-  {
-   "name": "Sandro Mamukelashvili",
-   "nba_team": "LAL",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Illness",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Mamukelashvili (illness) is listed as questionable for Friday's game against Portland.",
-   "note_date": "2026-11-06",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Santi Aldama",
-   "nba_team": "DAL",
-   "pos": "F",
-   "status": "Out",
-   "injury": "Right Knee",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Aldama (knee) is probable to suit up for Friday's game against the Jazz.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
   },
   {
    "name": "Scottie Barnes",
@@ -310,20 +225,25 @@
    "per_game": null
   },
   {
-   "name": "Tyrese Proctor",
-   "nba_team": "CLE",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Left Ankle",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
+   "name": "Anthony Davis",
+   "nba_team": "WSH",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Right Ankle",
+   "return_date": "2026-11-07",
+   "days_out": 1,
+   "games_missed": 1,
    "timeframe": "Days",
-   "note": "Proctor (ankle) is questionable to play in Friday's game against the 76ers.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
+   "note": "Davis (ankle) is listed as out for Friday's game against the Hawks.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "No Scrubs",
    "on_ir": false,
-   "per_game": null
+   "per_game": {
+    "FPTS": 47.2,
+    "PTS": 22.9,
+    "REB": 10.6,
+    "AST": 2.8
+   }
   },
   {
    "name": "Asa Newell",
@@ -342,22 +262,6 @@
    "per_game": null
   },
   {
-   "name": "Clint Capela",
-   "nba_team": "HOU",
-   "pos": "C",
-   "status": "Day-To-Day",
-   "injury": "Right Ankle",
-   "return_date": "2026-11-07",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Capela (ankle) is out for Wednesday's game against the Timberwolves.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "DeMar DeRozan",
    "nba_team": "DEN",
    "pos": "G",
@@ -367,8 +271,45 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "DeRozan has been ruled out for Wednesday's game against the Raptors due to lower-back spasms.",
-   "note_date": "2026-11-05",
+   "note": "DeRozan (back) is probable for Saturday's game against the Pacers.",
+   "note_date": "2026-11-06",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Draymond Green",
+   "nba_team": "GS",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Right Elbow",
+   "return_date": "2026-11-07",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Green (elbow) is listed as questionable ahead of Saturday's game against Orlando.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "Rye RSL",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 26.4,
+    "PTS": 6.9,
+    "REB": 5.7,
+    "AST": 6.1
+   }
+  },
+  {
+   "name": "Gary Payton II",
+   "nba_team": "GS",
+   "pos": "G",
+   "status": "Day-To-Day",
+   "injury": "Right Calf",
+   "return_date": "2026-11-07",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Payton is questionable to play Saturday against the Magic due to right calf tightness.",
+   "note_date": "2026-11-06",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -383,11 +324,32 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Santos (knee) has been ruled out for Thursday's game against the Heat.",
+   "note": "Santos (knee) is questionable for Saturday's game versus Orlando, per Nick Friedell of The Athletic.",
    "note_date": "2026-11-06",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Jalen Johnson",
+   "nba_team": "ATL",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Left Ankle",
+   "return_date": "2026-11-07",
+   "days_out": 1,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Johnson (ankle) is out for Friday's game against the Wizards.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "Joseph's Scary Team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 47.1,
+    "PTS": 21.5,
+    "REB": 10.1,
+    "AST": 7.9
+   }
   },
   {
    "name": "Jaylin Williams",
@@ -454,27 +416,6 @@
    "per_game": null
   },
   {
-   "name": "Josh Hart",
-   "nba_team": "NY",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Ankle",
-   "return_date": "2026-11-07",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Hart is out for Wednesday's game against the Bulls due to right ankle soreness.",
-   "note_date": "2026-11-05",
-   "fantasy_team": "NAWSectual",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 31.7,
-    "PTS": 11.0,
-    "REB": 7.6,
-    "AST": 4.6
-   }
-  },
-  {
    "name": "Kelly Oubre Jr.",
    "nba_team": "IND",
    "pos": "G",
@@ -484,8 +425,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Oubre (calf) has been ruled out for Wednesday's game against the Grizzlies.",
-   "note_date": "2026-11-05",
+   "note": "Oubre (calf) is questionable for Saturday's game against Denver.",
+   "note_date": "2026-11-06",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -501,22 +442,6 @@
    "games_missed": 1,
    "timeframe": "Days",
    "note": "Gilbert is out for Friday's game against the Wizards due to left knee inflammation.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Noah Clowney",
-   "nba_team": "BKN",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Right Knee",
-   "return_date": "2026-11-07",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Clowney (knee) supplied seven points (3-6 FG, 1-4 3Pt), one rebound and one assist over 17 minutes during Wednesday's 114-104 victory over the Hornets.",
    "note_date": "2026-11-05",
    "fantasy_team": null,
    "on_ir": false,
@@ -539,6 +464,38 @@
    "per_game": null
   },
   {
+   "name": "T.J. McConnell",
+   "nba_team": "IND",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Hamstring",
+   "return_date": "2026-11-07",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "McConnell (hamstring) is questionable for Saturday's game against Denver.",
+   "note_date": "2026-11-06",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Adem Bona",
+   "nba_team": "PHI",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Back",
+   "return_date": "2026-11-08",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Bona (neck) is listed as out for Friday's game versus the Cavaliers.",
+   "note_date": "2026-11-06",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Brandon Ingram",
    "nba_team": "LAC",
    "pos": "F",
@@ -548,8 +505,8 @@
    "days_out": 2,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "The Clippers recalled Ingram (Achilles) from the G League's San Diego Clippers on Sunday.",
-   "note_date": "2026-11-02",
+   "note": "Ingram (Achilles) has progressed to full contact basketball activities, per NBA writer Justin Russo.",
+   "note_date": "2026-11-06",
    "fantasy_team": "Kawhi Me A River",
    "on_ir": true,
    "per_game": {
@@ -654,13 +611,29 @@
    "nba_team": "CHI",
    "pos": "F",
    "status": "Day-To-Day",
-   "injury": "Undisclosed",
+   "injury": "Illness",
    "return_date": "2026-11-08",
    "days_out": 2,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Collins (undisclosed) exited to the locker room in the fourth quarter of Wednesday's 135-105 loss to the Knicks, finishing with three points (1-4 FG, 0-2 3Pt, 1-1 FT), three assists, one rebound and one steal across 14 minutes.",
-   "note_date": "2026-11-05",
+   "note": "Collins didn't practice Friday due to an illness, per K.C. Johnson of Chicago Sports Network.",
+   "note_date": "2026-11-06",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Clint Capela",
+   "nba_team": "HOU",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Right Ankle",
+   "return_date": "2026-11-09",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Capela (ankle) is out for Saturday's game against the Suns.",
+   "note_date": "2026-11-06",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -830,22 +803,6 @@
    "per_game": null
   },
   {
-   "name": "T.J. McConnell",
-   "nba_team": "IND",
-   "pos": "G",
-   "status": "Out",
-   "injury": "Right Hamstring",
-   "return_date": "2026-11-09",
-   "days_out": 3,
-   "games_missed": 1,
-   "timeframe": "1 week",
-   "note": "McConnell (hamstring) is out for Monday's game against the Hawks and remains week-to-week.",
-   "note_date": "2026-11-02",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "Tobias Harris",
    "nba_team": "SA",
    "pos": "F",
@@ -939,6 +896,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Josh Hart",
+   "nba_team": "NY",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Ankle",
+   "return_date": "2026-11-10",
+   "days_out": 4,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Hart is out for Saturday's game against the Cavaliers due to right ankle soreness.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "NAWSectual",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 31.7,
+    "PTS": 11.0,
+    "REB": 7.6,
+    "AST": 4.6
+   }
   },
   {
    "name": "Keegan Murray",
@@ -1291,22 +1269,6 @@
    }
   },
   {
-   "name": "Kristaps Porzingis",
-   "nba_team": "GS",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Illness",
-   "return_date": "2026-12-01",
-   "days_out": 25,
-   "games_missed": 11,
-   "timeframe": "2-4 weeks",
-   "note": "The Warriors have stopped issuing salary payments to Porzingis, who remains away from the team and is considering retirement, Anthony Slater and Shams Charania of ESPN reported Wednesday.",
-   "note_date": "2026-11-04",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "Moses Moody",
    "nba_team": "GS",
    "pos": "G",
@@ -1466,6 +1428,22 @@
    "timeframe": "1-2 months",
    "note": "Furphy (knee) is practicing with the G League's Noblesville Boom, per Alex Golden of SI.com.",
    "note_date": "2026-10-30",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Kristaps Porzingis",
+   "nba_team": "GS",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Illness",
+   "return_date": "2027-01-02",
+   "days_out": 57,
+   "games_missed": 23,
+   "timeframe": "1-2 months",
+   "note": "Porzingis announced on his social media that he's stepping away from basketball.",
+   "note_date": "2026-11-06",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null

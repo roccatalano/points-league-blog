@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-06T18:49:13+00:00",
- "fa_points_per_game": 23.9,
- "fa_points_per_day": 11.47,
+ "updated_utc": "2026-11-06T23:37:04+00:00",
+ "fa_points_per_game": 24.2,
+ "fa_points_per_day": 11.62,
  "fa_pool": 10,
  "trades": [
   {
@@ -286,7 +286,7 @@
   }
  ],
  "pickups": {
-  "count": 94,
+  "count": 95,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -1431,6 +1431,16 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Jake LaRavia",
+    "team": "Big Herro Glick",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-06",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -1496,7 +1506,7 @@
    },
    {
     "team": "Big Herro Glick",
-    "pickups": 10,
+    "pickups": 11,
     "fpts": 183.0,
     "faab": 0
    },
@@ -1521,7 +1531,7 @@
   ]
  },
  "drops": {
-  "count": 74,
+  "count": 75,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -1724,7 +1734,7 @@
    {
     "player": "Oso Ighodaro",
     "team": "Downtown Euros",
-    "now": "Big Herro Glick",
+    "now": "free agent",
     "date": "2026-10-22",
     "games": 4,
     "fpts": 83.0,
@@ -2165,6 +2175,15 @@
    {
     "player": "De'Anthony Melton",
     "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-11-06",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Oso Ighodaro",
+    "team": "Big Herro Glick",
     "now": "free agent",
     "date": "2026-11-06",
     "games": 0,
