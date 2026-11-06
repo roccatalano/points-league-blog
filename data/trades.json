@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-06T11:45:05+00:00",
- "fa_points_per_game": 24.3,
- "fa_points_per_day": 11.66,
+ "updated_utc": "2026-11-06T18:49:13+00:00",
+ "fa_points_per_game": 23.9,
+ "fa_points_per_day": 11.47,
  "fa_pool": 10,
  "trades": [
   {
@@ -286,7 +286,7 @@
   }
  ],
  "pickups": {
-  "count": 93,
+  "count": 94,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -1421,6 +1421,16 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Jared McCain",
+    "team": "RayJayDaPawnSTAH",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-06",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -1450,7 +1460,7 @@
    },
    {
     "team": "RayJayDaPawnSTAH",
-    "pickups": 6,
+    "pickups": 7,
     "fpts": 390.0,
     "faab": 0
    },
@@ -1511,7 +1521,7 @@
   ]
  },
  "drops": {
-  "count": 73,
+  "count": 74,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -1813,7 +1823,7 @@
    {
     "player": "Egor Demin",
     "team": "Joseph's Scary Team",
-    "now": "RayJayDaPawnSTAH",
+    "now": "free agent",
     "date": "2026-10-21",
     "games": 3,
     "fpts": 53.0,
@@ -1948,7 +1958,7 @@
    {
     "player": "Jared McCain",
     "team": "Kuminga Lot",
-    "now": "free agent",
+    "now": "RayJayDaPawnSTAH",
     "date": "2026-11-03",
     "games": 1,
     "fpts": 6.0,
@@ -2092,8 +2102,17 @@
    {
     "player": "Egor Demin",
     "team": "Spicy town Mayo",
-    "now": "RayJayDaPawnSTAH",
+    "now": "free agent",
     "date": "2026-10-27",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Egor Demin",
+    "team": "RayJayDaPawnSTAH",
+    "now": "free agent",
+    "date": "2026-11-06",
     "games": 0,
     "fpts": 0,
     "per_game": null

@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-06T15:23:19.783978+00:00",
+ "updated_utc": "2026-11-06T18:49:18.900093+00:00",
  "today_et": "2026-11-06",
  "players": [
   {
@@ -61,27 +61,6 @@
    }
   },
   {
-   "name": "Dennis Schroder",
-   "nba_team": "CHA",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Thigh",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Schroder (thigh) is questionable for Friday's game against the Celtics.",
-   "note_date": "2026-11-05",
-   "fantasy_team": "Rye RSL",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 21.3,
-    "PTS": 10.8,
-    "REB": 2.9,
-    "AST": 4.9
-   }
-  },
-  {
    "name": "Devin Carter",
    "nba_team": "BOS",
    "pos": "G",
@@ -93,6 +72,43 @@
    "timeframe": "Days",
    "note": "Carter (illness) practiced with the G League's Maine Celtics on Wednesday.",
    "note_date": "2026-11-04",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Immanuel Quickley",
+   "nba_team": "TOR",
+   "pos": "G",
+   "status": "Day-To-Day",
+   "injury": "Right Hamstring",
+   "return_date": "2026-11-06",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Quickley (hamstring) is questionable for Friday against the Bucks.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "Ant Social Behaviour",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 34.7,
+    "PTS": 17.2,
+    "REB": 3.8,
+    "AST": 5.8
+   }
+  },
+  {
+   "name": "Jakob Poeltl",
+   "nba_team": "TOR",
+   "pos": "C",
+   "status": "Day-To-Day",
+   "injury": "Left Shoulder",
+   "return_date": "2026-11-06",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Poeltl (shoulder) is listed as probable for Friday's game against Milwaukee.",
+   "note_date": "2026-11-06",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -156,6 +172,22 @@
    "per_game": null
   },
   {
+   "name": "Kyle Anderson",
+   "nba_team": "TOR",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-06",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Anderson is questionable for Friday against the Bucks due to illness.",
+   "note_date": "2026-11-06",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Max Christie",
    "nba_team": "DAL",
    "pos": "G",
@@ -170,48 +202,6 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
-  },
-  {
-   "name": "Moussa Diabate",
-   "nba_team": "CHA",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Quadriceps",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Diabate (quadriceps) is questionable for Friday's game against the Celtics.",
-   "note_date": "2026-11-05",
-   "fantasy_team": "Big Herro Glick",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 26.0,
-    "PTS": 8.0,
-    "REB": 8.6,
-    "AST": 1.8
-   }
-  },
-  {
-   "name": "Payton Pritchard",
-   "nba_team": "BOS",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Right Eye",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Pritchard (eye) is questionable for Friday against Charlotte, Taylor Snow of the Celtics' official site reports.",
-   "note_date": "2026-11-05",
-   "fantasy_team": "Kawhi Me A River",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 28.8,
-    "PTS": 15.0,
-    "REB": 3.4,
-    "AST": 4.4
-   }
   },
   {
    "name": "Peyton Watson",
@@ -276,7 +266,7 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Barnes (groin) is questionable to play Friday's game against the Bucks.",
+   "note": "Barnes (adductor) was not present at the morning shootaround, Michael Grange of Sportsnet.careports.",
    "note_date": "2026-11-06",
    "fantasy_team": "No Scrubs",
    "on_ir": false,
@@ -286,22 +276,6 @@
     "REB": 7.7,
     "AST": 5.7
    }
-  },
-  {
-   "name": "Terrence Shannon Jr.",
-   "nba_team": "MIN",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Left Hip",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Shannon (hip) is questionable for Friday's game against New Orleans.",
-   "note_date": "2026-11-05",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
   },
   {
    "name": "Trey Alexander",
@@ -318,27 +292,6 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
-  },
-  {
-   "name": "Trey Murphy III",
-   "nba_team": "NO",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Knee",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Murphy (knee) is probable for Friday's game against Minnesota.",
-   "note_date": "2026-11-05",
-   "fantasy_team": "Spicy town Mayo",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 34.0,
-    "PTS": 18.1,
-    "REB": 5.0,
-    "AST": 3.4
-   }
   },
   {
    "name": "Tyler Bilodeau",
@@ -653,8 +606,8 @@
    "days_out": 2,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Claxton (hamstring) was recalled from the G League's Windy City Bulls on Thursday.",
-   "note_date": "2026-11-05",
+   "note": "Head coach Tiago Splittler said Friday that Claxton (hamstring) is expected to make his season debut Sunday against the 76ers, per Joel Lorenzi of The Athletic.",
+   "note_date": "2026-11-06",
    "fantasy_team": "Spicy town Mayo",
    "on_ir": false,
    "per_game": {
@@ -663,6 +616,22 @@
     "REB": 7.1,
     "AST": 3.4
    }
+  },
+  {
+   "name": "Terrence Shannon Jr.",
+   "nba_team": "MIN",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Left Hip",
+   "return_date": "2026-11-08",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Shannon (hip) has been ruled out for Friday's game against New Orleans.",
+   "note_date": "2026-11-06",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
   },
   {
    "name": "Yanic Konan Niederhauser",
@@ -695,6 +664,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Dennis Schroder",
+   "nba_team": "CHA",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Thigh",
+   "return_date": "2026-11-09",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Schroder (thigh) is out for Friday's game versus Boston.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "Rye RSL",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 21.3,
+    "PTS": 10.8,
+    "REB": 2.9,
+    "AST": 4.9
+   }
   },
   {
    "name": "Grant Williams",
@@ -768,6 +758,27 @@
     "PTS": 18.7,
     "REB": 5.4,
     "AST": 3.5
+   }
+  },
+  {
+   "name": "Moussa Diabate",
+   "nba_team": "CHA",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Quadriceps",
+   "return_date": "2026-11-09",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Diabate (quadriceps) has been ruled out for Friday's game against Boston, according to the Hornets' official injury report.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "Big Herro Glick",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 26.0,
+    "PTS": 8.0,
+    "REB": 8.6,
+    "AST": 1.8
    }
   },
   {
@@ -978,14 +989,9 @@
    "timeframe": "1 week",
    "note": "The Nets exercised Demin's third-year team option for the 2027-28 season, Sharif Phillips-Keaton of USA Today reports Thursday.",
    "note_date": "2026-10-29",
-   "fantasy_team": "RayJayDaPawnSTAH",
+   "fantasy_team": null,
    "on_ir": false,
-   "per_game": {
-    "FPTS": 26.7,
-    "PTS": 13.0,
-    "REB": 3.7,
-    "AST": 4.0
-   }
+   "per_game": null
   },
   {
    "name": "Spencer Jones",
@@ -1050,27 +1056,6 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
-  },
-  {
-   "name": "Jusuf Nurkic",
-   "nba_team": "UTAH",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Right Foot",
-   "return_date": "2026-11-13",
-   "days_out": 7,
-   "games_missed": 4,
-   "timeframe": "1 week",
-   "note": "Nurkic (foot) is out for Wednesday's game against the Pelicans.",
-   "note_date": "2026-11-03",
-   "fantasy_team": "No Scrubs",
-   "on_ir": true,
-   "per_game": {
-    "FPTS": 27.6,
-    "PTS": 9.4,
-    "REB": 9.1,
-    "AST": 3.4
-   }
   },
   {
    "name": "Nikola Topic",
@@ -1172,6 +1157,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Jusuf Nurkic",
+   "nba_team": "UTAH",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Right Foot",
+   "return_date": "2026-11-20",
+   "days_out": 14,
+   "games_missed": 8,
+   "timeframe": "1-2 weeks",
+   "note": "Nurkic (toe) has begun participating in on-court activities as he continues recovering from a right foot injury sustained during an Oct. 4 preseason game against Denver. He will be re-evaluated in two weeks, the Jazz announced Friday.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "No Scrubs",
+   "on_ir": true,
+   "per_game": {
+    "FPTS": 27.6,
+    "PTS": 9.4,
+    "REB": 9.1,
+    "AST": 3.4
+   }
   },
   {
    "name": "Mouhamed Gueye",
