@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-06T23:37:08.647154+00:00",
+ "updated_utc": "2026-11-07T04:21:14.899982+00:00",
  "today_et": "2026-11-06",
  "players": [
   {
@@ -24,27 +24,6 @@
    }
   },
   {
-   "name": "De'Andre Hunter",
-   "nba_team": "SAC",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Illness",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Hunter is questionable for Friday against the Spurs due to an illness.",
-   "note_date": "2026-11-06",
-   "fantasy_team": "Kuminga Lot",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 22.0,
-    "PTS": 14.6,
-    "REB": 4.3,
-    "AST": 1.5
-   }
-  },
-  {
    "name": "Devin Carter",
    "nba_team": "BOS",
    "pos": "G",
@@ -61,64 +40,6 @@
    "per_game": null
   },
   {
-   "name": "Immanuel Quickley",
-   "nba_team": "TOR",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Right Hamstring",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Quickley (hamstring) is questionable for Friday against the Bucks.",
-   "note_date": "2026-11-06",
-   "fantasy_team": "Ant Social Behaviour",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 34.7,
-    "PTS": 17.2,
-    "REB": 3.8,
-    "AST": 5.8
-   }
-  },
-  {
-   "name": "Jakob Poeltl",
-   "nba_team": "TOR",
-   "pos": "C",
-   "status": "Day-To-Day",
-   "injury": "Left Shoulder",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Poeltl (shoulder) is listed as probable for Friday's game against Milwaukee.",
-   "note_date": "2026-11-06",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Jarrett Allen",
-   "nba_team": "CLE",
-   "pos": "C",
-   "status": "Day-To-Day",
-   "injury": "Right Knee",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Allen (knee) is questionable for Friday's game against Philadelphia.",
-   "note_date": "2026-11-05",
-   "fantasy_team": "Kawhi Me A River",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 34.9,
-    "PTS": 14.9,
-    "REB": 9.2,
-    "AST": 1.9
-   }
-  },
-  {
    "name": "Kam Jones",
    "nba_team": "MIL",
    "pos": "G",
@@ -133,64 +54,6 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
-  },
-  {
-   "name": "Kyle Anderson",
-   "nba_team": "TOR",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Illness",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Anderson is questionable for Friday against the Bucks due to illness.",
-   "note_date": "2026-11-06",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Peyton Watson",
-   "nba_team": "CLE",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Right Hamstring",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Watson (hamstring) is questionable for Friday's game against the 76ers.",
-   "note_date": "2026-11-05",
-   "fantasy_team": "Kream team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 28.2,
-    "PTS": 13.3,
-    "REB": 4.7,
-    "AST": 2.4
-   }
-  },
-  {
-   "name": "Scottie Barnes",
-   "nba_team": "TOR",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Left Groin",
-   "return_date": "2026-11-06",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Barnes (adductor) was not present at the morning shootaround, Michael Grange of Sportsnet.careports.",
-   "note_date": "2026-11-06",
-   "fantasy_team": "No Scrubs",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 43.3,
-    "PTS": 20.4,
-    "REB": 7.7,
-    "AST": 5.7
-   }
   },
   {
    "name": "Trey Alexander",
@@ -352,6 +215,27 @@
    }
   },
   {
+   "name": "Jarrett Allen",
+   "nba_team": "CLE",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Right Knee",
+   "return_date": "2026-11-07",
+   "days_out": 1,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Allen (knee) is out for Friday's game against the 76ers.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "Kawhi Me A River",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 34.9,
+    "PTS": 14.9,
+    "REB": 9.2,
+    "AST": 1.9
+   }
+  },
+  {
    "name": "Jaylin Williams",
    "nba_team": "OKC",
    "pos": "F",
@@ -409,8 +293,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Goodwin (calf) is out for Thursday's game against Orlando.",
-   "note_date": "2026-11-06",
+   "note": "Goodwin (calf) is doubtful for Saturday's game against the Rockets.",
+   "note_date": "2026-11-07",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -457,8 +341,24 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Fleming is out for Thursday's game against the Magic due to a sprained left ankle.",
-   "note_date": "2026-11-06",
+   "note": "Fleming (ankle) is questionable for Saturday's game against the Rockets.",
+   "note_date": "2026-11-07",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Sam Merrill",
+   "nba_team": "CLE",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Elbow",
+   "return_date": "2026-11-07",
+   "days_out": 1,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Merrill (elbow) won't return to Friday's game against the 76ers, Dave McMenamin of ESPN.com reports.",
+   "note_date": "2026-11-07",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -517,6 +417,27 @@
    }
   },
   {
+   "name": "De'Andre Hunter",
+   "nba_team": "SAC",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Illness",
+   "return_date": "2026-11-08",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Hunter (illness) is listed as out for Friday's game against San Antonio.",
+   "note_date": "2026-11-07",
+   "fantasy_team": "Kuminga Lot",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 22.0,
+    "PTS": 14.6,
+    "REB": 4.3,
+    "AST": 1.5
+   }
+  },
+  {
    "name": "Isaiah Joe",
    "nba_team": "DET",
    "pos": "G",
@@ -552,6 +473,22 @@
     "REB": 6.9,
     "AST": 1.4
    }
+  },
+  {
+   "name": "Joan Beringer",
+   "nba_team": "MIN",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Fracture",
+   "return_date": "2026-11-08",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Beringer was ruled out for the second half of Friday's game against the Pelicans due to a nasal fracture, Dane Moore of 'The Dane Moore NBA Podcast' reports.",
+   "note_date": "2026-11-07",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
   },
   {
    "name": "Nic Claxton",
@@ -623,6 +560,27 @@
    "per_game": null
   },
   {
+   "name": "Brandon Miller",
+   "nba_team": "CHA",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Right Groin",
+   "return_date": "2026-11-09",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Miller (groin) won't return to Friday's game against the Celtics, Brett Siegel of ClutchPoints.com reports.",
+   "note_date": "2026-11-07",
+   "fantasy_team": "coachcainzey",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 34.2,
+    "PTS": 21.6,
+    "REB": 5.2,
+    "AST": 3.1
+   }
+  },
+  {
    "name": "Clint Capela",
    "nba_team": "HOU",
    "pos": "C",
@@ -674,6 +632,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Immanuel Quickley",
+   "nba_team": "TOR",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Hamstring",
+   "return_date": "2026-11-09",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Quickley (hamstring) won't play Friday in Milwaukee, Michael Grange of Sportsnet.ca reports.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "Ant Social Behaviour",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 34.7,
+    "PTS": 17.2,
+    "REB": 3.8,
+    "AST": 5.8
+   }
   },
   {
    "name": "Isaiah Stewart",
@@ -769,6 +748,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Scottie Barnes",
+   "nba_team": "TOR",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Left Groin",
+   "return_date": "2026-11-09",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Barnes (adductor) is listed as out for Friday's game against Milwaukee, Michael Grange of Sportsnet.ca reports.",
+   "note_date": "2026-11-06",
+   "fantasy_team": "No Scrubs",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 43.3,
+    "PTS": 20.4,
+    "REB": 7.7,
+    "AST": 5.7
+   }
   },
   {
    "name": "Scotty Pippen Jr.",
@@ -967,22 +967,6 @@
    "timeframe": "1 week",
    "note": "The Nets exercised Demin's third-year team option for the 2027-28 season, Sharif Phillips-Keaton of USA Today reports Thursday.",
    "note_date": "2026-10-29",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Spencer Jones",
-   "nba_team": "DEN",
-   "pos": "F",
-   "status": "Out",
-   "injury": "Hamstring",
-   "return_date": "2026-11-11",
-   "days_out": 5,
-   "games_missed": 2,
-   "timeframe": "1 week",
-   "note": "Jones (hamstring) is out for Wednesday's game against the Raptors.",
-   "note_date": "2026-11-03",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
