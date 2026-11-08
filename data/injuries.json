@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-08T06:27:31.851377+00:00",
+ "updated_utc": "2026-11-08T13:45:44.502184+00:00",
  "today_et": "2026-11-08",
  "players": [
   {
@@ -244,7 +244,7 @@
    "fantasy_team": "coachcainzey",
    "on_ir": false,
    "per_game": {
-    "FPTS": 34.2,
+    "FPTS": 34.0,
     "PTS": 21.6,
     "REB": 5.2,
     "AST": 3.1
@@ -278,14 +278,9 @@
    "timeframe": "Days",
    "note": "Ayton won't return to Saturday's game against the Thunder due to a lower leg injury.",
    "note_date": "2026-11-08",
-   "fantasy_team": "RayJayDaPawnSTAH",
+   "fantasy_team": null,
    "on_ir": false,
-   "per_game": {
-    "FPTS": 21.0,
-    "PTS": 9.0,
-    "REB": 6.5,
-    "AST": 1.0
-   }
+   "per_game": null
   },
   {
    "name": "Dennis Schroder",
