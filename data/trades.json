@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-08T00:09:24+00:00",
- "fa_points_per_game": 24.9,
- "fa_points_per_day": 11.95,
+ "updated_utc": "2026-11-08T06:27:27+00:00",
+ "fa_points_per_game": 24.7,
+ "fa_points_per_day": 11.86,
  "fa_pool": 10,
  "trades": [
   {
@@ -294,7 +294,7 @@
   }
  ],
  "pickups": {
-  "count": 98,
+  "count": 100,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -1479,6 +1479,26 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Jake LaRavia",
+    "team": "No Scrubs",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-07",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
+   },
+   {
+    "player": "Morez Johnson Jr.",
+    "team": "RayJayDaPawnSTAH",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-07",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -1490,7 +1510,7 @@
    },
    {
     "team": "No Scrubs",
-    "pickups": 14,
+    "pickups": 15,
     "fpts": 685.0,
     "faab": 0
    },
@@ -1508,7 +1528,7 @@
    },
    {
     "team": "RayJayDaPawnSTAH",
-    "pickups": 8,
+    "pickups": 9,
     "fpts": 448.0,
     "faab": 0
    },
@@ -1569,7 +1589,7 @@
   ]
  },
  "drops": {
-  "count": 78,
+  "count": 80,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -1585,9 +1605,18 @@
     "team": "Kuminga Lot",
     "now": "Big Herro Glick",
     "date": "2026-10-22",
-    "games": 8,
-    "fpts": 180.0,
-    "per_game": 22.5
+    "games": 9,
+    "fpts": 202.0,
+    "per_game": 22.4
+   },
+   {
+    "player": "Tristan da Silva",
+    "team": "Big Herro Glick",
+    "now": "No Scrubs",
+    "date": "2026-10-25",
+    "games": 7,
+    "fpts": 177.0,
+    "per_game": 25.3
    },
    {
     "player": "Dennis Schroder",
@@ -1599,13 +1628,31 @@
     "per_game": 18.4
    },
    {
+    "player": "Khaman Maluach",
+    "team": "RayJayDaPawnSTAH",
+    "now": "free agent",
+    "date": "2026-10-21",
+    "games": 7,
+    "fpts": 153.0,
+    "per_game": 21.9
+   },
+   {
+    "player": "Aday Mara",
+    "team": "Ant Social Behaviour",
+    "now": "Joseph's Scary Team",
+    "date": "2026-10-29",
+    "games": 5,
+    "fpts": 151.0,
+    "per_game": 30.2
+   },
+   {
     "player": "Mario Hezonja",
     "team": "No Scrubs",
     "now": "Ant Social Behaviour",
     "date": "2026-10-25",
-    "games": 7,
-    "fpts": 149.0,
-    "per_game": 21.3
+    "games": 8,
+    "fpts": 150.0,
+    "per_game": 18.8
    },
    {
     "player": "Klay Thompson",
@@ -1615,15 +1662,6 @@
     "games": 6,
     "fpts": 149.0,
     "per_game": 24.8
-   },
-   {
-    "player": "Tristan da Silva",
-    "team": "Big Herro Glick",
-    "now": "No Scrubs",
-    "date": "2026-10-25",
-    "games": 6,
-    "fpts": 147.0,
-    "per_game": 24.5
    },
    {
     "player": "Bones Hyland",
@@ -1644,6 +1682,15 @@
     "per_game": 17.5
    },
    {
+    "player": "Collin Gillespie",
+    "team": "Big Herro Glick",
+    "now": "coachcainzey",
+    "date": "2026-10-25",
+    "games": 6,
+    "fpts": 137.0,
+    "per_game": 22.8
+   },
+   {
     "player": "Dennis Schroder",
     "team": "Spicy town Mayo",
     "now": "Rye RSL",
@@ -1662,24 +1709,6 @@
     "per_game": 21.2
    },
    {
-    "player": "Khaman Maluach",
-    "team": "RayJayDaPawnSTAH",
-    "now": "free agent",
-    "date": "2026-10-21",
-    "games": 6,
-    "fpts": 126.0,
-    "per_game": 21.0
-   },
-   {
-    "player": "Bilal Coulibaly",
-    "team": "Downtown Euros",
-    "now": "No Scrubs",
-    "date": "2026-10-25",
-    "games": 6,
-    "fpts": 123.0,
-    "per_game": 20.5
-   },
-   {
     "player": "Anfernee Simons",
     "team": "No Scrubs",
     "now": "free agent",
@@ -1687,6 +1716,15 @@
     "games": 6,
     "fpts": 121.0,
     "per_game": 20.2
+   },
+   {
+    "player": "De'Anthony Melton",
+    "team": "No Scrubs",
+    "now": "free agent",
+    "date": "2026-10-29",
+    "games": 5,
+    "fpts": 120.0,
+    "per_game": 24.0
    },
    {
     "player": "Kevin Huerter",
@@ -1698,13 +1736,13 @@
     "per_game": 16.9
    },
    {
-    "player": "Collin Gillespie",
-    "team": "Big Herro Glick",
-    "now": "coachcainzey",
+    "player": "Bilal Coulibaly",
+    "team": "Downtown Euros",
+    "now": "free agent",
     "date": "2026-10-25",
-    "games": 5,
-    "fpts": 118.0,
-    "per_game": 23.6
+    "games": 7,
+    "fpts": 116.0,
+    "per_game": 16.6
    },
    {
     "player": "Derrick Jones Jr.",
@@ -1716,13 +1754,13 @@
     "per_game": 28.0
    },
    {
-    "player": "De'Anthony Melton",
-    "team": "No Scrubs",
+    "player": "Keldon Johnson",
+    "team": "coachcainzey",
     "now": "free agent",
-    "date": "2026-10-29",
-    "games": 4,
-    "fpts": 112.0,
-    "per_game": 28.0
+    "date": "2026-10-25",
+    "games": 7,
+    "fpts": 106.0,
+    "per_game": 15.1
    },
    {
     "player": "Tre Jones",
@@ -1734,13 +1772,13 @@
     "per_game": 26.5
    },
    {
-    "player": "Aday Mara",
-    "team": "Ant Social Behaviour",
-    "now": "Joseph's Scary Team",
-    "date": "2026-10-29",
-    "games": 4,
+    "player": "Kelly Oubre Jr.",
+    "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-10-24",
+    "games": 6,
     "fpts": 103.0,
-    "per_game": 25.8
+    "per_game": 17.2
    },
    {
     "player": "Malik Monk",
@@ -1761,15 +1799,6 @@
     "per_game": 25.0
    },
    {
-    "player": "Kelly Oubre Jr.",
-    "team": "Downtown Euros",
-    "now": "free agent",
-    "date": "2026-10-24",
-    "games": 6,
-    "fpts": 99.0,
-    "per_game": 16.5
-   },
-   {
     "player": "Trevon Brazile",
     "team": "Big Herro Glick",
     "now": "free agent",
@@ -1777,6 +1806,33 @@
     "games": 5,
     "fpts": 97.0,
     "per_game": 19.4
+   },
+   {
+    "player": "Jared McCain",
+    "team": "Kuminga Lot",
+    "now": "RayJayDaPawnSTAH",
+    "date": "2026-11-03",
+    "games": 3,
+    "fpts": 97.0,
+    "per_game": 32.3
+   },
+   {
+    "player": "Andre Drummond",
+    "team": "Joseph's Scary Team",
+    "now": "free agent",
+    "date": "2026-10-24",
+    "games": 7,
+    "fpts": 96.0,
+    "per_game": 13.7
+   },
+   {
+    "player": "Oso Ighodaro",
+    "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-10-22",
+    "games": 5,
+    "fpts": 94.0,
+    "per_game": 18.8
    },
    {
     "player": "Neemias Queta",
@@ -1806,24 +1862,6 @@
     "per_game": 14.3
    },
    {
-    "player": "Keldon Johnson",
-    "team": "coachcainzey",
-    "now": "free agent",
-    "date": "2026-10-25",
-    "games": 6,
-    "fpts": 85.0,
-    "per_game": 14.2
-   },
-   {
-    "player": "Oso Ighodaro",
-    "team": "Downtown Euros",
-    "now": "free agent",
-    "date": "2026-10-22",
-    "games": 4,
-    "fpts": 83.0,
-    "per_game": 20.8
-   },
-   {
     "player": "Kyle Kuzma",
     "team": "coachcainzey",
     "now": "NAWSectual",
@@ -1831,15 +1869,6 @@
     "games": 4,
     "fpts": 80.0,
     "per_game": 20.0
-   },
-   {
-    "player": "Andre Drummond",
-    "team": "Joseph's Scary Team",
-    "now": "free agent",
-    "date": "2026-10-24",
-    "games": 6,
-    "fpts": 79.0,
-    "per_game": 13.2
    },
    {
     "player": "De'Andre Hunter",
@@ -1905,13 +1934,13 @@
     "per_game": 14.8
    },
    {
-    "player": "Jared McCain",
-    "team": "Kuminga Lot",
-    "now": "RayJayDaPawnSTAH",
-    "date": "2026-11-03",
-    "games": 2,
-    "fpts": 57.0,
-    "per_game": 28.5
+    "player": "Scoot Henderson",
+    "team": "coachcainzey",
+    "now": "free agent",
+    "date": "2026-10-24",
+    "games": 7,
+    "fpts": 56.0,
+    "per_game": 8.0
    },
    {
     "player": "Egor Demin",
@@ -1925,11 +1954,11 @@
    {
     "player": "Deandre Ayton",
     "team": "NAWSectual",
-    "now": "RayJayDaPawnSTAH",
+    "now": "free agent",
     "date": "2026-11-04",
-    "games": 2,
-    "fpts": 50.0,
-    "per_game": 25.0
+    "games": 3,
+    "fpts": 51.0,
+    "per_game": 17.0
    },
    {
     "player": "Keaton Wagler",
@@ -1939,6 +1968,15 @@
     "games": 3,
     "fpts": 48.0,
     "per_game": 16.0
+   },
+   {
+    "player": "Chris Youngblood",
+    "team": "BYE",
+    "now": "free agent",
+    "date": "2026-10-27",
+    "games": 5,
+    "fpts": 47.0,
+    "per_game": 9.4
    },
    {
     "player": "Ziaire Williams",
@@ -1963,6 +2001,15 @@
     "team": "coachcainzey",
     "now": "free agent",
     "date": "2026-10-24",
+    "games": 4,
+    "fpts": 44.0,
+    "per_game": 11.0
+   },
+   {
+    "player": "Keldon Johnson",
+    "team": "Big Herro Glick",
+    "now": "free agent",
+    "date": "2026-11-03",
     "games": 3,
     "fpts": 41.0,
     "per_game": 13.7
@@ -1970,20 +2017,20 @@
    {
     "player": "Morez Johnson Jr.",
     "team": "Big Herro Glick",
-    "now": "free agent",
+    "now": "RayJayDaPawnSTAH",
     "date": "2026-11-05",
     "games": 1,
     "fpts": 39.0,
     "per_game": 39.0
    },
    {
-    "player": "Scoot Henderson",
+    "player": "Khaman Maluach",
     "team": "coachcainzey",
     "now": "free agent",
-    "date": "2026-10-24",
-    "games": 6,
-    "fpts": 36.0,
-    "per_game": 6.0
+    "date": "2026-11-05",
+    "games": 1,
+    "fpts": 27.0,
+    "per_game": 27.0
    },
    {
     "player": "Kentavious Caldwell-Pope",
@@ -1995,31 +2042,13 @@
     "per_game": 8.7
    },
    {
-    "player": "Chris Youngblood",
-    "team": "BYE",
-    "now": "free agent",
-    "date": "2026-10-27",
-    "games": 4,
-    "fpts": 23.0,
-    "per_game": 5.8
-   },
-   {
     "player": "DeMar DeRozan",
     "team": "Downtown Euros",
     "now": "Big Herro Glick",
     "date": "2026-11-04",
     "games": 1,
-    "fpts": 23.0,
-    "per_game": 23.0
-   },
-   {
-    "player": "Keldon Johnson",
-    "team": "Big Herro Glick",
-    "now": "free agent",
-    "date": "2026-11-03",
-    "games": 2,
-    "fpts": 20.0,
-    "per_game": 10.0
+    "fpts": 22.0,
+    "per_game": 22.0
    },
    {
     "player": "Daniss Jenkins",
@@ -2031,6 +2060,15 @@
     "per_game": 8.0
    },
    {
+    "player": "Brandon Williams",
+    "team": "No Scrubs",
+    "now": "free agent",
+    "date": "2026-11-05",
+    "games": 1,
+    "fpts": 16.0,
+    "per_game": 16.0
+   },
+   {
     "player": "T.J. McConnell",
     "team": "Ant Social Behaviour",
     "now": "free agent",
@@ -2038,6 +2076,24 @@
     "games": 1,
     "fpts": 13.0,
     "per_game": 13.0
+   },
+   {
+    "player": "Oso Ighodaro",
+    "team": "Big Herro Glick",
+    "now": "free agent",
+    "date": "2026-11-06",
+    "games": 1,
+    "fpts": 11.0,
+    "per_game": 11.0
+   },
+   {
+    "player": "De'Anthony Melton",
+    "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-11-06",
+    "games": 1,
+    "fpts": 8.0,
+    "per_game": 8.0
    },
    {
     "player": "Bronny James",
@@ -2193,42 +2249,6 @@
     "per_game": null
    },
    {
-    "player": "Brandon Williams",
-    "team": "No Scrubs",
-    "now": "free agent",
-    "date": "2026-11-05",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
-    "player": "Khaman Maluach",
-    "team": "coachcainzey",
-    "now": "free agent",
-    "date": "2026-11-05",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
-    "player": "De'Anthony Melton",
-    "team": "Downtown Euros",
-    "now": "free agent",
-    "date": "2026-11-06",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
-    "player": "Oso Ighodaro",
-    "team": "Big Herro Glick",
-    "now": "free agent",
-    "date": "2026-11-06",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
     "player": "Anfernee Simons",
     "team": "Ant Social Behaviour",
     "now": "free agent",
@@ -2240,7 +2260,7 @@
    {
     "player": "Jake LaRavia",
     "team": "Big Herro Glick",
-    "now": "free agent",
+    "now": "No Scrubs",
     "date": "2026-11-07",
     "games": 0,
     "fpts": 0,
@@ -2248,6 +2268,24 @@
    },
    {
     "player": "Brook Lopez",
+    "team": "RayJayDaPawnSTAH",
+    "now": "free agent",
+    "date": "2026-11-07",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Bilal Coulibaly",
+    "team": "No Scrubs",
+    "now": "free agent",
+    "date": "2026-11-07",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Deandre Ayton",
     "team": "RayJayDaPawnSTAH",
     "now": "free agent",
     "date": "2026-11-07",
