@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-07T20:40:45+00:00",
- "fa_points_per_game": 25.0,
- "fa_points_per_day": 12.0,
+ "updated_utc": "2026-11-08T00:09:24+00:00",
+ "fa_points_per_game": 24.9,
+ "fa_points_per_day": 11.95,
  "fa_pool": 10,
  "trades": [
   {
@@ -1765,9 +1765,18 @@
     "team": "Downtown Euros",
     "now": "free agent",
     "date": "2026-10-24",
+    "games": 6,
+    "fpts": 99.0,
+    "per_game": 16.5
+   },
+   {
+    "player": "Trevon Brazile",
+    "team": "Big Herro Glick",
+    "now": "free agent",
+    "date": "2026-10-27",
     "games": 5,
-    "fpts": 95.0,
-    "per_game": 19.0
+    "fpts": 97.0,
+    "per_game": 19.4
    },
    {
     "player": "Neemias Queta",
@@ -1795,15 +1804,6 @@
     "games": 6,
     "fpts": 86.0,
     "per_game": 14.3
-   },
-   {
-    "player": "Trevon Brazile",
-    "team": "Big Herro Glick",
-    "now": "free agent",
-    "date": "2026-10-27",
-    "games": 4,
-    "fpts": 86.0,
-    "per_game": 21.5
    },
    {
     "player": "Keldon Johnson",
@@ -2004,6 +2004,15 @@
     "per_game": 5.8
    },
    {
+    "player": "DeMar DeRozan",
+    "team": "Downtown Euros",
+    "now": "Big Herro Glick",
+    "date": "2026-11-04",
+    "games": 1,
+    "fpts": 23.0,
+    "per_game": 23.0
+   },
+   {
     "player": "Keldon Johnson",
     "team": "Big Herro Glick",
     "now": "free agent",
@@ -2020,6 +2029,15 @@
     "games": 2,
     "fpts": 16.0,
     "per_game": 8.0
+   },
+   {
+    "player": "T.J. McConnell",
+    "team": "Ant Social Behaviour",
+    "now": "free agent",
+    "date": "2026-10-21",
+    "games": 1,
+    "fpts": 13.0,
+    "per_game": 13.0
    },
    {
     "player": "Bronny James",
@@ -2103,15 +2121,6 @@
     "per_game": null
    },
    {
-    "player": "T.J. McConnell",
-    "team": "Ant Social Behaviour",
-    "now": "free agent",
-    "date": "2026-10-21",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
     "player": "Kevin Porter Jr.",
     "team": "RayJayDaPawnSTAH",
     "now": "free agent",
@@ -2170,15 +2179,6 @@
     "team": "RayJayDaPawnSTAH",
     "now": "free agent",
     "date": "2026-11-06",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
-    "player": "DeMar DeRozan",
-    "team": "Downtown Euros",
-    "now": "Big Herro Glick",
-    "date": "2026-11-04",
     "games": 0,
     "fpts": 0,
     "per_game": null
