@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-09T18:42:56.796433+00:00",
+ "updated_utc": "2026-11-09T20:55:29.673150+00:00",
  "today_et": "2026-11-09",
  "players": [
   {
@@ -12,8 +12,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Gordon (lower body injury management) is listed as questionable for Monday's game against the Rockets.",
-   "note_date": "2026-11-08",
+   "note": "Gordon (left calf injury management) is probable for Monday's game against Houston.",
+   "note_date": "2026-11-09",
    "fantasy_team": "Downtown Euros",
    "on_ir": false,
    "per_game": {
@@ -66,17 +66,33 @@
    }
   },
   {
-   "name": "Cameron Johnson",
-   "nba_team": "DEN",
-   "pos": "F",
+   "name": "Bilal Coulibaly",
+   "nba_team": "WSH",
+   "pos": "G",
    "status": "Day-To-Day",
-   "injury": "Lower Body",
+   "injury": "Left Hand",
    "return_date": "2026-11-09",
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Johnson (lower body) is questionable for Monday's game against Houston.",
-   "note_date": "2026-11-08",
+   "note": "Coulibaly (hand) is listed as questionable for Monday's game against Detroit.",
+   "note_date": "2026-11-09",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Cameron Johnson",
+   "nba_team": "DEN",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Ankle",
+   "return_date": "2026-11-09",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Johnson (ankle) is probable for Monday against Houston.",
+   "note_date": "2026-11-09",
    "fantasy_team": "Big Herro Glick",
    "on_ir": false,
    "per_game": {
@@ -96,8 +112,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Braun (calf/illness) is listed as questionable for Monday's game against Houston.",
-   "note_date": "2026-11-08",
+   "note": "Braun (left calf contusion/illness) is probable for Monday's matchup against the Rockets.",
+   "note_date": "2026-11-09",
    "fantasy_team": "coachcainzey",
    "on_ir": false,
    "per_game": {
@@ -138,8 +154,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "DeRozan is questionable for Monday's game against the Rockets due to lower back spasms.",
-   "note_date": "2026-11-08",
+   "note": "DeRozan (back) is probable for Monday against Houston.",
+   "note_date": "2026-11-09",
    "fantasy_team": "Big Herro Glick",
    "on_ir": false,
    "per_game": {
@@ -150,25 +166,20 @@
    }
   },
   {
-   "name": "Devin Vassell",
-   "nba_team": "SA",
+   "name": "Gary Payton II",
+   "nba_team": "GS",
    "pos": "G",
    "status": "Day-To-Day",
-   "injury": "Left Groin",
+   "injury": "Left Knee",
    "return_date": "2026-11-09",
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Vassell is questionable for Monday's game against the Suns due to left adductor tightness.",
+   "note": "Payton (left knee soreness) is listed as questionable for Monday's game against New Orleans.",
    "note_date": "2026-11-09",
-   "fantasy_team": "Downtown Euros",
+   "fantasy_team": null,
    "on_ir": false,
-   "per_game": {
-    "FPTS": 27.1,
-    "PTS": 13.3,
-    "REB": 3.6,
-    "AST": 2.9
-   }
+   "per_game": null
   },
   {
    "name": "Gui Santos",
@@ -208,22 +219,6 @@
    }
   },
   {
-   "name": "Isaiah Joe",
-   "nba_team": "DET",
-   "pos": "G",
-   "status": "Out",
-   "injury": "Right Hip",
-   "return_date": "2026-11-09",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Joe (hip) has been ruled out for Sunday's game against the Lakers.",
-   "note_date": "2026-11-07",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "Jamal Murray",
    "nba_team": "DEN",
    "pos": "G",
@@ -233,8 +228,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Murray is questionable for Monday's game against the Rockets due to a left shin contusion.",
-   "note_date": "2026-11-08",
+   "note": "Murray (leg) is probable for Monday against Houston.",
+   "note_date": "2026-11-09",
    "fantasy_team": "Kawhi Me A River",
    "on_ir": false,
    "per_game": {
@@ -298,6 +293,27 @@
    "per_game": null
   },
   {
+   "name": "Morez Johnson Jr.",
+   "nba_team": "DAL",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Leg",
+   "return_date": "2026-11-09",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Johnson (leg) is questionable for Monday's game against Indiana.",
+   "note_date": "2026-11-09",
+   "fantasy_team": "RayJayDaPawnSTAH",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 20.1,
+    "PTS": 9.4,
+    "REB": 5.4,
+    "AST": 1.5
+   }
+  },
+  {
    "name": "Moussa Diabate",
    "nba_team": "CHA",
    "pos": "F",
@@ -328,8 +344,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Jokic (elbow) is listed as questionable for Monday's game in Houston.",
-   "note_date": "2026-11-08",
+   "note": "Jokic (right elbow sprain) is probable for Monday's game against the Rockets.",
+   "note_date": "2026-11-09",
    "fantasy_team": "Downtown Euros",
    "on_ir": false,
    "per_game": {
@@ -694,6 +710,27 @@
    "per_game": null
   },
   {
+   "name": "Devin Vassell",
+   "nba_team": "SA",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Left Groin",
+   "return_date": "2026-11-11",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Vassell (groin) is out for Monday's game against the Suns, Tom Orsborn of the San Antonio Express-News reports.",
+   "note_date": "2026-11-09",
+   "fantasy_team": "Downtown Euros",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 27.1,
+    "PTS": 13.3,
+    "REB": 3.6,
+    "AST": 2.9
+   }
+  },
+  {
    "name": "Egor Demin",
    "nba_team": "BKN",
    "pos": "G",
@@ -877,6 +914,43 @@
     "PTS": 14.5,
     "REB": 5.7,
     "AST": 2.6
+   }
+  },
+  {
+   "name": "Trendon Watford",
+   "nba_team": "NO",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Ankle",
+   "return_date": "2026-11-11",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Watford (ankle) is out for Monday's game versus Utah.",
+   "note_date": "2026-11-09",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Trey Murphy III",
+   "nba_team": "NO",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Knee",
+   "return_date": "2026-11-11",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Murphy (knees) has been ruled out for Monday's game against Golden State.",
+   "note_date": "2026-11-09",
+   "fantasy_team": "Spicy town Mayo",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 34.2,
+    "PTS": 18.0,
+    "REB": 5.0,
+    "AST": 3.5
    }
   },
   {
@@ -1117,6 +1191,22 @@
     "REB": 7.5,
     "AST": 1.7
    }
+  },
+  {
+   "name": "Isaiah Joe",
+   "nba_team": "DET",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Hip",
+   "return_date": "2026-11-17",
+   "days_out": 8,
+   "games_missed": 3,
+   "timeframe": "1-2 weeks",
+   "note": "Joe (hip) is out for Monday against the Wizards.",
+   "note_date": "2026-11-09",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
   },
   {
    "name": "Dominick Barlow",
