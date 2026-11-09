@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-09T17:47:42.579017+00:00",
+ "updated_utc": "2026-11-09T18:42:56.796433+00:00",
  "today_et": "2026-11-09",
  "players": [
   {
@@ -45,6 +45,27 @@
    }
   },
   {
+   "name": "Austin Reaves",
+   "nba_team": "LAL",
+   "pos": "G",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-09",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Reaves is questionable for Monday's game against the Hawks due to an illness, per Dave McMenamin of ESPN.com.",
+   "note_date": "2026-11-09",
+   "fantasy_team": "Big Herro Glick",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 41.1,
+    "PTS": 25.3,
+    "REB": 4.2,
+    "AST": 5.4
+   }
+  },
+  {
    "name": "Cameron Johnson",
    "nba_team": "DEN",
    "pos": "F",
@@ -84,6 +105,27 @@
     "PTS": 11.8,
     "REB": 4.1,
     "AST": 2.2
+   }
+  },
+  {
+   "name": "Collin Murray-Boyles",
+   "nba_team": "TOR",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-09",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Murray-Boyles (illness) is questionable for Monday's game versus Memphis, per Josh Lewenberg of TSN.ca.",
+   "note_date": "2026-11-09",
+   "fantasy_team": "Joseph's Scary Team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 24.1,
+    "PTS": 9.7,
+    "REB": 5.1,
+    "AST": 1.7
    }
   },
   {
@@ -256,27 +298,6 @@
    "per_game": null
   },
   {
-   "name": "Luka Doncic",
-   "nba_team": "LAL",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Back",
-   "return_date": "2026-11-09",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Doncic has been ruled out for Sunday's game at Detroit due to lower-back tightness, Trevor Lane of LakersNation.com reports.",
-   "note_date": "2026-11-09",
-   "fantasy_team": "Downtown Euros",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 63.0,
-    "PTS": 35.7,
-    "REB": 8.2,
-    "AST": 8.4
-   }
-  },
-  {
    "name": "Moussa Diabate",
    "nba_team": "CHA",
    "pos": "F",
@@ -317,22 +338,6 @@
     "REB": 11.8,
     "AST": 9.8
    }
-  },
-  {
-   "name": "Quentin Grimes",
-   "nba_team": "LAL",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Finger",
-   "return_date": "2026-11-09",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Grimes (finger) did not return to Sunday's game against the Pistons.",
-   "note_date": "2026-11-09",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
   },
   {
    "name": "Scottie Barnes",
@@ -784,6 +789,22 @@
    "games_missed": 1,
    "timeframe": "Days",
    "note": "Tshiebwe has been ruled out for Monday's game against the Nuggets due to an illness.",
+   "note_date": "2026-11-09",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Quentin Grimes",
+   "nba_team": "LAL",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Finger",
+   "return_date": "2026-11-11",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Grimes (finger) is out for Monday's game against Atlanta, per Dave McMenamin of ESPN.com.",
    "note_date": "2026-11-09",
    "fantasy_team": null,
    "on_ir": false,
