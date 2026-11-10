@@ -825,6 +825,13 @@
    "bid": 0,
    "type": "FREEAGENT",
    "date_utc": "2026-11-09T09:10:32.211000+00:00"
+  },
+  "c4cbf6ad-fb3e-4ddd-805b-8f6a04278540:4888725": {
+   "team": 1,
+   "player": 4888725,
+   "bid": 0,
+   "type": "FREEAGENT",
+   "date_utc": "2026-11-09T23:59:56.024000+00:00"
   }
  },
  "_drops": {
@@ -1292,6 +1299,11 @@
    "team": 2,
    "player": 4066262,
    "date_utc": "2026-11-09T09:10:32.211000+00:00"
+  },
+  "c4cbf6ad-fb3e-4ddd-805b-8f6a04278540:3102530": {
+   "team": 1,
+   "player": 3102530,
+   "date_utc": "2026-11-09T23:59:56.024000+00:00"
   }
  },
  "roster:2026-10-30:4871145-5093267-5203685-6442": {
@@ -1319,8 +1331,8 @@
    ],
    [
     "2026-11-09",
-    0.16,
-    -0.12
+    0.17,
+    -0.13
    ]
   ],
   "at_time": {
@@ -1337,12 +1349,12 @@
   "now": {
    "date": "2026-11-09",
    "Joseph's Scary Team": {
-    "exp_wins": 0.16,
-    "weekly_points": 11.8
+    "exp_wins": 0.17,
+    "weekly_points": 12.2
    },
    "coachcainzey": {
-    "exp_wins": -0.12,
-    "weekly_points": -8.2
+    "exp_wins": -0.13,
+    "weekly_points": -8.4
    }
   },
   "post": "2026-10-30-trade"
