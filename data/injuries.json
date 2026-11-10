@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-10T11:29:49.858464+00:00",
+ "updated_utc": "2026-11-10T15:46:57.154696+00:00",
  "today_et": "2026-11-10",
  "players": [
   {
@@ -368,22 +368,6 @@
    "timeframe": "Days",
    "note": "Tyson (ankle) is out for Monday's game against the Hornets.",
    "note_date": "2026-11-08",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Jonathan Isaac",
-   "nba_team": "ORL",
-   "pos": "F",
-   "status": "Out",
-   "injury": "Left Knee",
-   "return_date": "2026-11-11",
-   "days_out": 1,
-   "games_missed": 1,
-   "timeframe": "Days",
-   "note": "Isaac (knee) is out for Tuesday's game against Sacramento.",
-   "note_date": "2026-11-09",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -954,6 +938,22 @@
     "REB": 3.7,
     "AST": 4.3
    }
+  },
+  {
+   "name": "Jonathan Isaac",
+   "nba_team": "ORL",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Left Knee",
+   "return_date": "2026-11-16",
+   "days_out": 6,
+   "games_missed": 3,
+   "timeframe": "1 week",
+   "note": "Isaac (knee) is out for Tuesday's game against Sacramento.",
+   "note_date": "2026-11-09",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
   },
   {
    "name": "Tristan Vukcevic",
