@@ -1,22 +1,27 @@
 {
- "updated_utc": "2026-11-11T15:37:22.133088+00:00",
+ "updated_utc": "2026-11-11T19:47:35.673841+00:00",
  "today_et": "2026-11-11",
  "players": [
   {
-   "name": "Grant Nelson",
-   "nba_team": "BKN",
+   "name": "Caleb Wilson",
+   "nba_team": "CHI",
    "pos": "F",
    "status": "Day-To-Day",
-   "injury": "Left Knee",
-   "return_date": "2026-11-10",
+   "injury": "Right Hip",
+   "return_date": "2026-11-11",
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Nelson signed a two-way contract with the Nets on Friday, Michael Scotto of HoopsHype.com reports.",
-   "note_date": "2026-11-08",
-   "fantasy_team": null,
+   "note": "Wilson has been downgraded to questionable for Wednesday's game against the Spurs due to right hip soreness.",
+   "note_date": "2026-11-11",
+   "fantasy_team": "Kuminga Lot",
    "on_ir": false,
-   "per_game": null
+   "per_game": {
+    "FPTS": 34.5,
+    "PTS": 18.4,
+    "REB": 7.4,
+    "AST": 2.0
+   }
   },
   {
    "name": "Collin Murray-Boyles",
@@ -59,22 +64,6 @@
     "REB": 3.6,
     "AST": 2.9
    }
-  },
-  {
-   "name": "Egor Demin",
-   "nba_team": "BKN",
-   "pos": "G",
-   "status": "Out",
-   "injury": "Right Leg",
-   "return_date": "2026-11-11",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Demin (leg) is probable for Wednesday's game against the Pelicans, Erik Slater of ClutchPoints.com reports.",
-   "note_date": "2026-11-10",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
   },
   {
    "name": "Immanuel Quickley",
@@ -155,8 +144,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Hart (illness) won't play Tuesday against the Bucks, Kristian Winfield of the New York Daily News reports.",
-   "note_date": "2026-11-10",
+   "note": "Hart (illness) is probable for Wednesday's game against the Cavaliers.",
+   "note_date": "2026-11-11",
    "fantasy_team": "NAWSectual",
    "on_ir": false,
    "per_game": {
@@ -164,6 +153,27 @@
     "PTS": 11.0,
     "REB": 7.6,
     "AST": 4.6
+   }
+  },
+  {
+   "name": "Karl-Anthony Towns",
+   "nba_team": "NY",
+   "pos": "C",
+   "status": "Day-To-Day",
+   "injury": "Left Calf",
+   "return_date": "2026-11-11",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Towns (calf) is listed as questionable for Wednesday's game against Cleveland.",
+   "note_date": "2026-11-11",
+   "fantasy_team": "Kream team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 43.0,
+    "PTS": 21.5,
+    "REB": 12.2,
+    "AST": 3.9
    }
   },
   {
@@ -185,27 +195,6 @@
     "PTS": 21.8,
     "REB": 3.9,
     "AST": 6.2
-   }
-  },
-  {
-   "name": "Lauri Markkanen",
-   "nba_team": "UTAH",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Right Wrist",
-   "return_date": "2026-11-11",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Markkanen is out for Tuesday's game versus the Heat with a right wrist sprain.",
-   "note_date": "2026-11-11",
-   "fantasy_team": "Kuminga Lot",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 35.9,
-    "PTS": 21.8,
-    "REB": 7.0,
-    "AST": 1.9
    }
   },
   {
@@ -251,22 +240,6 @@
    }
   },
   {
-   "name": "Quentin Grimes",
-   "nba_team": "LAL",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Finger",
-   "return_date": "2026-11-11",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Grimes (finger) is listed as questionable for Wednesday's game in Milwaukee.",
-   "note_date": "2026-11-10",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "T.J. McConnell",
    "nba_team": "IND",
    "pos": "G",
@@ -283,38 +256,6 @@
    "per_game": null
   },
   {
-   "name": "Tobe Awaka",
-   "nba_team": "CHI",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Back",
-   "return_date": "2026-11-11",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Awaka (back) is questionable for Wednesday's game against the Spurs.",
-   "note_date": "2026-11-10",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Trayce Jackson-Davis",
-   "nba_team": "TOR",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Illness",
-   "return_date": "2026-11-11",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Jackson-Davis is questionable for Wednesday's game against Boston with an illness.",
-   "note_date": "2026-11-10",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "Trey Murphy III",
    "nba_team": "NO",
    "pos": "F",
@@ -324,8 +265,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Murphy (knee) is probable for Wednesday's game against the Nets.",
-   "note_date": "2026-11-10",
+   "note": "Murphy (knee) is doubtful for Wednesday's game against the Nets.",
+   "note_date": "2026-11-11",
    "fantasy_team": "Spicy town Mayo",
    "on_ir": false,
    "per_game": {
@@ -366,7 +307,7 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Herro (knee) is listed as out for Tuesday's game against New York.",
+   "note": "Herro (knee) is listed as questionable for Wednesday's game against the Lakers.",
    "note_date": "2026-11-11",
    "fantasy_team": "Big Herro Glick",
    "on_ir": false,
@@ -381,14 +322,14 @@
    "name": "Will Richard",
    "nba_team": "GS",
    "pos": "G",
-   "status": "Out",
+   "status": "Day-To-Day",
    "injury": "Left Thumb",
    "return_date": "2026-11-11",
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Richard (thumb) is questionable for Wednesday's game against Houston.",
-   "note_date": "2026-11-10",
+   "note": "Richard (thumb) has been upgraded to probable for Wednesday's game at Houston.",
+   "note_date": "2026-11-11",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -569,6 +510,22 @@
    "per_game": null
   },
   {
+   "name": "Trayce Jackson-Davis",
+   "nba_team": "TOR",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Illness",
+   "return_date": "2026-11-12",
+   "days_out": 1,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Jackson-Davis (illness) has been ruled out for Wednesday's game against the Celtics, Blake Murphy of Sportsnet.ca reports.",
+   "note_date": "2026-11-11",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Asa Newell",
    "nba_team": "ATL",
    "pos": "F",
@@ -580,6 +537,22 @@
    "timeframe": "Days",
    "note": "Newell (toe) has been ruled out for Monday's game against the Lakers.",
    "note_date": "2026-11-08",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Bennedict Mathurin",
+   "nba_team": "NO",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Thumb",
+   "return_date": "2026-11-13",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Mathurin has been ruled out for Wednesday's game against the Nets due to a right thumb sprain.",
+   "note_date": "2026-11-11",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -654,6 +627,27 @@
    "per_game": null
   },
   {
+   "name": "Myles Turner",
+   "nba_team": "MIL",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Rest",
+   "return_date": "2026-11-13",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Turner has been ruled out for Wednesday's game against the Lakers due to rest.",
+   "note_date": "2026-11-11",
+   "fantasy_team": "RayJayDaPawnSTAH",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 26.4,
+    "PTS": 10.0,
+    "REB": 5.5,
+    "AST": 2.0
+   }
+  },
+  {
    "name": "Precious Achiuwa",
    "nba_team": "SAC",
    "pos": "F",
@@ -707,11 +701,27 @@
    "per_game": null
   },
   {
+   "name": "Tobe Awaka",
+   "nba_team": "CHI",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Back",
+   "return_date": "2026-11-13",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Awaka (back) has been ruled out for Wednesday's game against the Spurs.",
+   "note_date": "2026-11-11",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Trendon Watford",
    "nba_team": "NO",
    "pos": "F",
    "status": "Out",
-   "injury": "Ankle",
+   "injury": "Right Ankle",
    "return_date": "2026-11-13",
    "days_out": 2,
    "games_missed": 1,
@@ -760,6 +770,27 @@
    "per_game": null
   },
   {
+   "name": "Mikel Brown Jr.",
+   "nba_team": "BKN",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Illness",
+   "return_date": "2026-11-14",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Brown has been ruled out for Wednesday's game against the Pelicans due to an illness, Sharif Phillips-Keaton of USA Today reports.",
+   "note_date": "2026-11-11",
+   "fantasy_team": "coachcainzey",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 22.6,
+    "PTS": 15.0,
+    "REB": 2.4,
+    "AST": 3.5
+   }
+  },
+  {
    "name": "Clint Capela",
    "nba_team": "HOU",
    "pos": "C",
@@ -803,6 +834,43 @@
    "timeframe": "1 week",
    "note": "Bittle (foot) is listed as out for Monday's game against Memphis.",
    "note_date": "2026-11-08",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Paul George",
+   "nba_team": "BOS",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Illness",
+   "return_date": "2026-11-15",
+   "days_out": 4,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "George (illness) has been ruled out for Wednesday's game against Toronto, Taylor Snow of the Celtics' official site reports.",
+   "note_date": "2026-11-11",
+   "fantasy_team": "Kream team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 39.8,
+    "PTS": 20.7,
+    "REB": 5.3,
+    "AST": 3.8
+   }
+  },
+  {
+   "name": "Quentin Grimes",
+   "nba_team": "LAL",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Finger",
+   "return_date": "2026-11-15",
+   "days_out": 4,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Grimes (finger) has been ruled out for Wednesday's game against the Bucks.",
+   "note_date": "2026-11-11",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -1442,6 +1510,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Lauri Markkanen",
+   "nba_team": "UTAH",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Right Hand",
+   "return_date": "2027-01-04",
+   "days_out": 54,
+   "games_missed": 23,
+   "timeframe": "1-2 months",
+   "note": "Markkanen has been diagnosed with a non-displaced fracture in his right hand and will be sidelined for at least one month, Shams Charania of ESPN reports.",
+   "note_date": "2026-11-11",
+   "fantasy_team": "Kuminga Lot",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 35.9,
+    "PTS": 21.8,
+    "REB": 7.0,
+    "AST": 1.9
+   }
   },
   {
    "name": "Mark Williams",
