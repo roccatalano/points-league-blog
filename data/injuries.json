@@ -1,44 +1,7 @@
 {
- "updated_utc": "2026-11-10T23:52:56.979275+00:00",
+ "updated_utc": "2026-11-11T04:25:00.398089+00:00",
  "today_et": "2026-11-10",
  "players": [
-  {
-   "name": "Cam Christie",
-   "nba_team": "LAC",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Ankle",
-   "return_date": "2026-11-10",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Christie is questionable for Tuesday's game against the Suns due to a right ankle sprain, Ohm Youngmisuk of ESPN.com reports.",
-   "note_date": "2026-11-09",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Giannis Antetokounmpo",
-   "nba_team": "MIA",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Right Wrist",
-   "return_date": "2026-11-10",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Antetokounmpo is probable for Tuesday's game against the Jazz due to a right wrist sprain.",
-   "note_date": "2026-11-09",
-   "fantasy_team": "Big Herro Glick",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 55.2,
-    "PTS": 30.2,
-    "REB": 12.0,
-    "AST": 5.9
-   }
-  },
   {
    "name": "Grant Nelson",
    "nba_team": "BKN",
@@ -54,27 +17,6 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
-  },
-  {
-   "name": "Tristan da Silva",
-   "nba_team": "ORL",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Left Calf",
-   "return_date": "2026-11-10",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Da Silva is questionable for Tuesday's game against the Kings due to a left calf strain.",
-   "note_date": "2026-11-10",
-   "fantasy_team": "No Scrubs",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 19.7,
-    "PTS": 10.9,
-    "REB": 3.4,
-    "AST": 1.5
-   }
   },
   {
    "name": "Collin Murray-Boyles",
@@ -394,6 +336,27 @@
    }
   },
   {
+   "name": "Tristan da Silva",
+   "nba_team": "ORL",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Left Calf",
+   "return_date": "2026-11-11",
+   "days_out": 1,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Da Silva (calf) has been ruled out for Tuesday's game against the Kings, Jason Beede of the Orlando Sentinel reports.",
+   "note_date": "2026-11-11",
+   "fantasy_team": "No Scrubs",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 19.7,
+    "PTS": 10.9,
+    "REB": 3.4,
+    "AST": 1.5
+   }
+  },
+  {
    "name": "Tyler Herro",
    "nba_team": "MIL",
    "pos": "G",
@@ -641,6 +604,22 @@
     "REB": 5.7,
     "AST": 4.8
    }
+  },
+  {
+   "name": "Cam Christie",
+   "nba_team": "LAC",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Ankle",
+   "return_date": "2026-11-13",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Christie (ankle) is listed as out for Tuesday's game against Phoenix.",
+   "note_date": "2026-11-11",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
   },
   {
    "name": "Gary Payton II",
