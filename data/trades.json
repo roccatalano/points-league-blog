@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-12T17:40:53+00:00",
- "fa_points_per_game": 24.3,
- "fa_points_per_day": 11.66,
+ "updated_utc": "2026-11-12T23:08:26+00:00",
+ "fa_points_per_game": 24.7,
+ "fa_points_per_day": 11.86,
  "fa_pool": 10,
  "trades": [
   {
@@ -147,7 +147,7 @@
     },
     "coachcainzey": {
      "exp_wins": -0.23,
-     "weekly_points": -15.1
+     "weekly_points": -15.2
     }
    },
    "now_frozen": false,
