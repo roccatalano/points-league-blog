@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-12T16:13:43.161776+00:00",
+ "updated_utc": "2026-11-12T17:40:57.242009+00:00",
  "today_et": "2026-11-12",
  "players": [
   {
@@ -28,8 +28,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Embiid (foot) is listed as questionable for Thursday's game against Toronto, Adam Aaronson of PhillyVoice.com reports.",
-   "note_date": "2026-11-11",
+   "note": "Embiid (foot) remains questionable for Thursday's game against the Raptors, but he participated in the team's morning shootaround, Ky Carlin of USA Today reports.",
+   "note_date": "2026-11-12",
    "fantasy_team": "NAWSectual",
    "on_ir": false,
    "per_game": {
@@ -49,8 +49,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "James (back) is questionable for Thursday's game against the Raptors, Kyle Neubeck of AllPHLY.com reports.",
-   "note_date": "2026-11-11",
+   "note": "James (back) remains questionable for Thursday's game against the Raptors, but he participated in the team's morning shootaround, Ky Carlin of USA Today reports.",
+   "note_date": "2026-11-12",
    "fantasy_team": "coachcainzey",
    "on_ir": false,
    "per_game": {
@@ -460,27 +460,6 @@
     "PTS": 13.1,
     "REB": 4.3,
     "AST": 4.5
-   }
-  },
-  {
-   "name": "Stephen Curry",
-   "nba_team": "GS",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Right Abdomen",
-   "return_date": "2026-11-13",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Steve Kerr told reporters Wednesday that Curry said he tweaked something in his abdominal area and \"had never done it before.\" Kerr added that the concern level is high, but they will await the MRI results, Kelly Iko of Yahoo Sports reports.",
-   "note_date": "2026-11-12",
-   "fantasy_team": "Kream team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 43.5,
-    "PTS": 26.6,
-    "REB": 4.0,
-    "AST": 4.7
    }
   },
   {
@@ -980,8 +959,8 @@
    "days_out": 6,
    "games_missed": 3,
    "timeframe": "1 week",
-   "note": "Bona (back) is out for Thursday's game against the Raptors, Kyle Neubeck of AllPHLY.com reports.",
-   "note_date": "2026-11-11",
+   "note": "Bona (back) will be re-evaluated in approximately one week after seeing a specialist, Ky Carlin of USA Today reports.",
+   "note_date": "2026-11-12",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -1012,8 +991,8 @@
    "days_out": 6,
    "games_missed": 3,
    "timeframe": "1 week",
-   "note": "Head coach Nick Nurse said Wednesday that Barlow (back) likely needs another 10-12 days before he's cleared to return to the court, Derek Bodner of AllPHLY.com reports.",
-   "note_date": "2026-11-04",
+   "note": "Barlow (back) participated in Thursday's shootaround but doesn't have a timeline to return to game action, Ky Carlin of USA Today reports.",
+   "note_date": "2026-11-12",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -1351,6 +1330,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Stephen Curry",
+   "nba_team": "GS",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Abdomen",
+   "return_date": "2026-12-01",
+   "days_out": 19,
+   "games_missed": 8,
+   "timeframe": "2-4 weeks",
+   "note": "Curry has been diagnosed with an oblique abdominal tear and will be re-evaluated in two weeks, Shams Charania of ESPN reports.",
+   "note_date": "2026-11-12",
+   "fantasy_team": "Kream team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 43.5,
+    "PTS": 26.6,
+    "REB": 4.0,
+    "AST": 4.7
+   }
   },
   {
    "name": "Jayden Quaintance",

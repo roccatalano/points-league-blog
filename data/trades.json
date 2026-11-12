@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-12T09:10:41+00:00",
- "fa_points_per_game": 24.1,
- "fa_points_per_day": 11.57,
+ "updated_utc": "2026-11-12T17:40:53+00:00",
+ "fa_points_per_game": 24.3,
+ "fa_points_per_day": 11.66,
  "fa_pool": 10,
  "trades": [
   {
@@ -147,7 +147,7 @@
     },
     "coachcainzey": {
      "exp_wins": -0.23,
-     "weekly_points": -15.2
+     "weekly_points": -15.1
     }
    },
    "now_frozen": false,
@@ -354,7 +354,7 @@
   }
  ],
  "pickups": {
-  "count": 116,
+  "count": 117,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -1719,6 +1719,16 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Ja'Kobe Walter",
+    "team": "Downtown Euros",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-12",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -1742,7 +1752,7 @@
    },
    {
     "team": "Downtown Euros",
-    "pickups": 8,
+    "pickups": 9,
     "fpts": 776.0,
     "faab": 0
    },
@@ -1809,7 +1819,7 @@
   ]
  },
  "drops": {
-  "count": 94,
+  "count": 95,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -2291,7 +2301,7 @@
    {
     "player": "Ja'Kobe Walter",
     "team": "Ant Social Behaviour",
-    "now": "free agent",
+    "now": "Downtown Euros",
     "date": "2026-11-09",
     "games": 2,
     "fpts": 45.0,
@@ -2635,6 +2645,15 @@
     "team": "RayJayDaPawnSTAH",
     "now": "free agent",
     "date": "2026-11-11",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Mikal Bridges",
+    "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-11-12",
     "games": 0,
     "fpts": 0,
     "per_game": null
