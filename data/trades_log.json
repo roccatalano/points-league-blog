@@ -1427,6 +1427,11 @@
     "2026-11-11",
     0.21,
     -0.24
+   ],
+   [
+    "2026-11-12",
+    0.21,
+    -0.23
    ]
   ],
   "at_time": {
@@ -1441,14 +1446,14 @@
   },
   "at_time_source": "model on 2026-11-03 (trade made before the tracker started)",
   "now": {
-   "date": "2026-11-11",
+   "date": "2026-11-12",
    "Joseph's Scary Team": {
     "exp_wins": 0.21,
-    "weekly_points": 14.7
+    "weekly_points": 14.6
    },
    "coachcainzey": {
-    "exp_wins": -0.24,
-    "weekly_points": -15.3
+    "exp_wins": -0.23,
+    "weekly_points": -15.2
    }
   },
   "post": "2026-10-30-trade"
