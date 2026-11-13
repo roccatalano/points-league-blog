@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-13T11:27:32+00:00",
- "fa_points_per_game": 24.4,
- "fa_points_per_day": 11.71,
+ "updated_utc": "2026-11-13T18:40:06+00:00",
+ "fa_points_per_game": 24.3,
+ "fa_points_per_day": 11.66,
  "fa_pool": 10,
  "trades": [
   {
@@ -362,7 +362,7 @@
   }
  ],
  "pickups": {
-  "count": 121,
+  "count": 122,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -1777,6 +1777,16 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Jordan Goodwin",
+    "team": "NAWSectual",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-13",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -1830,7 +1840,7 @@
    },
    {
     "team": "NAWSectual",
-    "pickups": 3,
+    "pickups": 4,
     "fpts": 438.0,
     "faab": 0
    },
