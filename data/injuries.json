@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-14T06:51:06.047534+00:00",
+ "updated_utc": "2026-11-14T13:55:13.560819+00:00",
  "today_et": "2026-11-14",
  "players": [
   {
@@ -104,14 +104,9 @@
    "timeframe": "Days",
    "note": "Thompson (ankle) is out for Friday's game against the Cavaliers.",
    "note_date": "2026-11-13",
-   "fantasy_team": "No Scrubs",
+   "fantasy_team": null,
    "on_ir": false,
-   "per_game": {
-    "FPTS": 21.1,
-    "PTS": 13.2,
-    "REB": 2.0,
-    "AST": 1.7
-   }
+   "per_game": null
   },
   {
    "name": "Max Christie",
@@ -347,14 +342,9 @@
    "timeframe": "Days",
    "note": "Nesmith exited to the locker room in the final seconds of Friday's 106-104 win over the Knicks due to an apparent hand/wrist injury, Tony East of Forbes.com reports. He posted 18 points (7-10 FG, 2-3 3Pt, 2-2 FT), seven rebounds and one assist in 33 minutes.",
    "note_date": "2026-11-14",
-   "fantasy_team": "coachcainzey",
+   "fantasy_team": null,
    "on_ir": false,
-   "per_game": {
-    "FPTS": 22.0,
-    "PTS": 12.7,
-    "REB": 3.5,
-    "AST": 1.6
-   }
+   "per_game": null
   },
   {
    "name": "Ajay Mitchell",
