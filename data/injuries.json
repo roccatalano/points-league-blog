@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-14T18:55:55.195528+00:00",
+ "updated_utc": "2026-11-14T22:51:46.993938+00:00",
  "today_et": "2026-11-14",
  "players": [
   {
@@ -105,6 +105,27 @@
     "PTS": 14.4,
     "REB": 9.3,
     "AST": 1.8
+   }
+  },
+  {
+   "name": "Jerami Grant",
+   "nba_team": "MEM",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Head",
+   "return_date": "2026-11-14",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Grant (head) is questionable for Saturday's game against the Nets.",
+   "note_date": "2026-11-14",
+   "fantasy_team": "NAWSectual",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 24.3,
+    "PTS": 15.0,
+    "REB": 2.8,
+    "AST": 2.1
    }
   },
   {
@@ -298,22 +319,6 @@
    }
   },
   {
-   "name": "Quinten Post",
-   "nba_team": "MEM",
-   "pos": "C",
-   "status": "Day-To-Day",
-   "injury": "Concussion",
-   "return_date": "2026-11-14",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Post (concussion) has been ruled out for Friday's game against New Orleans.",
-   "note_date": "2026-11-14",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "Ugonna Onyenso",
    "nba_team": "DET",
    "pos": "C",
@@ -330,27 +335,6 @@
    "per_game": null
   },
   {
-   "name": "Yves Missi",
-   "nba_team": "NO",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Left Knee",
-   "return_date": "2026-11-14",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Missi (knee) has been upgraded to probable for Saturday's game versus the Nuggets.",
-   "note_date": "2026-11-14",
-   "fantasy_team": "Kuminga Lot",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 26.0,
-    "PTS": 7.8,
-    "REB": 7.5,
-    "AST": 1.7
-   }
-  },
-  {
    "name": "Zach Edey",
    "nba_team": "MEM",
    "pos": "C",
@@ -360,7 +344,7 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Edey won't play in Friday's game against the Pelicans due to left ankle injury management.",
+   "note": "Edey (ankle) is listed as questionable for Saturday's game against Brooklyn.",
    "note_date": "2026-11-14",
    "fantasy_team": "Kawhi Me A River",
    "on_ir": false,
@@ -376,12 +360,12 @@
    "nba_team": "IND",
    "pos": "G",
    "status": "Day-To-Day",
-   "injury": "Hand",
+   "injury": "Left Hand",
    "return_date": "2026-11-15",
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Nesmith exited to the locker room in the final seconds of Friday's 106-104 win over the Knicks due to an apparent hand/wrist injury, Tony East of Forbes.com reports. He posted 18 points (7-10 FG, 2-3 3Pt, 2-2 FT), seven rebounds and one assist in 33 minutes.",
+   "note": "Nesmith (hand) is listed as questionable for Sunday's game against Philadelphia.",
    "note_date": "2026-11-14",
    "fantasy_team": null,
    "on_ir": false,
@@ -409,6 +393,27 @@
    }
   },
   {
+   "name": "Alex Sarr",
+   "nba_team": "WSH",
+   "pos": "C",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-15",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Sarr (illness) is listed as questionable for Sunday's game against Houston.",
+   "note_date": "2026-11-14",
+   "fantasy_team": "NAWSectual",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 32.9,
+    "PTS": 14.1,
+    "REB": 7.5,
+    "AST": 2.3
+   }
+  },
+  {
    "name": "Austin Reaves",
    "nba_team": "LAL",
    "pos": "G",
@@ -418,8 +423,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Reaves (heel) won't undergo imaging and is considered day-to-day ahead of Sunday's game against the Suns, Jovan Buha of The Athletic reports.",
-   "note_date": "2026-11-13",
+   "note": "Reaves (heel) didn't participate in Saturday's practice, Dave McMenamin of ESPN.com reports.",
+   "note_date": "2026-11-14",
    "fantasy_team": "Big Herro Glick",
    "on_ir": false,
    "per_game": {
@@ -460,24 +465,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Carrington (chest) has been ruled out for the remainder of Thursday's game against the Pistons.",
-   "note_date": "2026-11-13",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Clint Capela",
-   "nba_team": "HOU",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Right Ankle",
-   "return_date": "2026-11-15",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Head coach Ime Udoka stated Monday that Capela (ankle) could be cleared to return either Nov. 15 in Washington or Nov. 16 in Miami, Lachard Binkley of SI.com reports.",
-   "note_date": "2026-11-09",
+   "note": "Carrington (chest) is listed as questionable for Sunday's game against Houston.",
+   "note_date": "2026-11-14",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -492,8 +481,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Sexton did not return to Wednesday's 123-112 win over the Bucks and required stitches to close a cut on his forehead, Thuc Nhi Nguyen of the Los Angeles Times reports.",
-   "note_date": "2026-11-12",
+   "note": "Sexton (head) was a full participant in Saturday's practice, Dave McMenamin of ESPN.com reports.",
+   "note_date": "2026-11-14",
    "fantasy_team": "No Scrubs",
    "on_ir": false,
    "per_game": {
@@ -557,6 +546,27 @@
    "per_game": null
   },
   {
+   "name": "Keegan Murray",
+   "nba_team": "SAC",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-15",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Murray (illness) didn't participate in Saturday's practice, Brenden Nunes of KHTK Sactown Sports 1140 reports.",
+   "note_date": "2026-11-14",
+   "fantasy_team": "Spicy town Mayo",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 27.6,
+    "PTS": 12.9,
+    "REB": 5.3,
+    "AST": 1.6
+   }
+  },
+  {
    "name": "Kingston Flemings",
    "nba_team": "ATL",
    "pos": "G",
@@ -578,48 +588,6 @@
    }
   },
   {
-   "name": "LeBron James",
-   "nba_team": "PHI",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Back",
-   "return_date": "2026-11-15",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "James (back) is out for Thursday's game against Toronto.",
-   "note_date": "2026-11-13",
-   "fantasy_team": "coachcainzey",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 39.8,
-    "PTS": 18.7,
-    "REB": 6.7,
-    "AST": 6.8
-   }
-  },
-  {
-   "name": "Luka Doncic",
-   "nba_team": "LAL",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Right Ankle",
-   "return_date": "2026-11-15",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Head coach JJ Redick said Friday that Doncic (ankle) is \"fine,\" per Law Murray of The Athletic.",
-   "note_date": "2026-11-13",
-   "fantasy_team": "Downtown Euros",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 62.8,
-    "PTS": 35.4,
-    "REB": 8.1,
-    "AST": 8.4
-   }
-  },
-  {
    "name": "Maxime Raynaud",
    "nba_team": "SAC",
    "pos": "C",
@@ -634,43 +602,6 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
-  },
-  {
-   "name": "Nate Bittle",
-   "nba_team": "TOR",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Right Foot",
-   "return_date": "2026-11-15",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Bittle (foot) is listed as out for Monday's game against Memphis.",
-   "note_date": "2026-11-08",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Paul George",
-   "nba_team": "BOS",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Illness",
-   "return_date": "2026-11-15",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "George (illness) has been ruled out for Wednesday's game against Toronto, Taylor Snow of the Celtics' official site reports.",
-   "note_date": "2026-11-12",
-   "fantasy_team": "Kream team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 39.8,
-    "PTS": 20.7,
-    "REB": 5.3,
-    "AST": 3.8
-   }
   },
   {
    "name": "Precious Achiuwa",
@@ -740,24 +671,40 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Head coach Ime Udoka said Monday that Adams could return as soon as Sunday's game at Washington, Lachard Binkley of SI.com reports.",
-   "note_date": "2026-11-09",
+   "note": "Adams (calf) has been upgraded to probable for Sunday's game against the Wizards.",
+   "note_date": "2026-11-14",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
   },
   {
-   "name": "Trayce Jackson-Davis",
-   "nba_team": "TOR",
-   "pos": "F",
+   "name": "T.J. McConnell",
+   "nba_team": "IND",
+   "pos": "G",
    "status": "Day-To-Day",
-   "injury": "Illness",
+   "injury": "Right Hamstring",
    "return_date": "2026-11-15",
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Jackson-Davis is out for Thursday's game against the 76ers due to an illness.",
-   "note_date": "2026-11-13",
+   "note": "McConnell (hamstring) is listed as probable for Sunday's game against the 76ers.",
+   "note_date": "2026-11-14",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Tre Johnson",
+   "nba_team": "WSH",
+   "pos": "G",
+   "status": "Day-To-Day",
+   "injury": "Back",
+   "return_date": "2026-11-15",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Johnson is listed as questionable for Sunday's game against the Rockets due to lower-back soreness.",
+   "note_date": "2026-11-14",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -795,6 +742,22 @@
    "per_game": null
   },
   {
+   "name": "Clint Capela",
+   "nba_team": "HOU",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Right Ankle",
+   "return_date": "2026-11-16",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Capela (ankle) has been ruled out for Sunday's game at Washington.",
+   "note_date": "2026-11-14",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Evan Mobley",
    "nba_team": "CLE",
    "pos": "C",
@@ -813,6 +776,48 @@
     "PTS": 18.0,
     "REB": 8.7,
     "AST": 3.6
+   }
+  },
+  {
+   "name": "Fred VanVleet",
+   "nba_team": "HOU",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Knee",
+   "return_date": "2026-11-16",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "VanVleet (right knee injury management) has been ruled out for Sunday's game against the Wizards.",
+   "note_date": "2026-11-14",
+   "fantasy_team": "Kawhi Me A River",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 33.1,
+    "PTS": 14.0,
+    "REB": 3.2,
+    "AST": 5.7
+   }
+  },
+  {
+   "name": "Joel Embiid",
+   "nba_team": "PHI",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Right Foot",
+   "return_date": "2026-11-16",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Embiid (right foot injury management) has been ruled out for Sunday's game against the Pacers.",
+   "note_date": "2026-11-14",
+   "fantasy_team": "NAWSectual",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 38.9,
+    "PTS": 23.4,
+    "REB": 8.5,
+    "AST": 4.0
    }
   },
   {
@@ -843,6 +848,22 @@
    "timeframe": "Days",
    "note": "Tomlin is set to miss several weeks with a lower back stress reaction, Chris Fedor of The Cleveland Plain Dealer reports.",
    "note_date": "2026-10-20",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Quinten Post",
+   "nba_team": "MEM",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Concussion",
+   "return_date": "2026-11-16",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Post (concussion) has been ruled out for Saturday's game against the Nets.",
+   "note_date": "2026-11-14",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -947,6 +968,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Ty Jerome",
+   "nba_team": "MEM",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Hip",
+   "return_date": "2026-11-16",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Jerome (hip) has been ruled out for Saturday's game against the Nets.",
+   "note_date": "2026-11-14",
+   "fantasy_team": "Joseph's Scary Team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 41.8,
+    "PTS": 23.7,
+    "REB": 3.5,
+    "AST": 5.9
+   }
   },
   {
    "name": "Isaiah Joe",
@@ -1056,6 +1098,22 @@
    "timeframe": "1 week",
    "note": "Smart has been suspended three games for throwing a punch during Wednesday's matchup against Golden State, Shams Charania of ESPN reports.",
    "note_date": "2026-11-12",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Ousmane Dieng",
+   "nba_team": "MIL",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Left Finger",
+   "return_date": "2026-11-18",
+   "days_out": 4,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Dieng finished with zero points (0-1 FG, 0-1 3Pt) over five minutes during Friday's 107-99 loss to Orlando.",
+   "note_date": "2026-11-14",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -1329,6 +1387,22 @@
     "REB": 6.3,
     "AST": 3.3
    }
+  },
+  {
+   "name": "Nate Bittle",
+   "nba_team": "TOR",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Right Foot",
+   "return_date": "2026-11-23",
+   "days_out": 9,
+   "games_missed": 4,
+   "timeframe": "1-2 weeks",
+   "note": "Bittle (foot) has been ruled out for Sunday's game against the Knicks, Zulfi Sheikh of Sportsnet.ca reports.",
+   "note_date": "2026-11-14",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
   },
   {
    "name": "Jalen Duren",

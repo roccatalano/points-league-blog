@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-14T18:55:50+00:00",
- "fa_points_per_game": 23.9,
- "fa_points_per_day": 11.47,
+ "updated_utc": "2026-11-14T22:51:42+00:00",
+ "fa_points_per_game": 24.8,
+ "fa_points_per_day": 11.9,
  "fa_pool": 10,
  "trades": [
   {
@@ -370,7 +370,7 @@
   }
  ],
  "pickups": {
-  "count": 126,
+  "count": 127,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -1835,6 +1835,16 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Tyrese Proctor",
+    "team": "Spicy town Mayo",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-14",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -1912,7 +1922,7 @@
    },
    {
     "team": "Spicy town Mayo",
-    "pickups": 10,
+    "pickups": 11,
     "fpts": 289.0,
     "faab": 0
    },
@@ -1925,7 +1935,7 @@
   ]
  },
  "drops": {
-  "count": 103,
+  "count": 104,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -1935,15 +1945,6 @@
     "games": 12,
     "fpts": 493.0,
     "per_game": 41.1
-   },
-   {
-    "player": "Kevin Huerter",
-    "team": "Spicy town Mayo",
-    "now": "free agent",
-    "date": "2026-10-22",
-    "games": 10,
-    "fpts": 226.0,
-    "per_game": 22.6
    },
    {
     "player": "Bones Hyland",
@@ -2488,7 +2489,7 @@
    {
     "player": "Jalen Green",
     "team": "Kream team",
-    "now": "Spicy town Mayo",
+    "now": "free agent",
     "date": "2026-11-08",
     "games": 3,
     "fpts": 40.0,
@@ -2830,6 +2831,24 @@
    {
     "player": "Aaron Nesmith",
     "team": "coachcainzey",
+    "now": "free agent",
+    "date": "2026-11-14",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Jalen Green",
+    "team": "Spicy town Mayo",
+    "now": "free agent",
+    "date": "2026-11-14",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Jalen Suggs",
+    "team": "Spicy town Mayo",
     "now": "free agent",
     "date": "2026-11-14",
     "games": 0,
