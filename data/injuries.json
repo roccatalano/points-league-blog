@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-15T09:43:21.733528+00:00",
+ "updated_utc": "2026-11-15T14:57:31.323687+00:00",
  "today_et": "2026-11-15",
  "players": [
   {
@@ -22,22 +22,6 @@
     "REB": 2.2,
     "AST": 2.1
    }
-  },
-  {
-   "name": "Kevin McCullar Jr.",
-   "nba_team": "TOR",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Illness",
-   "return_date": "2026-11-14",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "McCullar signed a two-way contract with the Raptors on Thursday, Michael Scotto of HoopsHype.com reports.",
-   "note_date": "2026-11-13",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
   },
   {
    "name": "Ugonna Onyenso",
@@ -627,6 +611,22 @@
    "timeframe": "Days",
    "note": "Isaac (knee) is out for Tuesday's game against Sacramento.",
    "note_date": "2026-11-09",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Kevin McCullar Jr.",
+   "nba_team": "TOR",
+   "pos": "G",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-16",
+   "days_out": 1,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "McCullar signed a two-way contract with the Raptors on Thursday, Michael Scotto of HoopsHype.com reports.",
+   "note_date": "2026-11-13",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
