@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-16T08:15:55+00:00",
- "fa_points_per_game": 24.3,
- "fa_points_per_day": 11.66,
+ "updated_utc": "2026-11-16T18:45:33+00:00",
+ "fa_points_per_game": 23.9,
+ "fa_points_per_day": 11.47,
  "fa_pool": 10,
  "trades": [
   {
@@ -386,7 +386,7 @@
   }
  ],
  "pickups": {
-  "count": 129,
+  "count": 131,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -1881,6 +1881,26 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Jalen Suggs",
+    "team": "No Scrubs",
+    "bid": 0,
+    "type": "waiver claim",
+    "date": "2026-11-16",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
+   },
+   {
+    "player": "Taylor Hendricks",
+    "team": "Downtown Euros",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-16",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -1898,13 +1918,13 @@
    },
    {
     "team": "No Scrubs",
-    "pickups": 20,
+    "pickups": 21,
     "fpts": 1177.0,
     "faab": 0
    },
    {
     "team": "Downtown Euros",
-    "pickups": 10,
+    "pickups": 11,
     "fpts": 962.0,
     "faab": 0
    },
@@ -1971,7 +1991,7 @@
   ]
  },
  "drops": {
-  "count": 106,
+  "count": 108,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -2228,7 +2248,7 @@
    {
     "player": "Ziaire Williams",
     "team": "coachcainzey",
-    "now": "Downtown Euros",
+    "now": "free agent",
     "date": "2026-11-03",
     "games": 6,
     "fpts": 155.0,
@@ -2829,6 +2849,15 @@
     "per_game": null
    },
    {
+    "player": "Kevin Huerter",
+    "team": "Spicy town Mayo",
+    "now": "free agent",
+    "date": "2026-11-16",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
     "player": "Kevin Porter Jr.",
     "team": "RayJayDaPawnSTAH",
     "now": "free agent",
@@ -2885,7 +2914,7 @@
    {
     "player": "Jalen Suggs",
     "team": "Spicy town Mayo",
-    "now": "free agent",
+    "now": "No Scrubs",
     "date": "2026-11-14",
     "games": 0,
     "fpts": 0,
@@ -2901,19 +2930,28 @@
     "per_game": null
    },
    {
-    "player": "Tyrese Proctor",
-    "team": "Spicy town Mayo",
+    "player": "Jaylen Wells",
+    "team": "No Scrubs",
     "now": "free agent",
-    "date": "2026-11-14",
+    "date": "2026-11-15",
     "games": 0,
     "fpts": 0,
     "per_game": null
    },
    {
-    "player": "Jaylen Wells",
+    "player": "Santi Aldama",
     "team": "No Scrubs",
     "now": "free agent",
-    "date": "2026-11-15",
+    "date": "2026-11-16",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Ziaire Williams",
+    "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-11-16",
     "games": 0,
     "fpts": 0,
     "per_game": null
