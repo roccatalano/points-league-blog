@@ -1,13 +1,13 @@
 {
- "updated_utc": "2026-11-16T01:17:11+00:00",
+ "updated_utc": "2026-11-16T08:15:56+00:00",
  "summary": {
-  "matchups": 21,
-  "called": 13,
-  "callable": 21,
-  "brier": 0.224,
-  "avg_miss_points": 156.5,
-  "bias_points": -76.9,
-  "in_range": 15,
+  "matchups": 28,
+  "called": 17,
+  "callable": 28,
+  "brier": 0.228,
+  "avg_miss_points": 144.1,
+  "bias_points": -77.3,
+  "in_range": 19,
   "range_target_pct": 80,
   "calibration": [
    {
@@ -17,26 +17,57 @@
    },
    {
     "bucket": "60-70%",
-    "n": 6,
-    "fav_won_pct": 17
+    "n": 10,
+    "fav_won_pct": 30
    },
    {
     "bucket": "70-80%",
-    "n": 5,
-    "fav_won_pct": 80
+    "n": 6,
+    "fav_won_pct": 67
    },
    {
     "bucket": "80-90%",
-    "n": 2,
-    "fav_won_pct": 50
+    "n": 3,
+    "fav_won_pct": 67
    },
    {
     "bucket": "90-100%",
-    "n": 4,
+    "n": 5,
     "fav_won_pct": 100
    }
   ],
-  "live_only": null,
+  "live_only": {
+   "matchups": 7,
+   "called": 4,
+   "callable": 7,
+   "brier": 0.24,
+   "avg_miss_points": 106.9,
+   "bias_points": -78.4,
+   "in_range": 4,
+   "range_target_pct": 80,
+   "calibration": [
+    {
+     "bucket": "60-70%",
+     "n": 4,
+     "fav_won_pct": 50
+    },
+    {
+     "bucket": "70-80%",
+     "n": 1,
+     "fav_won_pct": 0
+    },
+    {
+     "bucket": "80-90%",
+     "n": 1,
+     "fav_won_pct": 100
+    },
+    {
+     "bucket": "90-100%",
+     "n": 1,
+     "fav_won_pct": 100
+    }
+   ]
+  },
   "rebuilt_matchups": 21
  },
  "weeks": [
@@ -576,7 +607,7 @@
    "opening": true,
    "rebuilt": false,
    "saved_utc": "2026-11-09T10:02:15+00:00",
-   "finished": false,
+   "finished": true,
    "matchups": [
     {
      "home": "Rye RSL",
@@ -589,6 +620,17 @@
      "margin_80": [
       -200.3,
       131.4
+     ],
+     "actual": [
+      1076.0,
+      1306.0
+     ],
+     "called": true,
+     "brier": 0.144,
+     "in_range": false,
+     "miss": [
+      -85.7,
+      104.6
      ]
     },
     {
@@ -602,6 +644,17 @@
      "margin_80": [
       -119.3,
       253.5
+     ],
+     "actual": [
+      1184.0,
+      1294.0
+     ],
+     "called": false,
+     "brier": 0.41,
+     "in_range": true,
+     "miss": [
+      -271.9,
+      -99.4
      ]
     },
     {
@@ -615,6 +668,17 @@
      "margin_80": [
       -239.1,
       122.3
+     ],
+     "actual": [
+      1269.0,
+      1503.0
+     ],
+     "called": true,
+     "brier": 0.109,
+     "in_range": true,
+     "miss": [
+      -114.3,
+      58.0
      ]
     },
     {
@@ -628,6 +692,17 @@
      "margin_80": [
       -118.9,
       236.1
+     ],
+     "actual": [
+      1163.0,
+      1339.0
+     ],
+     "called": false,
+     "brier": 0.449,
+     "in_range": false,
+     "miss": [
+      -242.1,
+      -9.6
      ]
     },
     {
@@ -641,6 +716,17 @@
      "margin_80": [
       -278.1,
       96.2
+     ],
+     "actual": [
+      1425.0,
+      1228.0
+     ],
+     "called": false,
+     "brier": 0.548,
+     "in_range": false,
+     "miss": [
+      37.2,
+      -249.8
      ]
     },
     {
@@ -654,6 +740,17 @@
      "margin_80": [
       -336.0,
       28.2
+     ],
+     "actual": [
+      1203.0,
+      1309.0
+     ],
+     "called": true,
+     "brier": 0.02,
+     "in_range": true,
+     "miss": [
+      -40.5,
+      -88.4
      ]
     },
     {
@@ -667,6 +764,117 @@
      "margin_80": [
       -1359.9,
       -1116.8
+     ],
+     "actual": [
+      0.0,
+      1263.0
+     ],
+     "called": true,
+     "brier": 0.0,
+     "in_range": true,
+     "miss": [
+      -60.0,
+      -35.7
+     ]
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "opening": true,
+   "rebuilt": false,
+   "saved_utc": "2026-11-16T08:15:43+00:00",
+   "finished": false,
+   "matchups": [
+    {
+     "home": "coachcainzey",
+     "away": "NAWSectual",
+     "home_win_pct": 40,
+     "proj": [
+      1283.4,
+      1312.8
+     ],
+     "margin_80": [
+      -196.7,
+      137.0
+     ]
+    },
+    {
+     "home": "Spicy town Mayo",
+     "away": "No Scrubs",
+     "home_win_pct": 65,
+     "proj": [
+      1399.0,
+      1345.9
+     ],
+     "margin_80": [
+      -111.9,
+      230.9
+     ]
+    },
+    {
+     "home": "Ant Social Behaviour",
+     "away": "RayJayDaPawnSTAH",
+     "home_win_pct": 33,
+     "proj": [
+      1179.7,
+      1236.3
+     ],
+     "margin_80": [
+      -221.7,
+      106.7
+     ]
+    },
+    {
+     "home": "Kawhi Me A River",
+     "away": "Big Herro Glick",
+     "home_win_pct": 90,
+     "proj": [
+      1428.2,
+      1260.2
+     ],
+     "margin_80": [
+      -1.5,
+      345.3
+     ]
+    },
+    {
+     "home": "Downtown Euros",
+     "away": "Joseph's Scary Team",
+     "home_win_pct": 93,
+     "proj": [
+      1398.9,
+      1196.8
+     ],
+     "margin_80": [
+      17.9,
+      387.7
+     ]
+    },
+    {
+     "home": "Kream team",
+     "away": "Rye RSL",
+     "home_win_pct": 6,
+     "proj": [
+      1173.8,
+      1384.8
+     ],
+     "margin_80": [
+      -389.6,
+      -37.1
+     ]
+    },
+    {
+     "home": "Kuminga Lot",
+     "away": "BYE",
+     "home_win_pct": 100,
+     "proj": [
+      1389.4,
+      46.6
+     ],
+     "margin_80": [
+      1222.5,
+      1465.9
      ]
     }
    ]
