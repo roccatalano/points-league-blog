@@ -1,58 +1,26 @@
 {
- "updated_utc": "2026-11-17T17:04:11.749775+00:00",
+ "updated_utc": "2026-11-17T19:37:37.795746+00:00",
  "today_et": "2026-11-17",
  "players": [
   {
-   "name": "Chris Youngblood",
+   "name": "Deni Avdija",
    "nba_team": "POR",
-   "pos": "G",
-   "status": "Out",
-   "injury": "Right Foot",
-   "return_date": "2026-11-17",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Youngblood (foot) is out for Monday's game against the Timberwolves.",
-   "note_date": "2026-11-15",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Isaiah Joe",
-   "nba_team": "DET",
-   "pos": "G",
-   "status": "Out",
-   "injury": "Right Hip",
-   "return_date": "2026-11-17",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Joe (hip) is doubtful to play in Tuesday's game against the Spurs.",
-   "note_date": "2026-11-16",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Jonathan Kuminga",
-   "nba_team": "MIN",
    "pos": "F",
    "status": "Day-To-Day",
-   "injury": "Right Shoulder",
+   "injury": "Foot",
    "return_date": "2026-11-17",
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Kuminga (shoulder) exited in the fourth quarter of Monday's 106-98 win over Portland and did not return. He closed with 13 points (5-12 FG, 1-2 3Pt, 2-2 FT), nine rebounds and one assist across 29 minutes.",
+   "note": "Avdija (foot) is questionable for Tuesday's game against the Timberwolves.",
    "note_date": "2026-11-17",
-   "fantasy_team": "Kuminga Lot",
+   "fantasy_team": "Ant Social Behaviour",
    "on_ir": false,
    "per_game": {
-    "FPTS": 26.5,
-    "PTS": 13.8,
-    "REB": 5.9,
-    "AST": 2.7
+    "FPTS": 41.0,
+    "PTS": 23.6,
+    "REB": 6.7,
+    "AST": 6.2
    }
   },
   {
@@ -70,6 +38,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Scottie Barnes",
+   "nba_team": "TOR",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-17",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Barnes (illness) has been downgraded to questionable for Tuesday's game against the Knicks, Blake Murphy of Sportsnet.ca reports.",
+   "note_date": "2026-11-17",
+   "fantasy_team": "No Scrubs",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 43.9,
+    "PTS": 20.8,
+    "REB": 7.7,
+    "AST": 5.6
+   }
   },
   {
    "name": "Amen Thompson",
@@ -268,6 +257,22 @@
    "per_game": null
   },
   {
+   "name": "Isaiah Joe",
+   "nba_team": "DET",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Hip",
+   "return_date": "2026-11-18",
+   "days_out": 1,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Joe (hip) is out for Tuesday's game against the Spurs.",
+   "note_date": "2026-11-17",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Isaiah Stewart",
    "nba_team": "MEM",
    "pos": "C",
@@ -420,8 +425,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Flemings (back) has been ruled out for Sunday's game against the Bucks.",
-   "note_date": "2026-11-16",
+   "note": "Flemings (back) practiced Tuesday, per Lauren L. Williams of The Atlanta Journal-Constitution.",
+   "note_date": "2026-11-17",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -494,8 +499,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Christie (ankle) has been ruled out for Sunday's game against the Celtics.",
-   "note_date": "2026-11-16",
+   "note": "Christie (ankle) was a full participant in Tuesday's practice, Mike Curtis of The Dallas Morning News reports.",
+   "note_date": "2026-11-17",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -711,8 +716,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Aldama (ankle) is out for Sunday's game against the Celtics.",
-   "note_date": "2026-11-16",
+   "note": "Aldama (ankle) was a full participant in Tuesday's practice, Mike Curtis of The Dallas Morning News reports.",
+   "note_date": "2026-11-17",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -919,6 +924,59 @@
    }
   },
   {
+   "name": "Chris Youngblood",
+   "nba_team": "POR",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Heel",
+   "return_date": "2026-11-19",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Youngblood (heel) has been ruled out for Tuesday's game at Minnesota.",
+   "note_date": "2026-11-17",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Jonathan Kuminga",
+   "nba_team": "MIN",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Right Shoulder",
+   "return_date": "2026-11-19",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Kuminga (shoulder) is out for Tuesday's game against Portland.",
+   "note_date": "2026-11-17",
+   "fantasy_team": "Kuminga Lot",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 26.5,
+    "PTS": 13.8,
+    "REB": 5.9,
+    "AST": 2.7
+   }
+  },
+  {
+   "name": "Zyon Pullin",
+   "nba_team": "MIN",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Quadriceps",
+   "return_date": "2026-11-19",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Pullin (quadriceps) has been ruled out for Tuesday's game against Portland.",
+   "note_date": "2026-11-17",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Asa Newell",
    "nba_team": "ATL",
    "pos": "F",
@@ -1089,27 +1147,6 @@
    }
   },
   {
-   "name": "Tyrese Haliburton",
-   "nba_team": "IND",
-   "pos": "G",
-   "status": "Out",
-   "injury": "Left Hamstring",
-   "return_date": "2026-11-22",
-   "days_out": 5,
-   "games_missed": 2,
-   "timeframe": "1 week",
-   "note": "Head coach Rick Carlisle said Wednesday that Haliburton (hamstring) will miss at least 10 more days, Alex Golden of SI.com reports.",
-   "note_date": "2026-11-11",
-   "fantasy_team": "Joseph's Scary Team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 49.2,
-    "PTS": 19.7,
-    "REB": 3.9,
-    "AST": 9.8
-   }
-  },
-  {
    "name": "Kawhi Leonard",
    "nba_team": "TOR",
    "pos": "F",
@@ -1250,6 +1287,27 @@
     "PTS": 14.2,
     "REB": 2.2,
     "AST": 2.1
+   }
+  },
+  {
+   "name": "Tyrese Haliburton",
+   "nba_team": "IND",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Left Hamstring",
+   "return_date": "2026-11-28",
+   "days_out": 11,
+   "games_missed": 5,
+   "timeframe": "1-2 weeks",
+   "note": "Head coach Rick Carlisle said Tuesday that Haliburton (hamstring) is \"getting there,\" but there's still no definitive timetable for his return to game action, Dustin Dopirak of The Indianapolis Star reports.",
+   "note_date": "2026-11-17",
+   "fantasy_team": "Joseph's Scary Team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 49.2,
+    "PTS": 19.7,
+    "REB": 3.9,
+    "AST": 9.8
    }
   },
   {
