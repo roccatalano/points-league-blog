@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-17T10:56:44.734871+00:00",
+ "updated_utc": "2026-11-17T17:04:11.749775+00:00",
  "today_et": "2026-11-17",
  "players": [
   {
@@ -252,25 +252,20 @@
    "per_game": null
   },
   {
-   "name": "Duncan Robinson",
-   "nba_team": "DET",
+   "name": "Felix Okpara",
+   "nba_team": "WSH",
    "pos": "F",
-   "status": "Out",
-   "injury": "Left Quadriceps",
+   "status": "Day-To-Day",
+   "injury": "Back",
    "return_date": "2026-11-18",
    "days_out": 1,
-   "games_missed": 1,
+   "games_missed": 0,
    "timeframe": "Days",
-   "note": "Robinson (quadriceps) has been ruled out for Tuesday's game against the Spurs.",
-   "note_date": "2026-11-16",
-   "fantasy_team": "Rye RSL",
+   "note": "Okpara (illness) is available for Friday's game against Toronto.",
+   "note_date": "2026-11-17",
+   "fantasy_team": null,
    "on_ir": false,
-   "per_game": {
-    "FPTS": 25.2,
-    "PTS": 14.2,
-    "REB": 2.2,
-    "AST": 2.1
-   }
+   "per_game": null
   },
   {
    "name": "Isaiah Stewart",
@@ -1235,6 +1230,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Duncan Robinson",
+   "nba_team": "DET",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Left Quadriceps",
+   "return_date": "2026-11-27",
+   "days_out": 10,
+   "games_missed": 5,
+   "timeframe": "1-2 weeks",
+   "note": "Robinson will be re-evaluated in one week due to a left quadriceps strain, Coty M. Davis of The Detroit News reports.",
+   "note_date": "2026-11-17",
+   "fantasy_team": "Rye RSL",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 25.2,
+    "PTS": 14.2,
+    "REB": 2.2,
+    "AST": 2.1
+   }
   },
   {
    "name": "Bradley Beal",
