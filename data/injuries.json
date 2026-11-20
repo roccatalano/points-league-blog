@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-20T16:54:37.983909+00:00",
+ "updated_utc": "2026-11-20T22:56:26.881435+00:00",
  "today_et": "2026-11-20",
  "players": [
   {
@@ -135,20 +135,25 @@
    "per_game": null
   },
   {
-   "name": "Kingston Flemings",
-   "nba_team": "ATL",
-   "pos": "G",
+   "name": "Jalen Smith",
+   "nba_team": "CHI",
+   "pos": "F",
    "status": "Day-To-Day",
-   "injury": "Back",
+   "injury": "Illness",
    "return_date": "2026-11-20",
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Flemings (back) is questionable for Friday's game against the Hornets, Brad Rowland of the Locked On Podcast Network reports.",
-   "note_date": "2026-11-19",
-   "fantasy_team": null,
+   "note": "Smith (illness) has been downgraded to questionable for Friday's game against the Wizards.",
+   "note_date": "2026-11-20",
+   "fantasy_team": "Kawhi Me A River",
    "on_ir": false,
-   "per_game": null
+   "per_game": {
+    "FPTS": 27.0,
+    "PTS": 11.5,
+    "REB": 7.1,
+    "AST": 1.6
+   }
   },
   {
    "name": "Noa Essengue",
@@ -188,25 +193,20 @@
    }
   },
   {
-   "name": "Precious Achiuwa",
-   "nba_team": "SAC",
+   "name": "Ronald Holland II",
+   "nba_team": "DET",
    "pos": "F",
    "status": "Day-To-Day",
-   "injury": "Left Lower Leg",
+   "injury": "Left Knee",
    "return_date": "2026-11-20",
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Achiuwa is doubtful for Friday's game against the Lakers due to a left lower leg bruise.",
+   "note": "Holland (knee) has been upgraded to doubtful for Friday's game against Toronto, Hunter Patterson of The Athletic reports.",
    "note_date": "2026-11-20",
-   "fantasy_team": "Downtown Euros",
+   "fantasy_team": null,
    "on_ir": false,
-   "per_game": {
-    "FPTS": 23.8,
-    "PTS": 9.7,
-    "REB": 6.4,
-    "AST": 1.2
-   }
+   "per_game": null
   },
   {
    "name": "Steven Adams",
@@ -262,80 +262,6 @@
    }
   },
   {
-   "name": "Adem Bona",
-   "nba_team": "PHI",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Back",
-   "return_date": "2026-11-21",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Bona (back) will be re-evaluated in approximately one week after seeing a specialist, Ky Carlin of USA Today reports.",
-   "note_date": "2026-11-12",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Brandon Ingram",
-   "nba_team": "LAC",
-   "pos": "F",
-   "status": "Out",
-   "injury": "Right Achilles",
-   "return_date": "2026-11-21",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Ingram (heel/Achilles) will remain on the inactive list for Thursday's game in San Antonio.",
-   "note_date": "2026-11-18",
-   "fantasy_team": "Kawhi Me A River",
-   "on_ir": true,
-   "per_game": {
-    "FPTS": 38.5,
-    "PTS": 22.6,
-    "REB": 5.7,
-    "AST": 4.8
-   }
-  },
-  {
-   "name": "Chris Youngblood",
-   "nba_team": "POR",
-   "pos": "G",
-   "status": "Out",
-   "injury": "Right Heel",
-   "return_date": "2026-11-21",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Youngblood (heel) has been ruled out for Thursday's game against the Bucks.",
-   "note_date": "2026-11-19",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Dean Wade",
-   "nba_team": "PHI",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Left Hamstring",
-   "return_date": "2026-11-21",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Wade (hamstring) is out for Wednesday's game in Orlando.",
-   "note_date": "2026-11-19",
-   "fantasy_team": "Kream team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 17.9,
-    "PTS": 5.2,
-    "REB": 4.3,
-    "AST": 1.5
-   }
-  },
-  {
    "name": "Deni Avdija",
    "nba_team": "POR",
    "pos": "F",
@@ -345,7 +271,7 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Avdija (foot) is listed as out for Thursday's game against the Bucks.",
+   "note": "Avdija (foot) is listed as questionable for Saturday's game against the Knicks.",
    "note_date": "2026-11-20",
    "fantasy_team": "Ant Social Behaviour",
    "on_ir": false,
@@ -366,8 +292,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Barlow (back) is out for Wednesday's game against Orlando.",
-   "note_date": "2026-11-17",
+   "note": "Barlow (back) is probable for Saturday's game versus the Bucks.",
+   "note_date": "2026-11-20",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -394,65 +320,65 @@
    }
   },
   {
-   "name": "Kyle Kuzma",
-   "nba_team": "MIL",
+   "name": "OG Anunoby",
+   "nba_team": "NY",
    "pos": "F",
    "status": "Day-To-Day",
-   "injury": "Right Shoulder",
+   "injury": "Calf",
    "return_date": "2026-11-21",
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Kuzma (shoulder) has been ruled out for Thursday's game against Portland due to a right shoulder contusion.",
+   "note": "Anunoby (calf) is questionable for Saturday's game against Portland.",
    "note_date": "2026-11-20",
-   "fantasy_team": "NAWSectual",
+   "fantasy_team": "Kuminga Lot",
    "on_ir": false,
    "per_game": {
-    "FPTS": 23.7,
-    "PTS": 12.6,
-    "REB": 4.9,
-    "AST": 2.5
-   }
-  },
-  {
-   "name": "Myles Turner",
-   "nba_team": "MIL",
-   "pos": "C",
-   "status": "Day-To-Day",
-   "injury": "Left Shoulder",
-   "return_date": "2026-11-21",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Turner (shoulder) has been ruled out for Thursday's game against Portland due to a left shoulder contusion,",
-   "note_date": "2026-11-20",
-   "fantasy_team": "Joseph's Scary Team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 26.6,
-    "PTS": 9.9,
-    "REB": 5.7,
+    "FPTS": 30.7,
+    "PTS": 16.6,
+    "REB": 5.3,
     "AST": 2.1
    }
   },
   {
-   "name": "Robert Williams III",
-   "nba_team": "POR",
-   "pos": "C",
+   "name": "P.J. Washington",
+   "nba_team": "DAL",
+   "pos": "F",
    "status": "Day-To-Day",
-   "injury": "Rest",
+   "injury": "Shoulder",
    "return_date": "2026-11-21",
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Williams (rest) is listed as out for Thursday's game versus the Bucks.",
+   "note": "Washington (shoulder) is listed as questionable for Saturday's game versus the Clippers.",
    "note_date": "2026-11-20",
    "fantasy_team": "NAWSectual",
    "on_ir": false,
    "per_game": {
-    "FPTS": 24.7,
-    "PTS": 7.1,
-    "REB": 7.3,
+    "FPTS": 26.7,
+    "PTS": 13.6,
+    "REB": 6.6,
+    "AST": 1.5
+   }
+  },
+  {
+   "name": "Precious Achiuwa",
+   "nba_team": "SAC",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Left Lower Leg",
+   "return_date": "2026-11-21",
+   "days_out": 1,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Achiuwa (lower leg) has been ruled out for Friday's game against the Lakers.",
+   "note_date": "2026-11-20",
+   "fantasy_team": "Downtown Euros",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 23.8,
+    "PTS": 9.7,
+    "REB": 6.4,
     "AST": 1.2
    }
   },
@@ -503,8 +429,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Maxey (foot) is out for Wednesday's game in Orlando, Ky Carlin of USA Today reports.",
-   "note_date": "2026-11-19",
+   "note": "Maxey (foot) is questionable for Saturday's game against the Bucks.",
+   "note_date": "2026-11-20",
    "fantasy_team": "Kream team",
    "on_ir": false,
    "per_game": {
@@ -526,6 +452,22 @@
    "timeframe": "Days",
    "note": "Onyenso agreed to a two-way contract with the Pistons on Thursday.",
    "note_date": "2026-11-19",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Walter Clayton Jr.",
+   "nba_team": "DAL",
+   "pos": "G",
+   "status": "Day-To-Day",
+   "injury": "Knee",
+   "return_date": "2026-11-21",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Clayton (knee) is questionable for Saturday's game against the Clippers.",
+   "note_date": "2026-11-20",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -637,6 +579,38 @@
    "per_game": null
   },
   {
+   "name": "Jordan Clarkson",
+   "nba_team": "NY",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Foot",
+   "return_date": "2026-11-22",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Clarkson (foot) won't play in Saturday's game against Portland.",
+   "note_date": "2026-11-20",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Kingston Flemings",
+   "nba_team": "ATL",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Back",
+   "return_date": "2026-11-22",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Flemings (back) is out for Friday's game against the Hornets, Brad Rowland of the Locked On Podcast Network reports.",
+   "note_date": "2026-11-20",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Myron Gardner",
    "nba_team": "MIA",
    "pos": "F",
@@ -648,6 +622,22 @@
    "timeframe": "Days",
    "note": "Gardner (hamstring) is out for Wednesday's game against the Bucks.",
    "note_date": "2026-11-19",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Nikola Topic",
+   "nba_team": "OKC",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Left Hip",
+   "return_date": "2026-11-22",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Topic (hip) is out for Friday's game against New Orleans.",
+   "note_date": "2026-11-20",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -669,17 +659,17 @@
    "per_game": null
   },
   {
-   "name": "Ronald Holland II",
-   "nba_team": "DET",
-   "pos": "F",
+   "name": "Adem Bona",
+   "nba_team": "PHI",
+   "pos": "C",
    "status": "Out",
-   "injury": "Left Knee",
-   "return_date": "2026-11-22",
-   "days_out": 2,
+   "injury": "Back",
+   "return_date": "2026-11-23",
+   "days_out": 3,
    "games_missed": 1,
-   "timeframe": "Days",
-   "note": "Holland (knee) won't play in Friday's game against the Raptors, Blake Murphy of Sportsnet.ca reports.",
-   "note_date": "2026-11-19",
+   "timeframe": "1 week",
+   "note": "Bona (back) participated in Friday's practice, though he still needs to go through a full practice with contact before being cleared to return to game action, Adam Aaronson of PhillyVoice.com reports.",
+   "note_date": "2026-11-20",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -703,6 +693,27 @@
     "PTS": 25.1,
     "REB": 4.2,
     "AST": 5.3
+   }
+  },
+  {
+   "name": "Brandon Ingram",
+   "nba_team": "LAC",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Right Achilles",
+   "return_date": "2026-11-23",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Ingram (Achilles) is expected to make his season and team debut Monday against the Rockets, per Shams Charania of ESPN.",
+   "note_date": "2026-11-20",
+   "fantasy_team": "Kawhi Me A River",
+   "on_ir": true,
+   "per_game": {
+    "FPTS": 38.5,
+    "PTS": 22.6,
+    "REB": 5.7,
+    "AST": 4.8
    }
   },
   {
@@ -740,6 +751,27 @@
     "PTS": 9.2,
     "REB": 4.9,
     "AST": 1.8
+   }
+  },
+  {
+   "name": "Dean Wade",
+   "nba_team": "PHI",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Left Hamstring",
+   "return_date": "2026-11-23",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Wade (hamstring) won't play Saturday against the Bucks.",
+   "note_date": "2026-11-20",
+   "fantasy_team": "Kream team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 17.9,
+    "PTS": 5.2,
+    "REB": 4.3,
+    "AST": 1.5
    }
   },
   {
@@ -805,8 +837,8 @@
    "days_out": 3,
    "games_missed": 1,
    "timeframe": "1 week",
-   "note": "Brown (hamstring) will be re-evaluated at some point this weekend, per Kris Rihm of ESPN.com.",
-   "note_date": "2026-11-18",
+   "note": "Brown (hamstring) went through individual work during Friday's practice, Tony Jones of The Athletic reports.",
+   "note_date": "2026-11-20",
    "fantasy_team": "Kawhi Me A River",
    "on_ir": false,
    "per_game": {
@@ -982,6 +1014,22 @@
    "per_game": null
   },
   {
+   "name": "Chris Youngblood",
+   "nba_team": "POR",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Right Heel",
+   "return_date": "2026-11-27",
+   "days_out": 7,
+   "games_missed": 3,
+   "timeframe": "1 week",
+   "note": "Youngblood (heel) has been ruled out for Saturday's game against the Knicks.",
+   "note_date": "2026-11-20",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Dejounte Murray",
    "nba_team": "NO",
    "pos": "G",
@@ -1012,8 +1060,8 @@
    "days_out": 7,
    "games_missed": 3,
    "timeframe": "1 week",
-   "note": "Lively (foot) is out for Wednesday's game against the Warriors.",
-   "note_date": "2026-11-17",
+   "note": "Head coach Dusty May said Friday that Lively (foot) is moving well and progressing in his recovery, and the big man told May he's \"close\" to returning, Mike Curtis of The Dallas Morning News reports.",
+   "note_date": "2026-11-20",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -1037,43 +1085,6 @@
     "PTS": 14.2,
     "REB": 2.2,
     "AST": 2.1
-   }
-  },
-  {
-   "name": "Jusuf Nurkic",
-   "nba_team": "UTAH",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Right Foot",
-   "return_date": "2026-11-27",
-   "days_out": 7,
-   "games_missed": 3,
-   "timeframe": "1 week",
-   "note": "Nurkic (toe) is listed as out for Friday's game against Phoenix.",
-   "note_date": "2026-11-20",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Kawhi Leonard",
-   "nba_team": "TOR",
-   "pos": "F",
-   "status": "Out",
-   "injury": "Left Knee",
-   "return_date": "2026-11-27",
-   "days_out": 7,
-   "games_missed": 2,
-   "timeframe": "1 week",
-   "note": "Leonard (knee) has progressed in his strength and conditioning program but will miss at least one more week, Michael Scotto of HoopsHype.com reports.",
-   "note_date": "2026-11-17",
-   "fantasy_team": "Rye RSL",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 44.8,
-    "PTS": 24.4,
-    "REB": 6.3,
-    "AST": 3.3
    }
   },
   {
@@ -1123,27 +1134,6 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
-  },
-  {
-   "name": "Tyrese Haliburton",
-   "nba_team": "IND",
-   "pos": "G",
-   "status": "Out",
-   "injury": "Left Hamstring",
-   "return_date": "2026-11-28",
-   "days_out": 8,
-   "games_missed": 4,
-   "timeframe": "1-2 weeks",
-   "note": "Head coach Rick Carlisle said Tuesday that Haliburton (hamstring) is \"getting there,\" but there's still no definitive timetable for his return to game action, Dustin Dopirak of The Indianapolis Star reports.",
-   "note_date": "2026-11-17",
-   "fantasy_team": "Joseph's Scary Team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 49.2,
-    "PTS": 19.7,
-    "REB": 3.9,
-    "AST": 9.8
-   }
   },
   {
    "name": "Bradley Beal",
@@ -1226,6 +1216,22 @@
    "timeframe": "1-2 weeks",
    "note": "Strawther (knee) was diagnosed with a left knee sprain Friday and will be re-evaluated in six weeks, Vinny Benedetto of The Denver Gazette reports.",
    "note_date": "2026-10-17",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Jusuf Nurkic",
+   "nba_team": "UTAH",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Right Foot",
+   "return_date": "2026-11-29",
+   "days_out": 9,
+   "games_missed": 4,
+   "timeframe": "1-2 weeks",
+   "note": "Nurkic (foot) has been cleared for on-court work and will be re-evaluated in one week.",
+   "note_date": "2026-11-20",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -1335,6 +1341,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Kawhi Leonard",
+   "nba_team": "TOR",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Left Knee",
+   "return_date": "2026-12-03",
+   "days_out": 13,
+   "games_missed": 5,
+   "timeframe": "1-2 weeks",
+   "note": "Leonard (knee) could return in the next few weeks, per Shams Charania of ESPN.",
+   "note_date": "2026-11-20",
+   "fantasy_team": "Rye RSL",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 44.8,
+    "PTS": 24.4,
+    "REB": 6.3,
+    "AST": 3.3
+   }
   },
   {
    "name": "Reece Beekman",
@@ -1509,6 +1536,27 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Tyrese Haliburton",
+   "nba_team": "IND",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Left Hamstring",
+   "return_date": "2026-12-13",
+   "days_out": 23,
+   "games_missed": 7,
+   "timeframe": "2-4 weeks",
+   "note": "Haliburton (hamstring) is expected to miss at least two more weeks, Shams Charania of ESPN reports.",
+   "note_date": "2026-11-20",
+   "fantasy_team": "Joseph's Scary Team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 49.2,
+    "PTS": 19.7,
+    "REB": 3.9,
+    "AST": 9.8
+   }
   },
   {
    "name": "Jaren Jackson Jr.",
