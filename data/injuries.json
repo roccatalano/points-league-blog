@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-21T15:36:24.915333+00:00",
+ "updated_utc": "2026-11-21T19:37:23.662636+00:00",
  "today_et": "2026-11-21",
  "players": [
   {
@@ -45,22 +45,6 @@
    }
   },
   {
-   "name": "Dominick Barlow",
-   "nba_team": "PHI",
-   "pos": "F",
-   "status": "Out",
-   "injury": "Back",
-   "return_date": "2026-11-21",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Barlow (back) is probable for Saturday's game versus the Bucks.",
-   "note_date": "2026-11-20",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "Jayson Tatum",
    "nba_team": "BOS",
    "pos": "F",
@@ -82,6 +66,27 @@
    }
   },
   {
+   "name": "Karl-Anthony Towns",
+   "nba_team": "NY",
+   "pos": "C",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-21",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Towns is questionable for Saturday's game against the Trail Blazers due to an illness.",
+   "note_date": "2026-11-21",
+   "fantasy_team": "Kream team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 44.4,
+    "PTS": 21.6,
+    "REB": 12.6,
+    "AST": 4.2
+   }
+  },
+  {
    "name": "OG Anunoby",
    "nba_team": "NY",
    "pos": "F",
@@ -91,8 +96,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Anunoby (calf) is questionable for Saturday's game against Portland.",
-   "note_date": "2026-11-20",
+   "note": "Anunoby (calf) has been downgraded to doubtful for Saturday's game against the Trail Bllazers.",
+   "note_date": "2026-11-21",
    "fantasy_team": "Kuminga Lot",
    "on_ir": false,
    "per_game": {
@@ -107,7 +112,7 @@
    "nba_team": "DAL",
    "pos": "F",
    "status": "Day-To-Day",
-   "injury": "Shoulder",
+   "injury": "Illness",
    "return_date": "2026-11-21",
    "days_out": 0,
    "games_missed": 0,
@@ -138,48 +143,6 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
-  },
-  {
-   "name": "Ty Jerome",
-   "nba_team": "MEM",
-   "pos": "G",
-   "status": "Out",
-   "injury": "Right Hip",
-   "return_date": "2026-11-21",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Jerome (hip) is probable for Saturday's game in Minnesota.",
-   "note_date": "2026-11-20",
-   "fantasy_team": "Joseph's Scary Team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 41.8,
-    "PTS": 23.7,
-    "REB": 3.5,
-    "AST": 5.9
-   }
-  },
-  {
-   "name": "Tyrese Maxey",
-   "nba_team": "PHI",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Right Foot",
-   "return_date": "2026-11-21",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Maxey (foot) is questionable for Saturday's game against the Bucks.",
-   "note_date": "2026-11-20",
-   "fantasy_team": "Kream team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 45.8,
-    "PTS": 25.7,
-    "REB": 3.4,
-    "AST": 5.8
-   }
   },
   {
    "name": "Ugonna Onyenso",
@@ -282,22 +245,6 @@
    "games_missed": 0,
    "timeframe": "Days",
    "note": "Okorie (oblique) has been ruled out for Friday's game against Toronto.",
-   "note_date": "2026-11-21",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Felix Okpara",
-   "nba_team": "WSH",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Back",
-   "return_date": "2026-11-22",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Okpara (illness) is available for Friday's game against Toronto.",
    "note_date": "2026-11-21",
    "fantasy_team": null,
    "on_ir": false,
@@ -797,6 +744,27 @@
    "per_game": null
   },
   {
+   "name": "Trey Murphy III",
+   "nba_team": "NO",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Knee",
+   "return_date": "2026-11-23",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Murphy (knee) has been ruled out for Saturday's game against the Spurs.",
+   "note_date": "2026-11-21",
+   "fantasy_team": "Spicy town Mayo",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 34.3,
+    "PTS": 18.0,
+    "REB": 5.0,
+    "AST": 3.4
+   }
+  },
+  {
    "name": "Jalen Duren",
    "nba_team": "DET",
    "pos": "C",
@@ -1045,8 +1013,8 @@
    "days_out": 6,
    "games_missed": 2,
    "timeframe": "1 week",
-   "note": "Watford (ankle) has been ruled out for Friday's game against Oklahoma City.",
-   "note_date": "2026-11-19",
+   "note": "Watford (ankle) is out for Saturday's game against the Spurs.",
+   "note_date": "2026-11-21",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
