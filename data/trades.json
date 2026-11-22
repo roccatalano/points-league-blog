@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-21T19:37:19+00:00",
- "fa_points_per_game": 23.3,
- "fa_points_per_day": 11.18,
+ "updated_utc": "2026-11-22T00:02:36+00:00",
+ "fa_points_per_game": 23.1,
+ "fa_points_per_day": 11.09,
  "fa_pool": 10,
  "trades": [
   {
@@ -426,7 +426,7 @@
   }
  ],
  "pickups": {
-  "count": 145,
+  "count": 146,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -2081,6 +2081,16 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Caleb Martin",
+    "team": "Big Herro Glick",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-21",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -2122,7 +2132,7 @@
    },
    {
     "team": "Big Herro Glick",
-    "pickups": 17,
+    "pickups": 18,
     "fpts": 853.0,
     "faab": 0
    },
@@ -2171,7 +2181,7 @@
   ]
  },
  "drops": {
-  "count": 123,
+  "count": 124,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -2291,6 +2301,15 @@
     "per_game": 24.5
    },
    {
+    "player": "Anfernee Simons",
+    "team": "No Scrubs",
+    "now": "free agent",
+    "date": "2026-10-25",
+    "games": 13,
+    "fpts": 267.0,
+    "per_game": 20.5
+   },
+   {
     "player": "Tristan da Silva",
     "team": "Big Herro Glick",
     "now": "No Scrubs",
@@ -2298,15 +2317,6 @@
     "games": 11,
     "fpts": 263.0,
     "per_game": 23.9
-   },
-   {
-    "player": "Anfernee Simons",
-    "team": "No Scrubs",
-    "now": "free agent",
-    "date": "2026-10-25",
-    "games": 13,
-    "fpts": 256.0,
-    "per_game": 19.7
    },
    {
     "player": "Brice Sensabaugh",
@@ -2323,8 +2333,8 @@
     "now": "NAWSectual",
     "date": "2026-10-30",
     "games": 11,
-    "fpts": 250.0,
-    "per_game": 22.7
+    "fpts": 252.0,
+    "per_game": 22.9
    },
    {
     "player": "Jared McCain",
@@ -2426,6 +2436,15 @@
     "per_game": 35.2
    },
    {
+    "player": "Kentavious Caldwell-Pope",
+    "team": "No Scrubs",
+    "now": "free agent",
+    "date": "2026-10-25",
+    "games": 13,
+    "fpts": 207.0,
+    "per_game": 15.9
+   },
+   {
     "player": "Leaky Black",
     "team": "BYE",
     "now": "free agent",
@@ -2433,15 +2452,6 @@
     "games": 10,
     "fpts": 203.0,
     "per_game": 20.3
-   },
-   {
-    "player": "Kentavious Caldwell-Pope",
-    "team": "No Scrubs",
-    "now": "free agent",
-    "date": "2026-10-25",
-    "games": 13,
-    "fpts": 199.0,
-    "per_game": 15.3
    },
    {
     "player": "Keldon Johnson",
@@ -2464,11 +2474,20 @@
    {
     "player": "Ziaire Williams",
     "team": "coachcainzey",
-    "now": "Big Herro Glick",
+    "now": "free agent",
     "date": "2026-11-03",
     "games": 9,
     "fpts": 174.0,
     "per_game": 19.3
+   },
+   {
+    "player": "Kentavious Caldwell-Pope",
+    "team": "coachcainzey",
+    "now": "free agent",
+    "date": "2026-11-01",
+    "games": 10,
+    "fpts": 171.0,
+    "per_game": 17.1
    },
    {
     "player": "Keaton Wagler",
@@ -2505,15 +2524,6 @@
     "games": 13,
     "fpts": 165.0,
     "per_game": 12.7
-   },
-   {
-    "player": "Kentavious Caldwell-Pope",
-    "team": "coachcainzey",
-    "now": "free agent",
-    "date": "2026-11-01",
-    "games": 10,
-    "fpts": 163.0,
-    "per_game": 16.3
    },
    {
     "player": "Trevon Brazile",
@@ -2570,6 +2580,15 @@
     "per_game": 18.8
    },
    {
+    "player": "Anfernee Simons",
+    "team": "Ant Social Behaviour",
+    "now": "free agent",
+    "date": "2026-11-07",
+    "games": 7,
+    "fpts": 146.0,
+    "per_game": 20.9
+   },
+   {
     "player": "Oso Ighodaro",
     "team": "Big Herro Glick",
     "now": "free agent",
@@ -2586,15 +2605,6 @@
     "games": 7,
     "fpts": 137.0,
     "per_game": 19.6
-   },
-   {
-    "player": "Anfernee Simons",
-    "team": "Ant Social Behaviour",
-    "now": "free agent",
-    "date": "2026-11-07",
-    "games": 7,
-    "fpts": 135.0,
-    "per_game": 19.3
    },
    {
     "player": "Jaylon Tyson",
@@ -2669,6 +2679,15 @@
     "per_game": 18.0
    },
    {
+    "player": "Myles Turner",
+    "team": "RayJayDaPawnSTAH",
+    "now": "Joseph's Scary Team",
+    "date": "2026-11-11",
+    "games": 4,
+    "fpts": 118.0,
+    "per_game": 29.5
+   },
+   {
     "player": "Jake LaRavia",
     "team": "Big Herro Glick",
     "now": "free agent",
@@ -2712,15 +2731,6 @@
     "games": 4,
     "fpts": 111.0,
     "per_game": 27.8
-   },
-   {
-    "player": "Myles Turner",
-    "team": "RayJayDaPawnSTAH",
-    "now": "Joseph's Scary Team",
-    "date": "2026-11-11",
-    "games": 4,
-    "fpts": 110.0,
-    "per_game": 27.5
    },
    {
     "player": "Jake LaRavia",
@@ -3058,7 +3068,7 @@
    {
     "player": "Ziaire Williams",
     "team": "Downtown Euros",
-    "now": "Big Herro Glick",
+    "now": "free agent",
     "date": "2026-11-16",
     "games": 3,
     "fpts": 19.0,
@@ -3265,6 +3275,15 @@
    {
     "player": "Precious Achiuwa",
     "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-11-21",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Ziaire Williams",
+    "team": "Big Herro Glick",
     "now": "free agent",
     "date": "2026-11-21",
     "games": 0,
