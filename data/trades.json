@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-22T15:30:46+00:00",
+ "updated_utc": "2026-11-22T21:28:17+00:00",
  "fa_points_per_game": 23.3,
  "fa_points_per_day": 11.18,
  "fa_pool": 10,
@@ -2295,22 +2295,22 @@
     "per_game": 20.5
    },
    {
-    "player": "Bones Hyland",
-    "team": "BYE",
-    "now": "Big Herro Glick",
-    "date": "2026-10-27",
-    "games": 13,
-    "fpts": 293.0,
-    "per_game": 22.5
-   },
-   {
     "player": "Daniss Jenkins",
     "team": "Downtown Euros",
     "now": "Kuminga Lot",
     "date": "2026-10-31",
-    "games": 9,
-    "fpts": 289.0,
-    "per_game": 32.1
+    "games": 10,
+    "fpts": 305.0,
+    "per_game": 30.5
+   },
+   {
+    "player": "Bones Hyland",
+    "team": "BYE",
+    "now": "free agent",
+    "date": "2026-10-27",
+    "games": 13,
+    "fpts": 293.0,
+    "per_game": 22.5
    },
    {
     "player": "Kelly Oubre Jr.",
@@ -2448,6 +2448,15 @@
     "per_game": 15.9
    },
    {
+    "player": "Kingston Flemings",
+    "team": "Kuminga Lot",
+    "now": "Big Herro Glick",
+    "date": "2026-10-22",
+    "games": 12,
+    "fpts": 236.0,
+    "per_game": 19.7
+   },
+   {
     "player": "Brook Lopez",
     "team": "RayJayDaPawnSTAH",
     "now": "No Scrubs",
@@ -2473,15 +2482,6 @@
     "games": 12,
     "fpts": 226.0,
     "per_game": 18.8
-   },
-   {
-    "player": "Kingston Flemings",
-    "team": "Kuminga Lot",
-    "now": "free agent",
-    "date": "2026-10-22",
-    "games": 11,
-    "fpts": 220.0,
-    "per_game": 20.0
    },
    {
     "player": "Leaky Black",
@@ -2934,15 +2934,6 @@
     "per_game": 11.7
    },
    {
-    "player": "Kevin Huerter",
-    "team": "Spicy town Mayo",
-    "now": "Big Herro Glick",
-    "date": "2026-11-16",
-    "games": 3,
-    "fpts": 65.0,
-    "per_game": 21.7
-   },
-   {
     "player": "Max Christie",
     "team": "NAWSectual",
     "now": "free agent",
@@ -2961,6 +2952,15 @@
     "per_game": 10.2
    },
    {
+    "player": "John Collins",
+    "team": "Kuminga Lot",
+    "now": "coachcainzey",
+    "date": "2026-11-17",
+    "games": 3,
+    "fpts": 61.0,
+    "per_game": 20.3
+   },
+   {
     "player": "Bennett Stirtz",
     "team": "Kuminga Lot",
     "now": "free agent",
@@ -2968,6 +2968,15 @@
     "games": 3,
     "fpts": 59.0,
     "per_game": 19.7
+   },
+   {
+    "player": "Kevin Huerter",
+    "team": "Spicy town Mayo",
+    "now": "Big Herro Glick",
+    "date": "2026-11-16",
+    "games": 4,
+    "fpts": 57.0,
+    "per_game": 14.2
    },
    {
     "player": "Ja'Kobe Walter",
@@ -3010,15 +3019,6 @@
     "team": "coachcainzey",
     "now": "free agent",
     "date": "2026-11-16",
-    "games": 2,
-    "fpts": 44.0,
-    "per_game": 22.0
-   },
-   {
-    "player": "John Collins",
-    "team": "Kuminga Lot",
-    "now": "coachcainzey",
-    "date": "2026-11-17",
     "games": 2,
     "fpts": 44.0,
     "per_game": 22.0
@@ -3312,15 +3312,6 @@
     "per_game": null
    },
    {
-    "player": "Kingston Flemings",
-    "team": "Big Herro Glick",
-    "now": "free agent",
-    "date": "2026-11-14",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
     "player": "Javon Small",
     "team": "No Scrubs",
     "now": "free agent",
@@ -3368,6 +3359,15 @@
    {
     "player": "Dean Wade",
     "team": "Kream team",
+    "now": "free agent",
+    "date": "2026-11-22",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Bones Hyland",
+    "team": "Big Herro Glick",
     "now": "free agent",
     "date": "2026-11-22",
     "games": 0,
