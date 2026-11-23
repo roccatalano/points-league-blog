@@ -1,24 +1,24 @@
 {
- "updated_utc": "2026-11-23T01:54:50+00:00",
+ "updated_utc": "2026-11-23T10:12:55+00:00",
  "summary": {
-  "matchups": 28,
-  "called": 17,
-  "callable": 28,
-  "brier": 0.228,
-  "avg_miss_points": 144.1,
-  "bias_points": -77.3,
-  "in_range": 19,
+  "matchups": 35,
+  "called": 20,
+  "callable": 35,
+  "brier": 0.243,
+  "avg_miss_points": 152.7,
+  "bias_points": -56.1,
+  "in_range": 23,
   "range_target_pct": 80,
   "calibration": [
    {
     "bucket": "50-60%",
-    "n": 4,
-    "fav_won_pct": 75
+    "n": 5,
+    "fav_won_pct": 60
    },
    {
     "bucket": "60-70%",
-    "n": 10,
-    "fav_won_pct": 30
+    "n": 12,
+    "fav_won_pct": 25
    },
    {
     "bucket": "70-80%",
@@ -32,24 +32,29 @@
    },
    {
     "bucket": "90-100%",
-    "n": 5,
-    "fav_won_pct": 100
+    "n": 9,
+    "fav_won_pct": 89
    }
   ],
   "live_only": {
-   "matchups": 7,
-   "called": 4,
-   "callable": 7,
-   "brier": 0.24,
-   "avg_miss_points": 106.9,
-   "bias_points": -78.4,
-   "in_range": 4,
+   "matchups": 14,
+   "called": 7,
+   "callable": 14,
+   "brier": 0.272,
+   "avg_miss_points": 147.1,
+   "bias_points": -24.9,
+   "in_range": 8,
    "range_target_pct": 80,
    "calibration": [
     {
+     "bucket": "50-60%",
+     "n": 1,
+     "fav_won_pct": 0
+    },
+    {
      "bucket": "60-70%",
-     "n": 4,
-     "fav_won_pct": 50
+     "n": 6,
+     "fav_won_pct": 33
     },
     {
      "bucket": "70-80%",
@@ -63,8 +68,8 @@
     },
     {
      "bucket": "90-100%",
-     "n": 1,
-     "fav_won_pct": 100
+     "n": 5,
+     "fav_won_pct": 80
     }
    ]
   },
@@ -784,7 +789,7 @@
    "opening": true,
    "rebuilt": false,
    "saved_utc": "2026-11-16T08:15:43+00:00",
-   "finished": false,
+   "finished": true,
    "matchups": [
     {
      "home": "coachcainzey",
@@ -797,6 +802,17 @@
      "margin_80": [
       -196.7,
       137.0
+     ],
+     "actual": [
+      1172.0,
+      1083.0
+     ],
+     "called": false,
+     "brier": 0.354,
+     "in_range": true,
+     "miss": [
+      -111.4,
+      -229.8
      ]
     },
     {
@@ -810,6 +826,17 @@
      "margin_80": [
       -111.9,
       230.9
+     ],
+     "actual": [
+      1505.0,
+      1512.0
+     ],
+     "called": false,
+     "brier": 0.423,
+     "in_range": true,
+     "miss": [
+      106.0,
+      166.1
      ]
     },
     {
@@ -823,6 +850,17 @@
      "margin_80": [
       -221.7,
       106.7
+     ],
+     "actual": [
+      1169.0,
+      1067.0
+     ],
+     "called": false,
+     "brier": 0.449,
+     "in_range": true,
+     "miss": [
+      -10.7,
+      -169.3
      ]
     },
     {
@@ -836,6 +874,17 @@
      "margin_80": [
       -1.5,
       345.3
+     ],
+     "actual": [
+      1360.0,
+      1198.0
+     ],
+     "called": true,
+     "brier": 0.01,
+     "in_range": true,
+     "miss": [
+      -68.2,
+      -62.2
      ]
     },
     {
@@ -849,6 +898,17 @@
      "margin_80": [
       17.9,
       387.7
+     ],
+     "actual": [
+      1414.0,
+      974.0
+     ],
+     "called": true,
+     "brier": 0.005,
+     "in_range": false,
+     "miss": [
+      15.1,
+      -222.8
      ]
     },
     {
@@ -862,6 +922,17 @@
      "margin_80": [
       -389.6,
       -37.1
+     ],
+     "actual": [
+      1207.0,
+      1168.0
+     ],
+     "called": false,
+     "brier": 0.884,
+     "in_range": false,
+     "miss": [
+      33.2,
+      -216.8
      ]
     },
     {
@@ -875,6 +946,117 @@
      "margin_80": [
       1222.5,
       1465.9
+     ],
+     "actual": [
+      1370.0,
+      1236.0
+     ],
+     "called": true,
+     "brier": 0.0,
+     "in_range": false,
+     "miss": [
+      -19.4,
+      1189.4
+     ]
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "opening": true,
+   "rebuilt": false,
+   "saved_utc": "2026-11-23T10:12:38+00:00",
+   "finished": false,
+   "matchups": [
+    {
+     "home": "Big Herro Glick",
+     "away": "coachcainzey",
+     "home_win_pct": 28,
+     "proj": [
+      1171.4,
+      1241.8
+     ],
+     "margin_80": [
+      -233.9,
+      95.5
+     ]
+    },
+    {
+     "home": "NAWSectual",
+     "away": "Kuminga Lot",
+     "home_win_pct": 26,
+     "proj": [
+      1116.9,
+      1198.5
+     ],
+     "margin_80": [
+      -249.0,
+      86.1
+     ]
+    },
+    {
+     "home": "RayJayDaPawnSTAH",
+     "away": "Kream team",
+     "home_win_pct": 81,
+     "proj": [
+      1129.0,
+      1024.2
+     ],
+     "margin_80": [
+      -43.7,
+      268.1
+     ]
+    },
+    {
+     "home": "Downtown Euros",
+     "away": "Spicy town Mayo",
+     "home_win_pct": 90,
+     "proj": [
+      1299.0,
+      1121.5
+     ],
+     "margin_80": [
+      -1.5,
+      355.2
+     ]
+    },
+    {
+     "home": "No Scrubs",
+     "away": "Ant Social Behaviour",
+     "home_win_pct": 94,
+     "proj": [
+      1295.7,
+      1091.1
+     ],
+     "margin_80": [
+      41.9,
+      371.7
+     ]
+    },
+    {
+     "home": "BYE",
+     "away": "Rye RSL",
+     "home_win_pct": 0,
+     "proj": [
+      63.2,
+      1170.3
+     ],
+     "margin_80": [
+      -1228.0,
+      -985.5
+     ]
+    },
+    {
+     "home": "Joseph's Scary Team",
+     "away": "Kawhi Me A River",
+     "home_win_pct": 0,
+     "proj": [
+      1090.8,
+      1485.5
+     ],
+     "margin_80": [
+      -573.3,
+      -214.2
      ]
     }
    ]
