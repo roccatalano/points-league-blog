@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-23T20:06:46.288504+00:00",
+ "updated_utc": "2026-11-23T22:09:03.925758+00:00",
  "today_et": "2026-11-23",
  "players": [
   {
@@ -132,27 +132,6 @@
     "PTS": 12.0,
     "REB": 7.0,
     "AST": 1.6
-   }
-  },
-  {
-   "name": "Jaxson Hayes",
-   "nba_team": "UTAH",
-   "pos": "C",
-   "status": "Day-To-Day",
-   "injury": "Left Knee",
-   "return_date": "2026-11-23",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Hayes (knee) has been ruled out for the remainder of Sunday's game against the Mavericks, Grant Afseth of DallasHoopsJournal.com reports.",
-   "note_date": "2026-11-23",
-   "fantasy_team": "Kuminga Lot",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 20.7,
-    "PTS": 7.8,
-    "REB": 5.2,
-    "AST": 1.1
    }
   },
   {
@@ -330,43 +309,6 @@
    "per_game": null
   },
   {
-   "name": "Jalen Duren",
-   "nba_team": "DET",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Right Hamstring",
-   "return_date": "2026-11-24",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Duren (hamstring) has begun on-court activity and will be re-evaluated in two weeks, Hunter Patterson of The Athletic reports.",
-   "note_date": "2026-11-08",
-   "fantasy_team": "RayJayDaPawnSTAH",
-   "on_ir": true,
-   "per_game": {
-    "FPTS": 41.0,
-    "PTS": 19.4,
-    "REB": 11.2,
-    "AST": 2.3
-   }
-  },
-  {
-   "name": "Mitchell Robinson",
-   "nba_team": "BOS",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Illness",
-   "return_date": "2026-11-24",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Robinson (illness) has been ruled out for Sunday's game against Golden State, Justin Turpin of WEEI.com reports.",
-   "note_date": "2026-11-22",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "P.J. Washington",
    "nba_team": "DAL",
    "pos": "F",
@@ -388,27 +330,6 @@
    }
   },
   {
-   "name": "Paul George",
-   "nba_team": "BOS",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Rest",
-   "return_date": "2026-11-24",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "George (rest) has been ruled out for Sunday's game against Golden State, Justin Turpin of WEEI.com reports.",
-   "note_date": "2026-11-23",
-   "fantasy_team": "Kream team",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 39.0,
-    "PTS": 19.8,
-    "REB": 5.5,
-    "AST": 3.8
-   }
-  },
-  {
    "name": "Tobi Lawal",
    "nba_team": "DAL",
    "pos": "F",
@@ -420,22 +341,6 @@
    "timeframe": "Days",
    "note": "Lawal (groin) has been ruled out for Sunday's game against the Jazz.",
    "note_date": "2026-11-22",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Tristan Vukcevic",
-   "nba_team": "WSH",
-   "pos": "F",
-   "status": "Out",
-   "injury": "Left Hip",
-   "return_date": "2026-11-24",
-   "days_out": 1,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Vukcevic (hip) has been ruled out for Monday's game against Memphis.",
-   "note_date": "2026-11-16",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -492,8 +397,8 @@
    "days_out": 2,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Williams (hamstring) is out for Sunday's game against the Celtics.",
-   "note_date": "2026-11-22",
+   "note": "Head coach Steve Kerr said Monday that Williams (hamstring) is on track to return Wednesday against the Kings, Kenzo Fukuda of ClutchPoints.com reports.",
+   "note_date": "2026-11-23",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -843,6 +748,27 @@
    }
   },
   {
+   "name": "Jaxson Hayes",
+   "nba_team": "UTAH",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Left Knee",
+   "return_date": "2026-11-27",
+   "days_out": 4,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Hayes (knee) has been ruled out for Monday's game against the Lakers.",
+   "note_date": "2026-11-23",
+   "fantasy_team": "Kuminga Lot",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 20.7,
+    "PTS": 7.8,
+    "REB": 5.2,
+    "AST": 1.1
+   }
+  },
+  {
    "name": "Jock Landale",
    "nba_team": "ATL",
    "pos": "C",
@@ -854,6 +780,22 @@
    "timeframe": "1 week",
    "note": "Landale (hip) won't play Sunday against the Pistons.",
    "note_date": "2026-11-21",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Mitchell Robinson",
+   "nba_team": "BOS",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Illness",
+   "return_date": "2026-11-27",
+   "days_out": 4,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Robinson (illness) is out for Tuesday's game against Washington, Taylor Snow of the Celtics' official site reports.",
+   "note_date": "2026-11-23",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -1133,6 +1075,43 @@
     "REB": 7.7,
     "AST": 5.5
    }
+  },
+  {
+   "name": "Jalen Duren",
+   "nba_team": "DET",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Right Hamstring",
+   "return_date": "2026-11-30",
+   "days_out": 7,
+   "games_missed": 3,
+   "timeframe": "1 week",
+   "note": "Duren (hamstring) has begun on-court activity and will be re-evaluated in two weeks, Hunter Patterson of The Athletic reports.",
+   "note_date": "2026-11-08",
+   "fantasy_team": "RayJayDaPawnSTAH",
+   "on_ir": true,
+   "per_game": {
+    "FPTS": 41.0,
+    "PTS": 19.4,
+    "REB": 11.2,
+    "AST": 2.3
+   }
+  },
+  {
+   "name": "Tristan Vukcevic",
+   "nba_team": "WSH",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Left Hip",
+   "return_date": "2026-11-30",
+   "days_out": 7,
+   "games_missed": 2,
+   "timeframe": "1 week",
+   "note": "Vukcevic (hip) has been ruled out for Monday's game against Memphis.",
+   "note_date": "2026-11-16",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
   },
   {
    "name": "Ja Morant",
