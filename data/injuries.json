@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-24T18:04:09.781409+00:00",
+ "updated_utc": "2026-11-24T19:05:30.160881+00:00",
  "today_et": "2026-11-24",
  "players": [
   {
@@ -165,8 +165,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Antetokounmpo (groin) won't play in Sunday's game against Oklahoma City, Clemente Almanza of USA Today reports.",
-   "note_date": "2026-11-23",
+   "note": "Antetokounmpo (groin) participated in most of Tuesday's practice, Zachary Weinberger of ClutchPoints.com reports.",
+   "note_date": "2026-11-24",
    "fantasy_team": "Big Herro Glick",
    "on_ir": false,
    "per_game": {
@@ -211,6 +211,27 @@
     "PTS": 14.5,
     "REB": 3.0,
     "AST": 3.3
+   }
+  },
+  {
+   "name": "Jalen Smith",
+   "nba_team": "CHI",
+   "pos": "F",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-25",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Smith (illness) is listed as questionable for Wednesday's game against the Hornets.",
+   "note_date": "2026-11-24",
+   "fantasy_team": "Kawhi Me A River",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 28.0,
+    "PTS": 11.9,
+    "REB": 7.0,
+    "AST": 1.7
    }
   },
   {
@@ -260,8 +281,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Clarkson (foot) has been ruled out for Sunday's game against Indiana.",
-   "note_date": "2026-11-22",
+   "note": "Clarkson (foot) didn't participate in Tuesday's practice, Jared Schwartz of the New York Post reports.",
+   "note_date": "2026-11-24",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -292,8 +313,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "McBride (abdomen) has been ruled out for Sunday's game against the Pacers.",
-   "note_date": "2026-11-23",
+   "note": "McBride (groin) practiced Tuesday, per Jared Schwartz of the New York Post.",
+   "note_date": "2026-11-24",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -324,8 +345,8 @@
    "days_out": 1,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Anunoby (calf) won't play Sunday against the Pacers.",
-   "note_date": "2026-11-23",
+   "note": "Anunoby (calf) did not participate in Tuesday's practice, Jared Schwartz of the New York Post reports.",
+   "note_date": "2026-11-24",
    "fantasy_team": "Kuminga Lot",
    "on_ir": false,
    "per_game": {
@@ -509,8 +530,8 @@
    "days_out": 3,
    "games_missed": 1,
    "timeframe": "1 week",
-   "note": "Robinson will be re-evaluated in one week due to a left quadriceps strain, Coty M. Davis of The Detroit News reports.",
-   "note_date": "2026-11-17",
+   "note": "Robinson (quadriceps) is considered day-to-day as he progresses in his rehab, Eric Vincent of ClutchPoints.com reports.",
+   "note_date": "2026-11-24",
    "fantasy_team": "Rye RSL",
    "on_ir": false,
    "per_game": {
@@ -866,22 +887,6 @@
    }
   },
   {
-   "name": "Ebuka Okorie",
-   "nba_team": "DET",
-   "pos": "G",
-   "status": "Out",
-   "injury": "Left Oblique",
-   "return_date": "2026-11-30",
-   "days_out": 6,
-   "games_missed": 3,
-   "timeframe": "1 week",
-   "note": "Okorie (oblique) won't play Tuesday in Orlando.",
-   "note_date": "2026-11-23",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
    "name": "Jalen Duren",
    "nba_team": "DET",
    "pos": "C",
@@ -891,8 +896,8 @@
    "days_out": 6,
    "games_missed": 3,
    "timeframe": "1 week",
-   "note": "Duren (hamstring) has been ruled out for Tuesday's game against the Magic.",
-   "note_date": "2026-11-23",
+   "note": "Duren (hamstring) is being assigned to the Motor City Cruise on Wednesday for practice as he ramps up for a return, Eric Vincent of ClutchPoints.com reports.",
+   "note_date": "2026-11-24",
    "fantasy_team": "RayJayDaPawnSTAH",
    "on_ir": true,
    "per_game": {
@@ -1167,6 +1172,22 @@
    }
   },
   {
+   "name": "Ebuka Okorie",
+   "nba_team": "DET",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Left Oblique",
+   "return_date": "2026-12-13",
+   "days_out": 19,
+   "games_missed": 5,
+   "timeframe": "2-4 weeks",
+   "note": "The Pistons announced Tuesday that Okorie (oblique) will miss at least two weeks, per Eric Vincent of ClutchPoints.com.",
+   "note_date": "2026-11-24",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "RJ Barrett",
    "nba_team": "TOR",
    "pos": "F",
@@ -1186,22 +1207,6 @@
     "REB": 6.0,
     "AST": 4.1
    }
-  },
-  {
-   "name": "Taurean Prince",
-   "nba_team": "DET",
-   "pos": "F",
-   "status": "Out",
-   "injury": "Right Knee",
-   "return_date": "2026-12-13",
-   "days_out": 19,
-   "games_missed": 5,
-   "timeframe": "2-4 weeks",
-   "note": "Prince (knee) underwent surgery to address lingering issues and has no timeline for a return, Hunter Patterson of The Athletic reports.",
-   "note_date": "2026-11-20",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
   },
   {
    "name": "Tyrese Haliburton",
@@ -1307,6 +1312,22 @@
     "REB": 8.6,
     "AST": 4.2
    }
+  },
+  {
+   "name": "Taurean Prince",
+   "nba_team": "DET",
+   "pos": "F",
+   "status": "Out",
+   "injury": "Right Knee",
+   "return_date": "2026-12-26",
+   "days_out": 32,
+   "games_missed": 12,
+   "timeframe": "1-2 months",
+   "note": "Prince underwent arthroscopic right knee surgery Nov. 18 and will be re-evaluated in four weeks, Eric Vincent of ClutchPoints.com reports.",
+   "note_date": "2026-11-24",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
   },
   {
    "name": "Ben Sheppard",
