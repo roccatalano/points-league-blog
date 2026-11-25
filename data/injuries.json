@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-25T12:02:23.755299+00:00",
+ "updated_utc": "2026-11-25T18:11:00.272951+00:00",
  "today_et": "2026-11-25",
  "players": [
   {
@@ -61,24 +61,24 @@
    }
   },
   {
-   "name": "Grayson Allen",
-   "nba_team": "CHA",
+   "name": "Jalen Brunson",
+   "nba_team": "NY",
    "pos": "G",
-   "status": "Out",
-   "injury": "Concussion",
+   "status": "Day-To-Day",
+   "injury": "Illness",
    "return_date": "2026-11-25",
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Allen (concussion) is listed as questionable for Wednesday's game versus Chicago.",
-   "note_date": "2026-11-24",
-   "fantasy_team": "RayJayDaPawnSTAH",
+   "note": "Brunson (illness) has been downgraded to questionable for Wednesday's game against the Cavaliers.",
+   "note_date": "2026-11-25",
+   "fantasy_team": "Kuminga Lot",
    "on_ir": false,
    "per_game": {
-    "FPTS": 26.4,
-    "PTS": 14.5,
-    "REB": 3.0,
-    "AST": 3.3
+    "FPTS": 42.2,
+    "PTS": 26.7,
+    "REB": 3.2,
+    "AST": 6.4
    }
   },
   {
@@ -124,17 +124,33 @@
    }
   },
   {
-   "name": "Karl-Anthony Towns",
-   "nba_team": "NY",
-   "pos": "C",
+   "name": "Julian Reese",
+   "nba_team": "NO",
+   "pos": "F",
    "status": "Day-To-Day",
-   "injury": "Knee",
+   "injury": "Right Knee",
    "return_date": "2026-11-25",
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Towns (knee) is questionable for Wednesday's game against Cleveland.",
-   "note_date": "2026-11-24",
+   "note": "The Pelicans transferred Reese from the G League's Laketown Squadron, and he will be available for New Orleans' game against the Warriors on Monday.",
+   "note_date": "2026-11-25",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Karl-Anthony Towns",
+   "nba_team": "NY",
+   "pos": "C",
+   "status": "Day-To-Day",
+   "injury": "Right Knee",
+   "return_date": "2026-11-25",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Towns (knee) is probable for Wednesday's game against Cleveland.",
+   "note_date": "2026-11-25",
    "fantasy_team": "Kream team",
    "on_ir": false,
    "per_game": {
@@ -143,38 +159,6 @@
     "REB": 12.6,
     "AST": 4.2
    }
-  },
-  {
-   "name": "Miles McBride",
-   "nba_team": "NY",
-   "pos": "G",
-   "status": "Day-To-Day",
-   "injury": "Left Groin",
-   "return_date": "2026-11-25",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "McBride (adductor) is listed as questionable for Wednesday's game versus Cleveland.",
-   "note_date": "2026-11-24",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Ryan Kalkbrenner",
-   "nba_team": "CHA",
-   "pos": "C",
-   "status": "Day-To-Day",
-   "injury": "Left Hip",
-   "return_date": "2026-11-25",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Kalkbrenner (hip) is doubtful to play Wednesday against the Bulls.",
-   "note_date": "2026-11-24",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
   },
   {
    "name": "Sion James",
@@ -473,6 +457,22 @@
    "per_game": null
   },
   {
+   "name": "Miles McBride",
+   "nba_team": "NY",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Left Groin",
+   "return_date": "2026-11-27",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "McBride (adductor) is listed as questionable for Wednesday's game versus Cleveland.",
+   "note_date": "2026-11-25",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Mitchell Robinson",
    "nba_team": "BOS",
    "pos": "C",
@@ -627,6 +627,27 @@
    }
   },
   {
+   "name": "Grayson Allen",
+   "nba_team": "CHA",
+   "pos": "G",
+   "status": "Out",
+   "injury": "Concussion",
+   "return_date": "2026-11-28",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Allen (concussion) has been ruled out for Wednesday's game against Chicago.",
+   "note_date": "2026-11-25",
+   "fantasy_team": "RayJayDaPawnSTAH",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 26.4,
+    "PTS": 14.5,
+    "REB": 3.0,
+    "AST": 3.3
+   }
+  },
+  {
    "name": "Jaylin Williams",
    "nba_team": "OKC",
    "pos": "F",
@@ -678,6 +699,22 @@
     "REB": 3.4,
     "AST": 2.5
    }
+  },
+  {
+   "name": "Ryan Kalkbrenner",
+   "nba_team": "CHA",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Left Hip",
+   "return_date": "2026-11-28",
+   "days_out": 3,
+   "games_missed": 1,
+   "timeframe": "1 week",
+   "note": "Kalkbrenner (hip) has been ruled out for Wednesday's matchup with Chicago.",
+   "note_date": "2026-11-25",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
   },
   {
    "name": "Bradley Beal",
@@ -938,7 +975,7 @@
    "days_out": 7,
    "games_missed": 3,
    "timeframe": "1 week",
-   "note": "Raynaud (knee) is out for Wednesday's game against the Warriors.",
+   "note": "Raynaud (knee) was assigned to the G League's Stockton Kings on Wednesday, James Ham of ESPN 1320 Sacramento reports.",
    "note_date": "2026-11-25",
    "fantasy_team": null,
    "on_ir": false,
