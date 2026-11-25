@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-25T18:11:00.272951+00:00",
+ "updated_utc": "2026-11-25T21:53:48.165834+00:00",
  "today_et": "2026-11-25",
  "players": [
   {
@@ -40,27 +40,6 @@
    }
   },
   {
-   "name": "Giannis Antetokounmpo",
-   "nba_team": "MIA",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Groin",
-   "return_date": "2026-11-25",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Antetokounmpo (groin) is questionable for Wednesday's game in Philadelphia.",
-   "note_date": "2026-11-24",
-   "fantasy_team": "Big Herro Glick",
-   "on_ir": false,
-   "per_game": {
-    "FPTS": 56.2,
-    "PTS": 30.1,
-    "REB": 12.0,
-    "AST": 5.9
-   }
-  },
-  {
    "name": "Jalen Brunson",
    "nba_team": "NY",
    "pos": "G",
@@ -70,7 +49,7 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Brunson (illness) has been downgraded to questionable for Wednesday's game against the Cavaliers.",
+   "note": "Brunson (illness) is probable for Wednesday's game against Cleveland.",
    "note_date": "2026-11-25",
    "fantasy_team": "Kuminga Lot",
    "on_ir": false,
@@ -112,8 +91,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Hart (shoulder) is listed as questionable for Wednesday's game against Cleveland.",
-   "note_date": "2026-11-24",
+   "note": "Hart (shoulder) has been upgraded to probable for Wednesday's game against the Cavaliers.",
+   "note_date": "2026-11-25",
    "fantasy_team": "NAWSectual",
    "on_ir": false,
    "per_game": {
@@ -219,6 +198,27 @@
    }
   },
   {
+   "name": "Zach LaVine",
+   "nba_team": "SAC",
+   "pos": "G",
+   "status": "Day-To-Day",
+   "injury": "Right Knee",
+   "return_date": "2026-11-25",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "LaVine (knee) has been downgraded to questionable for Wednesday's game against Golden State.",
+   "note_date": "2026-11-25",
+   "fantasy_team": "Kream team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 32.0,
+    "PTS": 20.4,
+    "REB": 3.8,
+    "AST": 3.0
+   }
+  },
+  {
    "name": "Aaron Nesmith",
    "nba_team": "IND",
    "pos": "G",
@@ -244,8 +244,8 @@
    "days_out": 2,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Coach JJ Redick stated Monday that the team is optimistic Reaves (heel) will return for Friday's game against San Antonio, Daniel Starkand of LakersNation.com reports.",
-   "note_date": "2026-11-24",
+   "note": "Reaves (heel) was a full participant in Wednesday's practice, Daniel Starkand of LakersNation.com reports.",
+   "note_date": "2026-11-25",
    "fantasy_team": "Spicy town Mayo",
    "on_ir": true,
    "per_game": {
@@ -275,14 +275,14 @@
    "name": "Cade Cunningham",
    "nba_team": "DET",
    "pos": "G",
-   "status": "Out",
+   "status": "Day-To-Day",
    "injury": "Knee",
    "return_date": "2026-11-27",
    "days_out": 2,
    "games_missed": 0,
    "timeframe": "Days",
    "note": "Cunningham (knee) is listed as out for Tuesday's game against Orlando.",
-   "note_date": "2026-11-24",
+   "note_date": "2026-11-25",
    "fantasy_team": "Rye RSL",
    "on_ir": false,
    "per_game": {
@@ -407,14 +407,14 @@
    "name": "Joel Embiid",
    "nba_team": "PHI",
    "pos": "C",
-   "status": "Day-To-Day",
+   "status": "Out",
    "injury": "Illness",
    "return_date": "2026-11-27",
    "days_out": 2,
    "games_missed": 1,
    "timeframe": "Days",
-   "note": "Embiid (illness) is listed as doubtful for Wednesday's game versus Miami.",
-   "note_date": "2026-11-24",
+   "note": "Embiid (illness) is out for Wednesday's game against Miami, Ira Winderman of the South Florida Sun Sentinel reports.",
+   "note_date": "2026-11-25",
    "fantasy_team": "NAWSectual",
    "on_ir": false,
    "per_game": {
@@ -466,7 +466,7 @@
    "days_out": 2,
    "games_missed": 1,
    "timeframe": "Days",
-   "note": "McBride (adductor) is listed as questionable for Wednesday's game versus Cleveland.",
+   "note": "McBride (adductor) has been ruled out for Wednesday's game against the Cavaliers.",
    "note_date": "2026-11-25",
    "fantasy_team": null,
    "on_ir": false,
@@ -975,7 +975,7 @@
    "days_out": 7,
    "games_missed": 3,
    "timeframe": "1 week",
-   "note": "Raynaud (knee) was assigned to the G League's Stockton Kings on Wednesday, James Ham of ESPN 1320 Sacramento reports.",
+   "note": "Raynaud (knee) was recalled from the G League's Stockton Kings on Wednesday, Marc J. Spears of ESPN.com reports.",
    "note_date": "2026-11-25",
    "fantasy_team": null,
    "on_ir": false,

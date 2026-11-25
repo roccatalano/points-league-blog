@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-25T12:02:20+00:00",
- "fa_points_per_game": 22.8,
- "fa_points_per_day": 10.94,
+ "updated_utc": "2026-11-25T21:53:43+00:00",
+ "fa_points_per_game": 23.1,
+ "fa_points_per_day": 11.09,
  "fa_pool": 10,
  "trades": [
   {
@@ -458,7 +458,7 @@
   }
  ],
  "pickups": {
-  "count": 160,
+  "count": 162,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -2263,6 +2263,26 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Danny Wolf",
+    "team": "Spicy town Mayo",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-25",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
+   },
+   {
+    "player": "Kevin Porter Jr.",
+    "team": "Downtown Euros",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-25",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -2286,7 +2306,7 @@
    },
    {
     "team": "Downtown Euros",
-    "pickups": 13,
+    "pickups": 14,
     "fpts": 1527.0,
     "faab": 0
    },
@@ -2316,7 +2336,7 @@
    },
    {
     "team": "Spicy town Mayo",
-    "pickups": 18,
+    "pickups": 19,
     "fpts": 818.0,
     "faab": 0
    },
@@ -2353,7 +2373,7 @@
   ]
  },
  "drops": {
-  "count": 137,
+  "count": 139,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -3096,7 +3116,7 @@
    {
     "player": "Danny Wolf",
     "team": "coachcainzey",
-    "now": "free agent",
+    "now": "Spicy town Mayo",
     "date": "2026-11-16",
     "games": 3,
     "fpts": 76.0,
@@ -3483,7 +3503,7 @@
    {
     "player": "Kevin Porter Jr.",
     "team": "RayJayDaPawnSTAH",
-    "now": "free agent",
+    "now": "Downtown Euros",
     "date": "2026-10-21",
     "games": 0,
     "fpts": 0,
@@ -3573,6 +3593,24 @@
    {
     "player": "Kevin Huerter",
     "team": "Big Herro Glick",
+    "now": "free agent",
+    "date": "2026-11-25",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Caleb Martin",
+    "team": "Spicy town Mayo",
+    "now": "free agent",
+    "date": "2026-11-25",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Aaron Gordon",
+    "team": "Downtown Euros",
     "now": "free agent",
     "date": "2026-11-25",
     "games": 0,
