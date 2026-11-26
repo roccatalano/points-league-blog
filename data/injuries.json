@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-26T13:29:43.982023+00:00",
+ "updated_utc": "2026-11-26T17:53:41.106464+00:00",
  "today_et": "2026-11-26",
  "players": [
   {
@@ -104,6 +104,22 @@
    "timeframe": "Days",
    "note": "Youngblood (heel) has been ruled out for Saturday's game against the Knicks.",
    "note_date": "2026-11-20",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Colin Castleton",
+   "nba_team": "ORL",
+   "pos": "C",
+   "status": "Day-To-Day",
+   "injury": "Calf",
+   "return_date": "2026-11-27",
+   "days_out": 1,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Castleton totaled five points (2-4 FG, 1-1 3Pt) and four rebounds in seven minutes during Tuesday's 132-116 preseason win over the Cavaliers.",
+   "note_date": "2026-11-26",
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
@@ -827,8 +843,8 @@
    "days_out": 4,
    "games_missed": 2,
    "timeframe": "1 week",
-   "note": "Duren (hamstring) is being assigned to the Motor City Cruise on Wednesday for practice as he ramps up for a return, Eric Vincent of ClutchPoints.com reports.",
-   "note_date": "2026-11-24",
+   "note": "Detroit recalled Duren (hamstring) from the G League's Motor City Cruise on Wednesday.",
+   "note_date": "2026-11-26",
    "fantasy_team": "RayJayDaPawnSTAH",
    "on_ir": true,
    "per_game": {
