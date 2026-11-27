@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-27T04:44:37+00:00",
- "fa_points_per_game": 22.8,
- "fa_points_per_day": 10.94,
+ "updated_utc": "2026-11-27T14:38:45+00:00",
+ "fa_points_per_game": 22.5,
+ "fa_points_per_day": 10.8,
  "fa_pool": 10,
  "trades": [
   {
@@ -36,7 +36,7 @@
    "post": "2026-10-30-trade",
    "so_far": {
     "from": "2026-10-30",
-    "days": 27,
+    "days": 28,
     "points": {
      "Joseph's Scary Team": 674.0,
      "coachcainzey": 544.0
@@ -46,8 +46,8 @@
      "coachcainzey": -130.0
     },
     "per_week": {
-     "Joseph's Scary Team": 33.7,
-     "coachcainzey": -33.7
+     "Joseph's Scary Team": 32.5,
+     "coachcainzey": -32.5
     },
     "games": {
      "Joseph's Scary Team": 21,
@@ -188,6 +188,10 @@
      [
       "2026-11-25",
       130.0
+     ],
+     [
+      "2026-11-26",
+      130.0
      ]
     ],
     "grade": {
@@ -271,7 +275,7 @@
    "post": "2026-10-20-trade",
    "so_far": {
     "from": "2026-10-20",
-    "days": 37,
+    "days": 38,
     "points": {
      "Kream team": 50.0,
      "coachcainzey": 76.0
@@ -281,8 +285,8 @@
      "coachcainzey": 26.0
     },
     "per_week": {
-     "Kream team": -4.9,
-     "coachcainzey": 4.9
+     "Kream team": -4.8,
+     "coachcainzey": 4.8
     },
     "games": {
      "Kream team": 4,
@@ -453,6 +457,10 @@
      [
       "2026-11-25",
       -26.0
+     ],
+     [
+      "2026-11-26",
+      -26.0
      ]
     ],
     "grade": {
@@ -466,7 +474,7 @@
   }
  ],
  "pickups": {
-  "count": 167,
+  "count": 168,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -2341,6 +2349,16 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Aaron Gordon",
+    "team": "Downtown Euros",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-27",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -2358,7 +2376,7 @@
    },
    {
     "team": "Downtown Euros",
-    "pickups": 14,
+    "pickups": 15,
     "fpts": 1624.0,
     "faab": 0
    },
@@ -3091,15 +3109,6 @@
     "per_game": 19.7
    },
    {
-    "player": "Keon Ellis",
-    "team": "No Scrubs",
-    "now": "free agent",
-    "date": "2026-11-04",
-    "games": 8,
-    "fpts": 114.0,
-    "per_game": 14.2
-   },
-   {
     "player": "Jalen Suggs",
     "team": "Spicy town Mayo",
     "now": "No Scrubs",
@@ -3107,6 +3116,15 @@
     "games": 5,
     "fpts": 111.0,
     "per_game": 22.2
+   },
+   {
+    "player": "Keon Ellis",
+    "team": "No Scrubs",
+    "now": "free agent",
+    "date": "2026-11-04",
+    "games": 8,
+    "fpts": 110.0,
+    "per_game": 13.8
    },
    {
     "player": "Jared McCain",
@@ -3649,6 +3667,15 @@
     "per_game": null
    },
    {
+    "player": "Precious Achiuwa",
+    "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-11-27",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
     "player": "Sam Hauser",
     "team": "coachcainzey",
     "now": "free agent",
@@ -3669,15 +3696,6 @@
    {
     "player": "Caleb Martin",
     "team": "Spicy town Mayo",
-    "now": "free agent",
-    "date": "2026-11-25",
-    "games": 0,
-    "fpts": 0,
-    "per_game": null
-   },
-   {
-    "player": "Aaron Gordon",
-    "team": "Downtown Euros",
     "now": "free agent",
     "date": "2026-11-25",
     "games": 0,
