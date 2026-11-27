@@ -1,7 +1,7 @@
 {
- "updated_utc": "2026-11-26T22:31:51+00:00",
- "fa_points_per_game": 22.9,
- "fa_points_per_day": 10.99,
+ "updated_utc": "2026-11-27T04:44:37+00:00",
+ "fa_points_per_game": 22.8,
+ "fa_points_per_day": 10.94,
  "fa_pool": 10,
  "trades": [
   {
@@ -3568,7 +3568,7 @@
     "per_game": null
    },
    {
-    "player": "4431775",
+    "player": "Seth Lundy",
     "team": "BYE",
     "now": "free agent",
     "date": "2026-10-20",
