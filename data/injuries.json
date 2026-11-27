@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-27T14:38:49.734129+00:00",
+ "updated_utc": "2026-11-27T17:39:17.831245+00:00",
  "today_et": "2026-11-27",
  "players": [
   {
@@ -13,38 +13,6 @@
    "games_missed": 0,
    "timeframe": "Days",
    "note": "Martin is questionable for Friday's game against the Nets due to left knee soreness.",
-   "note_date": "2026-11-26",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Andre Drummond",
-   "nba_team": "NY",
-   "pos": "C",
-   "status": "Day-To-Day",
-   "injury": "Head",
-   "return_date": "2026-11-27",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Drummond (head) is questionable for Friday's game against the Heat.",
-   "note_date": "2026-11-26",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Andrew Wiggins",
-   "nba_team": "MIA",
-   "pos": "F",
-   "status": "Day-To-Day",
-   "injury": "Right Ankle",
-   "return_date": "2026-11-27",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Wiggins is probable for Friday's game against the Knicks due to a right ankle sprain.",
    "note_date": "2026-11-26",
    "fantasy_team": null,
    "on_ir": false,
@@ -213,8 +181,8 @@
    "days_out": 0,
    "games_missed": 0,
    "timeframe": "Days",
-   "note": "Embiid (illness) is questionable for Friday's game against the Pacers.",
-   "note_date": "2026-11-26",
+   "note": "Embiid (illness) was at shootaround for the 76ers on Friday, Chris Hine of The Philly Inquirer reports.",
+   "note_date": "2026-11-27",
    "fantasy_team": "NAWSectual",
    "on_ir": false,
    "per_game": {
@@ -259,6 +227,27 @@
     "PTS": 9.4,
     "REB": 9.1,
     "AST": 3.4
+   }
+  },
+  {
+   "name": "Karl-Anthony Towns",
+   "nba_team": "NY",
+   "pos": "C",
+   "status": "Day-To-Day",
+   "injury": "Right Abdomen",
+   "return_date": "2026-11-27",
+   "days_out": 0,
+   "games_missed": 0,
+   "timeframe": "Days",
+   "note": "Towns is questionable for Friday's game against the Heat due to a right abdominal contusion.",
+   "note_date": "2026-11-27",
+   "fantasy_team": "Kream team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 45.5,
+    "PTS": 21.6,
+    "REB": 12.5,
+    "AST": 4.3
    }
   },
   {
@@ -330,22 +319,6 @@
    "games_missed": 0,
    "timeframe": "Days",
    "note": "McBride (groin) is questionable for Friday's game against the Heat.",
-   "note_date": "2026-11-26",
-   "fantasy_team": null,
-   "on_ir": false,
-   "per_game": null
-  },
-  {
-   "name": "Mitchell Robinson",
-   "nba_team": "BOS",
-   "pos": "C",
-   "status": "Out",
-   "injury": "Illness",
-   "return_date": "2026-11-27",
-   "days_out": 0,
-   "games_missed": 0,
-   "timeframe": "Days",
-   "note": "Robinson (illness) is questionable for Friday's game against the Hawks.",
    "note_date": "2026-11-26",
    "fantasy_team": null,
    "on_ir": false,
@@ -611,6 +584,22 @@
    "per_game": null
   },
   {
+   "name": "Andre Drummond",
+   "nba_team": "NY",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Concussion",
+   "return_date": "2026-11-29",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Drummond (concussion) has been ruled out for Friday's game against the Heat.",
+   "note_date": "2026-11-27",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
    "name": "Bradley Beal",
    "nba_team": "LAC",
    "pos": "G",
@@ -789,6 +778,43 @@
    "fantasy_team": null,
    "on_ir": false,
    "per_game": null
+  },
+  {
+   "name": "Mitchell Robinson",
+   "nba_team": "BOS",
+   "pos": "C",
+   "status": "Out",
+   "injury": "Illness",
+   "return_date": "2026-11-29",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Robinson has been ruled out Marc D'Amico of the Celtics' official sitefor Friday's game.",
+   "note_date": "2026-11-27",
+   "fantasy_team": null,
+   "on_ir": false,
+   "per_game": null
+  },
+  {
+   "name": "Mo Bamba",
+   "nba_team": "UTAH",
+   "pos": "C",
+   "status": "Day-To-Day",
+   "injury": "Illness",
+   "return_date": "2026-11-29",
+   "days_out": 2,
+   "games_missed": 1,
+   "timeframe": "Days",
+   "note": "Bamba (illness) is listed as questionable for Friday's game against the Nuggets, according to the Jazz's injury report.",
+   "note_date": "2026-11-27",
+   "fantasy_team": "Kream team",
+   "on_ir": false,
+   "per_game": {
+    "FPTS": 17.9,
+    "PTS": 5.5,
+    "REB": 6.2,
+    "AST": 0.7
+   }
   },
   {
    "name": "Nae'Qwan Tomlin",
@@ -1287,8 +1313,8 @@
    "days_out": 16,
    "games_missed": 4,
    "timeframe": "2-4 weeks",
-   "note": "Haliburton (hamstring) was recalled from the G League's Noblesville Boom on Tuesday, Tony East of Forbes.com reports.",
-   "note_date": "2026-11-24",
+   "note": "Haliburton (hamstring) has been ruled out per Scott Agness of FieldhouseFiles.com for Friday's game against the 76ers. The guard participated in practice activities earlier this week as he continues working toward his return.",
+   "note_date": "2026-11-27",
    "fantasy_team": "Joseph's Scary Team",
    "on_ir": false,
    "per_game": {
