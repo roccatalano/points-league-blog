@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-11-28T13:50:13+00:00",
+ "updated_utc": "2026-11-28T21:29:52+00:00",
  "fa_points_per_game": 23.1,
  "fa_points_per_day": 11.09,
  "fa_pool": 10,
@@ -482,7 +482,7 @@
   }
  ],
  "pickups": {
-  "count": 170,
+  "count": 171,
   "best": [
    {
     "player": "Davion Mitchell",
@@ -2387,6 +2387,16 @@
     "starts": 0,
     "fpts": 0.0,
     "per_start": null
+   },
+   {
+    "player": "Christian Anderson",
+    "team": "Downtown Euros",
+    "bid": 0,
+    "type": "free agent",
+    "date": "2026-11-28",
+    "starts": 0,
+    "fpts": 0.0,
+    "per_start": null
    }
   ],
   "by_team": [
@@ -2404,7 +2414,7 @@
    },
    {
     "team": "Downtown Euros",
-    "pickups": 16,
+    "pickups": 17,
     "fpts": 1709.0,
     "faab": 0
    },
@@ -2477,7 +2487,7 @@
   ]
  },
  "drops": {
-  "count": 145,
+  "count": 146,
   "all": [
    {
     "player": "Davion Mitchell",
@@ -3777,6 +3787,15 @@
    },
    {
     "player": "Meleek Thomas",
+    "team": "Downtown Euros",
+    "now": "free agent",
+    "date": "2026-11-28",
+    "games": 0,
+    "fpts": 0,
+    "per_game": null
+   },
+   {
+    "player": "Dominick Barlow",
     "team": "Downtown Euros",
     "now": "free agent",
     "date": "2026-11-28",
